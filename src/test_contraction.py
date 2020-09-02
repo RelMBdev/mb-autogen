@@ -12,8 +12,8 @@ def main():
    print("\ninput  : ",string)
    c1.parse_contraction(string, verbose=True)
    c1.process_contraction(split_groups=True,remove_bar=True,verbose=True)
-#  print("output : ")
-#  rct1.print_contraction()
+   print("output : ")
+#  c1.print_contraction()
 
 
 main()
