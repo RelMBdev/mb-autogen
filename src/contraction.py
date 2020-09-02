@@ -95,17 +95,5 @@ class binary_contraction:
 
       return common_groups
 
-
-def main():
-
-   c1 = binary_contraction()
-   string = "Z49(e1b|m1b)+=H17(e1b,l1b|d1bd2b)*S44(d1bd2b|m1b,l1b)"
-   print("\ninput  : ",string)
-   c1.parse_contraction(string, verbose=True)
-   c1.process_contraction(split_groups=True,remove_bar=True,verbose=True)
-#  print("output : ")
-#  rct1.print_contraction()
-
-
-main()
-
+   def print_contraction(self) :
+      pass
