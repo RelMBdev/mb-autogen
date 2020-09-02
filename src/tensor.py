@@ -104,6 +104,18 @@ class tensor:
    def set_tensor_name(self,name):
       self.name = name
 
+   def get_tensor_name(self) :
+      return self.name
+
+   def get_tensor_groups(self) :
+      return self.groups
+
+   def get_tensor_indexes(self) :
+      return self.indexes
+
+   def get_tensor_rank(self) :
+      return self.rank
+
    def set_tensor_representation(self,split_groups=False,remove_bar=False, verbose=False):
       if (verbose):
          self.print_tensor_information()
@@ -134,48 +146,4 @@ class tensor:
       tensor_string = self.set_tensor_representation(split_groups,remove_bar)
       print(tensor_string)
 
-
-def main():
-
-   print("\ninput : ",None)
-   t0 = tensor()
-   print("output : ")
-   t0.print_tensor(split_groups=True)
-
-   t1 = tensor()
-   string = "S44(d1bd2b|l1bl2b)"
-   print("\ninput  : ",string)
-   t1.parse_tensor(string)
-   print("output : ")
-   t1.print_tensor(split_groups=True)
-
-   t2 = tensor()
-   string = "S46(d1ad1b|m1b,l1a)"
-   print("\ninput : ",string)
-   t2.parse_tensor(string)
-   print("output : ")
-   t2.print_tensor()
-
-   t3 = tensor()
-   string = "S99(|)"
-   print("\ninput : ",string)
-   t3.parse_tensor(string)
-   print("output : ")
-   t3.print_tensor()
-
-   t4 = tensor(spinorbital=True)
-   string = "S14(e1,d1|l1l2)"
-   print("\ninput : ",string)
-   t4.parse_tensor(string)
-   print("output : ")
-   t4.print_tensor(remove_bar=True)
-
-   t5 = tensor()
-   string = "S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)"
-   print("\ninput : ",string)
-   t5.parse_tensor(string)
-   print("output : ")
-   t5.print_tensor(split_groups=True,remove_bar=True)
-
-main()
 
