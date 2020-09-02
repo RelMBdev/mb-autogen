@@ -66,21 +66,42 @@ class binary_contraction:
       self.B.print_tensor_information()
 
    def process_contraction(self,split_groups=False,remove_bar=False,verbose=False) :
-      tA = self.A.set_tensor_representation(split_groups=split_groups,remove_bar=remove_bar,verbose=verbose)
-      tB = self.B.set_tensor_representation(split_groups=split_groups,remove_bar=remove_bar,verbose=verbose)
-      tC = self.C.set_tensor_representation(split_groups=split_groups,remove_bar=remove_bar,verbose=verbose)
-
       common_AB = self.find_common_groups(self.A,self.B)
       common_AC = self.find_common_groups(self.A,self.C)
       common_BC = self.find_common_groups(self.B,self.C)
       if verbose :
-         print("Tensor A : ",tA)
-         print("Tensor B : ",tB)
-         print("Tensor C : ",tC)
          print("Common groups to tensors A and B",common_AB)
          print("Common groups to tensors A and C",common_AC)
          print("Common groups to tensors B and C",common_BC)
 
+      tA = self.A.set_tensor_representation(split_groups=split_groups,remove_bar=remove_bar,verbose=verbose)
+      tB = self.B.set_tensor_representation(split_groups=split_groups,remove_bar=remove_bar,verbose=verbose)
+      tC = self.C.set_tensor_representation(split_groups=split_groups,remove_bar=remove_bar,verbose=verbose)
+      if verbose :
+         print("Tensor A : ",tA)
+         print("Tensor B : ",tB)
+         print("Tensor C : ",tC)
+
+      expression = tC + "+=" + tA + "*" + tB + "*" + str(self.factor)
+      if split_groups and remove_bar :
+
+         if common_AB not in common_AC and common_AB not in common_BC :
+            f1 = 1
+            fact= 1
+            for g in common_AB :
+               f1 *= len(g)
+            print("factor: ",f1)
+
+            for i in range(1,f1+1): 
+               fact = fact * i 
+            factor = 1.0/fact
+            print("factor: ",factor)
+
+            expression = tC + "+=" + tA + "*" + tB + "*" + str(self.factor * factor) 
+         else :
+            expression = tC + "+=" + tA + "*" + tB + "*" + str(self.factor)
+
+      return expression
       
    def find_common_groups(self, A, B):
       gA = A.get_tensor_groups()
