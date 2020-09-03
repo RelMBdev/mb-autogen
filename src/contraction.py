@@ -19,13 +19,23 @@ class binary_contraction:
       self.A                = None
       self.B                = None
       self.C                = None
+      self.operations       = []
       self.factor           = 1.0
 
    def parse_contraction(self,input_string, verbose=False):
       import re
 
+      operator_regexp_definition = "(\+\=|\*\=|\*|\+|\/|\-)"
+      tensor_regexp_definition   = "(.+)" 
 #     contraction_regexp_definition = "(.+)\+\=(.+)\*(.+)\*?([0-9.-+])?"
-      contraction_regexp_definition = "(.*)\+\=(.+)\*(.+)"
+#     contraction_regexp_definition = "(.*)\+\=(.+)\*(.+)"
+      contraction_regexp_definition = tensor_regexp_definition \
+                                    + operator_regexp_definition \
+                                    + tensor_regexp_definition \
+                                    + operator_regexp_definition \
+                                    + tensor_regexp_definition \
+                                    + operator_regexp_definition + "?"
+
       contraction_re = re.compile (r''+ contraction_regexp_definition+'', re.IGNORECASE)
 
       if (verbose) :
@@ -38,8 +48,15 @@ class binary_contraction:
           self.C = t.tensor(self.spinorbital)
 
           tensor_C_string = contraction.group(1)
-          tensor_A_string = contraction.group(2)
-          tensor_B_string = contraction.group(3)
+          tensor_A_string = contraction.group(3)
+          tensor_B_string = contraction.group(5)
+
+          self.operations.append(contraction.group(2))
+          self.operations.append(contraction.group(4))
+          if contraction.group(6) is not None:
+             self.operations.append(contraction.group(6))
+
+          print(self.operations)
 #         if contraction.group(4) :
 #            self.factor  = contraction.group(4)
 
