@@ -25,7 +25,7 @@ class tensor:
    def parse_tensor(self,input_string, verbose=False):
       import re
 
-      tensor_regexp_definition = "([a-zA-Z]+_?[0-9]+)\((.+)\)"
+      tensor_regexp_definition = "([a-zA-Z_0-9]+)\((.+)\)"
       tensor_sep_definition = "([|,])"
       if self.spinorbital :
          stride = 2
