@@ -26,35 +26,70 @@ class binary_contraction:
       import re
 
       operator_regexp_definition = "(\+\=|\*\=|\*|\+|\/|\-)"
-      tensor_regexp_definition   = "(.+)" 
+#     tensor_regexp_definition   = "(.+)" 
+      tensor_regexp_definition   = "([a-zA-z0-9_\(\)\|\,]+)" 
+      factor_regexp_definition   = "(-?\d\.)"
 #     contraction_regexp_definition = "(.+)\+\=(.+)\*(.+)\*?([0-9.-+])?"
 #     contraction_regexp_definition = "(.*)\+\=(.+)\*(.+)"
-      contraction_regexp_definition = tensor_regexp_definition \
-                                    + operator_regexp_definition \
-                                    + tensor_regexp_definition \
-                                    + operator_regexp_definition \
-                                    + tensor_regexp_definition \
-                                    + operator_regexp_definition + "?"
+      contraction_regexp_definition_b = tensor_regexp_definition \
+                                      + operator_regexp_definition \
+                                      + tensor_regexp_definition \
+                                      + operator_regexp_definition \
+                                      + tensor_regexp_definition 
 
-      contraction_re = re.compile (r''+ contraction_regexp_definition+'', re.IGNORECASE)
+      contraction_regexp_definition_bf = contraction_regexp_definition_b \
+                                       + operator_regexp_definition \
+                                       + factor_regexp_definition 
+
+      contraction_b_re = re.compile (r''+ contraction_regexp_definition_b+'', re.IGNORECASE)
+      contraction_bf_re = re.compile (r''+ contraction_regexp_definition_bf+'', re.IGNORECASE)
 
       if (verbose) :
          print("\nparsing tensor contraction input string:", input_string)
 
-      contraction = contraction_re.match(input_string)
-      if contraction : 
+      contraction_b = contraction_b_re.match(input_string)
+      contraction_bf = contraction_bf_re.match(input_string)
+
+      if contraction_bf :
+          print("contraction_bf")
           self.A = t.tensor(self.spinorbital)
           self.B = t.tensor(self.spinorbital)
           self.C = t.tensor(self.spinorbital)
 
-          tensor_C_string = contraction.group(1)
-          tensor_A_string = contraction.group(3)
-          tensor_B_string = contraction.group(5)
+          tensor_C_string = contraction_bf.group(1)
+          print("C string:",tensor_C_string)
+          tensor_A_string = contraction_bf.group(3)
+          print("A string:",tensor_A_string)
+          tensor_B_string = contraction_bf.group(5)
+          print("B string:",tensor_B_string)
 
-          self.operations.append(contraction.group(2))
-          self.operations.append(contraction.group(4))
-          if contraction.group(6) is not None:
-             self.operations.append(contraction.group(6))
+          self.operations.append(contraction_bf.group(2))
+          self.operations.append(contraction_bf.group(4))
+          self.operations.append(contraction_bf.group(6))
+
+          print(self.operations)
+          self.factor  = float(contraction_bf.group(7))
+          print(self.factor)
+
+          self.A.parse_tensor(tensor_A_string)
+          self.B.parse_tensor(tensor_B_string)
+          self.C.parse_tensor(tensor_C_string)
+
+          if verbose :
+             self.print_contraction_information()
+
+      elif contraction_b : 
+          print("contraction_b")
+          self.A = t.tensor(self.spinorbital)
+          self.B = t.tensor(self.spinorbital)
+          self.C = t.tensor(self.spinorbital)
+
+          tensor_C_string = contraction_b.group(1)
+          tensor_A_string = contraction_b.group(3)
+          tensor_B_string = contraction_b.group(5)
+
+          self.operations.append(contraction_b.group(2))
+          self.operations.append(contraction_b.group(4))
 
           print(self.operations)
 #         if contraction.group(4) :
