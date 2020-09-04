@@ -33,14 +33,13 @@ class tensor:
       else :
          stride = 3
          tensor_indexes_definition = "(\w\d\w)"
-      sensor_sep_definition = "([|,])"
 
       tensor_re = re.compile (r''+ tensor_regexp_definition+'', re.IGNORECASE)
       tensor_sep_re = re.compile (r''+ tensor_sep_definition+'', re.IGNORECASE)
       tensor_indexes_re = re.compile (r''+ tensor_indexes_definition +'', re.IGNORECASE)
       tensor_groups_re  = re.compile (r''+ tensor_indexes_definition + "*" +'', re.IGNORECASE)
 
-      if (verbose) :
+      if verbose :
          print("\nparsing tensor input string:", input_string)
 
       if tensor_re.match(input_string):
@@ -55,7 +54,7 @@ class tensor:
                 start = m.span(0)[0]
                 end   = m.span(0)[1]
                 if (start != end) :
-                   v = targs[m.span(0)[0]:m.span(0)[1]]
+                   v = targs[start:end]
                    if ((end - start + 1) >= stride ) :
                       group = tensor_indexes_re.findall(v)
                       self.groups.append(group)
@@ -66,7 +65,7 @@ class tensor:
           if (rank != 0) :
              self.rank = rank
 
-          if (verbose) :
+          if verbose :
              self.print_tensor_information(targs)
       else :
          print("   failed to indentify a tensor definition from input") 
@@ -116,34 +115,46 @@ class tensor:
    def get_tensor_rank(self) :
       return self.rank
 
-   def set_tensor_representation(self,split_groups=False,remove_bar=False, verbose=False):
-      if (verbose):
+   def set_tensor_representation(self,split_groups=False,replace_bar=False, remove_bar=False, verbose=False):
+      if verbose:
          self.print_tensor_information()
 
       tensor  = self.name
       tensor += "("
-      k = -1
-      for i in self.groups :
-         if (k >= 0 ) :
-            sep = self.separatrices[k]
-            if (remove_bar and (sep is "|")) :
-               sep = ","
-            tensor += sep
-         if isinstance(i, list): 
-            l = 0
-            for e in i :
-               tensor += e 
-               if (split_groups and ((len(i)-1) > l)) :
-                  tensor += ","
-                  l += 1
+      if len(self.groups) != 0:
+         k = -1
+         for i in self.groups :
+            if (k >= 0 ) :
+               sep = self.separatrices[k]
+               if sep is "|" :
+                  if replace_bar :
+                     sep = ","
+                  elif remove_bar :
+                     sep = " "
+               tensor += sep
+            if isinstance(i, list): 
+               l = 0
+               for e in i :
+                  tensor += e 
+                  if (split_groups and ((len(i)-1) > l)) :
+                     tensor += ","
+                     l += 1
+            else :
+               tensor += i 
+            k = k + 1
+      else : # handling a unit tensor, here we should have no indexes or groups so the only action is to replaes
+         if replace_bar :
+            tensor += ","
+         elif remove_bar : 
+            tensor += " "
          else :
-            tensor += i 
-         k = k + 1
+            tensor += "|"
+
       tensor += ")"
       return tensor
    
-   def print_tensor(self,split_groups=False,remove_bar=False):
-      tensor_string = self.set_tensor_representation(split_groups,remove_bar)
+   def print_tensor(self,split_groups=False,replace_bar=False,remove_bar=False):
+      tensor_string = self.set_tensor_representation(split_groups,replace_bar,remove_bar)
       print(tensor_string)
 
 
