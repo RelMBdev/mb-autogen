@@ -181,7 +181,7 @@ class binary_contraction:
                factor_from_split_groups *= (1.0/fact)
             if verbose_c :
                print("   Additional factor for tensor contraction : ",factor_from_split_groups)
-         new_factor = self.truncate(self.factor*factor_from_split_groups,16)
+         new_factor = self.round_value(self.factor*factor_from_split_groups,20)
          
          expression = tC + self.operations[0] + tA + self.operations[1] + tB 
          if len(self.operations) is 2 :
@@ -205,11 +205,9 @@ class binary_contraction:
 
       return common_groups
 
-   def truncate(self, value, digits) :
-      import math
-
+   def round_value(self, value, digits) :
       factor = 10.0 ** digits
-      return math.trunc(value * factor) / factor
+      return round(value * factor) / factor
 
    def print_contraction(self) :
       pass
