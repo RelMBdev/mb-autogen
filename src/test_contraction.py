@@ -18,10 +18,17 @@ def main():
 #  c1.print_contraction()
 
    c2 = c.binary_contraction()
-   string = "Z48(|)+=S44(d1bd2b|l1bl2b)*H24(l1bl2b|d1bd2b)"
+   string = "Z48(|)+=S44(d1bd2b|l1bl2b)*H24(l1bl2b|d1bd2b)*-1."
    print("\ninput  : ",string)
    c2.parse_contraction(string, verbose=[False,False])
    expr = c2.process_contraction(split_groups=[True,True,True],replace_bar=[True,True,True], verbose=[False,False])
+   print("output : ",expr)
+
+   c8 = c.binary_contraction()
+   string = "Z448(|)+=S44(d1bd2bd3b|l1bl2b)*H24(l1bl2b|d1bd2bd3b)*-0.25"
+   print("\ninput  : ",string)
+   c8.parse_contraction(string, verbose=[False,False])
+   expr = c8.process_contraction(split_groups=[True,True,True],replace_bar=[True,True,True], verbose=[False,False])
    print("output : ",expr)
 
    c3 = c.binary_contraction()
@@ -55,6 +62,7 @@ def main():
    c7.parse_contraction(string, verbose=[False,False])
    expr = c7.process_contraction(split_groups=[True,True,True],replace_bar=[False,True,True], remove_lhs_bar=True,verbose=[False,False])
    print("output : ",expr)
+
 
 
 main()

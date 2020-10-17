@@ -35,7 +35,7 @@ class binary_contraction:
 
       operator_regexp_definition = "(\+\=|\*\=|\*|\+|\/|\-)"
       tensor_regexp_definition   = "([a-zA-z0-9_\(\)\|\,]+)" 
-      factor_regexp_definition   = "(-?\d\.)"
+      factor_regexp_definition   = "(-?\d+\.\d*)"
       contraction_regexp_definition_b = tensor_regexp_definition \
                                       + operator_regexp_definition \
                                       + tensor_regexp_definition \
@@ -164,28 +164,31 @@ class binary_contraction:
       if len(self.operations) > 2 :
          expression = expression + self.operations[2] + str(self.factor)
 
+      # here we should not add a prefactor for a group twice
       if split_groups and replace_bar :
          factor_from_split_groups = 1
          if common_AB not in common_AC and common_AB not in common_BC :
-            f1 = 1
-            fact= 1
+         # calculating new prefactor when there are common groups in the binary contraction : 
+         # 1. for each repeating group, we set as prefactor (1/(n!)), with n the number of indices in a group
+         # 2. the final prefactor is the product of the prefactors in #1 
             for g in common_AB :
-               f1 *= len(g)
+               f1 = len(g)
+               if verbose_c :
+                  print("   group : ",g,", Number of repetitions in RHS of contraction : ",f1)
+               fact = 1
+               for i in range(1,f1+1): 
+                  fact = fact * i 
+               factor_from_split_groups *= (1.0/fact)
             if verbose_c :
-               print("   Number of repeated groups in left-hand side of contraction : ",f1)
-
-            for i in range(1,f1+1): 
-               fact = fact * i 
-            factor_from_split_groups = (1.0/fact)
-            if verbose_c :
-               print("   New factor for tensor contraction : ",factor_from_split_groups)
-
+               print("   Additional factor for tensor contraction : ",factor_from_split_groups)
+         new_factor = self.truncate(self.factor*factor_from_split_groups,16)
+         
          expression = tC + self.operations[0] + tA + self.operations[1] + tB 
          if len(self.operations) is 2 :
             if factor_from_split_groups != 1 :
-               expression = expression + "*" + str(self.factor*factor_from_split_groups)
+               expression = expression + "*" + str(new_factor)
          elif len(self.operations) is 3 :
-            expression = expression + self.operations[2] + str(self.factor*factor_from_split_groups)
+            expression = expression + self.operations[2] + str(new_factor)
 
       return expression
       
@@ -201,6 +204,12 @@ class binary_contraction:
               common_groups.append(i)
 
       return common_groups
+
+   def truncate(self, value, digits) :
+      import math
+
+      factor = 10.0 ** digits
+      return math.trunc(value * factor) / factor
 
    def print_contraction(self) :
       pass
