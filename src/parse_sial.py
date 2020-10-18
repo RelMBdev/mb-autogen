@@ -46,7 +46,6 @@ class sial :
 
       if verbose :
          print("\nparsing SIAL input string:", input_string)
-      print("input string |"+input_string+"|")
 
       output = {}
 
@@ -57,7 +56,7 @@ class sial :
          tensor = t.tensor()
          instruction = sial_instruction_tensor_re.match(input_string).group(1)
          tensor_string = sial_instruction_tensor_re.match(input_string).group(2)
-         print("t.ins:",instruction,"t.str:",tensor_string)
+         #print("t.ins:",instruction,"t.str:",tensor_string)
          tensor.parse_tensor(tensor_string)
          # we parse the tensor expression, but defer from outputting it for now  
          # if we were to print, we'd 
@@ -70,10 +69,10 @@ class sial :
          output[instruction] = tensor
 
       elif sial_tensor_operation_expression_re.match(input_string):
-         contr = c.binary_contraction()
          instruction = "CONTRACTION"
          contr_string = sial_tensor_operation_expression_re.match(input_string).group(1)
-         print("prior instruction",instruction,"t.op:",contr_string)
+         contr = c.binary_contraction(expr=contr_string)
+         #print("prior instruction",instruction,"t.op:",contr_string)
          contr.parse_contraction(contr_string, verbose=[False,False])
          contr.process_contraction(split_groups=[True,True,True],replace_bar=[True,True,True], verbose=[False,False])
          output[instruction] = contr
@@ -93,9 +92,16 @@ class sial :
       for i, l in enumerate(self.input_lines) :
          instruction = self.parse_sial_instruction(l.rstrip(), verbose=False)
          if instruction is not {}:
-            self.print_parsed_instruction(instruction)
+            self.print_parsed_instruction(i,instruction)
             self.parsed_lines.append(instruction)
 
-   def print_parsed_instruction(self, instruction_dict):
-      print(instruction_dict)
+   def print_parsed_instruction(self, lineno, instruction_dict):
+      print("at line ",lineno,":")
+      for k in instruction_dict.keys() :
+         print("   Sial operation:",k)
+         val = instruction_dict.get(k)
+         if val is not None:
+            print("   Operand:",val)
+            print("   Operand characteristics")
+            val.print_info()
          
