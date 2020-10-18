@@ -115,6 +115,12 @@ class tensor:
    def get_tensor_rank(self) :
       return self.rank
 
+   def get_tensor_separatrices(self) :
+      return self.separatrices
+
+   def get_tensor_representation(self) :
+      return self.representation
+
    def set_tensor_representation(self,split_groups=False,replace_bar=False, remove_bar=False, verbose=False):
       if verbose:
          self.print_tensor_information()
@@ -151,10 +157,11 @@ class tensor:
             tensor += "|"
 
       tensor += ")"
-      return tensor
+      self.representation = tensor
    
    def print_tensor(self,split_groups=False,replace_bar=False,remove_bar=False):
-      tensor_string = self.set_tensor_representation(split_groups,replace_bar,remove_bar)
+      self.set_tensor_representation(split_groups,replace_bar,remove_bar)
+      tensor_string = self.get_tensor_representation()
       print(tensor_string)
 
 

@@ -1,0 +1,48 @@
+
+input :  None
+output (prints out default values for tensor, splitting groups) : 
+T00(|)
+
+input  :  S44_b(d1bd2b|l1bl2b)
+output (splitting groups) : 
+S44_b(d1b,d2b|l1b,l2b)
+
+input :  S46_1(d1ad1b|m1b,l1a)
+output (not splitting groups) : 
+S46_1(d1ad1b|m1b,l1a)
+
+input :  S99(|)
+output (not splitting groups) : 
+S99(|)
+
+input :  S99(|)
+
+parsing tensor input string: S99(|)
+   printing tensor information
+      name                     :  S99
+      spin-orbital/spinor mode :  False
+      rank                     :  1
+      arguments
+         at input              : |
+         indexes, parsed       : []
+         groups, parsed        : []
+         separatrices, parsed  : ['|']
+   done printing tensor information
+output (not splitting groups, removing bar) : 
+S99( )
+
+input :  S99(|)
+output (replacing bar) : 
+S99(,)
+
+input :  S14(e1,d1|l1l2)
+output (replacing bar) : 
+S14(e1,d1,l1l2)
+
+input :  S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)
+output (replacing bar, splitting groups) : 
+S46(d1a,d1b,d2a,d2b,m1b,l1a,n1a,i1b)
+
+input :  S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)
+output (removing bar, splitting groups) : 
+S46(d1a,d1b,d2a,d2b m1b,l1a,n1a,i1b)
