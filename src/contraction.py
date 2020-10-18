@@ -281,7 +281,7 @@ class binary_contraction:
       if self.B is None :
          expression = tC + self.operations[0] + tA 
          if len(self.operations) > 1 :
-            expression = expression + self.operations[2] + str(self.factor)
+            expression = expression + self.operations[1] + str(self.factor)
 
       else :
          expression = tC + self.operations[0] + tA + self.operations[1] + tB 
@@ -315,7 +315,7 @@ class binary_contraction:
             elif len(self.operations) is 3 :
                expression = expression + self.operations[2] + str(self.factor)
 
-         self.processed_expr = expression
+      self.processed_expr = expression
       
    def find_common_groups(self, A, B):
       gA = A.get_tensor_groups()
