@@ -9,6 +9,7 @@
 #
 import tensor as t
 import contraction as c
+import sys, copy
 
 class sial :
    """
@@ -17,8 +18,8 @@ class sial :
 
    def __init__ (self, spinorbital=False) :
       self.spinorbital      = spinorbital 
-      self.input_lines      = []
-      self.parsed_lines     = []
+      self.input_lines      = None 
+      self.parsed_lines     = None 
 
    def parse_sial_instruction(self,input_string, verbose=False):
       import re
@@ -54,24 +55,29 @@ class sial :
 
       output = {}
 
-      if sial_instruction_re.match(input_string):
+      if sial_ignoreline_re.match(input_string):
+         pass
+
+      elif sial_instruction_re.match(input_string):
          instruction = sial_instruction_re.match(input_string).group(1)
          tensor      = None
          output[instruction] = tensor
 
-      else if sial_instruction_tensor_re.match(input_string):
+      elif sial_instruction_tensor_re.match(input_string):
          tensor = t.tensor()
-         instruction = sial_ionstruction_tensor_re.match(input_string).group(1)
-         tensor_string = sial_ionstruction_tensor_re.match(input_string).group(2)
+         instruction = sial_instruction_tensor_re.match(input_string).group(1)
+         tensor_string = sial_instruction_tensor_re.match(input_string).group(2)
+         print("t.ins:",instruction,"t.str:",tensor_string)
          tensor.parse_tensor(tensor_string)
          # we parse the tensor expression, but defer from outputting it for now  
          # if we were to print, we'd 
          # parsed_string = tensor.print_tensor(split_groups=True,remove_bar=True,replace_bar=True)
          output[instruction] = tensor 
 
-      else if sial_tensor_operation_expression_re.match(input_string):
+      elif sial_tensor_operation_expression_re.match(input_string):
          contr = c.binary_contraction()
          contr_string = sial_tensor_operation_expression_re.match(input_string).group(1)
+         print("t.op:",contr_string)
          contr.parse_contraction(contr_string, verbose=[False,False])
          # parsed the contraction expression, but  defer from outputting it for now 
          # if we were to print, we'd 
@@ -83,20 +89,24 @@ class sial :
             print("   failed to handle split line instruction")
             raise ValueError
  
-      else if sial_ignoreline_re.match(input_string):
-         pass 
-
       else :
          print("   failed to indentify valid input line")
          raise ValueError
 
-      return [instruction, tensor]
+      return output
 
    def read_input(self, file_name) :
-      pass
+      f = open(file_name,'r')
+      self.input_lines = f.readlines()
 
    def parse_input(self) :
-      pass
+      self.parsed_lines = []
+      for i, l in enumerate(self.input_lines) :
+         instruction = self.parse_sial_instruction(l, verbose=False)
+         if instruction is not {}:
+            self.print_parsed_instruction(instruction)
+            self.parsed_lines.append(instruction)
 
    def print_parsed_instruction(self, instruction_dict):
-      pass
+      print(instruction_dict)
+         
