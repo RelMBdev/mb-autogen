@@ -14,20 +14,48 @@ class binary_contraction:
    C = A*B
    """
 
-   def __init__ (self, spinorbital=False) :
+   def __init__ (self, spinorbital=False, expr=None) :
       self.spinorbital      = spinorbital 
       self.A                = None
       self.B                = None
       self.C                = None
       self.operations       = []
       self.factor           = 1.0
+      self.processed_expr   = None
+      self.original_expr    = expr
 
-   def parse_contraction(self,input_string, verbose=[False, False]) :
+   def get_tensor(self,T) :
+      if T is "A" :
+         return self.A
+      elif T is "B" : 
+         return self.B
+      elif T is "C" : 
+         return self.C
+      else :
+         print("   Unknown tensor from contraction expression")
+         raise ValueError
+
+   def set_expression(self, input_string) :
+      self.original_expr = input_string
+
+   def get_expression(self) :
+      if self.processed_expr is not None:
+         return self.processed_expr
+      elif self.original_expr is not None :
+         return self.original_expr
+      else :
+         print("   Unknown tensor contraction expression")
+         raise ValueError
+
+   def parse_contraction(self, input_string=None, verbose=[False, False]) :
       """
       Parses a definition of a binary contraction, breaking it down into the tensors, operators and any prefactors
       """
       import re
 
+      if input_string is None and self.original_expr is not None:
+         input_string = self.original_expr
+         
       # verbose_c controls printout for the parsinf of the contraction, and verbose_t for the indidual tensors 
       verbose_c = verbose[0]
       verbose_t = verbose[1]
@@ -128,6 +156,12 @@ class binary_contraction:
       print("         B :")
       self.B.print_tensor_information()
 
+   def print_processed_contraction(self):
+      if self.processed_expr is not None:
+         print("Processed expression: ",self.processed_expr)
+      else :
+         print("Binary contraction has not been processed")
+ 
    def process_contraction(self,split_groups=[False,False,False],replace_bar=[False,False,False],remove_lhs_bar=False,verbose=[False, False]) :
 
       # verbose_c controls printout for the parsinf of the contraction, and verbose_t for the indidual tensors 
@@ -137,12 +171,18 @@ class binary_contraction:
       split_groups_C = split_groups[0]
       split_groups_A = split_groups[1]
       split_groups_B = split_groups[2]
-      split_groups = split_groups_C and split_groups_A and split_groups_B
+
+      split_groups_lhs = split_groups_C 
+      split_groups_rhs = split_groups_A and split_groups_B
+      split_groups = split_groups_lhs and split_groups_rhs
 
       replace_bar_C  = replace_bar[0]
       replace_bar_A  = replace_bar[1]
       replace_bar_B  = replace_bar[2]
-      replace_bar = replace_bar_C and replace_bar_A and replace_bar_B
+
+      replace_bar_rhs = replace_bar_C 
+      replace_bar_lhs = replace_bar_A and replace_bar_B
+      replace_bar = replace_bar_lhs and replace_bar_rhs
 
       common_AB = self.find_common_groups(self.A,self.B)
       common_AC = self.find_common_groups(self.A,self.C)
@@ -152,9 +192,13 @@ class binary_contraction:
          print("Common groups to tensors A and C",common_AC)
          print("Common groups to tensors B and C",common_BC)
 
-      tA = self.A.set_tensor_representation(split_groups=split_groups_A,replace_bar=replace_bar_A,verbose=verbose_t)
-      tB = self.B.set_tensor_representation(split_groups=split_groups_B,replace_bar=replace_bar_B,verbose=verbose_t)
-      tC = self.C.set_tensor_representation(split_groups=split_groups_C,replace_bar=replace_bar_C,verbose=verbose_t,remove_bar=remove_lhs_bar)
+      self.A.set_tensor_representation(split_groups=split_groups_A,replace_bar=replace_bar_A,verbose=verbose_t)
+      self.B.set_tensor_representation(split_groups=split_groups_B,replace_bar=replace_bar_B,verbose=verbose_t)
+      self.C.set_tensor_representation(split_groups=split_groups_C,replace_bar=replace_bar_C,verbose=verbose_t,remove_bar=remove_lhs_bar)
+
+      tA = self.A.get_tensor_representation()
+      tB = self.B.get_tensor_representation()
+      tC = self.C.get_tensor_representation()
       if verbose_c :
          print("Tensor A : ",tA)
          print("Tensor B : ",tB)
@@ -165,7 +209,8 @@ class binary_contraction:
          expression = expression + self.operations[2] + str(self.factor)
 
       # here we should not add a prefactor for a group twice
-      if split_groups and replace_bar :
+#     if split_groups and replace_bar :
+      if split_groups_rhs and replace_bar_rhs :
          factor_from_split_groups = 1
          if common_AB not in common_AC and common_AB not in common_BC :
          # calculating new prefactor when there are common groups in the binary contraction : 
@@ -181,16 +226,16 @@ class binary_contraction:
                factor_from_split_groups *= (1.0/fact)
             if verbose_c :
                print("   Additional factor for tensor contraction : ",factor_from_split_groups)
-         new_factor = self.round_value(self.factor*factor_from_split_groups,20)
+         self.factor = self.round_value(self.factor*factor_from_split_groups,20)
          
          expression = tC + self.operations[0] + tA + self.operations[1] + tB 
          if len(self.operations) is 2 :
             if factor_from_split_groups != 1 :
-               expression = expression + "*" + str(new_factor)
+               expression = expression + "*" + str(self.factor)
          elif len(self.operations) is 3 :
-            expression = expression + self.operations[2] + str(new_factor)
+            expression = expression + self.operations[2] + str(self.factor)
 
-      return expression
+      self.processed_expr = expression
       
    def find_common_groups(self, A, B):
       gA = A.get_tensor_groups()
