@@ -71,7 +71,7 @@ class tensor:
          print("   failed to indentify a tensor definition from input") 
          raise ValueError
 
-   def print_tensor_information(self, targs=""):
+   def print_info(self, targs=""):
       print("   printing tensor information")
       print("      name                     : ",self.name)
       print("      spin-orbital/spinor mode : ",self.spinorbital)
@@ -123,7 +123,7 @@ class tensor:
 
    def set_tensor_representation(self,split_groups=False,replace_bar=False, remove_bar=False, verbose=False):
       if verbose:
-         self.print_tensor_information()
+         self.print_info()
 
       tensor  = self.name
       tensor += "("

@@ -131,7 +131,7 @@ class binary_contraction:
           self.C.parse_tensor(tensor_C_string, verbose=verbose_t)
 
           if verbose_c :
-             self.print_contraction_information()
+             self.print_info()
 
       elif contraction_b : 
           if verbose_c :
@@ -156,7 +156,7 @@ class binary_contraction:
           self.C.parse_tensor(tensor_C_string, verbose=verbose_t)
 
           if verbose_c :
-             self.print_contraction_information()
+             self.print_info()
 
       elif contraction_uf :
           if verbose_c :
@@ -184,7 +184,7 @@ class binary_contraction:
           self.C.parse_tensor(tensor_C_string, verbose=verbose_t)
 
           if verbose_c :
-             self.print_contraction_information()
+             self.print_info()
 
       elif contraction_u :
           if verbose_c :
@@ -205,23 +205,25 @@ class binary_contraction:
           self.C.parse_tensor(tensor_C_string, verbose=verbose_t)
 
           if verbose_c :
-             self.print_contraction_information()
+             self.print_info()
 
       else :
          print("   Failed to indentify a tensor contraction")
          raise ValueError
 
-   def print_contraction_information(self) :
+   def print_info(self) :
       print("   Printing tensor contraction information")
       print("      spin-orbital/spinor mode : ",self.spinorbital)
+      print("      original expression      : ",self.original_expr)
+      print("      processed expression     : ",self.processed_expr)
       print("      tensor information")
       print("         C :")
-      self.C.print_tensor_information()
+      self.C.print_info()
       print("         A :")
-      self.A.print_tensor_information()
+      self.A.print_info()
       if self.B is not None:
          print("         B :")
-         self.B.print_tensor_information()
+         self.B.print_info()
 
    def print_processed_contraction(self):
       if self.processed_expr is not None:
