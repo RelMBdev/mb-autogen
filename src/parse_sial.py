@@ -95,6 +95,8 @@ class sial :
    def read_input(self, file_name) :
       pass
 
+   def parse_input(self) :
+      pass
 
    def print_parsed_instruction(self, instruction_dict):
       pass
