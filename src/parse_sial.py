@@ -96,9 +96,9 @@ class sial :
             self.parsed_lines.append(instruction)
 
    def print_parsed_instruction(self, lineno, instruction_dict):
-      print("at line ",lineno,":")
+      print("** At line ",lineno,":")
       for k in instruction_dict.keys() :
-         print("   Sial operation:",k)
+         print("   SIAL operation:",k)
          val = instruction_dict.get(k)
          if val is not None:
             print("   Operand:",val)
