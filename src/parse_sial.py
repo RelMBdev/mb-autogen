@@ -87,12 +87,13 @@ class sial :
       f = open(file_name,'r')
       self.input_lines = f.readlines()
 
-   def parse_input(self) :
+   def parse_input(self, verbose=False) :
       self.parsed_lines = []
       for i, l in enumerate(self.input_lines) :
          instruction = self.parse_sial_instruction(l.rstrip(), verbose=False)
          if instruction is not {}:
-            self.print_parsed_instruction(i,instruction)
+            if verbose:
+               self.print_parsed_instruction(i,instruction)
             self.parsed_lines.append(instruction)
 
    def print_parsed_instruction(self, lineno, instruction_dict):
