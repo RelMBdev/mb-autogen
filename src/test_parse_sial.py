@@ -11,7 +11,7 @@ def main():
 
    ps1 = p.sial()
    ps1.read_input("CCSD.1.fac.u.ormo.txt")
-   ps1.parse_input()
+   ps1.parse_input(verbose=True)
 
 main()
 
