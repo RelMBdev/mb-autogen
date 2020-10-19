@@ -215,7 +215,9 @@ class binary_contraction:
       print("   Printing tensor contraction information")
       print("      spin-orbital/spinor mode : ",self.spinorbital)
       print("      original expression      : ",self.original_expr)
-      print("      processed expression     : ",self.processed_expr)
+      print("      stored   expression      : ",self.processed_expr)
+      print("      stored   factor          : ",self.factor)
+      self.print_processed_contraction()
       print("      tensor information")
       print("         C :")
       self.C.print_info()
@@ -227,9 +229,19 @@ class binary_contraction:
 
    def print_processed_contraction(self):
       if self.processed_expr is not None:
-         print("Processed expression: ",self.processed_expr)
+         expression = self.processed_expr
+         if self.B is None :
+            if len(self.operations) > 1 :
+               expression = expression + self.operations[1] + str(self.factor)
+         else :
+            if len(self.operations) is 2 :
+               if self.factor != 1 :
+                  expression = expression + "*" + str(self.factor)
+            elif len(self.operations) is 3 :
+               expression = expression + self.operations[2] + str(self.factor)
+         print("      processed expression     : ",expression)
       else :
-         print("Binary/unary contraction has not been processed")
+         print("      binary/unary contraction has not been processed")
  
    def process_contraction(self,split_groups=[False,False,False],replace_bar=[False,False,False],remove_lhs_bar=False,verbose=[False, False]) :
 
@@ -254,8 +266,15 @@ class binary_contraction:
       replace_bar = replace_bar_lhs and replace_bar_rhs
 
       common_AC = self.find_common_groups(self.A,self.C)
+      common_AB = self.find_common_groups(self.A,self.B)
+      common_BC = self.find_common_groups(self.B,self.C)
+
       if verbose_c :
          print("Common groups to tensors A and C",common_AC)
+         if self.B is not None :
+            print("Common groups to tensors A and B",common_AB)
+            print("Common groups to tensors B and C",common_BC)
+
       self.A.set_tensor_representation(split_groups=split_groups_A,replace_bar=replace_bar_A,verbose=verbose_t)
       self.C.set_tensor_representation(split_groups=split_groups_C,replace_bar=replace_bar_C,verbose=verbose_t,remove_bar=remove_lhs_bar)
 
@@ -263,12 +282,6 @@ class binary_contraction:
       tC = self.C.get_tensor_representation()
 
       if self.B is not None :
-         common_AB = self.find_common_groups(self.A,self.B)
-         common_BC = self.find_common_groups(self.B,self.C)
-         if verbose_c :
-            print("Common groups to tensors A and B",common_AB)
-            print("Common groups to tensors B and C",common_BC)
-
          self.B.set_tensor_representation(split_groups=split_groups_B,replace_bar=replace_bar_B,verbose=verbose_t)
          tB = self.B.get_tensor_representation()
 
@@ -278,50 +291,44 @@ class binary_contraction:
             print("Tensor B : ",tB)
          print("Tensor C : ",tC)
 
+      # we do not ad the factor to the expression we store, but add it when printing the processed expression
+      # this is done in order to be able to reuse the expression in other contexts, such as code generation,
+      # since e.g. tal-sh, exatensor or exatn the factor is an argument to the call for contraction, rather than
+      # being explicitly added to the symbolic expression to the contraction 
       if self.B is None :
          expression = tC + self.operations[0] + tA 
-         if len(self.operations) > 1 :
-            expression = expression + self.operations[1] + str(self.factor)
 
       else :
          expression = tC + self.operations[0] + tA + self.operations[1] + tB 
-         if len(self.operations) > 2 :
-            expression = expression + self.operations[2] + str(self.factor)
 
-         # here we should not add a prefactor for a group twice
-#        if split_groups and replace_bar :
-         if split_groups_rhs and replace_bar_rhs :
-            factor_from_split_groups = 1
-            if common_AB not in common_AC and common_AB not in common_BC :
-            # calculating new prefactor when there are common groups in the binary contraction : 
-            # 1. for each repeating group, we set as prefactor (1/(n!)), with n the number of indices in a group
-            # 2. the final prefactor is the product of the prefactors in #1 
-               for g in common_AB :
-                  f1 = len(g)
-                  if verbose_c :
-                     print("   group : ",g,", Number of repetitions in RHS of contraction : ",f1)
-                  fact = 1
-                  for i in range(1,f1+1): 
-                     fact = fact * i 
-                  factor_from_split_groups *= (1.0/fact)
+      # here we should not add a prefactor for a group twice
+      if split_groups_rhs and replace_bar_rhs :
+         factor_from_split_groups = 1
+         if common_AB not in common_AC and common_AB not in common_BC :
+         # calculating new prefactor when there are common groups in the binary contraction : 
+         # 1. for each repeating group, we set as prefactor (1/(n!)), with n the number of indices in a group
+         # 2. the final prefactor is the product of the prefactors in #1 
+            for g in common_AB :
+               f1 = len(g)
                if verbose_c :
-                  print("   Additional factor for tensor contraction : ",factor_from_split_groups)
-            self.factor = self.round_value(self.factor*factor_from_split_groups,20)
-         
-            expression = tC + self.operations[0] + tA + self.operations[1] + tB 
-            if len(self.operations) is 2 :
-               if factor_from_split_groups != 1 :
-                  expression = expression + "*" + str(self.factor)
-            elif len(self.operations) is 3 :
-               expression = expression + self.operations[2] + str(self.factor)
+                  print("   group : ",g,", Number of repetitions in RHS of contraction : ",f1)
+               fact = 1
+               for i in range(1,f1+1): 
+                  fact = fact * i 
+               factor_from_split_groups *= (1.0/fact)
+            if verbose_c :
+               print("   Additional factor for tensor contraction : ",factor_from_split_groups)
+         self.factor = self.round_value(self.factor*factor_from_split_groups,20)
 
       self.processed_expr = expression
       
    def find_common_groups(self, A, B):
+      common_groups = []
+      if A is None or B is None:
+         return common_groups
+
       gA = A.get_tensor_groups()
       gB = B.get_tensor_groups()
-
-      common_groups = []
 
       for i in gA :
         for j in gB :

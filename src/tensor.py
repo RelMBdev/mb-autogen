@@ -121,7 +121,7 @@ class tensor:
    def get_tensor_representation(self) :
       return self.representation
 
-   def set_tensor_representation(self,split_groups=False,replace_bar=False, remove_bar=False, verbose=False):
+   def set_tensor_representation(self,split_groups=False,replace_bar=False, remove_bar=False, verbose=False, empty_unit_tensor=True):
       if verbose:
          self.print_info()
 
@@ -149,14 +149,18 @@ class tensor:
                tensor += i 
             k = k + 1
       else : # handling a unit tensor, here we should have no indexes or groups so the only action is to replaes
-         if replace_bar :
-            tensor += ","
-         elif remove_bar : 
-            tensor += " "
+         if empty_unit_tensor :
+            tensor += ""
          else :
-            tensor += "|"
+            if replace_bar :
+               tensor += ","
+            elif remove_bar : 
+               tensor += " "
+            else :
+               tensor += "|"
 
       tensor += ")"
+      
       self.representation = tensor
    
    def print_tensor(self,split_groups=False,replace_bar=False,remove_bar=False):
