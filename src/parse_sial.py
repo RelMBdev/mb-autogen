@@ -21,7 +21,7 @@ class sial :
       self.input_lines      = None 
       self.parsed_lines     = None 
 
-   def parse_sial_instruction(self,input_string, verbose=False):
+   def parse_instruction(self,input_string, verbose=False):
       import re
 
       sial_marker_regexp_definition = "\$SIAL"
@@ -90,7 +90,7 @@ class sial :
    def parse_input(self, verbose=False) :
       self.parsed_lines = []
       for i, l in enumerate(self.input_lines) :
-         instruction = self.parse_sial_instruction(l.rstrip(), verbose=False)
+         instruction = self.parse_instruction(l.rstrip(), verbose=False)
          if instruction is not {}:
             if verbose:
                self.print_parsed_instruction(i,instruction)
