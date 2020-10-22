@@ -83,11 +83,11 @@ class sial :
 
       return output
 
-   def read_input(self, file_name) :
+   def read(self, file_name) :
       f = open(file_name,'r')
       self.input_lines = f.readlines()
 
-   def parse_input(self, verbose=False) :
+   def parse(self, verbose=False) :
       self.parsed_lines = []
       for i, l in enumerate(self.input_lines) :
          instruction = self.parse_instruction(l.rstrip(), verbose=False)
