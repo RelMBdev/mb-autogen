@@ -20,6 +20,9 @@ class sial :
       self.spinorbital      = spinorbital 
       self.input_lines      = None 
       self.parsed_lines     = None 
+      self.input_tensors    = []
+      self.output_tensors   = []
+      self.interm_tensors   = []
 
    def parse_instruction(self,input_string, verbose=False):
       import re
@@ -106,3 +109,43 @@ class sial :
             print("   Operand characteristics")
             val.print_info()
          
+   def _classify_tensors(self):
+      for i, l in enumerate(self.parsed_lines) :
+         for k in l.keys() :
+            if k is "CONTRACTION" : 
+               val = l.get(k)
+               A = val.get_tensor("A")
+               B = val.get_tensor("B")
+               C = val.get_tensor("C")
+
+               if C not in self.output_tensors : 
+                  self.output_tensors.append(C)
+
+               if A not in self.input_tensors:
+                  self.input_tensors.append(A)
+
+               if B is not None and B not in self.input_tensors:
+                  self.input_tensors.append(B)
+
+      for t in self.output_tensors:
+         if t in self.input_tensors:
+            intm_t = self.input_tensors.pop(t)
+            if intm_t not in  self.interm_tensors:
+               self.interm_tensors.append(intm_t)
+
+   def _print_tensor_classification(self):
+      print("   Input tensors:")
+      for i, t in enumerate(self.input_tensors):
+         print("     ",i,":",t.get_tensor_name())
+
+      print("   Output tensors:")
+      for i, t in enumerate(self.output_tensors):
+         print("     ",i,":",t.get_tensor_name())
+
+      print("   Interm. tensors:")
+      for i, t in enumerate(self.interm_tensors):
+         print("     ",i,":",t.get_tensor_name())
+
+   def print_info(self):
+      self._classify_tensors()
+      self._print_tensor_classification()
