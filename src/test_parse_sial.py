@@ -12,6 +12,7 @@ def main():
    sial_input = s.sial()
    sial_input.read("CCSD.1.fac.u.ormo.txt")
    sial_input.parse(verbose=True)
+   sial_input.print_info()
 
 main()
 
