@@ -20,9 +20,9 @@ class sial :
       self.spinorbital      = spinorbital 
       self.input_lines      = None 
       self.parsed_lines     = None 
-      self.input_tensors    = []
-      self.output_tensors   = []
-      self.interm_tensors   = []
+      self.input_tensors    = {}
+      self.output_tensors   = {}
+      self.interm_tensors   = {}
 
    def parse_instruction(self,input_string, verbose=False):
       import re
@@ -98,6 +98,7 @@ class sial :
             if verbose:
                self.print_parsed_instruction(i,instruction)
             self.parsed_lines.append(instruction)
+            self._classify_contraction_tensors_by_name(instruction)
 
    def print_parsed_instruction(self, lineno, instruction_dict):
       print("** At line ",lineno,":")
@@ -109,43 +110,75 @@ class sial :
             print("   Operand characteristics")
             val.print_info()
          
-   def _classify_tensors(self):
-      for i, l in enumerate(self.parsed_lines) :
-         for k in l.keys() :
-            if k is "CONTRACTION" : 
-               val = l.get(k)
-               A = val.get_tensor("A")
-               B = val.get_tensor("B")
-               C = val.get_tensor("C")
+   def _classify_contraction_tensors_by_name(self, instruction):
+      for k in instruction.keys() :
+         if k is "CONTRACTION" : 
+            val = instruction.get(k)
+            A = val.get_tensor("A")
+            B = val.get_tensor("B")
+            C = val.get_tensor("C")
 
-               if C not in self.output_tensors : 
-                  self.output_tensors.append(C)
+            lhs_names = self.output_tensors.keys()
+            rhs_names = self.input_tensors.keys()
+    
+            nameC = C.get_tensor_name() 
+            if nameC not in lhs_names :
+               self.output_tensors[nameC] = [ C ]
+            else:
+               self.output_tensors[nameC].append(C)
 
-               if A not in self.input_tensors:
-                  self.input_tensors.append(A)
+            nameA = A.get_tensor_name() 
+            if nameA not in rhs_names :
+               self.input_tensors[nameA] = [ A ]
+            else:
+               self.input_tensors[nameA].append(A)
 
-               if B is not None and B not in self.input_tensors:
-                  self.input_tensors.append(B)
+            if B is not None :
+               nameB = B.get_tensor_name() 
+               if nameB not in rhs_names :
+                  self.input_tensors[nameB] = [ B ]
+               else:
+                  self.input_tensors[nameB].append(B)
 
-      for t in self.output_tensors:
-         if t in self.input_tensors:
-            intm_t = self.input_tensors.pop(t)
-            if intm_t not in  self.interm_tensors:
-               self.interm_tensors.append(intm_t)
+   def _sort_tensors_by_class(self) :
+      lhs_names = self.output_tensors.keys()
+      rhs_names = self.input_tensors.keys()
+      intm_names = self.interm_tensors.keys() 
+
+      for l in lhs_names:
+         val_lhs = self.output_tensors[l]
+         if l in rhs_names :
+            val_rhs = self.input_tensors[l]
+            if l not in intm_names :
+               self.interm_tensors[l] = val_lhs + val_rhs
+            else :
+               self.interm_tensors[l] = self.interm_tensors[l] + val_lhs
+               self.interm_tensors[l] = self.interm_tensors[l] + val_rhs
+
+      updated_intm_names = self.interm_tensors.keys()
+      for l in updated_intm_names :
+         self.output_tensors.pop(l)
+         self.input_tensors.pop(l)
 
    def _print_tensor_classification(self):
       print("   Input tensors:")
-      for i, t in enumerate(self.input_tensors):
-         print("     ",i,":",t.get_tensor_name())
+      for i, k in enumerate(self.input_tensors.keys()) :
+         val = self.input_tensors[k]
+         for j, t in enumerate(val):
+            print("     name(",i,"):",k,"    tensor(",j,"):",t,t.get_tensor_representation())
 
       print("   Output tensors:")
-      for i, t in enumerate(self.output_tensors):
-         print("     ",i,":",t.get_tensor_name())
+      for i, k in enumerate(self.output_tensors.keys()) :
+         val = self.output_tensors[k]
+         for j, t in enumerate(val):
+            print("     name(",i,"):",k,"    tensor(",j,"):",t,t.get_tensor_representation())
 
-      print("   Interm. tensors:")
-      for i, t in enumerate(self.interm_tensors):
-         print("     ",i,":",t.get_tensor_name())
+      print("   Intermediate tensors:")
+      for i, k in enumerate(self.interm_tensors.keys()) :
+         val = self.interm_tensors[k]
+         for j, t in enumerate(val):
+            print("     name(",i,"):",k,"    tensor(",j,"):",t,t.get_tensor_representation())
 
    def print_info(self):
-      self._classify_tensors()
+      self._sort_tensors_by_class()
       self._print_tensor_classification()
