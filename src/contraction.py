@@ -35,6 +35,9 @@ class binary_contraction:
          print("   Unknown tensor from contraction expression")
          raise ValueError
 
+   def get_factor(self):
+      return self.factor
+
    def set_expression(self, input_string) :
       self.original_expr = input_string
 
