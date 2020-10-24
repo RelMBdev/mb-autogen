@@ -100,6 +100,9 @@ class sial :
             self.parsed_lines.append(instruction)
             self._classify_contraction_tensors_by_name(instruction)
 
+   def get_instructions(self):
+      return self.parsed_lines
+
    def print_parsed_instruction(self, lineno, instruction_dict):
       print("** At line ",lineno,":")
       for k in instruction_dict.keys() :

@@ -9,7 +9,7 @@
 #
 import sial as p
 
-class codeGenerator:
+class codeGenerator(object):
    """
    codeGenerator class : defines generic directives for generating code from SIAL
    input, which has been processed into a list of dictionaries
@@ -28,14 +28,22 @@ class codeGenerator:
    def print_info(self):
       pass 
 
-   def generate_contraction(self):
+   def generate_contraction(self, contraction):
       pass
 
-   def generate_create(self, initialize=True, intialize_to=None):
+   def generate_create(self, telsor, initialize=True, intialize_to=None):
       pass
 
-   def generate_destroy(self):
+   def generate_destroy(self, tensor):
       pass
 
    def generate_variables_declaration(self):
       pass
+
+   def print_contraction_code(self):
+      instructions = self.sial.get_instructions()
+      for i in instructions: 
+         for k in i.keys() :
+            if k is "CONTRACTION" :
+               c = instruction.get(k)
+               self.generate_contraction(c)
