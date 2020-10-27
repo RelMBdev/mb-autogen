@@ -26,7 +26,8 @@ class tensor:
 
    """
 
-   def __init__ (self, spinorbital=False) :
+   def __init__ (self, spinorbital=False, spinor=True) :
+      self.spinor           = spinor 
       self.spinorbital      = spinorbital 
       self.name             = "T00"
       self.rank             = 1
@@ -35,29 +36,38 @@ class tensor:
       self.separatrices     = []    # e.g.: ["|", "," ] so a ordered list of symbols separating groups. always 1 element less than self.groups
       self.factor           = 1.0
       self.representation   = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
-      self.tensor_class     = ""    # tensor nature in terms of occupied and virtuals: e.g. VVVV, ViVaViVa (a: active, i: inactive) etc
+      self.indexes_class    = []    # class of each of the indexes of the tensor (V, O etc)
 
 
-   def set_tensor_class(self):
-      if self.indexes == [] : # this is a unit tensor, since it has no indices
-         self.tensor_class = "UnitTensor"
-      else:
-         for i in self.indexes:
-            if i[0] == "m" or i[0] == "n" or i[0] == "l" :
-               self.tensor_class += "O"
-            elif i[0] == "e" or i[0] == "f" or i[0] == "d" :
-               self.tensor_class += "V"
-            elif i[0] == "I" or i[0] == "J" or i[0] == "K" :
-               self.tensor_class += "O_a"
-            elif i[0] == "A" or i[0] == "B" or i[0] == "C" :
-               self.tensor_class += "V_a"
-            elif i[0] == "i" or i[0] == "j" or i[0] == "j" :
-               self.tensor_class += "O_i"
-            elif i[0] == "a" or i[0] == "b" or i[0] == "c" :
-               self.tensor_class += "V_i"
+   def set_tensor_indexes_class(self):
+      for i in self.indexes:
+         if i[0] == "m" or i[0] == "n" or i[0] == "l" :
+            self.indexes_class.append("O")
+         elif i[0] == "e" or i[0] == "f" or i[0] == "d" :
+            self.indexes_class.append("V")
+         elif i[0] == "I" or i[0] == "J" or i[0] == "K" :
+            self.indexes_class.append("Oa")
+         elif i[0] == "A" or i[0] == "B" or i[0] == "C" :
+            self.indexes_class.append("Va")
+         elif i[0] == "i" or i[0] == "j" or i[0] == "k" :
+            self.indexes_class.append("Oi")
+         elif i[0] == "a" or i[0] == "b" or i[0] == "c" :
+            self.indexes_class.append("Vi")
+
+   def get_tensor_indexes_class(self):
+      return self.indexes_class
 
    def get_tensor_class(self):
-      return self.tensor_class
+      if self.indexes_class == [] : # this is a unit tensor, since it has no indices
+         return "UnitTensor"
+      else:
+         tensor_class = ""
+         for c in self.indexes_class :
+            tensor_class += c 
+         return tensor_class
+
+   def get_indexes_class(self):
+      return self.indexes_class
 
    def parse_tensor(self,input_string, verbose=False):
       import re
@@ -102,7 +112,7 @@ class tensor:
           if (rank != 0) :
              self.rank = rank
 
-          self.set_tensor_class()
+          self.set_tensor_indexes_class()
           if verbose :
              self.print_info(targs)
       else :
@@ -112,13 +122,15 @@ class tensor:
    def print_info(self, targs=""):
       print("   printing tensor information")
       print("      name                     : ",self.name)
-      print("      spin-orbital/spinor mode : ",self.spinorbital)
+      print("      spin-orbital mode        : ",self.spinorbital)
+      print("      spinor mode              : ",self.spinor)
       print("      rank                     : ",self.rank)
-      print("      class                    : ",self.tensor_class)
+      print("      class                    : ",self.get_tensor_class())
       print("      arguments")
       if (targs is not "") :
          print("         at input              :",targs)
       print("         indexes, parsed       :",self.indexes)
+      print("         indexes, class        :",self.indexes_class)
       print("         groups, parsed        :",self.groups)
       print("         separatrices, parsed  :", self.separatrices)
       print("         separatrices, parsed  :", self.separatrices)
@@ -126,6 +138,12 @@ class tensor:
 
    def set_tensor_name(self,name):
       self.name = name
+
+   def get_is_spinor(self):
+      return self.spinor
+
+   def get_is_spinorbital(self):
+      return self.spinorbital
 
    def get_tensor_name(self) :
       return self.name
