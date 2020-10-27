@@ -50,7 +50,7 @@ def main():
    t4 = t.tensor(spinorbital=True)
    string = "S14(e1,d1|l1l2)"
    print("\ninput : ",string)
-   t4.parse_tensor(string)
+   t4.parse_tensor(string, verbose=True)
    print("output (replacing bar) : ")
    t4.print_tensor(replace_bar=True)
 
@@ -64,7 +64,7 @@ def main():
    t6 = t.tensor()
    string = "S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)"
    print("\ninput : ",string)
-   t6.parse_tensor(string)
+   t6.parse_tensor(string,verbose=True)
    print("output (removing bar, splitting groups) : ")
    t6.print_tensor(split_groups=True,remove_bar=True)
 
