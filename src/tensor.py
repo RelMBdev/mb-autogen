@@ -10,6 +10,20 @@
 class tensor:
    """
    Tensor class : keeps information on the definition of a tensor
+
+   The information kept follows the DiaGen output conventions, that is:
+
+   1. The values of consecutive indices which are not separated by commas are assumed to form an ascending sequence (partially symmetrical storage).
+   2. Index groups separated by commas run independently.
+   3. Index ranges:
+     m,n,l: full occupied orbital range (e.g., [0..99]);
+     e,f,d: full virtual orbital range (e.g., [100..999]);
+     I,J,K: a small (active) subrange of the occupied orbital range (e.g., [90..99]);
+     A,B,C: a small (active) subrange of the virtual orbital range (e.g., [990..999]);
+     i,j,k: the occupied orbital range excluding the active subrange (e.g., [0..89]);
+     a,b,c: the virtual orbital range excluding the active subrange (e.g., [100..989]).
+    4. Despite multiple forms in which S/L/C tensors may appear in contractions, the only unique elements of these tensors are those which have both upper and lower indices ordered in an ascending order (separately).
+
    """
 
    def __init__ (self, spinorbital=False) :
@@ -20,7 +34,30 @@ class tensor:
       self.groups           = []    # e.g.: [[1,2,3],[4,5],[6]] so lists containing the indexes which make up the groups. 
       self.separatrices     = []    # e.g.: ["|", "," ] so a ordered list of symbols separating groups. always 1 element less than self.groups
       self.factor           = 1.0
-      self.representation   = ""
+      self.representation   = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
+      self.tensor_class     = ""    # tensor nature in terms of occupied and virtuals: e.g. VVVV, ViVaViVa (a: active, i: inactive) etc
+
+
+   def set_tensor_class(self):
+      if self.indexes == [] : # this is a unit tensor, since it has no indices
+         self.tensor_class = "UnitTensor"
+      else:
+         for i in self.indexes:
+            if i[0] == "m" or i[0] == "n" or i[0] == "l" :
+               self.tensor_class += "O"
+            elif i[0] == "e" or i[0] == "f" or i[0] == "d" :
+               self.tensor_class += "V"
+            elif i[0] == "I" or i[0] == "J" or i[0] == "K" :
+               self.tensor_class += "O_a"
+            elif i[0] == "A" or i[0] == "B" or i[0] == "C" :
+               self.tensor_class += "V_a"
+            elif i[0] == "i" or i[0] == "j" or i[0] == "j" :
+               self.tensor_class += "O_i"
+            elif i[0] == "a" or i[0] == "b" or i[0] == "c" :
+               self.tensor_class += "V_i"
+
+   def get_tensor_class(self):
+      return self.tensor_class
 
    def parse_tensor(self,input_string, verbose=False):
       import re
@@ -65,8 +102,9 @@ class tensor:
           if (rank != 0) :
              self.rank = rank
 
+          self.set_tensor_class()
           if verbose :
-             self.print_tensor_information(targs)
+             self.print_info(targs)
       else :
          print("   failed to indentify a tensor definition from input") 
          raise ValueError
@@ -76,30 +114,16 @@ class tensor:
       print("      name                     : ",self.name)
       print("      spin-orbital/spinor mode : ",self.spinorbital)
       print("      rank                     : ",self.rank)
+      print("      class                    : ",self.tensor_class)
       print("      arguments")
       if (targs is not "") :
          print("         at input              :",targs)
       print("         indexes, parsed       :",self.indexes)
       print("         groups, parsed        :",self.groups)
       print("         separatrices, parsed  :", self.separatrices)
+      print("         separatrices, parsed  :", self.separatrices)
       print("   done printing tensor information")
 
-   def get_tensor_class(self) :
-      """
-      get_tensor_class: from inspection of the indexes, return the class this tensor belongs to
-
-      in our case, the classes refer, for example, to how many occupied or virtuals indexes appear, and on what order these appear 
-      so a class could be vvvv, vvov, ooov etc
-      """
-
-      tensor_class = ""
-#     for index in self.indexes :
-#        if index[0] is in ("m", "n", "l") tensor_class += "o"
-#        if index[0] is in ("i", "j", "k") tensor_class += "o"
-#        if index[0] is in ("e", "f", "d") tensor_class += "v"
-#        if index[0] is in ("a", "b", "c") tensor_class += "v"
-      return tensor_class
-   
    def set_tensor_name(self,name):
       self.name = name
 

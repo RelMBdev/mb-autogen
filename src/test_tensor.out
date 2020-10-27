@@ -1,7 +1,7 @@
 
 input :  None
 output (prints out default values for tensor, splitting groups) : 
-T00(|)
+T00()
 
 input  :  S44_b(d1bd2b|l1bl2b)
 output (splitting groups) : 
@@ -13,7 +13,7 @@ S46_1(d1ad1b|m1b,l1a)
 
 input :  S99(|)
 output (not splitting groups) : 
-S99(|)
+S99()
 
 input :  S99(|)
 
@@ -22,20 +22,36 @@ parsing tensor input string: S99(|)
       name                     :  S99
       spin-orbital/spinor mode :  False
       rank                     :  1
+      class                    :  UnitTensor
       arguments
          at input              : |
          indexes, parsed       : []
          groups, parsed        : []
          separatrices, parsed  : ['|']
+         separatrices, parsed  : ['|']
    done printing tensor information
 output (not splitting groups, removing bar) : 
-S99( )
+S99()
 
 input :  S99(|)
 output (replacing bar) : 
-S99(,)
+S99()
 
 input :  S14(e1,d1|l1l2)
+
+parsing tensor input string: S14(e1,d1|l1l2)
+   printing tensor information
+      name                     :  S14
+      spin-orbital/spinor mode :  True
+      rank                     :  4
+      class                    :  VVOO
+      arguments
+         at input              : e1,d1|l1l2
+         indexes, parsed       : ['e1', 'd1', 'l1', 'l2']
+         groups, parsed        : [['e1'], ['d1'], ['l1', 'l2']]
+         separatrices, parsed  : [',', '|']
+         separatrices, parsed  : [',', '|']
+   done printing tensor information
 output (replacing bar) : 
 S14(e1,d1,l1l2)
 
@@ -44,5 +60,19 @@ output (replacing bar, splitting groups) :
 S46(d1a,d1b,d2a,d2b,m1b,l1a,n1a,i1b)
 
 input :  S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)
+
+parsing tensor input string: S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)
+   printing tensor information
+      name                     :  S46
+      spin-orbital/spinor mode :  False
+      rank                     :  8
+      class                    :  VVVVOOOO_i
+      arguments
+         at input              : d1ad1bd2ad2b|m1b,l1an1a,i1b
+         indexes, parsed       : ['d1a', 'd1b', 'd2a', 'd2b', 'm1b', 'l1a', 'n1a', 'i1b']
+         groups, parsed        : [['d1a', 'd1b', 'd2a', 'd2b'], ['m1b'], ['l1a', 'n1a'], ['i1b']]
+         separatrices, parsed  : ['|', ',', ',']
+         separatrices, parsed  : ['|', ',', ',']
+   done printing tensor information
 output (removing bar, splitting groups) : 
 S46(d1a,d1b,d2a,d2b m1b,l1a,n1a,i1b)
