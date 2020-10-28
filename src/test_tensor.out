@@ -24,12 +24,14 @@ parsing tensor input string: S99(|)
       spinor mode              :  True
       rank                     :  1
       class                    :  UnitTensor
+      class, transposed        :  UnitTensor
       arguments
          at input              : |
          indexes, parsed       : []
+         indexes, parsed, trans: []
          indexes, class        : []
          groups, parsed        : []
-         separatrices, parsed  : ['|']
+         groups, parsed, trans : []
          separatrices, parsed  : ['|']
    done printing tensor information
 output (not splitting groups, removing bar) : 
@@ -48,12 +50,14 @@ parsing tensor input string: S14(e1,d1|l1l2)
       spinor mode              :  True
       rank                     :  4
       class                    :  VVOO
+      class, transposed        :  OOVV
       arguments
          at input              : e1,d1|l1l2
          indexes, parsed       : ['e1', 'd1', 'l1', 'l2']
+         indexes, parsed, trans: ['l2', 'l1', 'd1', 'e1']
          indexes, class        : ['V', 'V', 'O', 'O']
          groups, parsed        : [['e1'], ['d1'], ['l1', 'l2']]
-         separatrices, parsed  : [',', '|']
+         groups, parsed, trans : [['l1', 'l2'], ['d1'], ['e1']]
          separatrices, parsed  : [',', '|']
    done printing tensor information
 output (replacing bar) : 
@@ -72,12 +76,14 @@ parsing tensor input string: S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)
       spinor mode              :  True
       rank                     :  8
       class                    :  VVVVOOOOi
+      class, transposed        :  OiOOOVVVV
       arguments
          at input              : d1ad1bd2ad2b|m1b,l1an1a,i1b
          indexes, parsed       : ['d1a', 'd1b', 'd2a', 'd2b', 'm1b', 'l1a', 'n1a', 'i1b']
+         indexes, parsed, trans: ['i1b', 'n1a', 'l1a', 'm1b', 'd2b', 'd2a', 'd1b', 'd1a']
          indexes, class        : ['V', 'V', 'V', 'V', 'O', 'O', 'O', 'Oi']
          groups, parsed        : [['d1a', 'd1b', 'd2a', 'd2b'], ['m1b'], ['l1a', 'n1a'], ['i1b']]
-         separatrices, parsed  : ['|', ',', ',']
+         groups, parsed, trans : [['i1b'], ['l1a', 'n1a'], ['m1b'], ['d1a', 'd1b', 'd2a', 'd2b']]
          separatrices, parsed  : ['|', ',', ',']
    done printing tensor information
 output (removing bar, splitting groups) : 
