@@ -38,7 +38,7 @@ class tensor:
       self.arglist          = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
       self.representation   = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
       self.indexes_class    = []    # class of each of the indexes of the tensor (V, O etc)
-
+      self.varnames         = {"O" : "nocc", "V" : "nvir", "Oa" : "nocc_a", "Va" : "nvir_a", "Oi" : "nocc_i", "Vi" : "nvir_i" }
 
    def set_tensor_indexes_class(self):
       for i in self.indexes:
@@ -54,6 +54,19 @@ class tensor:
             self.indexes_class.append("Oi")
          elif i[0] == "a" or i[0] == "b" or i[0] == "c" :
             self.indexes_class.append("Vi")
+
+   def set_tensor_indexes_dimensions(self) :
+      pass
+
+   def get_tensor_indexes_dimensions(self) :
+      t = [] 
+      for i in self.indexes_class: 
+         for k in self.varnames.keys(): 
+            val = self.varnames[k]
+            if (k == i) :
+               t.append(val)
+      
+      return t
 
    def get_tensor_indexes_class(self):
       return self.indexes_class

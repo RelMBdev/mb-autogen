@@ -35,6 +35,7 @@ class TALSHcodeGenerator:
 
    def generate_contraction(self, contraction):
       if contraction is not None:
+# here is where we need to check, for each element of the contraction, whether it conforms to one of the classes we have, and if not see if the complex conjugate does
          expression = contraction.get_expression()
          scaling = contraction.get_factor() 
          C = contraction.get_tensor("C")
@@ -59,13 +60,21 @@ class TALSHcodeGenerator:
    def generate_create(self, tensor, initialize=True, initialize_to=None):
       if tensor is not None :
          nameT = tensor.get_tensor_name()
-         a = "FIXME"
-         b = "nvir"
-         dimensions = "/("+a+","+a+")/" 
+         varList = tensor.get_tensor_indexes_dimensions()
+         varListSep = ","
+
+         dimensions = "/("
+         for i, v in enumerate(varList):
+            if i != (len(varList)-1) :
+               dimensions  += v + varListSep
+            else:
+               dimensions  += v
+         dimensions += ")/"
+
          if initialize_to is not None:
-            code = "err=talsh_tensor_construct("+nameT+",C8,"+dimensions+",init_val="+initialize_to+")"
+            code = "err=talsh_tensor_construct("+nameT+", C8, "+dimensions+", init_val="+initialize_to+")"
          else:
-            code = "err=talsh_tensor_construct("+nameT+",C8,"+dimensions+")"
+            code = "err=talsh_tensor_construct("+nameT+", C8, "+dimensions+")"
 
          print("   "+code)
       else:
