@@ -67,6 +67,16 @@ class tensor:
             tensor_class += c 
          return tensor_class
 
+   def get_transposed_tensor_class(self):
+      if self.indexes_class == [] : # this is a unit tensor, since it has no indices
+         return "UnitTensor"
+      else:
+         tensor_class = ""
+         for c in reversed(self.indexes_class) :
+            tensor_class += c
+         return tensor_class
+
+
    def get_indexes_class(self):
       return self.indexes_class
 
@@ -127,23 +137,52 @@ class tensor:
       print("      spinor mode              : ",self.spinor)
       print("      rank                     : ",self.rank)
       print("      class                    : ",self.get_tensor_class())
+      print("      class, transposed        : ",self.get_transposed_tensor_class())
       print("      arguments")
       if (targs is not "") :
          print("         at input              :",targs)
-      print("         indexes, parsed       :",self.indexes)
-      print("         indexes, class        :",self.indexes_class)
-      print("         groups, parsed        :",self.groups)
-      print("         separatrices, parsed  :", self.separatrices)
-      print("         separatrices, parsed  :", self.separatrices)
+      print("         indexes, parsed       :",self.get_indexes())
+      print("         indexes, parsed, trans:",self.get_transposed_indexes())
+      print("         indexes, class        :",self.get_indexes_class())
+      print("         groups, parsed        :",self.get_tensor_groups())
+      print("         groups, parsed, trans :",self.get_transposed_tensor_groups())
+      print("         separatrices, parsed  :", self.get_separatrices())
       print("   done printing tensor information")
+
+   def get_indexes(self):
+      return self.indexes
+
+   def get_transposed_indexes(self):
+      transposed = []
+      for t in reversed(self.indexes):
+         transposed.append(t)
+      return transposed
+
+   def get_separatrices(self):
+      return self.separatrices
 
    def set_tensor_name(self,name):
       self.name = name
 
-   def get_is_spinor(self):
+   def is_spinor(self):
       return self.spinor
 
-   def get_is_spinorbital(self):
+   def is_allowed_tensor_class(self, targets):
+      this_class = self.get_tensor_class()
+      if this_class not in targets :
+         return False
+      else:
+         return True
+
+   def is_allowed_transposed_tensor_class(self, targets):
+      this_transposed_class = self.get_transposed_tensor_class()
+      if this_class not in targets :
+         return False
+      else:
+         return True
+
+
+   def is_spinorbital(self):
       return self.spinorbital
 
    def get_tensor_name(self, conjugate=False) :
@@ -154,8 +193,20 @@ class tensor:
    def get_tensor_groups(self) :
       return self.groups
 
+   def get_transposed_tensor_groups(self) :
+      transposed = []
+      for t in reversed(self.groups):
+         transposed.append(t)
+      return transposed 
+
    def get_tensor_indexes(self) :
       return self.indexes
+
+   def get_transposed_tensor_indexes(self) :
+      transposed = []
+      for t in reversed(self.indexes):
+         transposed.append(t)
+      return transposed 
 
    def get_tensor_rank(self) :
       return self.rank
