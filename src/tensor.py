@@ -35,6 +35,7 @@ class tensor:
       self.groups           = []    # e.g.: [[1,2,3],[4,5],[6]] so lists containing the indexes which make up the groups. 
       self.separatrices     = []    # e.g.: ["|", "," ] so a ordered list of symbols separating groups. always 1 element less than self.groups
       self.factor           = 1.0
+      self.arglist          = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
       self.representation   = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
       self.indexes_class    = []    # class of each of the indexes of the tensor (V, O etc)
 
@@ -145,7 +146,9 @@ class tensor:
    def get_is_spinorbital(self):
       return self.spinorbital
 
-   def get_tensor_name(self) :
+   def get_tensor_name(self, conjugate=False) :
+      if conjugate :
+         return self.name + "+"
       return self.name
 
    def get_tensor_groups(self) :
@@ -163,12 +166,11 @@ class tensor:
    def get_tensor_representation(self) :
       return self.representation
 
-   def set_tensor_representation(self,split_groups=False,replace_bar=False, remove_bar=False, verbose=False, empty_unit_tensor=True):
+   def set_tensor_arglist(self,split_groups=False,replace_bar=False, remove_bar=False, verbose=False, empty_unit_tensor=True):
       if verbose:
          self.print_info()
 
-      tensor  = self.name
-      tensor += "("
+      tensor = "("
       if len(self.groups) != 0:
          k = -1
          for i in self.groups :
@@ -203,7 +205,16 @@ class tensor:
 
       tensor += ")"
       
-      self.representation = tensor
+      self.arglist = tensor
+
+   def set_tensor_representation(self,split_groups=False,replace_bar=False, remove_bar=False, verbose=False, empty_unit_tensor=True, conjugate=False, reset_representation=False):
+      if self.arglist == "" or reset_representation:
+         self.set_tensor_arglist(split_groups,replace_bar,remove_bar,verbose, empty_unit_tensor)
+
+      if conjugate:
+         self.representation = self.name + "+" + self.arglist
+      else :
+         self.representation = self.name + self.arglist
    
    def print_tensor(self,split_groups=False,replace_bar=False,remove_bar=False):
       self.set_tensor_representation(split_groups,replace_bar,remove_bar)
