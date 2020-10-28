@@ -246,7 +246,7 @@ class binary_contraction:
       else :
          print("      binary/unary contraction has not been processed")
  
-   def process_contraction(self,split_groups=[False,False,False],replace_bar=[False,False,False],remove_lhs_bar=False,verbose=[False, False]) :
+   def process_contraction(self,split_groups=[False,False,False],replace_bar=[False,False,False],remove_lhs_bar=False,verbose=[False, False], allowed_H_classes=None, allowed_S_classes=None) :
 
       # verbose_c controls printout for the parsinf of the contraction, and verbose_t for the indidual tensors 
       verbose_c = verbose[0]
@@ -278,14 +278,14 @@ class binary_contraction:
             print("Common groups to tensors A and B",common_AB)
             print("Common groups to tensors B and C",common_BC)
 
-      self.A.set_tensor_representation(split_groups=split_groups_A,replace_bar=replace_bar_A,verbose=verbose_t)
-      self.C.set_tensor_representation(split_groups=split_groups_C,replace_bar=replace_bar_C,verbose=verbose_t,remove_bar=remove_lhs_bar)
+      self.A.set_tensor_arglist(split_groups=split_groups_A,replace_bar=replace_bar_A,verbose=verbose_t)
+      self.C.set_tensor_arglist(split_groups=split_groups_C,replace_bar=replace_bar_C,verbose=verbose_t,remove_bar=remove_lhs_bar)
 
       tA = self.A.get_tensor_representation()
       tC = self.C.get_tensor_representation()
 
       if self.B is not None :
-         self.B.set_tensor_representation(split_groups=split_groups_B,replace_bar=replace_bar_B,verbose=verbose_t)
+         self.B.set_tensor_arglist(split_groups=split_groups_B,replace_bar=replace_bar_B,verbose=verbose_t)
          tB = self.B.get_tensor_representation()
 
       if verbose_c :

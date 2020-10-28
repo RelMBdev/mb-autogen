@@ -17,9 +17,13 @@ class TALSHcodeGenerator:
    input, which has been processed into a list of dictionaries
    """
 
-   def __init__ (self, spinorbital=False) :
+   def __init__ (self, spinorbital=False, spinor=True) :
+      self.spinor           = spinor     
       self.spinorbital      = spinorbital
       self.sial             = None
+      # the one body and two body hamiltonian/integral classes available are listed, any other will require the tensor is e.g. complex conjugated when writing the code 
+      self.available_H_classes = ["OO", "VV", "OV", "OOOO", "OOVV", "VOVO", "VOVV", "VVVV" ]
+      self.available_S_classes = ["VO", "VVOO", "VVVOOO" ]
 
    def read_sial(self, file_name, verbose=False):
       self.sial = p.sial()
