@@ -26,19 +26,37 @@ class tensor:
 
    """
 
-   def __init__ (self, spinorbital=False, spinor=True) :
-      self.spinor           = spinor 
-      self.spinorbital      = spinorbital 
-      self.name             = "T00"
-      self.rank             = 1
-      self.indexes          = []    # e.g.: ["m1b","l1b",...], list of the strings 
-      self.groups           = []    # e.g.: [[1,2,3],[4,5],[6]] so lists containing the indexes which make up the groups. 
-      self.separatrices     = []    # e.g.: ["|", "," ] so a ordered list of symbols separating groups. always 1 element less than self.groups
-      self.factor           = 1.0
-      self.arglist          = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
-      self.representation   = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
-      self.indexes_class    = []    # class of each of the indexes of the tensor (V, O etc)
-      self.varnames         = {"O" : "nocc", "V" : "nvir", "Oa" : "nocc_a", "Va" : "nvir_a", "Oi" : "nocc_i", "Vi" : "nvir_i" }
+   def __init__ (self, spinorbital=False, spinor=True, symmetric=False, cmplx=True) :
+      self.spinor            = spinor 
+      self.spinorbital       = spinorbital 
+      self.symmetric         = symmetric 
+      self.complex           = cmplx 
+      self.name              = "T00"
+      self.rank              = 1
+      self.varnames          = {"O" : "nocc", "V" : "nvir", "Oa" : "nocc_active", "Va" : "nvir_active", "Oi" : "nocc_inactive", "Vi" : "nvir_inactive" }
+#     variables to store the values that have been parsed for the first time, useful for consistency checks ? 
+#     concatenating the same index of indexes and spin yields the final index as given by e.g. a SIAL statement 
+#     the spin variables can also be used to create variable names, concatenating a values 
+      self._o_indexes        = []    # e.g.: ["m1b","l1a",...], list of the strings 
+      self._o_spin           = []    # e.g.: ["b","a",...], list of the strings containing the alpha/beta label
+                                     # can serve for labeling kramers pairs as well 
+      self._o_groups         = []    # e.g.: [[1,2,3],[4,5],[6]] so lists containing the indexes which make up the groups. 
+      self._o_separatrices   = []    # e.g.: ["|", "," ] so a ordered list of symbols separating groups. always 1 element less than self.groups
+      self._o_factor         = 1.0
+      self._o_arglist        = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
+      self._o_representation = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
+      self._o_indexes_class  = []    # class of each of the indexes of the tensor (V, O etc)
+#     variables to keep the current 
+#     concatenating the same index of indexes and spin yields the final index as given by e.g. a SIAL statement 
+      self.indexes           = []    # e.g.: ["m1b","l1a",...], list of the strings 
+      self.spin              = []    # e.g.: ["b","a",...], list of the strings containing the alpha/beta label, can serve for kramers pairs as well  
+      self.groups            = []    # e.g.: [[1,2,3],[4,5],[6]] so lists containing the indexes which make up the groups. 
+      self.separatrices      = []    # e.g.: ["|", "," ] so a ordered list of symbols separating groups. always 1 element less than self.groups
+#     depending on whether the tensor is symmetric or antisymmetric, self.factor will change sign accordingly, if indices are interchanged 
+      self.factor            = 1.0
+      self.arglist           = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
+      self.representation    = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
+      self.indexes_class     = []    # class of each of the indexes of the tensor (V, O etc)
 
    def set_tensor_indexes_class(self):
       for i in self.indexes:
@@ -93,6 +111,18 @@ class tensor:
    def get_indexes_class(self):
       return self.indexes_class
 
+   def exchange_indexes(self, index_pairs=None):
+      if index_pairs is None:
+         print("warning: requested index exchange but no index given")
+
+   def conj_transpose(self):
+      if self.complex = True:
+      else:
+         pass
+
+   def transpose(self):
+      pass
+
    def parse_tensor(self,input_string, verbose=False):
       import re
 
@@ -139,6 +169,10 @@ class tensor:
           self.set_tensor_indexes_class()
           if verbose :
              self.print_info(targs)
+
+# todo: once we get here, we should see whether each index is labelled with a/b, and further split it into the spin and orbital index part
+
+
       else :
          print("   failed to indentify a tensor definition from input") 
          raise ValueError
