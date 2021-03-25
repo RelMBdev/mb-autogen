@@ -116,9 +116,11 @@ class tensor:
          print("warning: requested index exchange but no index given")
 
    def conj_transpose(self):
-      if self.complex = True:
-      else:
-         pass
+      pass
+#     if self.complex = True:
+#        pass
+#     else:
+#        pass
 
    def transpose(self):
       pass
