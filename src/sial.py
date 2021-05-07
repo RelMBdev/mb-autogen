@@ -23,6 +23,7 @@ class sial :
       self.input_tensors    = {}
       self.output_tensors   = {}
       self.interm_tensors   = {}
+      self.is_parsed        = False
 
    def parse_instruction(self,input_string, verbose=False):
       import re
@@ -99,6 +100,8 @@ class sial :
                self.print_parsed_instruction(i,instruction)
             self.parsed_lines.append(instruction)
             self._classify_contraction_tensors_by_name(instruction)
+      self._sort_tensors_by_class()
+      self.is_parsed = True
 
    def get_instructions(self):
       return self.parsed_lines
@@ -182,6 +185,14 @@ class sial :
          for j, t in enumerate(val):
             print("     name(",i,"):",k,"    tensor(",j,"):",t,t.get_tensor_representation())
 
+   def get_input_tensor_names(self):
+      return self.input_tensors.keys()
+
+   def get_output_tensor_names(self):
+      return self.output_tensors.keys()
+
+   def get_interm_tensor_names(self):
+      return self.interm_tensors.keys()
+
    def print_info(self):
-      self._sort_tensors_by_class()
       self._print_tensor_classification()

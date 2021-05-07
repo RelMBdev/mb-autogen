@@ -17,10 +17,11 @@ class TALSHcodeGenerator:
    input, which has been processed into a list of dictionaries
    """
 
-   def __init__ (self, spinorbital=False, spinor=True, available_H_classes = None, available_S_classes = None):
+   def __init__ (self, lang="Fortran", spinorbital=False, spinor=True, available_H_classes = None, available_S_classes = None):
       self.spinor           = spinor     
       self.spinorbital      = spinorbital
       self.sial             = None
+      self.lang             = lang
       self.generated_code   = []
 
       # the one body and two body hamiltonian/integral classes available are listed 
@@ -29,6 +30,9 @@ class TALSHcodeGenerator:
          available_H_classes = ["OO", "VV", "OV", "OOOO", "OOVV", "VOVO", "VOVV", "VVVV" ]
       if available_S_classes is None :
          available_S_classes = ["VO", "VVOO", "VVVOOO" ]
+
+      if self.lang is not "Fortran" :
+         self.error_handler("Unsupported target language")
 
       self.available_H_classes = available_H_classes
       self.available_S_classes = available_S_classes
@@ -79,7 +83,7 @@ class TALSHcodeGenerator:
          code = code + ")"
          code = self.indentation+self.return_var_name+self.assign_var+code
       else:
-         self.error_handler("tensors found as None","generate_contraction")
+         self.error_handler("tensors found as None")
       return code
 
    def generate_create(self, tensor, initialize=True, initialize_to=None):
@@ -115,13 +119,14 @@ class TALSHcodeGenerator:
          self.error_handler("tensors found as None")
       return code
 
-   def error_handler(self,message,where):
-      raise RuntimeError("   Warning : ",message).with_traceback(tracebackobj)
+   def error_handler(self,message):
+#     raise RuntimeError("   Warning : ",message).with_traceback(tracebackobj)
+      raise RuntimeError("   Warning : "+message)
 
    def generate_variables_declaration(self):
       pass
 
-   def generate_variables_args(self,instructions):
+   def generate_variables_args(self,varnames):
       call_variable_block = []
 
       code = self.indentation+self.variables_args['nocc']+" :: nocc"
@@ -130,11 +135,13 @@ class TALSHcodeGenerator:
       call_variable_block.append(code)
       code = self.comment+"generation of call variables not yet implemented"
       call_variable_block.append(code)
+      print("arguments:",varnames)
 
       return call_variable_block
 
-   def generate_variables_local(self,instructions):
+   def generate_variables_local(self,varnames):
       local_variable_block = []
+      print("local:",varnames)
 
       code = self.comment+"generation of local variables not yet implemented"
       local_variable_block.append(code)
@@ -144,12 +151,17 @@ class TALSHcodeGenerator:
    def generate_code(self, function_name="generic_codegen_call"):
       instructions = self.sial.get_instructions()
 
+      local_tensors = self.sial.get_interm_tensor_names()
+      lhs_tensors = self.sial.get_output_tensor_names()
+      rhs_tensors = self.sial.get_input_tensor_names()
+      call_tensors = [rhs_tensors, lhs_tensors]
+
       if function_name is not None :
          function_declaration = "subroutine "+function_name + "(nocc,nvir)"
          self.generated_code.append(function_declaration) 
 
-         call_variables  = self.generate_variables_args(instructions)
-         local_variables = self.generate_variables_local(instructions)
+         call_variables  = self.generate_variables_args(call_tensors)
+         local_variables = self.generate_variables_local(local_tensors)
          self.generated_code.extend(call_variables)
          self.generated_code.extend(local_variables)
          self.generated_code.append(self.newline)
@@ -189,6 +201,18 @@ class TALSHcodeGenerator:
                function_calls.append(code)
       return function_calls
 
-   def print_code(self):
-      for l in self.generated_code:
-         print(l)
+   def print_code(self, filename=None):
+
+      comment = "!\n! Outputting TAL-SH "+self.lang+" code generated with :"
+      comment = comment + "\n!    Codegen, a toolset to process tensor contraction DSLs (SIAL etc)"
+      comment = comment + "\n!    Andre Gomes (CNRS UMR8523, Lille) and Dmitry Lyakh (OCLF, Oak Ridge)\n!"
+
+      if filename is not None :
+         f  = open(filename,'w')
+         print(comment, file=f)
+         for l in self.generated_code:
+            print(l, file=f)
+      else :
+         print(comment)
+         for l in self.generated_code:
+            print(l)
