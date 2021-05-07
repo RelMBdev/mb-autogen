@@ -38,8 +38,11 @@ class TALSHcodeGenerator:
       self.available_S_classes = available_S_classes
 
       # variables to handle printout
-      self.indentation     = " "*3
-      self.comment         = "!" + " "*2
+      self.indentation     = " "*4
+      if self.lang is "Fortran" : 
+         self.comment         = "!" + " "*3
+      elif self.lang is "C" :
+         self.comment         = "//" + " "*2
       self.return_var_name = "ierr"
       self.assign_var      = "="
       self.newline         = "\n"
@@ -77,7 +80,7 @@ class TALSHcodeGenerator:
             nameB = B.get_tensor_name()
             code = self.call_name['contract']+"(\""+expression+"\","+nameC+","+nameA+","+nameB
          else:
-            code = self.call_name['add']+"(\""+expression+","+nameC+","+nameA
+            code = self.call_name['add']+"(\""+expression+"\""+nameC+","+nameA
          if scaling is not 1:
             code = code+",scale=("+str(scaling)+"d0,0.0d0)"
          code = code + ")"
@@ -189,6 +192,8 @@ class TALSHcodeGenerator:
                pass
             elif k == "CONTRACTION" :
                c = i.get(k)
+               code = self.comment+c.get_expression()
+               function_calls.append(code)
                code = self.generate_contraction(c)
                function_calls.append(code)
             elif k == "DELETE_ARRAY" :
@@ -203,9 +208,10 @@ class TALSHcodeGenerator:
 
    def print_code(self, filename=None):
 
-      comment = "!\n! Outputting TAL-SH "+self.lang+" code generated with :"
-      comment = comment + "\n!    Codegen, a toolset to process tensor contraction DSLs (SIAL etc)"
-      comment = comment + "\n!    Andre Gomes (CNRS UMR8523, Lille) and Dmitry Lyakh (OCLF, Oak Ridge)\n!"
+      comment = self.comment+self.newline+self.comment+" Outputting TAL-SH "+self.lang+" code generated with :"
+      comment = comment+self.newline+self.comment+"   Codegen, a toolset to process tensor contraction DSLs (SIAL etc)"
+      comment = comment+self.newline+self.comment+"   Andre Gomes (CNRS UMR8523, Lille) and Dmitry Lyakh (OCLF, Oak Ridge)"
+      comment = comment+self.newline+self.comment
 
       if filename is not None :
          f  = open(filename,'w')
