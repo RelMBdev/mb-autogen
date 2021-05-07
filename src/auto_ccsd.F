@@ -3,7 +3,60 @@
 !      Codegen, a toolset to process tensor contraction DSLs (SIAL etc)
 !      Andre Gomes (CNRS UMR8523, Lille) and Dmitry Lyakh (OCLF, Oak Ridge)
 !   
-subroutine generic_codegen_call(nocc,nvir)
+subroutine generic_codegen_call(nocc,nvir,\
+    H24,\
+    S43,\
+    H15,\
+    H36,\
+    S45,\
+    H40,\
+    H27,\
+    S44,\
+    S46,\
+    S47,\
+    H2,\
+    H1,\
+    H17,\
+    H29,\
+    H18,\
+    H30,\
+    H25,\
+    H37,\
+    H16,\
+    H7,\
+    H6,\
+    H20,\
+    H33,\
+    H22,\
+    H34,\
+    H38,\
+    H41,\
+    H28,\
+    H5,\
+    H3,\
+    H19,\
+    H4,\
+    H26,\
+    H11,\
+    H8,\
+    H32,\
+    H23,\
+    H9,\
+    H10,\
+    H21,\
+    H39,\
+    H31,\
+    H14,\
+    H12,\
+    H35,\
+    H13,\
+    H42,\
+    Z48,\
+    Z49,\
+    Z51,\
+    Z50,\
+    Z52,\
+    Z53)
     integer, intent(in) :: nocc
     integer, intent(in) :: nvir
     talsh_tensor_t, intent(inout) :: H24
