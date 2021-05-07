@@ -210,6 +210,9 @@ class tensor:
    def get_separatrices(self):
       return self.separatrices
 
+   def get_tensor_name(self):
+      return self.name
+
    def set_tensor_name(self,name):
       self.name = name
 

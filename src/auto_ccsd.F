@@ -6,63 +6,106 @@
 subroutine generic_codegen_call(nocc,nvir)
     integer, intent(in) :: nocc
     integer, intent(in) :: nvir
-!   generation of call variables not yet implemented
-!   generation of local variables not yet implemented
+    talsh_tensor_t, intent(inout) :: H24
+    talsh_tensor_t, intent(inout) :: S43
+    talsh_tensor_t, intent(inout) :: H15
+    talsh_tensor_t, intent(inout) :: H36
+    talsh_tensor_t, intent(inout) :: S45
+    talsh_tensor_t, intent(inout) :: H40
+    talsh_tensor_t, intent(inout) :: H27
+    talsh_tensor_t, intent(inout) :: S44
+    talsh_tensor_t, intent(inout) :: S46
+    talsh_tensor_t, intent(inout) :: S47
+    talsh_tensor_t, intent(inout) :: H2
+    talsh_tensor_t, intent(inout) :: H1
+    talsh_tensor_t, intent(inout) :: H17
+    talsh_tensor_t, intent(inout) :: H29
+    talsh_tensor_t, intent(inout) :: H18
+    talsh_tensor_t, intent(inout) :: H30
+    talsh_tensor_t, intent(inout) :: H25
+    talsh_tensor_t, intent(inout) :: H37
+    talsh_tensor_t, intent(inout) :: H16
+    talsh_tensor_t, intent(inout) :: H7
+    talsh_tensor_t, intent(inout) :: H6
+    talsh_tensor_t, intent(inout) :: H20
+    talsh_tensor_t, intent(inout) :: H33
+    talsh_tensor_t, intent(inout) :: H22
+    talsh_tensor_t, intent(inout) :: H34
+    talsh_tensor_t, intent(inout) :: H38
+    talsh_tensor_t, intent(inout) :: H41
+    talsh_tensor_t, intent(inout) :: H28
+    talsh_tensor_t, intent(inout) :: H5
+    talsh_tensor_t, intent(inout) :: H3
+    talsh_tensor_t, intent(inout) :: H19
+    talsh_tensor_t, intent(inout) :: H4
+    talsh_tensor_t, intent(inout) :: H26
+    talsh_tensor_t, intent(inout) :: H11
+    talsh_tensor_t, intent(inout) :: H8
+    talsh_tensor_t, intent(inout) :: H32
+    talsh_tensor_t, intent(inout) :: H23
+    talsh_tensor_t, intent(inout) :: H9
+    talsh_tensor_t, intent(inout) :: H10
+    talsh_tensor_t, intent(inout) :: H21
+    talsh_tensor_t, intent(inout) :: H39
+    talsh_tensor_t, intent(inout) :: H31
+    talsh_tensor_t, intent(inout) :: H14
+    talsh_tensor_t, intent(inout) :: H12
+    talsh_tensor_t, intent(inout) :: H35
+    talsh_tensor_t, intent(inout) :: H13
+    talsh_tensor_t, intent(inout) :: H42
+    talsh_tensor_t, intent(inout) :: Z48
+    talsh_tensor_t, intent(inout) :: Z49
+    talsh_tensor_t, intent(inout) :: Z51
+    talsh_tensor_t, intent(inout) :: Z50
+    talsh_tensor_t, intent(inout) :: Z52
+    talsh_tensor_t, intent(inout) :: Z53
+    talsh_tensor_t :: Z57_1
+    talsh_tensor_t :: Z60_1
+    talsh_tensor_t :: Z56_1
+    talsh_tensor_t :: Z57_2
+    talsh_tensor_t :: Z54_1
+    talsh_tensor_t :: Z72_1
+    talsh_tensor_t :: Z74_1
+    talsh_tensor_t :: Z59_1
+    talsh_tensor_t :: Z60_2
+    talsh_tensor_t :: Z55_1
+    talsh_tensor_t :: Z75_1
+    talsh_tensor_t :: Z76_1
+    talsh_tensor_t :: Z63_1
+    talsh_tensor_t :: Z70_2
+    talsh_tensor_t :: Z83_3
+    talsh_tensor_t :: Z77_2
+    talsh_tensor_t :: Z83_2
+    talsh_tensor_t :: Z84_2
+    talsh_tensor_t :: Z65_1
+    talsh_tensor_t :: Z58_1
+    talsh_tensor_t :: Z72_2
+    talsh_tensor_t :: Z77_1
+    talsh_tensor_t :: Z78_1
+    talsh_tensor_t :: Z66_1
+    talsh_tensor_t :: Z80_2
+    talsh_tensor_t :: Z85_2
+    talsh_tensor_t :: Z64_1
+    talsh_tensor_t :: Z71_2
+    talsh_tensor_t :: Z84_3
+    talsh_tensor_t :: Z78_2
+    talsh_tensor_t :: Z86_2
+    talsh_tensor_t :: Z68_1
+    talsh_tensor_t :: Z61_1
+    talsh_tensor_t :: Z74_2
+    talsh_tensor_t :: Z81_1
+    talsh_tensor_t :: Z82_1
+    talsh_tensor_t :: Z80_1
+    talsh_tensor_t :: Z79_1
+    talsh_tensor_t :: Z67_1
+    talsh_tensor_t :: Z73_2
+    talsh_tensor_t :: Z86_3
+    talsh_tensor_t :: Z82_2
+    talsh_tensor_t :: Z69_1
+    talsh_tensor_t :: Z62_1
+    talsh_tensor_t :: Z76_2
 
 
-    ierr=talsh_tensor_construct(H2, C8, /(nvir,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H1, C8, /(nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H7, C8, /(nvir,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H6, C8, /(nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H16, C8, /(nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H15, C8, /(nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H28, C8, /(nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H27, C8, /(nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H5, C8, /(nvir,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H3, C8, /(nvir,nvir,nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H11, C8, /(nvir,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H8, C8, /(nvir,nvir,nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H14, C8, /(nvir,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H12, C8, /(nvir,nvir,nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H26, C8, /(nocc,nocc,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H24, C8, /(nocc,nocc,nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H39, C8, /(nocc,nocc,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H36, C8, /(nocc,nocc,nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H42, C8, /(nocc,nocc,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H40, C8, /(nocc,nocc,nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H19, C8, /(nocc,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H17, C8, /(nocc,nvir,nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H32, C8, /(nocc,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H29, C8, /(nocc,nvir,nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H4, C8, /(nvir,nvir,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H23, C8, /(nocc,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H20, C8, /(nocc,nvir,nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H35, C8, /(nocc,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H33, C8, /(nocc,nvir,nvir,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H9, C8, /(nvir,nvir,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H10, C8, /(nvir,nvir,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H13, C8, /(nvir,nvir,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H25, C8, /(nocc,nocc,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H37, C8, /(nocc,nocc,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H38, C8, /(nocc,nocc,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H41, C8, /(nocc,nocc,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H18, C8, /(nocc,nvir,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H30, C8, /(nocc,nvir,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H31, C8, /(nocc,nvir,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H21, C8, /(nocc,nvir,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H22, C8, /(nocc,nvir,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(H34, C8, /(nocc,nvir,nocc,nvir)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(S43, C8, /(nvir,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(S45, C8, /(nvir,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(S44, C8, /(nvir,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(S46, C8, /(nvir,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(S47, C8, /(nvir,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(Z48, C8, /()/, init_val=ZERO)
-    ierr=talsh_tensor_construct(Z49, C8, /(nvir,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(Z51, C8, /(nvir,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(Z50, C8, /(nvir,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(Z52, C8, /(nvir,nvir,nocc,nocc)/, init_val=ZERO)
-    ierr=talsh_tensor_construct(Z53, C8, /(nvir,nvir,nocc,nocc)/, init_val=ZERO)
     ierr=talsh_tensor_construct(Z57_1, C8, /(nocc,nvir)/, init_val=ZERO)
 !   Z57_1(l1b,d1b)+=H24(l1b,l2b,d1b,d2b)*S43(d2b,l2b)
     ierr=talsh_tensor_contract("Z57_1(l1b,d1b)+=H24(l1b,l2b,d1b,d2b)*S43(d2b,l2b)",Z57_1,H24,S43,scale=(0.5d0,0.0d0))
@@ -1651,59 +1694,6 @@ subroutine generic_codegen_call(nocc,nvir)
     ierr=talsh_tensor_contract("Z53(e1a,e2a,m1a,m2a)+=S47(e1a,d1a,m2a,l1a)*H34(e2a,l1a,m1a,d1a)",Z53,S47,H34,scale=(-1.0d0,0.0d0))
 !   Z53(e1a,e2a,m1a,m2a)+=S47(e2a,d1a,m2a,l1a)*H34(e1a,l1a,m1a,d1a)
     ierr=talsh_tensor_contract("Z53(e1a,e2a,m1a,m2a)+=S47(e2a,d1a,m2a,l1a)*H34(e1a,l1a,m1a,d1a)",Z53,S47,H34,scale=(1.0d0,0.0d0))
-    ierr=talsh_tensor_destruct(H2)
-    ierr=talsh_tensor_destruct(H1)
-    ierr=talsh_tensor_destruct(H7)
-    ierr=talsh_tensor_destruct(H6)
-    ierr=talsh_tensor_destruct(H16)
-    ierr=talsh_tensor_destruct(H15)
-    ierr=talsh_tensor_destruct(H28)
-    ierr=talsh_tensor_destruct(H27)
-    ierr=talsh_tensor_destruct(H5)
-    ierr=talsh_tensor_destruct(H3)
-    ierr=talsh_tensor_destruct(H11)
-    ierr=talsh_tensor_destruct(H8)
-    ierr=talsh_tensor_destruct(H14)
-    ierr=talsh_tensor_destruct(H12)
-    ierr=talsh_tensor_destruct(H26)
-    ierr=talsh_tensor_destruct(H24)
-    ierr=talsh_tensor_destruct(H39)
-    ierr=talsh_tensor_destruct(H36)
-    ierr=talsh_tensor_destruct(H42)
-    ierr=talsh_tensor_destruct(H40)
-    ierr=talsh_tensor_destruct(H19)
-    ierr=talsh_tensor_destruct(H17)
-    ierr=talsh_tensor_destruct(H32)
-    ierr=talsh_tensor_destruct(H29)
-    ierr=talsh_tensor_destruct(H4)
-    ierr=talsh_tensor_destruct(H23)
-    ierr=talsh_tensor_destruct(H20)
-    ierr=talsh_tensor_destruct(H35)
-    ierr=talsh_tensor_destruct(H33)
-    ierr=talsh_tensor_destruct(H9)
-    ierr=talsh_tensor_destruct(H10)
-    ierr=talsh_tensor_destruct(H13)
-    ierr=talsh_tensor_destruct(H25)
-    ierr=talsh_tensor_destruct(H37)
-    ierr=talsh_tensor_destruct(H38)
-    ierr=talsh_tensor_destruct(H41)
-    ierr=talsh_tensor_destruct(H18)
-    ierr=talsh_tensor_destruct(H30)
-    ierr=talsh_tensor_destruct(H31)
-    ierr=talsh_tensor_destruct(H21)
-    ierr=talsh_tensor_destruct(H22)
-    ierr=talsh_tensor_destruct(H34)
-    ierr=talsh_tensor_destruct(S43)
-    ierr=talsh_tensor_destruct(S45)
-    ierr=talsh_tensor_destruct(S44)
-    ierr=talsh_tensor_destruct(S46)
-    ierr=talsh_tensor_destruct(S47)
-    ierr=talsh_tensor_destruct(Z48)
-    ierr=talsh_tensor_destruct(Z49)
-    ierr=talsh_tensor_destruct(Z51)
-    ierr=talsh_tensor_destruct(Z50)
-    ierr=talsh_tensor_destruct(Z52)
-    ierr=talsh_tensor_destruct(Z53)
 
 
 end subroutine generic_codegen_call
