@@ -82,7 +82,7 @@ class TALSHcodeGenerator:
             nameB = B.get_tensor_name()
             code = self.call_name['contract']+"(\""+expression+"\","+nameC+","+nameA+","+nameB
          else:
-            code = self.call_name['add']+"(\""+expression+"\""+nameC+","+nameA
+            code = self.call_name['add']+"(\""+expression+"\","+nameC+","+nameA
          if scaling is not 1:
             code = code+",scale=("+str(scaling)+"d0,0.0d0)"
          code = code + ")"
