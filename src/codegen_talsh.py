@@ -158,8 +158,19 @@ class TALSHcodeGenerator:
       rhs_tensors = list(self.sial.get_input_tensor_names())
       call_tensors = rhs_tensors + lhs_tensors
 
+#     for e in call_tensors:
+#        if e[0] == "Z":
+#           print(e)
+#           call_tensors.remove(e)
+#           local_tensors.append(e)
+
       if function_name is not None :
-         function_declaration = "subroutine "+function_name + "(nocc,nvir)"
+         function_declaration = "subroutine "+function_name 
+         function_declaration = function_declaration + "(nocc,nvir"
+         for c in call_tensors:
+            function_declaration = function_declaration \
+                                 + ",\\"+self.newline+self.indentation + c
+         function_declaration = function_declaration + ")"
          self.generated_code.append(function_declaration) 
 
          call_variables  = self.generate_variables_args(call_tensors)
