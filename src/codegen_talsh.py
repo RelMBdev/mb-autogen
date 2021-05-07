@@ -48,8 +48,10 @@ class TALSHcodeGenerator:
       self.newline         = "\n"
 
       self.variables_args  = { 'nocc' : 'integer, intent(in)', \
-                               'nvir' : 'integer, intent(in)'} 
-      self.variables_local = {}
+                               'nvir' : 'integer, intent(in)', \
+                               'talsh_tensor' : 'talsh_tensor_t, intent(inout)' }
+
+      self.variables_local = { 'talsh_tensor' : 'talsh_tensor_t' }
 
       self.call_name = { 'add'      : "talsh_tensor_add", \
                          'contract' : "talsh_tensor_contract", \
@@ -136,28 +138,25 @@ class TALSHcodeGenerator:
       call_variable_block.append(code)
       code = self.indentation+self.variables_args['nvir']+" :: nvir"
       call_variable_block.append(code)
-      code = self.comment+"generation of call variables not yet implemented"
-      call_variable_block.append(code)
-      print("arguments:",varnames)
-
+      for v in varnames:
+         code = self.indentation+self.variables_args['talsh_tensor']+ " :: "+v
+         call_variable_block.append(code)
       return call_variable_block
 
    def generate_variables_local(self,varnames):
       local_variable_block = []
-      print("local:",varnames)
-
-      code = self.comment+"generation of local variables not yet implemented"
-      local_variable_block.append(code)
-
+      for v in varnames:
+         code = self.indentation+self.variables_local['talsh_tensor']+ " :: "+v 
+         local_variable_block.append(code)
       return local_variable_block
 
    def generate_code(self, function_name="generic_codegen_call"):
       instructions = self.sial.get_instructions()
 
-      local_tensors = self.sial.get_interm_tensor_names()
-      lhs_tensors = self.sial.get_output_tensor_names()
-      rhs_tensors = self.sial.get_input_tensor_names()
-      call_tensors = [rhs_tensors, lhs_tensors]
+      local_tensors = list(self.sial.get_interm_tensor_names())
+      lhs_tensors = list(self.sial.get_output_tensor_names())
+      rhs_tensors = list(self.sial.get_input_tensor_names())
+      call_tensors = rhs_tensors + lhs_tensors
 
       if function_name is not None :
          function_declaration = "subroutine "+function_name + "(nocc,nvir)"
@@ -169,7 +168,7 @@ class TALSHcodeGenerator:
          self.generated_code.extend(local_variables)
          self.generated_code.append(self.newline)
 
-      function_calls = self.generate_function_calls(instructions)
+      function_calls = self.generate_function_calls(instructions,local_tensors)
       self.generated_code.extend(function_calls)
       self.generated_code.append(self.newline)
 
@@ -177,7 +176,7 @@ class TALSHcodeGenerator:
          function_end = "end subroutine "+function_name
       self.generated_code.append(function_end)
 
-   def generate_function_calls(self,instructions):
+   def generate_function_calls(self,instructions,local_tensors):
       function_calls = []
       for i in instructions:
 #        print(i)
@@ -198,12 +197,16 @@ class TALSHcodeGenerator:
                function_calls.append(code)
             elif k == "DELETE_ARRAY" :
                t = i.get(k)
-               code = self.generate_destroy(t)
-               function_calls.append(code)
+               name = t.get_tensor_name()
+               if name in local_tensors : 
+                  code = self.generate_destroy(t)
+                  function_calls.append(code)
             elif k == "CREATE_ARRAY":
                t = i.get(k)
-               code = self.generate_create(t, initialize_to="ZERO")
-               function_calls.append(code)
+               name = t.get_tensor_name()
+               if name in local_tensors : 
+                  code = self.generate_create(t, initialize_to="ZERO")
+                  function_calls.append(code)
       return function_calls
 
    def print_code(self, filename=None):
