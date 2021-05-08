@@ -41,10 +41,10 @@ class binary_contraction:
    def set_expression(self, input_string) :
       self.original_expr = input_string
 
-   def get_expression(self) :
-      if self.processed_expr is not None:
+   def get_expression(self,expr="processed") :
+      if self.processed_expr is not None and expr == "processed":
          return self.processed_expr
-      elif self.original_expr is not None :
+      elif self.original_expr is not None and expr == "original":
          return self.original_expr
       else :
          print("   Unknown tensor contraction expression")
