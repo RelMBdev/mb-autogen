@@ -321,6 +321,12 @@ class tensor:
          transposed.append(t)
       return transposed 
 
+   def is_pure_beta(self):
+      for s in self.spin :
+         if s is not "b" :
+            return False 
+      return True
+
    def get_tensor_indexes(self) :
       return self.indexes
 

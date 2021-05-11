@@ -17,9 +17,10 @@ class TALSHcodeGenerator:
    input, which has been processed into a list of dictionaries
    """
 
-   def __init__ (self, lang="Fortran", spinorbital=False, spinor=True, available_H_classes = None, available_S_classes = None):
+   def __init__ (self, lang="Fortran", spinorbital=False, spinorbital_out=False, spinor=True, available_H_classes = None, available_S_classes = None):
       self.spinor           = spinor     
       self.spinorbital      = spinorbital
+      self.spinorbital_out  = spinorbital_out
       self.sial             = None
       self.lang             = lang
       self.generated_code   = []
@@ -59,7 +60,7 @@ class TALSHcodeGenerator:
                          'destroy'  : "talsh_tensor_destruct" }
 
    def read_sial(self, file_name, verbose=False):
-      self.sial = p.sial()
+      self.sial = p.sial(spinorbital_out=self.spinorbital_out)
       self.sial.read(file_name)
       self.sial.parse(verbose=verbose)
 

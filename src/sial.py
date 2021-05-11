@@ -16,8 +16,9 @@ class sial :
    sial class : parses sial input into instruction and tensors 
    """
 
-   def __init__ (self, spinorbital=False) :
+   def __init__ (self, spinorbital=False, spinorbital_out=False) :
       self.spinorbital      = spinorbital 
+      self.spinorbital_out  = spinorbital_out 
       self.input_lines      = None 
       self.parsed_lines     = None 
       self.input_tensors    = {}
@@ -65,7 +66,11 @@ class sial :
          # we parse the tensor expression, but defer from outputting it for now  
          # if we were to print, we'd 
          # parsed_string = tensor.print_tensor(split_groups=True,remove_bar=True,replace_bar=True)
-         output[instruction] = tensor 
+         if self.spinorbital_out :
+            if tensor.is_pure_beta() :
+               output[instruction] = tensor 
+         else:
+            output[instruction] = tensor 
 
       elif sial_instruction_re.match(input_string):
          instruction = sial_instruction_re.match(input_string).group(1)
@@ -75,11 +80,17 @@ class sial :
       elif sial_tensor_operation_expression_re.match(input_string):
          instruction = "CONTRACTION"
          contr_string = sial_tensor_operation_expression_re.match(input_string).group(1)
-         contr = c.binary_contraction(expr=contr_string)
+         contr = c.binary_contraction(expr=contr_string,spinorbital_out=self.spinorbital_out)
          #print("prior instruction",instruction,"t.op:",contr_string)
          contr.parse_contraction(contr_string, verbose=[False,False])
          contr.process_contraction(split_groups=[True,True,True],replace_bar=[True,True,True], verbose=[False,False])
-         output[instruction] = contr
+
+         if self.spinorbital_out :
+            pure_beta = contr.is_pure_beta
+            if pure_beta :
+               output[instruction] = contr
+         else:
+            output[instruction] = contr
  
       else :
          print("   failed to indentify valid input line")
