@@ -291,12 +291,33 @@ class tensor:
          return self.name + "+"
       return self.name
 
-   def get_tensor_groups(self) :
-      return self.groups
+   def get_tensor_groups(self, manybody_indexes=True) :
+      # we reconstruct the groups in terms of the many-body indexes, from the list indexes
+      if manybody_indexes : 
+         groups = []
+         for g in self.groups:
+            if not isinstance(g,list) :
+               raise ValueError
+            else :
+               subgroup = []
+               for l in g :
+                  if not isinstance(l,int) :
+                     raise ValueError
+                  else :
+                     if self.spinorbital_out or self.spinor_out: 
+                        mb_index = self.indexes[l]
+                     else :
+                        mb_index = self.indexes[l]+self.spin[l]
+                     subgroup.append(mb_index)
+               groups.append(subgroup)
+         return groups
+      else :
+         return self.groups
 
-   def get_transposed_tensor_groups(self) :
+   def get_transposed_tensor_groups(self, manybody_indexes=True) :
       transposed = []
-      for t in reversed(self.groups):
+      groups = self.get_tensor_groups(manybody_indexes) 
+      for t in reversed(groups):
          transposed.append(t)
       return transposed 
 
