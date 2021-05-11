@@ -64,8 +64,8 @@ parsing tensor input string: S14(e1,d1|l1l2)
             spin               : ['', '', '', '']
          indexes, parsed, trans: ['l2', 'l1', 'd1', 'e1']
          indexes, class        : ['V', 'V', 'O', 'O']
-         groups, parsed        : [[0], [1], [2, 3]]
-         groups, parsed, trans : [[2, 3], [1], [0]]
+         groups, parsed        : [['e1'], ['d1'], ['l1', 'l2']]
+         groups, parsed, trans : [['l1', 'l2'], ['d1'], ['e1']]
          separatrices, parsed  : [',', '|']
    done printing tensor information
 output (replacing bar) : 
@@ -94,8 +94,8 @@ parsing tensor input string: S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)
             spin               : ['a', 'b', 'a', 'b', 'b', 'a', 'a', 'b']
          indexes, parsed, trans: ['i1', 'n1', 'l1', 'm1', 'd2', 'd2', 'd1', 'd1']
          indexes, class        : ['V', 'V', 'V', 'V', 'O', 'O', 'O', 'Oi']
-         groups, parsed        : [[0, 1, 2, 3], [4], [5, 6], [7]]
-         groups, parsed, trans : [[7], [5, 6], [4], [0, 1, 2, 3]]
+         groups, parsed        : [['d1a', 'd1b', 'd2a', 'd2b'], ['m1b'], ['l1a', 'n1a'], ['i1b']]
+         groups, parsed, trans : [['i1b'], ['l1a', 'n1a'], ['m1b'], ['d1a', 'd1b', 'd2a', 'd2b']]
          separatrices, parsed  : ['|', ',', ',']
    done printing tensor information
 output (removing bar, splitting groups) : 
@@ -120,8 +120,8 @@ parsing tensor input string: S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)
             spin               : ['a', 'b', 'a', 'b', 'b', 'a', 'a', 'b']
          indexes, parsed, trans: ['i1', 'n1', 'l1', 'm1', 'd2', 'd2', 'd1', 'd1']
          indexes, class        : ['V', 'V', 'V', 'V', 'O', 'O', 'O', 'Oi']
-         groups, parsed        : [[0, 1, 2, 3], [4], [5, 6], [7]]
-         groups, parsed, trans : [[7], [5, 6], [4], [0, 1, 2, 3]]
+         groups, parsed        : [['d1', 'd1', 'd2', 'd2'], ['m1'], ['l1', 'n1'], ['i1']]
+         groups, parsed, trans : [['i1'], ['l1', 'n1'], ['m1'], ['d1', 'd1', 'd2', 'd2']]
          separatrices, parsed  : ['|', ',', ',']
    done printing tensor information
 output (removing bar, splitting groups) : 
