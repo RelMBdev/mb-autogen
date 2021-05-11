@@ -68,5 +68,12 @@ def main():
    print("output (removing bar, splitting groups) : ")
    t6.print_tensor(split_groups=True,remove_bar=True)
 
+   t7 = t.tensor(spinorbital_out=True)
+   string = "S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)"
+   print("\ninput : ",string)
+   t7.parse_tensor(string,verbose=True)
+   print("output (removing bar, splitting groups) : ")
+   t7.print_tensor(split_groups=True,remove_bar=True)
+
 main()
 
