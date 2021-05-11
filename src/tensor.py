@@ -26,9 +26,11 @@ class tensor:
 
    """
 
-   def __init__ (self, spinorbital=False, spinor=True, symmetric=False, cmplx=True) :
-      self.spinor            = spinor 
-      self.spinorbital       = spinorbital 
+   def __init__ (self, spinorbital=False, spinor=True, spinorbital_out=False, spinor_out=False, symmetric=False, cmplx=True) :
+      self.spinor_in         = spinor
+      self.spinorbital_in    = spinorbital
+      self.spinor_out        = spinor_out
+      self.spinorbital_out   = spinorbital_out
       self.symmetric         = symmetric 
       self.complex           = cmplx 
       self.name              = "T00"
@@ -46,9 +48,10 @@ class tensor:
       self._o_arglist        = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
       self._o_representation = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
       self._o_indexes_class  = []    # class of each of the indexes of the tensor (V, O etc)
+      self._o_saved          = False 
 #     variables to keep the current 
 #     concatenating the same index of indexes and spin yields the final index as given by e.g. a SIAL statement 
-      self.indexes           = []    # e.g.: ["m1b","l1a",...], list of the strings 
+      self.indexes           = []    # e.g.: ["m1","l1",...], list of the strings 
       self.spin              = []    # e.g.: ["b","a",...], list of the strings containing the alpha/beta label, can serve for kramers pairs as well  
       self.groups            = []    # e.g.: [[1,2,3],[4,5],[6]] so lists containing the indexes which make up the groups. 
       self.separatrices      = []    # e.g.: ["|", "," ] so a ordered list of symbols separating groups. always 1 element less than self.groups
@@ -125,22 +128,42 @@ class tensor:
    def transpose(self):
       pass
 
+   def _save_tensor_information(self):
+      if not self._o_saved :
+         self._o_indexes        = self.indexes
+         self._o_spin           = self.spin
+         self._o_groups         = self.groups
+         self._o_separatrices   = self.separatrices
+         self._o_factor         = self.factor
+         self._o_arglist        = self.arglist
+         self._o_representation = self.representation
+         self._o_indexes_class  = self.indexes_class
+         self._o_saved = True
+
    def parse_tensor(self,input_string, verbose=False):
+      self._parse_tensor(input_string, verbose)
+      self._save_tensor_information() 
+
+   def _parse_tensor(self,input_string, verbose=False):
       import re
 
       tensor_regexp_definition = "([a-zA-Z_0-9]+)\((.+)\)"
       tensor_sep_definition = "([|,])"
-      if self.spinorbital :
+      if self.spinorbital_in :
          stride = 2
          tensor_indexes_definition = "(\w\d)"
       else :
          stride = 3
          tensor_indexes_definition = "(\w\d\w)"
+         tensor_indexes_spin_definition = "(\w\d)(\w)"
 
       tensor_re = re.compile (r''+ tensor_regexp_definition+'', re.IGNORECASE)
       tensor_sep_re = re.compile (r''+ tensor_sep_definition+'', re.IGNORECASE)
       tensor_indexes_re = re.compile (r''+ tensor_indexes_definition +'', re.IGNORECASE)
       tensor_groups_re  = re.compile (r''+ tensor_indexes_definition + "*" +'', re.IGNORECASE)
+
+      if not self.spinorbital_in :
+         tensor_indexes_spin_re = re.compile (r''+ tensor_indexes_spin_definition +'', re.IGNORECASE)
 
       if verbose :
          print("\nparsing tensor input string:", input_string)
@@ -153,6 +176,7 @@ class tensor:
              self.separatrices = tensor_sep_re.findall(targs)
 
           if (tensor_groups_re.finditer(targs)):
+             idx = 0
              for m in tensor_groups_re.finditer(targs):
                 start = m.span(0)[0]
                 end   = m.span(0)[1]
@@ -160,9 +184,21 @@ class tensor:
                    v = targs[start:end]
                    if ((end - start + 1) >= stride ) :
                       group = tensor_indexes_re.findall(v)
-                      self.groups.append(group)
+                      # information on the groups of indices is kept through the index denoting the position of
+                      # of a given many-body index in the string defining the tensor. this way it is easier to
+                      # control permutations and also get rid of a spin label if needed
+                      gidx = []
                       for index in group :
-                         self.indexes.append(index)
+                         gidx.append(idx)
+                         if not self.spinorbital_in :
+                            index_spin = tensor_indexes_spin_re.findall(index)[0]
+                            self.indexes.append(index_spin[0])
+                            self.spin.append(index_spin[1])
+                         else : 
+                            self.indexes.append(index)
+                            self.spin.append("")
+                         idx = idx + 1
+                      self.groups.append(gidx)
 
           rank = len(self.indexes)
           if (rank != 0) :
@@ -172,9 +208,6 @@ class tensor:
           if verbose :
              self.print_info(targs)
 
-# todo: once we get here, we should see whether each index is labelled with a/b, and further split it into the spin and orbital index part
-
-
       else :
          print("   failed to indentify a tensor definition from input") 
          raise ValueError
@@ -182,8 +215,10 @@ class tensor:
    def print_info(self, targs=""):
       print("   printing tensor information")
       print("      name                     : ",self.name)
-      print("      spin-orbital mode        : ",self.spinorbital)
-      print("      spinor mode              : ",self.spinor)
+      print("      spin-orbital mode (in)   : ",self.spinorbital_in)
+      print("      spin-orbital mode (out)  : ",self.spinorbital_out)
+      print("      spinor mode       (in)   : ",self.spinor_in)
+      print("      spinor mode       (out)  : ",self.spinor_out)
       print("      rank                     : ",self.rank)
       print("      class                    : ",self.get_tensor_class())
       print("      class, transposed        : ",self.get_transposed_tensor_class())
@@ -191,6 +226,8 @@ class tensor:
       if (targs is not "") :
          print("         at input              :",targs)
       print("         indexes, parsed       :",self.get_indexes())
+      print("            spatial/spinorbital:",self.get_indexes_only())
+      print("            spin               :",self.get_spin())
       print("         indexes, parsed, trans:",self.get_transposed_indexes())
       print("         indexes, class        :",self.get_indexes_class())
       print("         groups, parsed        :",self.get_tensor_groups())
@@ -199,6 +236,18 @@ class tensor:
       print("   done printing tensor information")
 
    def get_indexes(self):
+      if not self.spinorbital_in : 
+         indexes = []
+         for i,s in zip(self.indexes,self.spin):
+            indexes.append(i+s)
+         return indexes
+      else :
+         return self.indexes
+
+   def get_spin(self):
+      return self.spin
+
+   def get_indexes_only(self):
       return self.indexes
 
    def get_transposed_indexes(self):
@@ -235,7 +284,7 @@ class tensor:
 
 
    def is_spinorbital(self):
-      return self.spinorbital
+      return self.spinorbital_in
 
    def get_tensor_name(self, conjugate=False) :
       if conjugate :
@@ -274,6 +323,47 @@ class tensor:
       return representation
 
    def set_tensor_arglist(self,split_groups=False,replace_bar=False, remove_bar=False, verbose=False, empty_unit_tensor=True):
+      self._old_set_tensor_arglist(split_groups,replace_bar,remove_bar,verbose,empty_unit_tensor)
+
+# WIP, make the code more compact compared to _old_set_tensor_arglist
+   def _new_set_tensor_arglist(self,split_groups=False,replace_bar=False, remove_bar=False, verbose=False, empty_unit_tensor=True):
+      import itertools
+
+      if verbose:
+         self.print_info()
+
+      tensor = "("
+      # unit tensor
+      if len(self.groups) == 0 :
+         if empty_unit_tensor :
+            tensor += ")"
+         else :
+            if replace_bar :
+               tensor += ",)"
+            elif remove_bar :
+               tensor += " )"
+            else :
+               tensor += self.separatrices[0]+")" 
+      # any other tensor
+      else :
+         # spitting first group/element
+         if split_groups and replace_bar:
+            flat_group_list = list(itertools.chain.from_iterable(self.groups))
+            tensor += self.indexes[flat_group_list[0]]
+            if not self.spinorbital_out or self.spinor_out :
+               tensor += self.spin[flat_group_list[0]]
+            for i in flat_group_list[0:] :
+               tensor += ","+self.indexes[i]
+               if not self.spinorbital_out or self.spinor_out :
+                  tensor += self.spin[i]
+         else :
+            pass
+
+      tensor += ")"
+
+      self.arglist = tensor
+
+   def _old_set_tensor_arglist(self,split_groups=False,replace_bar=False, remove_bar=False, verbose=False, empty_unit_tensor=True):
       if verbose:
          self.print_info()
 
@@ -292,7 +382,10 @@ class tensor:
             if isinstance(i, list): 
                l = 0
                for e in i :
-                  tensor += e 
+                  if self.spinorbital_out or self.spinor_out :
+                     tensor += self.indexes[e] 
+                  else :
+                     tensor += self.indexes[e]+self.spin[e] 
                   if (split_groups and ((len(i)-1) > l)) :
                      tensor += ","
                      l += 1

@@ -20,14 +20,18 @@ input :  S99(|)
 parsing tensor input string: S99(|)
    printing tensor information
       name                     :  S99
-      spin-orbital mode        :  False
-      spinor mode              :  True
+      spin-orbital mode (in)   :  False
+      spin-orbital mode (out)  :  False
+      spinor mode       (in)   :  True
+      spinor mode       (out)  :  False
       rank                     :  1
       class                    :  UnitTensor
       class, transposed        :  UnitTensor
       arguments
          at input              : |
          indexes, parsed       : []
+            spatial/spinorbital: []
+            spin               : []
          indexes, parsed, trans: []
          indexes, class        : []
          groups, parsed        : []
@@ -46,18 +50,22 @@ input :  S14(e1,d1|l1l2)
 parsing tensor input string: S14(e1,d1|l1l2)
    printing tensor information
       name                     :  S14
-      spin-orbital mode        :  True
-      spinor mode              :  True
+      spin-orbital mode (in)   :  True
+      spin-orbital mode (out)  :  False
+      spinor mode       (in)   :  True
+      spinor mode       (out)  :  False
       rank                     :  4
       class                    :  VVOO
       class, transposed        :  OOVV
       arguments
          at input              : e1,d1|l1l2
          indexes, parsed       : ['e1', 'd1', 'l1', 'l2']
+            spatial/spinorbital: ['e1', 'd1', 'l1', 'l2']
+            spin               : ['', '', '', '']
          indexes, parsed, trans: ['l2', 'l1', 'd1', 'e1']
          indexes, class        : ['V', 'V', 'O', 'O']
-         groups, parsed        : [['e1'], ['d1'], ['l1', 'l2']]
-         groups, parsed, trans : [['l1', 'l2'], ['d1'], ['e1']]
+         groups, parsed        : [[0], [1], [2, 3]]
+         groups, parsed, trans : [[2, 3], [1], [0]]
          separatrices, parsed  : [',', '|']
    done printing tensor information
 output (replacing bar) : 
@@ -72,19 +80,49 @@ input :  S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)
 parsing tensor input string: S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)
    printing tensor information
       name                     :  S46
-      spin-orbital mode        :  False
-      spinor mode              :  True
+      spin-orbital mode (in)   :  False
+      spin-orbital mode (out)  :  False
+      spinor mode       (in)   :  True
+      spinor mode       (out)  :  False
       rank                     :  8
       class                    :  VVVVOOOOi
       class, transposed        :  OiOOOVVVV
       arguments
          at input              : d1ad1bd2ad2b|m1b,l1an1a,i1b
          indexes, parsed       : ['d1a', 'd1b', 'd2a', 'd2b', 'm1b', 'l1a', 'n1a', 'i1b']
-         indexes, parsed, trans: ['i1b', 'n1a', 'l1a', 'm1b', 'd2b', 'd2a', 'd1b', 'd1a']
+            spatial/spinorbital: ['d1', 'd1', 'd2', 'd2', 'm1', 'l1', 'n1', 'i1']
+            spin               : ['a', 'b', 'a', 'b', 'b', 'a', 'a', 'b']
+         indexes, parsed, trans: ['i1', 'n1', 'l1', 'm1', 'd2', 'd2', 'd1', 'd1']
          indexes, class        : ['V', 'V', 'V', 'V', 'O', 'O', 'O', 'Oi']
-         groups, parsed        : [['d1a', 'd1b', 'd2a', 'd2b'], ['m1b'], ['l1a', 'n1a'], ['i1b']]
-         groups, parsed, trans : [['i1b'], ['l1a', 'n1a'], ['m1b'], ['d1a', 'd1b', 'd2a', 'd2b']]
+         groups, parsed        : [[0, 1, 2, 3], [4], [5, 6], [7]]
+         groups, parsed, trans : [[7], [5, 6], [4], [0, 1, 2, 3]]
          separatrices, parsed  : ['|', ',', ',']
    done printing tensor information
 output (removing bar, splitting groups) : 
 S46(d1a,d1b,d2a,d2b m1b,l1a,n1a,i1b)
+
+input :  S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)
+
+parsing tensor input string: S46(d1ad1bd2ad2b|m1b,l1an1a,i1b)
+   printing tensor information
+      name                     :  S46
+      spin-orbital mode (in)   :  False
+      spin-orbital mode (out)  :  True
+      spinor mode       (in)   :  True
+      spinor mode       (out)  :  False
+      rank                     :  8
+      class                    :  VVVVOOOOi
+      class, transposed        :  OiOOOVVVV
+      arguments
+         at input              : d1ad1bd2ad2b|m1b,l1an1a,i1b
+         indexes, parsed       : ['d1a', 'd1b', 'd2a', 'd2b', 'm1b', 'l1a', 'n1a', 'i1b']
+            spatial/spinorbital: ['d1', 'd1', 'd2', 'd2', 'm1', 'l1', 'n1', 'i1']
+            spin               : ['a', 'b', 'a', 'b', 'b', 'a', 'a', 'b']
+         indexes, parsed, trans: ['i1', 'n1', 'l1', 'm1', 'd2', 'd2', 'd1', 'd1']
+         indexes, class        : ['V', 'V', 'V', 'V', 'O', 'O', 'O', 'Oi']
+         groups, parsed        : [[0, 1, 2, 3], [4], [5, 6], [7]]
+         groups, parsed, trans : [[7], [5, 6], [4], [0, 1, 2, 3]]
+         separatrices, parsed  : ['|', ',', ',']
+   done printing tensor information
+output (removing bar, splitting groups) : 
+S46(d1,d1,d2,d2 m1,l1,n1,i1)
