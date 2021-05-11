@@ -14,8 +14,9 @@ class binary_contraction:
    C = A*B
    """
 
-   def __init__ (self, spinorbital=False, expr=None) :
+   def __init__ (self, spinorbital=False, spinorbital_out=False, expr=None) :
       self.spinorbital      = spinorbital 
+      self.spinorbital_out  = spinorbital_out 
       self.A                = None
       self.B                = None
       self.C                = None
@@ -23,6 +24,7 @@ class binary_contraction:
       self.factor           = 1.0
       self.processed_expr   = None
       self.original_expr    = expr
+      self.is_pure_beta     = True
 
    def get_tensor(self,T) :
       if T is "A" :
@@ -37,6 +39,9 @@ class binary_contraction:
 
    def get_factor(self):
       return self.factor
+
+   def is_pure_beta(self) :
+      return self.is_pure_beta
 
    def set_expression(self, input_string) :
       self.original_expr = input_string
@@ -107,9 +112,9 @@ class binary_contraction:
           if verbose_c :
              print("Parsing binary contraction with factor")
 
-          self.A = t.tensor(self.spinorbital)
-          self.B = t.tensor(self.spinorbital)
-          self.C = t.tensor(self.spinorbital)
+          self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+          self.B = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+          self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
 
           tensor_C_string = contraction_bf.group(1)
           tensor_A_string = contraction_bf.group(3)
@@ -140,9 +145,9 @@ class binary_contraction:
           if verbose_c :
              print("Parsing binary contraction without factor")
 
-          self.A = t.tensor(self.spinorbital)
-          self.B = t.tensor(self.spinorbital)
-          self.C = t.tensor(self.spinorbital)
+          self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+          self.B = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+          self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
 
           tensor_C_string = contraction_b.group(1)
           tensor_A_string = contraction_b.group(3)
@@ -165,8 +170,8 @@ class binary_contraction:
           if verbose_c :
              print("Parsing unary contraction with factor")
 
-          self.A = t.tensor(self.spinorbital)
-          self.C = t.tensor(self.spinorbital)
+          self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+          self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
 
           tensor_C_string = contraction_uf.group(1)
           tensor_A_string = contraction_uf.group(3)
@@ -193,8 +198,8 @@ class binary_contraction:
           if verbose_c :
              print("Parsing unary contraction without factor")
 
-          self.A = t.tensor(self.spinorbital)
-          self.C = t.tensor(self.spinorbital)
+          self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+          self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
 
           tensor_C_string = contraction_u.group(1)
           tensor_A_string = contraction_u.group(3)
@@ -217,6 +222,7 @@ class binary_contraction:
    def print_info(self) :
       print("   Printing tensor contraction information")
       print("      spin-orbital/spinor mode : ",self.spinorbital)
+      print("         for output            : ",self.spinorbital_out)
       print("      original expression      : ",self.original_expr)
       print("      stored   expression      : ",self.processed_expr)
       print("      stored   factor          : ",self.factor)
@@ -284,9 +290,11 @@ class binary_contraction:
       tA = self.A.get_tensor_representation()
       tC = self.C.get_tensor_representation()
 
+      self.is_pure_beta = self.A.is_pure_beta() and self.C.is_pure_beta()
       if self.B is not None :
          self.B.set_tensor_arglist(split_groups=split_groups_B,replace_bar=replace_bar_B,verbose=verbose_t)
          tB = self.B.get_tensor_representation()
+         self.is_pure_beta = self.A.is_pure_beta() and self.C.is_pure_beta() and self.B.is_pure_beta()
 
       if verbose_c :
          print("Tensor A : ",tA)
