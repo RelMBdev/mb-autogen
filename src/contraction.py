@@ -26,6 +26,39 @@ class binary_contraction:
       self.original_expr    = expr
       self.is_pure_beta     = True
 
+   def get_dependency_tree(self):
+      C_name = self.C.get_tensor_name()
+      C_lhs = []
+      C_rhs = []
+
+      A_name = self.A.get_tensor_name()
+      A_lhs = []
+      A_rhs = []
+
+      C_lhs.append(A_name)
+      A_rhs.append(C_name)
+
+      if self.B is not None:
+         B_name = self.B.get_tensor_name()
+         B_lhs = []
+         B_rhs = []
+
+         C_lhs.append(B_name)
+         B_rhs.append(C_name)
+
+      C_value = [ C_lhs, C_rhs ]
+      C_key   = C_name
+      A_value = [ A_lhs, A_rhs ]
+      A_key   = A_name
+
+      dependency_tree = { C_key : C_value, A_key : A_value }
+      if self.B is not None:
+         B_value = [ B_lhs, B_rhs ]
+         B_key   = B_name
+         dependency_tree.update({ B_key : B_value})
+
+      return dependency_tree
+ 
    def get_tensor(self,T) :
       if T is "A" :
          return self.A
