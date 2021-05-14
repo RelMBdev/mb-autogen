@@ -25,6 +25,7 @@ class sial :
       self.output_tensors   = {}
       self.interm_tensors   = {}
       self.is_parsed        = False
+      self.is_validated     = True
 
    def parse_instruction(self,input_string, verbose=False):
       import re
@@ -66,11 +67,7 @@ class sial :
          # we parse the tensor expression, but defer from outputting it for now  
          # if we were to print, we'd 
          # parsed_string = tensor.print_tensor(split_groups=True,remove_bar=True,replace_bar=True)
-         if self.spinorbital_out :
-            if tensor.is_pure_beta() :
-               output[instruction] = tensor 
-         else:
-            output[instruction] = tensor 
+         output[instruction] = tensor 
 
       elif sial_instruction_re.match(input_string):
          instruction = sial_instruction_re.match(input_string).group(1)
@@ -85,12 +82,11 @@ class sial :
          contr.parse_contraction(contr_string, verbose=[False,False])
          contr.process_contraction(split_groups=[True,True,True],replace_bar=[True,True,True], verbose=[False,False])
 
-         if self.spinorbital_out :
-            pure_beta = contr.is_pure_beta
-            if pure_beta :
-               output[instruction] = contr
-         else:
-            output[instruction] = contr
+         dep_c = contr.get_dependency_tree() 
+         print("dependency tree:",dep_c)
+#        self.append_to_deptree(dep_c)
+
+         output[instruction] = contr
  
       else :
          print("   failed to indentify valid input line")
@@ -106,16 +102,72 @@ class sial :
       self.parsed_lines = []
       for i, l in enumerate(self.input_lines) :
          instruction = self.parse_instruction(l.rstrip(), verbose=False)
-         if instruction is not {}:
+# if instruction is not valid, we don't add it to the list of parsed lines 
+         if instruction != {}:
             if verbose:
                self.print_parsed_instruction(i,instruction)
             self.parsed_lines.append(instruction)
-            self._classify_contraction_tensors_by_name(instruction)
-      self._sort_tensors_by_class()
       self.is_parsed = True
 
+   def _check_validity(self,instruction, verbose=False) :
+      if verbose :
+         print("   ->  for instruction ",instruction)
+         print("   ->                  ",instruction.items())
+      retval = True
+      if self.spinorbital_out :
+         for k in instruction.keys() :
+            value = instruction[k] 
+            retval = False 
+            if (isinstance(value,t.tensor)):
+               if value.is_pure_beta():
+                  if verbose :
+                     print("      -> we have a tensor that is pure beta")
+                  retval = True 
+               else:
+                  if verbose :
+                     print("      -> we have a tensor that is not pure beta")
+                  retval = False
+            if (isinstance(value,c.binary_contraction)):
+               if value.is_pure_beta:
+                  if verbose :
+                     print("      -> we have a contraction that is pure beta")
+                  retval = True 
+               else:
+                  if verbose :
+                     print("      -> we have a contraction that is not pure beta")
+                  retval = False 
+            break
+      if verbose :
+         print("      -> returning ",retval)
+
+      return retval
+
+
+   def validate(self, verbose=True):
+      self.valid_lines = []
+
+      for (l,instruction) in enumerate(self.parsed_lines) :
+         if verbose:
+            print("   validating instruction :",instruction)
+         is_valid = self._check_validity(instruction)
+         if is_valid :
+            self.valid_lines.append(instruction)
+            self._classify_contraction_tensors_by_name(instruction)
+            if verbose:
+               print("  -> instruction at line ",l," retained")
+         else:
+            if verbose:
+               print("  -> instruction dropped")
+
+      if verbose:
+         total = len(self.parsed_lines)
+         retained = len(self.valid_lines)
+         print("After applying constraits, ",retained," lines retained out of ",total)
+      self._sort_tensors_by_class()
+      self.is_validated = True
+
    def get_instructions(self):
-      return self.parsed_lines
+      return self.valid_lines
 
    def print_parsed_instruction(self, lineno, instruction_dict):
       print("** At line ",lineno,":")

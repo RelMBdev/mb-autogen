@@ -63,6 +63,7 @@ class TALSHcodeGenerator:
       self.sial = p.sial(spinorbital_out=self.spinorbital_out)
       self.sial.read(file_name)
       self.sial.parse(verbose=verbose)
+      self.sial.validate(verbose=verbose)
 
    def print_info(self):
       pass 
