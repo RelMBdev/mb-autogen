@@ -11,6 +11,73 @@ import tensor as t
 import contraction as c
 import sys, copy
 
+class sial_tensor_instance :
+   def __init__ (self) :
+      self.name         = None
+      self.tensor       = None
+      self.is_pure_beta = False
+      self.create_at    = None  # line we have a create  for a tensor with this name  
+      self.destroy_at   = None  # line we have a destroy for a tensor with this name
+      self.assign_at    = []    # empty list indicates it's an input tensor; otherwise we store data in the following format
+                                # [ [linenumber, instance x, instance y], [linenumber, instance z], ... ] meaning
+                                #  list w/ 2 instances is a contraction, 
+                                #  list w/1 instance is an addition/assignment 
+                                #  instance is an integer
+      self.use_at       = []    # emply list indicates it's an output tensor; otherwise we store data in the following format 
+                                # [[linenumber, instance z], ... ], in which instance is an integer 
+
+   def set_name (self, name):
+      self.name = name
+
+   def get_name (self) :
+      return self.name 
+
+   def set_tensor (self, tensor):
+      self.tensor = tensor
+
+   def get_tensor (self):
+      return self.tensor
+
+   def set_pure_beta(self, is_pure_beta):
+      self.is_pure_beta = is_pure_beta
+
+   def get_pure_beta(self):
+      return self.is_pure_beta
+
+   def set_create(self, create_at_line=None):
+      if create_at_line is not None:
+         self.create_at = create_at_line
+      else :
+         print("   invalid input at set_create")
+         raise ValueError
+
+   def get_create(self):
+      return self.create_at
+
+   def set_destroy(self, destroy_at_line=None):
+      if destroy_at_line is not None:
+         self.destroy_at = destroy_at_line
+      else :
+         print("   invalid input at set_create")
+         raise ValueError
+
+   def get_destroy(self):
+      return self.destroy_at
+
+   def set_assign(self, assign_at_line=None, dependencies=None): 
+      if assign_at_line is not None and dependencies is not None: 
+         assign = [assign_at_line]
+         assign = assign +  dependencies   
+         self.assign_at.append(assign)
+      else:
+        print("   invalid input at set_create")
+        raise ValueError
+
+   def get_assign(self):
+      return self.assign_at
+
+
+
 class sial :
    """
    sial class : parses sial input into instruction and tensors 
@@ -82,9 +149,8 @@ class sial :
          contr.parse_contraction(contr_string, verbose=[False,False])
          contr.process_contraction(split_groups=[True,True,True],replace_bar=[True,True,True], verbose=[False,False])
 
-         dep_c = contr.get_dependency_tree() 
-         print("dependency tree:",dep_c)
-#        self.append_to_deptree(dep_c)
+         event_c = contr.get_event
+         print("registering event:",event_c)
 
          output[instruction] = contr
  
@@ -108,6 +174,17 @@ class sial :
                self.print_parsed_instruction(i,instruction)
             self.parsed_lines.append(instruction)
       self.is_parsed = True
+
+      for i in enumerate(self.parsed_lines):
+         self._register_events(instruction,i)
+
+      self.is_parsed = True
+
+   def _register_events(self,instruction,i):
+#        event_c = self.contr.get_event
+#        print("registering event:",event_c)
+         pass
+
 
    def _check_validity(self,instruction, verbose=False) :
       if verbose :
@@ -145,6 +222,11 @@ class sial :
 
    def validate(self, verbose=True):
       self.valid_lines = []
+
+      for (l,instruction) in enumerate(self.parsed_lines) :
+         if verbose:
+            event_t = tensor.get_event(instruction)
+            print("registering event:",event_t)
 
       for (l,instruction) in enumerate(self.parsed_lines) :
          if verbose:
