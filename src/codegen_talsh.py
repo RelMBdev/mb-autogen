@@ -50,9 +50,9 @@ class TALSHcodeGenerator:
 
       self.variables_args  = { 'nocc' : 'integer, intent(in)', \
                                'nvir' : 'integer, intent(in)', \
-                               'talsh_tensor' : 'talsh_tensor_t, intent(inout)' }
+                               'talsh_tensor' : 'type(talsh_tensor_t), intent(inout)' }
 
-      self.variables_local = { 'talsh_tensor' : 'talsh_tensor_t' }
+      self.variables_local = { 'talsh_tensor' : 'type(talsh_tensor_t)' }
 
       self.call_name = { 'add'      : "talsh_tensor_add", \
                          'contract' : "talsh_tensor_contract", \

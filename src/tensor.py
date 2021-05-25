@@ -61,6 +61,19 @@ class tensor:
       self.representation    = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
       self.indexes_class     = []    # class of each of the indexes of the tensor (V, O etc)
 
+   def get_event(self, event, line) :
+
+      T_name = self.get_tensor_name()
+      T_lhs = []
+      T_rhs = []
+
+      T_value = [ self.T, event, line, T_lhs, T_rhs ]
+      T_key   = T_name
+
+      event = { T_key : T_value }
+
+      return event
+
    def set_tensor_indexes_class(self):
       for i in self.indexes:
          if i[0] == "m" or i[0] == "n" or i[0] == "l" :
