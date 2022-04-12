@@ -71,39 +71,39 @@ subroutine generic_codegen_call(nocc,nvir,\
     type(talsh_tensor_t), intent(inout) :: S47    !       VVOO
     type(talsh_tensor_t), intent(inout) :: H2    !       VO
     type(talsh_tensor_t), intent(inout) :: H1    !       VV
-    type(talsh_tensor_t), intent(inout) :: H17    !       OVVV
-    type(talsh_tensor_t), intent(inout) :: H29    !       OVVV
-    type(talsh_tensor_t), intent(inout) :: H18    !       OVOV
-    type(talsh_tensor_t), intent(inout) :: H30    !       OVOV
+    type(talsh_tensor_t), intent(inout) :: H17    !       VOVV
+    type(talsh_tensor_t), intent(inout) :: H29    !       VOVV
+    type(talsh_tensor_t), intent(inout) :: H18    !       VOOV
+    type(talsh_tensor_t), intent(inout) :: H30    !       VOOV
     type(talsh_tensor_t), intent(inout) :: H25    !       OOOV
     type(talsh_tensor_t), intent(inout) :: H37    !       OOOV
     type(talsh_tensor_t), intent(inout) :: H16    !       OO
     type(talsh_tensor_t), intent(inout) :: H7    !       VO
     type(talsh_tensor_t), intent(inout) :: H6    !       VV
-    type(talsh_tensor_t), intent(inout) :: H20    !       OVVV
-    type(talsh_tensor_t), intent(inout) :: H33    !       OVVV
-    type(talsh_tensor_t), intent(inout) :: H22    !       OVOV
-    type(talsh_tensor_t), intent(inout) :: H34    !       OVOV
+    type(talsh_tensor_t), intent(inout) :: H20    !       VOVV
+    type(talsh_tensor_t), intent(inout) :: H33    !       VOVV
+    type(talsh_tensor_t), intent(inout) :: H22    !       VOOV
+    type(talsh_tensor_t), intent(inout) :: H34    !       VOOV
     type(talsh_tensor_t), intent(inout) :: H38    !       OOOV
     type(talsh_tensor_t), intent(inout) :: H41    !       OOOV
     type(talsh_tensor_t), intent(inout) :: H28    !       OO
     type(talsh_tensor_t), intent(inout) :: H5    !       VVOO
     type(talsh_tensor_t), intent(inout) :: H3    !       VVVV
-    type(talsh_tensor_t), intent(inout) :: H19    !       OVOO
+    type(talsh_tensor_t), intent(inout) :: H19    !       VOOO
     type(talsh_tensor_t), intent(inout) :: H4    !       VVOV
     type(talsh_tensor_t), intent(inout) :: H26    !       OOOO
     type(talsh_tensor_t), intent(inout) :: H11    !       VVOO
     type(talsh_tensor_t), intent(inout) :: H8    !       VVVV
-    type(talsh_tensor_t), intent(inout) :: H32    !       OVOO
-    type(talsh_tensor_t), intent(inout) :: H23    !       OVOO
+    type(talsh_tensor_t), intent(inout) :: H32    !       VOOO
+    type(talsh_tensor_t), intent(inout) :: H23    !       VOOO
     type(talsh_tensor_t), intent(inout) :: H9    !       VVOV
     type(talsh_tensor_t), intent(inout) :: H10    !       VVOV
-    type(talsh_tensor_t), intent(inout) :: H21    !       OVOV
+    type(talsh_tensor_t), intent(inout) :: H21    !       VOOV
     type(talsh_tensor_t), intent(inout) :: H39    !       OOOO
-    type(talsh_tensor_t), intent(inout) :: H31    !       OVOV
+    type(talsh_tensor_t), intent(inout) :: H31    !       VOOV
     type(talsh_tensor_t), intent(inout) :: H14    !       VVOO
     type(talsh_tensor_t), intent(inout) :: H12    !       VVVV
-    type(talsh_tensor_t), intent(inout) :: H35    !       OVOO
+    type(talsh_tensor_t), intent(inout) :: H35    !       VOOO
     type(talsh_tensor_t), intent(inout) :: H13    !       VVOV
     type(talsh_tensor_t), intent(inout) :: H42    !       OOOO
     type(talsh_tensor_t), intent(inout) :: Z48    !       UnitTensor

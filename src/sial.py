@@ -93,6 +93,8 @@ class sial :
       self.interm_tensors   = {}
       self.is_parsed        = False
       self.is_validated     = True
+      self.active_labels = {}
+      self.reuse_tensor_instances = True
 
    def parse_instruction(self,input_string, verbose=False):
       import re
@@ -126,15 +128,28 @@ class sial :
          pass
 
       elif sial_instruction_tensor_re.match(input_string):
-         tensor = t.tensor()
+         tensor = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
          instruction = sial_instruction_tensor_re.match(input_string).group(1)
          tensor_string = sial_instruction_tensor_re.match(input_string).group(2)
          #print("t.ins:",instruction,"t.str:",tensor_string)
          tensor.parse_tensor(tensor_string)
+         label = tensor.get_tensor_name()
+
+         if label in self.active_labels:
+#           print("   active label, tensor",label,self.active_labels[label])
+            output[instruction] = self.active_labels[label]
+         else :
          # we parse the tensor expression, but defer from outputting it for now  
          # if we were to print, we'd 
          # parsed_string = tensor.print_tensor(split_groups=True,remove_bar=True,replace_bar=True)
-         output[instruction] = tensor 
+            self.active_labels[label] = tensor
+#           print(" + active label, tensor",label,self.active_labels[label])
+            output[instruction] = tensor 
+
+#        print(" ->active label, tensor, instruction:",label,self.active_labels[label],instruction)
+
+         if instruction == "DELETE_ARRAY":
+            self.active_labels.pop(label)
 
       elif sial_instruction_re.match(input_string):
          instruction = sial_instruction_re.match(input_string).group(1)
@@ -146,7 +161,7 @@ class sial :
          contr_string = sial_tensor_operation_expression_re.match(input_string).group(1)
          contr = c.binary_contraction(expr=contr_string,spinorbital_out=self.spinorbital_out)
          #print("prior instruction",instruction,"t.op:",contr_string)
-         contr.parse_contraction(contr_string, verbose=[False,False])
+         contr.parse_contraction(contr_string, verbose=[False,False], active_labels=self.active_labels)
          contr.process_contraction(split_groups=[True,True,True],replace_bar=[True,True,True], verbose=[False,False])
 
          output[instruction] = contr

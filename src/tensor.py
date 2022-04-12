@@ -60,6 +60,7 @@ class tensor:
       self.arglist           = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
       self.representation    = ""    # string representing the tensor, of the form: name(indexes/groups and separatrices)
       self.indexes_class     = []    # class of each of the indexes of the tensor (V, O etc)
+      self.already_parsed    = False
 
    def get_event(self, event, line) :
 
@@ -153,9 +154,32 @@ class tensor:
          self._o_indexes_class  = self.indexes_class
          self._o_saved = True
 
+   def _reset_tensor_information(self):
+      self.indexes           = []    
+      self.spin              = []    
+      self.groups            = []    
+      self.separatrices      = []    
+      self.factor            = 1.0
+      self.arglist           = "" 
+      self.representation    = ""   
+      self.indexes_class     = []   
+
+
+
    def parse_tensor(self,input_string, verbose=False):
+      if self.already_parsed :
+         print (">>>> Warning, parsing previously parsed tensor <<<\n Original state")
+         self.print_info()
+         print (" Resetting information")
+         self._reset_tensor_information()
+         self.print_info()
+
       self._parse_tensor(input_string, verbose)
+      if self.already_parsed :
+         print (" New state")
+         self.print_info()
       self._save_tensor_information() 
+      self.already_parsed = True
 
    def _parse_tensor(self,input_string, verbose=False):
       import re
@@ -227,12 +251,14 @@ class tensor:
 
    def print_info(self, targs=""):
       print("   printing tensor information")
+      print("      object type              : ",self)
       print("      name                     : ",self.name)
       print("      spin-orbital mode (in)   : ",self.spinorbital_in)
       print("      spin-orbital mode (out)  : ",self.spinorbital_out)
       print("      spinor mode       (in)   : ",self.spinor_in)
       print("      spinor mode       (out)  : ",self.spinor_out)
       print("      rank                     : ",self.rank)
+      print("      factor                   : ",self.factor)
       print("      class                    : ",self.get_tensor_class())
       print("      class, transposed        : ",self.get_transposed_tensor_class())
       print("      arguments")

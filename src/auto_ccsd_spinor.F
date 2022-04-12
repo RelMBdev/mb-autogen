@@ -30,13 +30,13 @@ subroutine generic_codegen_call(nocc,nvir,\
     type(talsh_tensor_t), intent(inout) :: S44    !       VVOO
     type(talsh_tensor_t), intent(inout) :: H2    !       VO
     type(talsh_tensor_t), intent(inout) :: H1    !       VV
-    type(talsh_tensor_t), intent(inout) :: H17    !       OVVV
-    type(talsh_tensor_t), intent(inout) :: H18    !       OVOV
+    type(talsh_tensor_t), intent(inout) :: H17    !       VOVV
+    type(talsh_tensor_t), intent(inout) :: H18    !       VOOV
     type(talsh_tensor_t), intent(inout) :: H25    !       OOOV
     type(talsh_tensor_t), intent(inout) :: H16    !       OO
     type(talsh_tensor_t), intent(inout) :: H5    !       VVOO
     type(talsh_tensor_t), intent(inout) :: H3    !       VVVV
-    type(talsh_tensor_t), intent(inout) :: H19    !       OVOO
+    type(talsh_tensor_t), intent(inout) :: H19    !       VOOO
     type(talsh_tensor_t), intent(inout) :: H4    !       VVOV
     type(talsh_tensor_t), intent(inout) :: H26    !       OOOO
     type(talsh_tensor_t), intent(inout) :: Z48    !       UnitTensor
