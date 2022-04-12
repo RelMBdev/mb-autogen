@@ -17,5 +17,10 @@ def main():
    sial_input.generate_code()
    sial_input.print_code(filename="auto_ccsd_spinor.F")
 
+   sial_input = tcg.TALSHcodeGenerator(spinorbital_out=True)
+   sial_input.read_sial("CCSDT.1.fac.u.ormo.txt")
+   sial_input.generate_code()
+   sial_input.print_code(filename="auto_ccsdt_spinor.F")
+
 main()
 
