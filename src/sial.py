@@ -96,6 +96,10 @@ class sial :
       self.active_labels = {}
       self.reuse_tensor_instances = True
 
+      self.instances_all = []
+      self.instances_kept = []
+      self.instances_dropped = []
+
    def parse_instruction(self,input_string, verbose=False):
       import re
 
@@ -231,24 +235,25 @@ class sial :
 
       return retval
 
+   def _register_all_events(self,verbose=True):
+      self.events_all = []
+      for (l,instruction) in enumerate(self.parsed_lines) :
+         for k in instruction.keys() :
+            value = instruction[k]
+            retval = False
+            if (isinstance(value,t.tensor)):
+               event_t = value.get_event(l,instruction)
+               print("registering event:",event_t)
+               self.events_all.append(event_t)
+            elif (isinstance(value,c.binary_contraction)):
+               event_t = value.get_event(l,instruction)
+               print("registering event:",event_t)
+               self.events_all.append(event_t)
 
    def validate(self, verbose=True):
       self.valid_lines = []
 
-      for (l,instruction) in enumerate(self.parsed_lines) :
-#        if verbose:
-         if True:
-#           event_t = tensor.get_event(instruction)
-#           print("registering event:",event_t)
-            for k in instruction.keys() :
-               value = instruction[k]
-               retval = False
-               if (isinstance(value,t.tensor)):
-                  event_t = value.get_event(l,instruction)
-                  print("registering event:",event_t)
-               elif (isinstance(value,c.binary_contraction)):
-                  event_t = value.get_event(l,instruction)
-                  print("registering event:",event_t)
+      self._register_all_events(verbose=verbose)
 
       for (l,instruction) in enumerate(self.parsed_lines) :
          if verbose:
