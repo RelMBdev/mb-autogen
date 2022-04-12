@@ -67,7 +67,7 @@ class tensor:
       T_lhs = []
       T_rhs = []
 
-      T_value = [ self.T, event, line, T_lhs, T_rhs ]
+      T_value = [ event, line, T_lhs, T_rhs ]
       T_key   = T_name
 
       event = { T_key : T_value }
