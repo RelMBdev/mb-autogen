@@ -149,9 +149,6 @@ class sial :
          contr.parse_contraction(contr_string, verbose=[False,False])
          contr.process_contraction(split_groups=[True,True,True],replace_bar=[True,True,True], verbose=[False,False])
 
-         event_c = contr.get_event
-         print("registering event:",event_c)
-
          output[instruction] = contr
  
       else :
@@ -224,9 +221,19 @@ class sial :
       self.valid_lines = []
 
       for (l,instruction) in enumerate(self.parsed_lines) :
-         if verbose:
-            event_t = tensor.get_event(instruction)
-            print("registering event:",event_t)
+#        if verbose:
+         if True:
+#           event_t = tensor.get_event(instruction)
+#           print("registering event:",event_t)
+            for k in instruction.keys() :
+               value = instruction[k]
+               retval = False
+               if (isinstance(value,t.tensor)):
+                  event_t = value.get_event(l,instruction)
+                  print("registering event:",event_t)
+               elif (isinstance(value,c.binary_contraction)):
+                  event_t = value.get_event(l,instruction)
+                  print("registering event:",event_t)
 
       for (l,instruction) in enumerate(self.parsed_lines) :
          if verbose:
