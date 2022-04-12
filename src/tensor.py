@@ -62,18 +62,16 @@ class tensor:
       self.indexes_class     = []    # class of each of the indexes of the tensor (V, O etc)
       self.already_parsed    = False
 
-   def get_event(self, event, line) :
+
+   def get_event(self, line, event) :
 
       T_name = self.get_tensor_name()
-      T_lhs = []
-      T_rhs = []
-
-      T_value = [ event, line, T_lhs, T_rhs ]
+      T_value = [ ]
+      for each in event.keys() :
+         T_value.append([line, each,event[each]])
       T_key   = T_name
 
-      event = { T_key : T_value }
-
-      return event
+      return { T_key : T_value } 
 
    def set_tensor_indexes_class(self):
       for i in self.indexes:

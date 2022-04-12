@@ -26,43 +26,22 @@ class binary_contraction:
       self.original_expr    = expr
       self.is_pure_beta     = True
 
-   def get_event(self, event, line): 
-      event = {}
+   def get_event(self, line, event): 
 
       C_name = self.C.get_tensor_name()
-      C_lhs = []
-      C_rhs = []
-
       A_name = self.A.get_tensor_name()
-      A_lhs = []
-      A_rhs = []
 
-      C_rhs.append(self.A)
-      A_lhs.append(self.C)
-
-      if self.B is not None:
-         B_name = self.B.get_tensor_name()
-         B_lhs = []
-         B_rhs = []
-
-         C_rhs.append(self.B)
-         B_lhs.append(self.C)
-
-#     C_value = [ self.C, event, line, C_lhs, C_rhs ]
-      C_value = [ event, line, C_lhs, C_rhs ]
       C_key   = C_name
-#     A_value = [ self.A, event, line, A_lhs, A_rhs ]
-      A_value = [ event, line, A_lhs, A_rhs ]
-      A_key   = A_name
+      C_value = []
 
-      event = { C_key : C_value, A_key : A_value }
-      if self.B is not None:
-#        B_value = [ self.B, event, line, B_lhs, B_rhs ]
-         B_value = [ event, line, B_lhs, B_rhs ]
-         B_key   = B_name
-         event.update({ B_key : B_value})
+      for each in event.keys() :
+         if self.B is not None:
+            B_name = self.B.get_tensor_name()
+            C_value.append([line, each, event[each], { C_name : self.C }, { A_name : self.A }, {B_name : self.B}])
+         else:
+            C_value.append([line, each, event[each], { C_name : self.C }, { A_name : self.A } ])
 
-      return event 
+      return { C_key : C_value }
  
    def get_tensor(self,T) :
       if T is "A" :
