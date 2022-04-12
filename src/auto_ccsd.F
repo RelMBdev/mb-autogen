@@ -59,104 +59,104 @@ subroutine generic_codegen_call(nocc,nvir,\
     Z53)
     integer, intent(in) :: nocc
     integer, intent(in) :: nvir
-    talsh_tensor_t, intent(inout) :: H24    !       OOVV
-    talsh_tensor_t, intent(inout) :: S43    !       VO
-    talsh_tensor_t, intent(inout) :: H15    !       OV
-    talsh_tensor_t, intent(inout) :: H36    !       OOVV
-    talsh_tensor_t, intent(inout) :: S45    !       VO
-    talsh_tensor_t, intent(inout) :: H40    !       OOVV
-    talsh_tensor_t, intent(inout) :: H27    !       OV
-    talsh_tensor_t, intent(inout) :: S44    !       VVOO
-    talsh_tensor_t, intent(inout) :: S46    !       VVOO
-    talsh_tensor_t, intent(inout) :: S47    !       VVOO
-    talsh_tensor_t, intent(inout) :: H2    !       VO
-    talsh_tensor_t, intent(inout) :: H1    !       VV
-    talsh_tensor_t, intent(inout) :: H17    !       OVVV
-    talsh_tensor_t, intent(inout) :: H29    !       OVVV
-    talsh_tensor_t, intent(inout) :: H18    !       OVOV
-    talsh_tensor_t, intent(inout) :: H30    !       OVOV
-    talsh_tensor_t, intent(inout) :: H25    !       OOOV
-    talsh_tensor_t, intent(inout) :: H37    !       OOOV
-    talsh_tensor_t, intent(inout) :: H16    !       OO
-    talsh_tensor_t, intent(inout) :: H7    !       VO
-    talsh_tensor_t, intent(inout) :: H6    !       VV
-    talsh_tensor_t, intent(inout) :: H20    !       OVVV
-    talsh_tensor_t, intent(inout) :: H33    !       OVVV
-    talsh_tensor_t, intent(inout) :: H22    !       OVOV
-    talsh_tensor_t, intent(inout) :: H34    !       OVOV
-    talsh_tensor_t, intent(inout) :: H38    !       OOOV
-    talsh_tensor_t, intent(inout) :: H41    !       OOOV
-    talsh_tensor_t, intent(inout) :: H28    !       OO
-    talsh_tensor_t, intent(inout) :: H5    !       VVOO
-    talsh_tensor_t, intent(inout) :: H3    !       VVVV
-    talsh_tensor_t, intent(inout) :: H19    !       OVOO
-    talsh_tensor_t, intent(inout) :: H4    !       VVOV
-    talsh_tensor_t, intent(inout) :: H26    !       OOOO
-    talsh_tensor_t, intent(inout) :: H11    !       VVOO
-    talsh_tensor_t, intent(inout) :: H8    !       VVVV
-    talsh_tensor_t, intent(inout) :: H32    !       OVOO
-    talsh_tensor_t, intent(inout) :: H23    !       OVOO
-    talsh_tensor_t, intent(inout) :: H9    !       VVOV
-    talsh_tensor_t, intent(inout) :: H10    !       VVOV
-    talsh_tensor_t, intent(inout) :: H21    !       OVOV
-    talsh_tensor_t, intent(inout) :: H39    !       OOOO
-    talsh_tensor_t, intent(inout) :: H31    !       OVOV
-    talsh_tensor_t, intent(inout) :: H14    !       VVOO
-    talsh_tensor_t, intent(inout) :: H12    !       VVVV
-    talsh_tensor_t, intent(inout) :: H35    !       OVOO
-    talsh_tensor_t, intent(inout) :: H13    !       VVOV
-    talsh_tensor_t, intent(inout) :: H42    !       OOOO
-    talsh_tensor_t, intent(inout) :: Z48    !       UnitTensor
-    talsh_tensor_t, intent(inout) :: Z49    !       VO
-    talsh_tensor_t, intent(inout) :: Z51    !       VO
-    talsh_tensor_t, intent(inout) :: Z50    !       VVOO
-    talsh_tensor_t, intent(inout) :: Z52    !       VVOO
-    talsh_tensor_t, intent(inout) :: Z53    !       VVOO
-    talsh_tensor_t :: Z57_1    !       OV
-    talsh_tensor_t :: Z60_1    !       OV
-    talsh_tensor_t :: Z56_1    !       OO
-    talsh_tensor_t :: Z57_2    !       OV
-    talsh_tensor_t :: Z54_1    !       VV
-    talsh_tensor_t :: Z72_1    !       OOOV
-    talsh_tensor_t :: Z74_1    !       OOOV
-    talsh_tensor_t :: Z59_1    !       OO
-    talsh_tensor_t :: Z60_2    !       OV
-    talsh_tensor_t :: Z55_1    !       VV
-    talsh_tensor_t :: Z75_1    !       OOOV
-    talsh_tensor_t :: Z76_1    !       OOOV
-    talsh_tensor_t :: Z63_1    !       VOOO
-    talsh_tensor_t :: Z70_2    !       OOOO
-    talsh_tensor_t :: Z83_3    !       OOOV
-    talsh_tensor_t :: Z77_2    !       VOOV
-    talsh_tensor_t :: Z83_2    !       OOOV
-    talsh_tensor_t :: Z84_2    !       OOOV
-    talsh_tensor_t :: Z65_1    !       VVOV
-    talsh_tensor_t :: Z58_1    !       OOOO
-    talsh_tensor_t :: Z72_2    !       OOOV
-    talsh_tensor_t :: Z77_1    !       VOOV
-    talsh_tensor_t :: Z78_1    !       VOOV
-    talsh_tensor_t :: Z66_1    !       VOOO
-    talsh_tensor_t :: Z80_2    !       VOOV
-    talsh_tensor_t :: Z85_2    !       OOOV
-    talsh_tensor_t :: Z64_1    !       VOOO
-    talsh_tensor_t :: Z71_2    !       OOOO
-    talsh_tensor_t :: Z84_3    !       OOOV
-    talsh_tensor_t :: Z78_2    !       VOOV
-    talsh_tensor_t :: Z86_2    !       OOOV
-    talsh_tensor_t :: Z68_1    !       VVOV
-    talsh_tensor_t :: Z61_1    !       OOOO
-    talsh_tensor_t :: Z74_2    !       OOOV
-    talsh_tensor_t :: Z81_1    !       VOOV
-    talsh_tensor_t :: Z82_1    !       VOOV
-    talsh_tensor_t :: Z80_1    !       VOOV
-    talsh_tensor_t :: Z79_1    !       VOOV
-    talsh_tensor_t :: Z67_1    !       VOOO
-    talsh_tensor_t :: Z73_2    !       OOOO
-    talsh_tensor_t :: Z86_3    !       OOOV
-    talsh_tensor_t :: Z82_2    !       VOOV
-    talsh_tensor_t :: Z69_1    !       VVOV
-    talsh_tensor_t :: Z62_1    !       OOOO
-    talsh_tensor_t :: Z76_2    !       OOOV
+    type(talsh_tensor_t), intent(inout) :: H24    !       OOVV
+    type(talsh_tensor_t), intent(inout) :: S43    !       VO
+    type(talsh_tensor_t), intent(inout) :: H15    !       OV
+    type(talsh_tensor_t), intent(inout) :: H36    !       OOVV
+    type(talsh_tensor_t), intent(inout) :: S45    !       VO
+    type(talsh_tensor_t), intent(inout) :: H40    !       OOVV
+    type(talsh_tensor_t), intent(inout) :: H27    !       OV
+    type(talsh_tensor_t), intent(inout) :: S44    !       VVOO
+    type(talsh_tensor_t), intent(inout) :: S46    !       VVOO
+    type(talsh_tensor_t), intent(inout) :: S47    !       VVOO
+    type(talsh_tensor_t), intent(inout) :: H2    !       VO
+    type(talsh_tensor_t), intent(inout) :: H1    !       VV
+    type(talsh_tensor_t), intent(inout) :: H17    !       OVVV
+    type(talsh_tensor_t), intent(inout) :: H29    !       OVVV
+    type(talsh_tensor_t), intent(inout) :: H18    !       OVOV
+    type(talsh_tensor_t), intent(inout) :: H30    !       OVOV
+    type(talsh_tensor_t), intent(inout) :: H25    !       OOOV
+    type(talsh_tensor_t), intent(inout) :: H37    !       OOOV
+    type(talsh_tensor_t), intent(inout) :: H16    !       OO
+    type(talsh_tensor_t), intent(inout) :: H7    !       VO
+    type(talsh_tensor_t), intent(inout) :: H6    !       VV
+    type(talsh_tensor_t), intent(inout) :: H20    !       OVVV
+    type(talsh_tensor_t), intent(inout) :: H33    !       OVVV
+    type(talsh_tensor_t), intent(inout) :: H22    !       OVOV
+    type(talsh_tensor_t), intent(inout) :: H34    !       OVOV
+    type(talsh_tensor_t), intent(inout) :: H38    !       OOOV
+    type(talsh_tensor_t), intent(inout) :: H41    !       OOOV
+    type(talsh_tensor_t), intent(inout) :: H28    !       OO
+    type(talsh_tensor_t), intent(inout) :: H5    !       VVOO
+    type(talsh_tensor_t), intent(inout) :: H3    !       VVVV
+    type(talsh_tensor_t), intent(inout) :: H19    !       OVOO
+    type(talsh_tensor_t), intent(inout) :: H4    !       VVOV
+    type(talsh_tensor_t), intent(inout) :: H26    !       OOOO
+    type(talsh_tensor_t), intent(inout) :: H11    !       VVOO
+    type(talsh_tensor_t), intent(inout) :: H8    !       VVVV
+    type(talsh_tensor_t), intent(inout) :: H32    !       OVOO
+    type(talsh_tensor_t), intent(inout) :: H23    !       OVOO
+    type(talsh_tensor_t), intent(inout) :: H9    !       VVOV
+    type(talsh_tensor_t), intent(inout) :: H10    !       VVOV
+    type(talsh_tensor_t), intent(inout) :: H21    !       OVOV
+    type(talsh_tensor_t), intent(inout) :: H39    !       OOOO
+    type(talsh_tensor_t), intent(inout) :: H31    !       OVOV
+    type(talsh_tensor_t), intent(inout) :: H14    !       VVOO
+    type(talsh_tensor_t), intent(inout) :: H12    !       VVVV
+    type(talsh_tensor_t), intent(inout) :: H35    !       OVOO
+    type(talsh_tensor_t), intent(inout) :: H13    !       VVOV
+    type(talsh_tensor_t), intent(inout) :: H42    !       OOOO
+    type(talsh_tensor_t), intent(inout) :: Z48    !       UnitTensor
+    type(talsh_tensor_t), intent(inout) :: Z49    !       VO
+    type(talsh_tensor_t), intent(inout) :: Z51    !       VO
+    type(talsh_tensor_t), intent(inout) :: Z50    !       VVOO
+    type(talsh_tensor_t), intent(inout) :: Z52    !       VVOO
+    type(talsh_tensor_t), intent(inout) :: Z53    !       VVOO
+    type(talsh_tensor_t) :: Z57_1    !       OV
+    type(talsh_tensor_t) :: Z60_1    !       OV
+    type(talsh_tensor_t) :: Z56_1    !       OO
+    type(talsh_tensor_t) :: Z57_2    !       OV
+    type(talsh_tensor_t) :: Z54_1    !       VV
+    type(talsh_tensor_t) :: Z72_1    !       OOOV
+    type(talsh_tensor_t) :: Z74_1    !       OOOV
+    type(talsh_tensor_t) :: Z59_1    !       OO
+    type(talsh_tensor_t) :: Z60_2    !       OV
+    type(talsh_tensor_t) :: Z55_1    !       VV
+    type(talsh_tensor_t) :: Z75_1    !       OOOV
+    type(talsh_tensor_t) :: Z76_1    !       OOOV
+    type(talsh_tensor_t) :: Z63_1    !       VOOO
+    type(talsh_tensor_t) :: Z70_2    !       OOOO
+    type(talsh_tensor_t) :: Z83_3    !       OOOV
+    type(talsh_tensor_t) :: Z77_2    !       VOOV
+    type(talsh_tensor_t) :: Z83_2    !       OOOV
+    type(talsh_tensor_t) :: Z84_2    !       OOOV
+    type(talsh_tensor_t) :: Z65_1    !       VVOV
+    type(talsh_tensor_t) :: Z58_1    !       OOOO
+    type(talsh_tensor_t) :: Z72_2    !       OOOV
+    type(talsh_tensor_t) :: Z77_1    !       VOOV
+    type(talsh_tensor_t) :: Z78_1    !       VOOV
+    type(talsh_tensor_t) :: Z66_1    !       VOOO
+    type(talsh_tensor_t) :: Z80_2    !       VOOV
+    type(talsh_tensor_t) :: Z85_2    !       OOOV
+    type(talsh_tensor_t) :: Z64_1    !       VOOO
+    type(talsh_tensor_t) :: Z71_2    !       OOOO
+    type(talsh_tensor_t) :: Z84_3    !       OOOV
+    type(talsh_tensor_t) :: Z78_2    !       VOOV
+    type(talsh_tensor_t) :: Z86_2    !       OOOV
+    type(talsh_tensor_t) :: Z68_1    !       VVOV
+    type(talsh_tensor_t) :: Z61_1    !       OOOO
+    type(talsh_tensor_t) :: Z74_2    !       OOOV
+    type(talsh_tensor_t) :: Z81_1    !       VOOV
+    type(talsh_tensor_t) :: Z82_1    !       VOOV
+    type(talsh_tensor_t) :: Z80_1    !       VOOV
+    type(talsh_tensor_t) :: Z79_1    !       VOOV
+    type(talsh_tensor_t) :: Z67_1    !       VOOO
+    type(talsh_tensor_t) :: Z73_2    !       OOOO
+    type(talsh_tensor_t) :: Z86_3    !       OOOV
+    type(talsh_tensor_t) :: Z82_2    !       VOOV
+    type(talsh_tensor_t) :: Z69_1    !       VVOV
+    type(talsh_tensor_t) :: Z62_1    !       OOOO
+    type(talsh_tensor_t) :: Z76_2    !       OOOV
 
 
     ierr=talsh_tensor_construct(Z57_1, C8, /(nocc,nvir)/, init_val=ZERO)
