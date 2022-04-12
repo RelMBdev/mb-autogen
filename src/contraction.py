@@ -93,7 +93,7 @@ class binary_contraction:
          print("   Unknown tensor contraction expression")
          raise ValueError
 
-   def parse_contraction(self, input_string=None, verbose=[False, False]) :
+   def parse_contraction(self, input_string=None, verbose=[False, False], active_labels={}) :
       """
       Parses a definition of a binary contraction, breaking it down into the tensors, operators and any prefactors
       """
@@ -110,6 +110,7 @@ class binary_contraction:
       operator_regexp_definition = "(\+\=|\*\=|\*|\+|\/|\-)"
       tensor_regexp_definition   = "([a-zA-z0-9_\(\)\|\,]+)" 
       factor_regexp_definition   = "(-?\d+\.\d*)"
+      tensor_name_regexp_definition = "([a-zA-z0-9_]+)"
 
 # definition of binary contractions
       contraction_regexp_definition_b = tensor_regexp_definition \
@@ -137,6 +138,8 @@ class binary_contraction:
       contraction_u_re = re.compile (r''+ contraction_regexp_definition_u+'', re.IGNORECASE)
       contraction_uf_re = re.compile (r''+ contraction_regexp_definition_uf+'', re.IGNORECASE)
 
+      tensorname_re = re.compile (r''+ tensor_name_regexp_definition +'', re.IGNORECASE)
+
       if verbose_c :
          print("\nparsing tensor contraction input string:", input_string)
 
@@ -146,17 +149,50 @@ class binary_contraction:
       contraction_u = contraction_u_re.match(input_string)
       contraction_uf = contraction_uf_re.match(input_string)
 
+      if verbose_c :
+         print("All currently known tensor labels",active_labels.keys())
+
       if contraction_bf :
           if verbose_c :
              print("Parsing binary contraction with factor")
 
-          self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
-          self.B = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
-          self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
-
+# the commented out code would always create new tensor instances
+#         self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+#         self.B = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+#         self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+#
           tensor_C_string = contraction_bf.group(1)
           tensor_A_string = contraction_bf.group(3)
           tensor_B_string = contraction_bf.group(5)
+
+# the code below reuses already existing tensor instances, checked from the list of active labels (if any)
+          tensorname_C_string = tensorname_re.match(tensor_C_string).group(1)
+          tensorname_A_string = tensorname_re.match(tensor_A_string).group(1)
+          tensorname_B_string = tensorname_re.match(tensor_B_string).group(1)
+
+          if tensorname_C_string in active_labels:
+             self.C = active_labels[tensorname_C_string]
+#            print("found active label :",tensorname_C_string,self.C)
+          else :
+             self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+             active_labels[tensorname_C_string] = self.C
+#            print(" new active label :",tensorname_C_string)
+
+          if tensorname_A_string in active_labels:
+             self.A = active_labels[tensorname_A_string]
+#            print("found active label :",tensorname_A_string,self.A)
+          else :
+             self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+             active_labels[tensorname_A_string] = self.A
+#            print(" new active label :",tensorname_A_string)
+
+          if tensorname_B_string in active_labels:
+             self.B = active_labels[tensorname_B_string]
+#            print("found active label :",tensorname_B_string,self.B)
+          else :
+             self.B = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+             active_labels[tensorname_B_string] = self.B
+#            print(" new active label :",tensorname_B_string)
 
           if verbose_c :
              print("C string:",tensor_C_string)
@@ -183,13 +219,43 @@ class binary_contraction:
           if verbose_c :
              print("Parsing binary contraction without factor")
 
-          self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
-          self.B = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
-          self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+#         self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+#         self.B = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+#         self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
 
           tensor_C_string = contraction_b.group(1)
           tensor_A_string = contraction_b.group(3)
           tensor_B_string = contraction_b.group(5)
+
+# the code below reuses already existing tensor instances, checked from the list of active labels (if any)
+          tensorname_C_string = tensorname_re.match(tensor_C_string).group(1)
+          tensorname_A_string = tensorname_re.match(tensor_A_string).group(1)
+          tensorname_B_string = tensorname_re.match(tensor_B_string).group(1)
+
+          if tensorname_C_string in active_labels:
+             self.C = active_labels[tensorname_C_string]
+#            print("found active label :",tensorname_C_string,self.C)
+          else :
+             self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+             active_labels[tensorname_C_string] = self.C
+#            print(" new active label :",tensorname_C_string)
+
+          if tensorname_A_string in active_labels:
+             self.A = active_labels[tensorname_A_string]
+#            print("found active label :",tensorname_A_string,self.A)
+          else :
+             self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+             active_labels[tensorname_A_string] = self.A
+#            print(" new active label :",tensorname_A_string)
+
+          if tensorname_B_string in active_labels:
+             self.B = active_labels[tensorname_B_string]
+#            print("found active label :",tensorname_B_string,self.B)
+          else :
+             self.B = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+             active_labels[tensorname_B_string] = self.B
+#            print(" new active label :",tensorname_B_string)
+
 
           self.operations.append(contraction_b.group(2))
           self.operations.append(contraction_b.group(4))
@@ -208,11 +274,32 @@ class binary_contraction:
           if verbose_c :
              print("Parsing unary contraction with factor")
 
-          self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
-          self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+#         self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+#         self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
 
           tensor_C_string = contraction_uf.group(1)
           tensor_A_string = contraction_uf.group(3)
+
+# the code below reuses already existing tensor instances, checked from the list of active labels (if any)
+          tensorname_C_string = tensorname_re.match(tensor_C_string).group(1)
+          tensorname_A_string = tensorname_re.match(tensor_A_string).group(1)
+
+          if tensorname_C_string in active_labels:
+             self.C = active_labels[tensorname_C_string]
+#            print("found active label :",tensorname_C_string,self.C)
+          else :
+             self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+             active_labels[tensorname_C_string] = self.C
+#            print(" new active label :",tensorname_C_string)
+
+          if tensorname_A_string in active_labels:
+             self.A = active_labels[tensorname_A_string]
+#            print("found active label :",tensorname_A_string,self.A)
+          else :
+             self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+             active_labels[tensorname_A_string] = self.A
+#            print(" new active label :",tensorname_A_string)
+
 
           if verbose_c :
              print("C string:",tensor_C_string)
@@ -236,11 +323,31 @@ class binary_contraction:
           if verbose_c :
              print("Parsing unary contraction without factor")
 
-          self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
-          self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+#         self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+#         self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
 
           tensor_C_string = contraction_u.group(1)
           tensor_A_string = contraction_u.group(3)
+
+# the code below reuses already existing tensor instances, checked from the list of active labels (if any)
+          tensorname_C_string = tensorname_re.match(tensor_C_string).group(1)
+          tensorname_A_string = tensorname_re.match(tensor_A_string).group(1)
+
+          if tensorname_C_string in active_labels:
+             self.C = active_labels[tensorname_C_string]
+#            print("found active label :",tensorname_C_string,self.C)
+          else :
+             self.C = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+             active_labels[tensorname_C_string] = self.C
+#            print(" new active label :",tensorname_C_string)
+
+          if tensorname_A_string in active_labels:
+             self.A = active_labels[tensorname_A_string]
+#            print("found active label :",tensorname_A_string,self.A)
+          else :
+             self.A = t.tensor(spinorbital=self.spinorbital,spinorbital_out=self.spinorbital_out)
+             active_labels[tensorname_A_string] = self.A
+#            print(" new active label :",tensorname_A_string)
 
           self.operations.append(contraction_u.group(2))
 
