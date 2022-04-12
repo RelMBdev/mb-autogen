@@ -1,142 +1,206 @@
 #CCSDT: Energy
-#Diagram Domain Tag: Begining - End:    1:        1 -       70
+#Diagram Domain Tag: Begining - End:    1:        1 -      102
 #Diagram #        1
-Z20(e1|m1)+=H2(e1|m1) #
+Z21(e1|m1)+=H2(e1|m1) #
 #Diagram #        2
-Z21(e1e2|m1m2)+=H5(e1e2|m1m2) #
+Z22(e1e2|m1m2)+=H5(e1e2|m1m2) #
 #Diagram #        3
-Z22(|)+=H6(l1|d1)*S7(d1|l1) #
+Z23(|)+=H6(l1|d1)*S7(d1|l1) #
 #Diagram #        4
-Z20(e1|m1)+=H8(e1|d1)*S7(d1|m1) #
+Z21(e1|m1)+=H8(e1|d1)*S7(d1|m1) #
 #Diagram #        5
-Z20(e1|m1)+=H9(l1|m1)*S7(e1|l1)*-1/1 #
+Z21(e1|m1)+=H9(l1|m1)*S7(e1|l1)*-1/1 #
 #Diagram #        6
-Z20(e1|m1)+=H10(e1,l1|m1,d1)*S7(d1|l1) #
+Z21(e1|m1)+=H10(e1,l1|m1,d1)*S7(d1|l1) #
 #Diagram #        7
-Z21(e1e2|m1m2)+=H11(e1e2|m1,d1)*S7(d1|m2) #
+Z22(e1e2|m1m2)+=H11(e1e2|m1,d1)*S7(d1|m2) #
 #Diagram #        8
-Z21(e1e2|m1m2)+=H12(e1,l1|m1m2)*S7(e2|l1)*-1/1 #
+Z22(e1e2|m1m2)+=H12(e1,l1|m1m2)*S7(e2|l1)*-1/1 #
 #Diagram #        9
-Z22(|)+=H13(l1l2|d1d2)*S14(d1d2|l1l2) #
+Z23(|)+=H13(l1l2|d1d2)*S14(d1d2|l1l2) #
 #Diagram #       10
-Z20(e1|m1)+=H6(l1|d1)*S14(e1,d1|m1,l1) #
+Z21(e1|m1)+=H6(l1|d1)*S14(e1,d1|m1,l1) #
 #Diagram #       11
-Z20(e1|m1)+=H15(e1,l1|d1d2)*S14(d1d2|m1,l1) #
+Z21(e1|m1)+=H15(e1,l1|d1d2)*S14(d1d2|m1,l1) #
 #Diagram #       12
-Z20(e1|m1)+=H16(l1l2|m1,d1)*S14(e1,d1|l1l2)*-1/1 #
+Z21(e1|m1)+=H16(l1l2|m1,d1)*S14(e1,d1|l1l2)*-1/1 #
 #Diagram #       13
-Z21(e1e2|m1m2)+=H8(e1|d1)*S14(e2,d1|m1m2)*-1/1 #
+Z22(e1e2|m1m2)+=H8(e1|d1)*S14(e2,d1|m1m2)*-1/1 #
 #Diagram #       14
-Z21(e1e2|m1m2)+=H9(l1|m1)*S14(e1e2|m2,l1) #
+Z22(e1e2|m1m2)+=H9(l1|m1)*S14(e1e2|m2,l1) #
 #Diagram #       15
-Z21(e1e2|m1m2)+=H17(e1e2|d1d2)*S14(d1d2|m1m2) #
+Z22(e1e2|m1m2)+=H17(e1e2|d1d2)*S14(d1d2|m1m2) #
 #Diagram #       16
-Z21(e1e2|m1m2)+=H10(e1,l1|m1,d1)*S14(e2,d1|m2,l1) #
+Z22(e1e2|m1m2)+=H10(e1,l1|m1,d1)*S14(e2,d1|m2,l1) #
 #Diagram #       17
-Z21(e1e2|m1m2)+=H18(l1l2|m1m2)*S14(e1e2|l1l2) #
+Z22(e1e2|m1m2)+=H18(l1l2|m1m2)*S14(e1e2|l1l2) #
 #Diagram #       18
-Z23(e1e2e3|m1m2m3)+=H11(e1e2|m1,d1)*S14(e3,d1|m2m3)*-1/1 #
+Z24(e1e2e3|m1m2m3)+=H11(e1e2|m1,d1)*S14(e3,d1|m2m3)*-1/1 #
 #Diagram #       19
-Z23(e1e2e3|m1m2m3)+=H12(e1,l1|m1m2)*S14(e2e3|m3,l1) #
+Z24(e1e2e3|m1m2m3)+=H12(e1,l1|m1m2)*S14(e2e3|m3,l1) #
 #Diagram #       20
-Z22(|)+=H13(l1,l2|d1,d2)*S7(d1|l1)*S7(d2|l2)*1/2 #
+Z21(e1|m1)+=H13(l1l2|d1d2)*S20(e1,d1d2|m1,l1l2) #
 #Diagram #       21
-Z20(e1|m1)+=H6(l1|d1)*S7(e1|l1)*S7(d1|m1)*-1/1 #
+Z22(e1e2|m1m2)+=H6(l1|d1)*S20(e1e2,d1|m1m2,l1) #
 #Diagram #       22
-Z20(e1|m1)+=H15(e1,l1|d1,d2)*S7(d1|m1)*S7(d2|l1) #
+Z22(e1e2|m1m2)+=H15(e1,l1|d1d2)*S20(e2,d1d2|m1m2,l1)*-1/1 #
 #Diagram #       23
-Z20(e1|m1)+=H16(l1,l2|m1,d1)*S7(e1|l1)*S7(d1|l2)*-1/1 #
+Z22(e1e2|m1m2)+=H16(l1l2|m1,d1)*S20(e1e2,d1|m2,l1l2) #
 #Diagram #       24
-Z21(e1e2|m1m2)+=H17(e1e2|d1,d2)*S7(d1|m1)*S7(d2|m2)*1/2 #
+Z24(e1e2e3|m1m2m3)+=H8(e1|d1)*S20(e2e3,d1|m1m2m3) #
 #Diagram #       25
-Z21(e1e2|m1m2)+=H10(e1,l1|m1,d1)*S7(e2|l1)*S7(d1|m2)*-1/1 #
+Z24(e1e2e3|m1m2m3)+=H9(l1|m1)*S20(e1e2e3|m2m3,l1)*-1/1 #
 #Diagram #       26
-Z21(e1e2|m1m2)+=H18(l1,l2|m1m2)*S7(e1|l1)*S7(e2|l2)*1/2 #
+Z24(e1e2e3|m1m2m3)+=H17(e1e2|d1d2)*S20(e3,d1d2|m1m2m3) #
 #Diagram #       27
-Z20(e1|m1)+=H13(l1,l2|d1d2)*S7(e1|l1)*S14(d1d2|m1,l2)*-1/1 #
+Z24(e1e2e3|m1m2m3)+=H10(e1,l1|m1,d1)*S20(e2e3,d1|m2m3,l1) #
 #Diagram #       28
-Z20(e1|m1)+=H13(l1l2|d1,d2)*S7(d1|m1)*S14(e1,d2|l1l2)*-1/1 #
+Z24(e1e2e3|m1m2m3)+=H18(l1l2|m1m2)*S20(e1e2e3|m3,l1l2) #
 #Diagram #       29
-Z20(e1|m1)+=H13(l1,l2|d1,d2)*S7(d1|l1)*S14(e1,d2|m1,l2) #
+Z23(|)+=H13(l1,l2|d1,d2)*S7(d1|l1)*S7(d2|l2)*1/2 #
 #Diagram #       30
-Z21(e1e2|m1m2)+=H6(l1|d1)*S7(e1|l1)*S14(e2,d1|m1m2) #
+Z21(e1|m1)+=H6(l1|d1)*S7(e1|l1)*S7(d1|m1)*-1/1 #
 #Diagram #       31
-Z21(e1e2|m1m2)+=H6(l1|d1)*S7(d1|m1)*S14(e1e2|m2,l1) #
+Z21(e1|m1)+=H15(e1,l1|d1,d2)*S7(d1|m1)*S7(d2|l1) #
 #Diagram #       32
-Z21(e1e2|m1m2)+=H15(e1,l1|d1d2)*S7(e2|l1)*S14(d1d2|m1m2)*-1/1 #
+Z21(e1|m1)+=H16(l1,l2|m1,d1)*S7(e1|l1)*S7(d1|l2)*-1/1 #
 #Diagram #       33
-Z21(e1e2|m1m2)+=H15(e1,l1|d1,d2)*S7(d1|m1)*S14(e2,d2|m2,l1) #
+Z22(e1e2|m1m2)+=H17(e1e2|d1,d2)*S7(d1|m1)*S7(d2|m2)*1/2 #
 #Diagram #       34
-Z21(e1e2|m1m2)+=H15(e1,l1|d1,d2)*S7(d1|l1)*S14(e2,d2|m1m2) #
+Z22(e1e2|m1m2)+=H10(e1,l1|m1,d1)*S7(e2|l1)*S7(d1|m2)*-1/1 #
 #Diagram #       35
-Z21(e1e2|m1m2)+=H16(l1,l2|m1,d1)*S7(e1|l1)*S14(e2,d1|m2,l2)*-1/1 #
+Z22(e1e2|m1m2)+=H18(l1,l2|m1m2)*S7(e1|l1)*S7(e2|l2)*1/2 #
 #Diagram #       36
-Z21(e1e2|m1m2)+=H16(l1l2|m1,d1)*S7(d1|m2)*S14(e1e2|l1l2) #
+Z21(e1|m1)+=H13(l1,l2|d1d2)*S7(e1|l1)*S14(d1d2|m1,l2)*-1/1 #
 #Diagram #       37
-Z21(e1e2|m1m2)+=H16(l1,l2|m1,d1)*S7(d1|l1)*S14(e1e2|m2,l2)*-1/1 #
+Z21(e1|m1)+=H13(l1l2|d1,d2)*S7(d1|m1)*S14(e1,d2|l1l2)*-1/1 #
 #Diagram #       38
-Z23(e1e2e3|m1m2m3)+=H17(e1e2|d1,d2)*S7(d1|m1)*S14(e3,d2|m2m3)*-1/1 #
+Z21(e1|m1)+=H13(l1,l2|d1,d2)*S7(d1|l1)*S14(e1,d2|m1,l2) #
 #Diagram #       39
-Z23(e1e2e3|m1m2m3)+=H10(e1,l1|m1,d1)*S7(e2|l1)*S14(e3,d1|m2m3) #
+Z22(e1e2|m1m2)+=H6(l1|d1)*S7(e1|l1)*S14(e2,d1|m1m2) #
 #Diagram #       40
-Z23(e1e2e3|m1m2m3)+=H10(e1,l1|m1,d1)*S7(d1|m2)*S14(e2e3|m3,l1) #
+Z22(e1e2|m1m2)+=H6(l1|d1)*S7(d1|m1)*S14(e1e2|m2,l1) #
 #Diagram #       41
-Z23(e1e2e3|m1m2m3)+=H18(l1,l2|m1m2)*S7(e1|l1)*S14(e2e3|m3,l2)*-1/1 #
+Z22(e1e2|m1m2)+=H15(e1,l1|d1d2)*S7(e2|l1)*S14(d1d2|m1m2)*-1/1 #
 #Diagram #       42
-Z21(e1e2|m1m2)+=H13(l1,l2|d1d2)*S14(e1e2|m1,l1)*S14(d1d2|m2,l2)*-1/1 #
+Z22(e1e2|m1m2)+=H15(e1,l1|d1,d2)*S7(d1|m1)*S14(e2,d2|m2,l1) #
 #Diagram #       43
-Z21(e1e2|m1m2)+=H13(l1l2|d1d2)*S14(e1e2|l1l2)*S14(d1d2|m1m2) #
+Z22(e1e2|m1m2)+=H15(e1,l1|d1,d2)*S7(d1|l1)*S14(e2,d2|m1m2) #
 #Diagram #       44
-Z21(e1e2|m1m2)+=H13(l1l2|d1,d2)*S14(e1,d1|m1m2)*S14(e2,d2|l1l2)*-1/1 #
+Z22(e1e2|m1m2)+=H16(l1,l2|m1,d1)*S7(e1|l1)*S14(e2,d1|m2,l2)*-1/1 #
 #Diagram #       45
-Z21(e1e2|m1m2)+=H13(l1,l2|d1,d2)*S14(e1,d1|m1,l1)*S14(e2,d2|m2,l2)*1/2 #
+Z22(e1e2|m1m2)+=H16(l1l2|m1,d1)*S7(d1|m2)*S14(e1e2|l1l2) #
 #Diagram #       46
-Z23(e1e2e3|m1m2m3)+=H6(l1|d1)*S14(e1e2|m1,l1)*S14(e3,d1|m2m3) #
+Z22(e1e2|m1m2)+=H16(l1,l2|m1,d1)*S7(d1|l1)*S14(e1e2|m2,l2)*-1/1 #
 #Diagram #       47
-Z23(e1e2e3|m1m2m3)+=H15(e1,l1|d1d2)*S14(e2e3|m1,l1)*S14(d1d2|m2m3) #
+Z24(e1e2e3|m1m2m3)+=H17(e1e2|d1,d2)*S7(d1|m1)*S14(e3,d2|m2m3)*-1/1 #
 #Diagram #       48
-Z23(e1e2e3|m1m2m3)+=H15(e1,l1|d1,d2)*S14(e2,d1|m1m2)*S14(e3,d2|m3,l1)*-1/1 #
+Z24(e1e2e3|m1m2m3)+=H10(e1,l1|m1,d1)*S7(e2|l1)*S14(e3,d1|m2m3) #
 #Diagram #       49
-Z23(e1e2e3|m1m2m3)+=H16(l1,l2|m1,d1)*S14(e1e2|m2,l1)*S14(e3,d1|m3,l2) #
+Z24(e1e2e3|m1m2m3)+=H10(e1,l1|m1,d1)*S7(d1|m2)*S14(e2e3|m3,l1) #
 #Diagram #       50
-Z23(e1e2e3|m1m2m3)+=H16(l1l2|m1,d1)*S14(e1e2|l1l2)*S14(e3,d1|m2m3)*-1/1 #
+Z24(e1e2e3|m1m2m3)+=H18(l1,l2|m1m2)*S7(e1|l1)*S14(e2e3|m3,l2)*-1/1 #
 #Diagram #       51
-Z20(e1|m1)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(d1|m1)*S7(d2|l2)*-1/1 #
+Z22(e1e2|m1m2)+=H13(l1,l2|d1d2)*S7(e1|l1)*S20(e2,d1d2|m1m2,l2) #
 #Diagram #       52
-Z21(e1e2|m1m2)+=H15(e1,l1|d1,d2)*S7(e2|l1)*S7(d1|m1)*S7(d2|m2)*-1/2 #
+Z22(e1e2|m1m2)+=H13(l1l2|d1,d2)*S7(d1|m1)*S20(e1e2,d2|m2,l1l2) #
 #Diagram #       53
-Z21(e1e2|m1m2)+=H16(l1,l2|m1,d1)*S7(e1|l1)*S7(e2|l2)*S7(d1|m2)*1/2 #
+Z22(e1e2|m1m2)+=H13(l1,l2|d1,d2)*S7(d1|l1)*S20(e1e2,d2|m1m2,l2) #
 #Diagram #       54
-Z21(e1e2|m1m2)+=H13(l1,l2|d1d2)*S7(e1|l1)*S7(e2|l2)*S14(d1d2|m1m2)*1/2 #
+Z24(e1e2e3|m1m2m3)+=H6(l1|d1)*S7(e1|l1)*S20(e2e3,d1|m1m2m3)*-1/1 #
 #Diagram #       55
-Z21(e1e2|m1m2)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(d1|m1)*S14(e2,d2|m2,l2)*-1/1 #
+Z24(e1e2e3|m1m2m3)+=H6(l1|d1)*S7(d1|m1)*S20(e1e2e3|m2m3,l1)*-1/1 #
 #Diagram #       56
-Z21(e1e2|m1m2)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(d1|l2)*S14(e2,d2|m1m2)*-1/1 #
+Z24(e1e2e3|m1m2m3)+=H15(e1,l1|d1d2)*S7(e2|l1)*S20(e3,d1d2|m1m2m3)*-1/1 #
 #Diagram #       57
-Z21(e1e2|m1m2)+=H13(l1l2|d1,d2)*S7(d1|m1)*S7(d2|m2)*S14(e1e2|l1l2)*1/2 #
+Z24(e1e2e3|m1m2m3)+=H15(e1,l1|d1,d2)*S7(d1|m1)*S20(e2e3,d2|m2m3,l1) #
 #Diagram #       58
-Z21(e1e2|m1m2)+=H13(l1,l2|d1,d2)*S7(d1|m1)*S7(d2|l1)*S14(e1e2|m2,l2)*-1/1 #
+Z24(e1e2e3|m1m2m3)+=H15(e1,l1|d1,d2)*S7(d1|l1)*S20(e2e3,d2|m1m2m3)*-1/1 #
 #Diagram #       59
-Z23(e1e2e3|m1m2m3)+=H15(e1,l1|d1,d2)*S7(e2|l1)*S7(d1|m1)*S14(e3,d2|m2m3) #
+Z24(e1e2e3|m1m2m3)+=H16(l1,l2|m1,d1)*S7(e1|l1)*S20(e2e3,d1|m2m3,l2)*-1/1 #
 #Diagram #       60
-Z23(e1e2e3|m1m2m3)+=H15(e1,l1|d1,d2)*S7(d1|m1)*S7(d2|m2)*S14(e2e3|m3,l1)*1/2 #
+Z24(e1e2e3|m1m2m3)+=H16(l1l2|m1,d1)*S7(d1|m2)*S20(e1e2e3|m3,l1l2) #
 #Diagram #       61
-Z23(e1e2e3|m1m2m3)+=H16(l1,l2|m1,d1)*S7(e1|l1)*S7(e2|l2)*S14(e3,d1|m2m3)*-1/2 #
+Z24(e1e2e3|m1m2m3)+=H16(l1,l2|m1,d1)*S7(d1|l1)*S20(e1e2e3|m2m3,l2) #
 #Diagram #       62
-Z23(e1e2e3|m1m2m3)+=H16(l1,l2|m1,d1)*S7(e1|l1)*S7(d1|m2)*S14(e2e3|m3,l2)*-1/1 #
+Z22(e1e2|m1m2)+=H13(l1,l2|d1d2)*S14(e1e2|m1,l1)*S14(d1d2|m2,l2)*-1/1 #
 #Diagram #       63
-Z23(e1e2e3|m1m2m3)+=H13(l1,l2|d1d2)*S7(e1|l1)*S14(e2e3|m1,l2)*S14(d1d2|m2m3)*-1/1 #
+Z22(e1e2|m1m2)+=H13(l1l2|d1d2)*S14(e1e2|l1l2)*S14(d1d2|m1m2) #
 #Diagram #       64
-Z23(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S14(e2,d1|m1m2)*S14(e3,d2|m3,l2) #
+Z22(e1e2|m1m2)+=H13(l1l2|d1,d2)*S14(e1,d1|m1m2)*S14(e2,d2|l1l2)*-1/1 #
 #Diagram #       65
-Z23(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(d1|m1)*S14(e1e2|m2,l1)*S14(e3,d2|m3,l2) #
+Z22(e1e2|m1m2)+=H13(l1,l2|d1,d2)*S14(e1,d1|m1,l1)*S14(e2,d2|m2,l2)*1/2 #
 #Diagram #       66
-Z23(e1e2e3|m1m2m3)+=H13(l1l2|d1,d2)*S7(d1|m1)*S14(e1e2|l1l2)*S14(e3,d2|m2m3)*-1/1 #
+Z24(e1e2e3|m1m2m3)+=H6(l1|d1)*S14(e1e2|m1,l1)*S14(e3,d1|m2m3) #
 #Diagram #       67
-Z23(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(d1|l1)*S14(e1e2|m1,l2)*S14(e3,d2|m2m3) #
+Z24(e1e2e3|m1m2m3)+=H15(e1,l1|d1d2)*S14(e2e3|m1,l1)*S14(d1d2|m2m3) #
 #Diagram #       68
-Z21(e1e2|m1m2)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(e2|l2)*S7(d1|m1)*S7(d2|m2)*1/4 #
+Z24(e1e2e3|m1m2m3)+=H15(e1,l1|d1,d2)*S14(e2,d1|m1m2)*S14(e3,d2|m3,l1)*-1/1 #
 #Diagram #       69
-Z23(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(e2|l2)*S7(d1|m1)*S14(e3,d2|m2m3)*-1/2 #
+Z24(e1e2e3|m1m2m3)+=H16(l1,l2|m1,d1)*S14(e1e2|m2,l1)*S14(e3,d1|m3,l2) #
 #Diagram #       70
-Z23(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(d1|m1)*S7(d2|m2)*S14(e2e3|m3,l2)*-1/2 #
+Z24(e1e2e3|m1m2m3)+=H16(l1l2|m1,d1)*S14(e1e2|l1l2)*S14(e3,d1|m2m3)*-1/1 #
+#Diagram #       71
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1d2)*S14(e1e2|m1,l1)*S20(e3,d1d2|m2m3,l2) #
+#Diagram #       72
+Z24(e1e2e3|m1m2m3)+=H13(l1l2|d1d2)*S14(e1e2|l1l2)*S20(e3,d1d2|m1m2m3) #
+#Diagram #       73
+Z24(e1e2e3|m1m2m3)+=H13(l1l2|d1,d2)*S14(e1,d1|m1m2)*S20(e2e3,d2|m3,l1l2) #
+#Diagram #       74
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S14(e1,d1|m1,l1)*S20(e2e3,d2|m2m3,l2) #
+#Diagram #       75
+Z24(e1e2e3|m1m2m3)+=H13(l1l2|d1,d2)*S14(e1,d1|l1l2)*S20(e2e3,d2|m1m2m3) #
+#Diagram #       76
+Z24(e1e2e3|m1m2m3)+=H13(l1l2|d1d2)*S14(d1d2|m1m2)*S20(e1e2e3|m3,l1l2) #
+#Diagram #       77
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1d2)*S14(d1d2|m1,l1)*S20(e1e2e3|m2m3,l2) #
+#Diagram #       78
+Z21(e1|m1)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(d1|m1)*S7(d2|l2)*-1/1 #
+#Diagram #       79
+Z22(e1e2|m1m2)+=H15(e1,l1|d1,d2)*S7(e2|l1)*S7(d1|m1)*S7(d2|m2)*-1/2 #
+#Diagram #       80
+Z22(e1e2|m1m2)+=H16(l1,l2|m1,d1)*S7(e1|l1)*S7(e2|l2)*S7(d1|m2)*1/2 #
+#Diagram #       81
+Z22(e1e2|m1m2)+=H13(l1,l2|d1d2)*S7(e1|l1)*S7(e2|l2)*S14(d1d2|m1m2)*1/2 #
+#Diagram #       82
+Z22(e1e2|m1m2)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(d1|m1)*S14(e2,d2|m2,l2)*-1/1 #
+#Diagram #       83
+Z22(e1e2|m1m2)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(d1|l2)*S14(e2,d2|m1m2)*-1/1 #
+#Diagram #       84
+Z22(e1e2|m1m2)+=H13(l1l2|d1,d2)*S7(d1|m1)*S7(d2|m2)*S14(e1e2|l1l2)*1/2 #
+#Diagram #       85
+Z22(e1e2|m1m2)+=H13(l1,l2|d1,d2)*S7(d1|m1)*S7(d2|l1)*S14(e1e2|m2,l2)*-1/1 #
+#Diagram #       86
+Z24(e1e2e3|m1m2m3)+=H15(e1,l1|d1,d2)*S7(e2|l1)*S7(d1|m1)*S14(e3,d2|m2m3) #
+#Diagram #       87
+Z24(e1e2e3|m1m2m3)+=H15(e1,l1|d1,d2)*S7(d1|m1)*S7(d2|m2)*S14(e2e3|m3,l1)*1/2 #
+#Diagram #       88
+Z24(e1e2e3|m1m2m3)+=H16(l1,l2|m1,d1)*S7(e1|l1)*S7(e2|l2)*S14(e3,d1|m2m3)*-1/2 #
+#Diagram #       89
+Z24(e1e2e3|m1m2m3)+=H16(l1,l2|m1,d1)*S7(e1|l1)*S7(d1|m2)*S14(e2e3|m3,l2)*-1/1 #
+#Diagram #       90
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1d2)*S7(e1|l1)*S7(e2|l2)*S20(e3,d1d2|m1m2m3)*1/2 #
+#Diagram #       91
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(d1|m1)*S20(e2e3,d2|m2m3,l2)*-1/1 #
+#Diagram #       92
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(d1|l2)*S20(e2e3,d2|m1m2m3) #
+#Diagram #       93
+Z24(e1e2e3|m1m2m3)+=H13(l1l2|d1,d2)*S7(d1|m1)*S7(d2|m2)*S20(e1e2e3|m3,l1l2)*1/2 #
+#Diagram #       94
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(d1|m1)*S7(d2|l1)*S20(e1e2e3|m2m3,l2) #
+#Diagram #       95
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1d2)*S7(e1|l1)*S14(e2e3|m1,l2)*S14(d1d2|m2m3)*-1/1 #
+#Diagram #       96
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S14(e2,d1|m1m2)*S14(e3,d2|m3,l2) #
+#Diagram #       97
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(d1|m1)*S14(e1e2|m2,l1)*S14(e3,d2|m3,l2) #
+#Diagram #       98
+Z24(e1e2e3|m1m2m3)+=H13(l1l2|d1,d2)*S7(d1|m1)*S14(e1e2|l1l2)*S14(e3,d2|m2m3)*-1/1 #
+#Diagram #       99
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(d1|l1)*S14(e1e2|m1,l2)*S14(e3,d2|m2m3) #
+#Diagram #      100
+Z22(e1e2|m1m2)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(e2|l2)*S7(d1|m1)*S7(d2|m2)*1/4 #
+#Diagram #      101
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(e2|l2)*S7(d1|m1)*S14(e3,d2|m2m3)*-1/2 #
+#Diagram #      102
+Z24(e1e2e3|m1m2m3)+=H13(l1,l2|d1,d2)*S7(e1|l1)*S7(d1|m1)*S7(d2|m2)*S14(e2e3|m3,l2)*-1/2 #
