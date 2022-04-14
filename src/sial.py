@@ -11,72 +11,143 @@ import tensor as t
 import contraction as c
 import sys, copy
 
+# instance[1].label = 'Z57_1'
+# instance[1].object = 0x7f98f018ce50 (can inquire pure beta)
+# instance[1].created_at  = 103
+# instance[1].deleted_at  = 109
+# instance[1].read_at     = None
+# instance[1].written_at  = None 
+# instance[1].assigned_at = [ [105, contraction.binary_contraction object at 0x7f98f0193350, {'H24': <tensor.tensor object at 0x7f98f0181050>}, {'S43': <tensor.tensor object at 0x7f98f018c750>}] ]
+# instance[1].used_at     = [ [107, contraction.binary_contraction object at 0x7f9910050790, {'Z48': <tensor.tensor object at 0x7f98f01858d0>}, {'S43': <tensor.tensor object at 0x7f98f018c750>}] ]
+
 class sial_tensor_instance :
    def __init__ (self) :
-      self.name         = None
-      self.tensor       = None
-      self.is_pure_beta = False
-      self.create_at    = None  # line we have a create  for a tensor with this name  
-      self.destroy_at   = None  # line we have a destroy for a tensor with this name
-      self.assign_at    = []    # empty list indicates it's an input tensor; otherwise we store data in the following format
+      self.name            = None  # string with the label for the tensor. is it a bit redundant as it can be obtained from  
+      self.tensor_instance = None  # keeping the tensor instance lets one query its attributes
+      self.tensor_memaddr  = None  # keeping the tensor instance lets one query its attributes
+      self.created_at_line = None  # line we have a create  for a tensor with this name  
+      self.deleted_at_line = None  # line we have a destroy for a tensor with this name
+      self.read_at_line    = None
+      self.written_at_line = None
+      self.assigned_at     = [] # empty list indicates it's an input tensor; otherwise we store data in the following format
                                 # [ [linenumber, instance x, instance y], [linenumber, instance z], ... ] meaning
                                 #  list w/ 2 instances is a contraction, 
-                                #  list w/1 instance is an addition/assignment 
+                                #  list w/1 instance is an addition/assignment vi
                                 #  instance is an integer
-      self.use_at       = []    # emply list indicates it's an output tensor; otherwise we store data in the following format 
+      self.used_at       = []   # emply list indicates it's an output tensor; otherwise we store data in the following format 
                                 # [[linenumber, instance z], ... ], in which instance is an integer 
 
-   def set_name (self, name):
-      self.name = name
-
    def get_name (self) :
-      return self.name 
+      return self.name
 
    def set_tensor (self, tensor):
-      self.tensor = tensor
+      self.tensor_instance = tensor
+      self.tensor_memaddr = hex(id(self.tensor_instance))
+      self.name = self.tensor_instance.get_tensor_name()
+
+#     print("tensor, address, name",self.tensor_instance,self.tensor_memaddr,self.name)
 
    def get_tensor (self):
-      return self.tensor
+      return self.tensor_instance
 
-   def set_pure_beta(self, is_pure_beta):
-      self.is_pure_beta = is_pure_beta
+   def get_tensor_address (self):
+      return self.tensor_memaddr
 
-   def get_pure_beta(self):
-      return self.is_pure_beta
+   def is_pure_beta(self):
+      return self.tensor_instance.is_pure_beta()
 
-   def set_create(self, create_at_line=None):
-      if create_at_line is not None:
-         self.create_at = create_at_line
-      else :
-         print("   invalid input at set_create")
+   def get_created_at(self):
+      return self.created_at_line
+
+   def get_deleted_at(self):
+      return self.deleted_at_line
+
+   def get_read_at(self):
+      return self.read_at_line
+
+   def get_written_at(self):
+      return self.written_at_line
+
+   def get_assigned_at(self):
+      return self.assigned_at
+
+   def get_used_at(self):
+      return self.used_at
+
+   def set_created_at(self, line=None):
+      if self.created_at_line is not None:
+         print("   trying to assign creation line more than once")
          raise ValueError
 
-   def get_create(self):
-      return self.create_at
-
-   def set_destroy(self, destroy_at_line=None):
-      if destroy_at_line is not None:
-         self.destroy_at = destroy_at_line
+      if line is not None:
+         self.created_at_line = line
       else :
-         print("   invalid input at set_create")
+         print("   invalid input at set_created_at")
          raise ValueError
 
-   def get_destroy(self):
-      return self.destroy_at
+   def set_deleted_at(self, line=None):
+      if self.deleted_at_line is not None:    
+         print("   trying to assign deletion line more than once")
+         raise ValueError
 
-   def set_assign(self, assign_at_line=None, dependencies=None): 
-      if assign_at_line is not None and dependencies is not None: 
-         assign = [assign_at_line]
-         assign = assign +  dependencies   
-         self.assign_at.append(assign)
+      if line is not None:
+         self.deleted_at = line
+      else :
+         print("   invalid input at set_deleted_at")
+         raise ValueError
+
+   def set_read_at(self, line=None):
+      if self.read_at_line is not None:    
+         print("   trying to assign read in line more than once")
+         raise ValueError
+
+      if line is not None:
+         self.read_at_line = line
+      else :
+         print("   invalid input at set_read_at")
+         raise ValueError
+
+   def set_written_at(self, line=None):
+      if self.written_at_line is not None:    
+         print("   trying to assign written at line more than once")
+         raise ValueError
+
+      if line is not None:
+         self.written_at_line = line
+      else :
+         print("   invalid input at set_written_at")
+         raise ValueError
+
+   def set_assigned_at(self, entry=None): 
+      if entry is not None :
+         if entry not in self.assigned_at : 
+            self.assigned_at.append(entry)
       else:
-        print("   invalid input at set_create")
+        print("   invalid input at set_assign_at")
         raise ValueError
 
-   def get_assign(self):
-      return self.assign_at
+   def set_used_at(self, entry=None): 
+      if entry is not None :
+         if entry not in self.used_at : 
+            self.used_at.append(entry)
+      else:
+        print("   invalid input at set_used_at")
 
-
+   def print_info(self):
+      print("Information for instance:")
+      print("   tensor label       :",self.get_name())
+      print("   associated object  :",self.get_tensor())
+      print("   memory address     :",self.get_tensor_address())
+      print("   created  at line   :",self.get_created_at())
+      print("   deleted  at line   :",self.get_deleted_at())
+      print("   written  at line   :",self.get_written_at())
+      print("   read     at line   :",self.get_read_at())
+      print("   assigned at line(s):")
+      for (index, e) in enumerate(self.get_assigned_at()) :
+         print(e)
+      print("   used     at line(s):")
+      for (index, e) in enumerate(self.get_used_at()) :
+         print(e)
 
 class sial :
    """
@@ -124,7 +195,7 @@ class sial :
       sial_tensor_operation_expression_re = re.compile (r''+ sial_tensor_operation_expression_regexp_definition +'', re.IGNORECASE)
 
       if verbose :
-         print("\nparsing SIAL input string:", input_string)
+         print("\nparsing sial input string:", input_string)
 
       output = {}
 
@@ -249,6 +320,16 @@ class sial :
                event_t = value.get_event(l,instruction)
                print("registering event:",event_t)
                self.events_all.append(event_t)
+  
+      if verbose :
+         print("\nDone registering events. Now gather information on tensor instances")
+      self._from_events_to_instances()
+
+   def _from_events_to_instances(self):
+      self.instances_all = []
+      for index, event in enumerate(self.events_all):
+         self._event_to_instances(event,self.instances_all)
+          
 
    def validate(self, verbose=True):
       self.valid_lines = []
@@ -368,3 +449,106 @@ class sial :
 
    def print_info(self):
       self._print_tensor_classification()
+
+   def _event_to_instances(self,event,instances):
+      for k in event.keys() :
+         e = event[k][0]
+         el = len(e)
+#     print(k,e,el)
+      event_name = k
+
+      if (el < 3) :
+         event_line = None
+         event_type = None
+         event_object = None
+         event_object_address = None
+      else:
+         event_line = e[0]
+         event_type = e[1]
+         event_object = e[2]
+         event_object_address = hex(id(event_object)) 
+
+
+#     print("event_line  :_%d_"%(event_line))
+#     print("event_type:_",event_type,"_")
+#     print("event_object:",event_object)
+#     print("event_objectid:",event_object_address)
+
+      if instances == [] :
+         this_instance = sial_tensor_instance()
+         instances.append(this_instance)
+
+#        print("bla 1")
+#        this_instance.print_info()
+      else :
+
+         if  event_type == 'CONTRACTION' :
+            print ("fo5a")
+            name = []
+            obj  = []
+            for d in e[3:] :
+               for i in d:
+                  name.append(i)
+                  obj.append(d[i])
+                  if i == event_name :
+                     target_name = i
+                     target_object = d[i]
+                     target_object_addr = hex(id(d[i]))
+            print(name,obj)
+         else :
+            target_name = event_name
+            target_object = event_object
+            target_object_addr = hex(id(target_object))
+            
+         print("targeting name, object, obj address ",target_name,target_object,target_object_addr)
+           
+         for (index,this_instance) in enumerate(instances) :
+#           print("index in instances:",index)
+            address = this_instance.get_tensor_address()
+            name    = this_instance.get_name()
+             
+            if (address == target_object_addr) and (name == target_name):
+               print("instance memory, event memory",address,target_object_addr)
+               print("memory is a match, index",index)
+               break
+            else :
+               print("instance memory, event memory",address,target_object_addr)
+               print("memory is not a match, index",index,len(instances))
+
+         if index >= (len(instances)-1) :
+            this_instance = sial_tensor_instance()
+            instances.append(this_instance)
+
+#        print("bla 2",index,instances)
+#        this_instance.print_info()
+
+#     print("bla 3")
+#     this_instance.print_info()
+# now we have the instance we have to deal with
+
+      if event_type == 'CREATE_ARRAY' :
+         print ("fo1")
+         this_instance.set_created_at(event_line)
+         this_instance.set_tensor(event_object)
+      elif  event_type == 'DELETE_ARRAY' :
+         print ("fo2")
+         this_instance.set_deleted_at(event_line)
+      elif  event_type == 'FOR_READ' :
+         print ("fo3")
+         this_instance.set_read_at(event_line)
+      elif  event_type == 'FOR_WRITE' :
+         print ("fo4")
+         this_instance.set_written_at(event_line)
+      elif  event_type == 'CONTRACTION' :
+         print ("fo5")
+#        print("el[3]:",e[3],e[3].keys())
+         for k2 in e[3].keys() : # if the label of the tensor in this instance matches the first of the elements in the contraction, it is in the LHS, otherwise it is in the RHS 
+            kc = [k2][0]
+         assignment = [event_line, event_object ]
+         if k == kc :
+            this_instance.set_assigned_at(assignment)
+         else :
+            this_instance.set_used_at(assignment)
+
+      print("bla 4")
+      this_instance.print_info()
