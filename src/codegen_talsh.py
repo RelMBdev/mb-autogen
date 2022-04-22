@@ -50,9 +50,9 @@ class TALSHcodeGenerator:
 
       self.variables_args  = { 'nocc' : 'integer, intent(in)', \
                                'nvir' : 'integer, intent(in)', \
-                               'talsh_tensor' : 'type(talsh_tensor_t), intent(inout)' }
+                               'talsh_tensor' : 'type(talsh_tens_t), intent(inout)' }
 
-      self.variables_local = { 'talsh_tensor' : 'type(talsh_tensor_t)' }
+      self.variables_local = { 'talsh_tensor' : 'type(talsh_tens_t)' }
 
       self.call_name = { 'add'      : "talsh_tensor_add", \
                          'contract' : "talsh_tensor_contract", \
@@ -67,6 +67,26 @@ class TALSHcodeGenerator:
 
    def print_info(self):
       pass 
+
+   def generate_common_declarations(self):
+      common_declarations = []
+
+      common_declarations.append(self.newline)
+      common_declarations.append(self.indentation+"use talsh")
+      common_declarations.append(self.indentation+"use tensor_algebra")
+      common_declarations.append(self.indentation+"use, intrinsic:: ISO_C_BINDING")
+      common_declarations.append(self.newline)
+      common_declarations.append(self.indentation+"implicit none")
+      common_declarations.append(self.newline)
+      common_declarations.append(self.indentation+"complex(8), parameter :: ZERO=(0.D0,0.D0),ONE_HALF=(0.5D0,0.D0), &")
+      common_declarations.append(self.indentation+"                         MINUS_ONE=(-1.D0,0.D0),ONE=(1.0D0,0.D0), MINUS_ONE_HALF=(-0.5D0,0.D0), &")
+      common_declarations.append(self.indentation+"                         MINUS_ONE_QUARTER=(-0.25D0,0.D0), ONE_QUARTER=(0.25D0,0.D0), &")
+      common_declarations.append(self.indentation+"                         MINUS_ONE_EIGHT=(-0.125D0,0.D0)")
+      common_declarations.append(self.newline)
+      common_declarations.append(self.indentation+"integer :: ierr")
+      common_declarations.append(self.newline)
+
+      return common_declarations
 
    def generate_contraction(self, contraction):
       # here is where we need to check, for each element of the contraction, 
@@ -99,13 +119,13 @@ class TALSHcodeGenerator:
          varList = tensor.get_tensor_indexes_dimensions()
          varListSep = ","
 
-         dimensions = "/("
+         dimensions = "(/"
          for i, v in enumerate(varList):
             if i != (len(varList)-1) :
                dimensions  += v + varListSep
             else:
                dimensions  += v
-         dimensions += ")/"
+         dimensions += "/)"
 
          code = self.call_name['create']+"("+nameT+", C8, "+dimensions
          if initialize_to is not None:
@@ -184,8 +204,11 @@ class TALSHcodeGenerator:
          function_declaration = function_declaration + ")"
          self.generated_code.append(function_declaration) 
 
+         common_variables = self.generate_common_declarations()
          call_variables  = self.generate_variables_args(call_tensors,classes_tensors)
          local_variables = self.generate_variables_local(local_tensors,classes_tensors)
+
+         self.generated_code.extend(common_variables)
          self.generated_code.extend(call_variables)
          self.generated_code.extend(local_variables)
          self.generated_code.append(self.newline)
