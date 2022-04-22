@@ -475,10 +475,10 @@ class sial :
 #     print("event_objectid:",event_object_address)
 
       if instances == [] :
+         print("bla 1")
          this_instance = sial_tensor_instance()
          instances.append(this_instance)
 
-#        print("bla 1")
 #        this_instance.print_info()
       else :
 
@@ -495,6 +495,11 @@ class sial :
                      target_object = d[i]
                      target_object_addr = hex(id(d[i]))
             print(name,obj)
+
+            lhs_name = e[3]
+            assign_tensor = False
+            if target_name is lhs_name :
+               assign_tensor = True
          else :
             target_name = event_name
             target_object = event_object
@@ -515,7 +520,9 @@ class sial :
                print("instance memory, event memory",address,target_object_addr)
                print("memory is not a match, index",index,len(instances))
 
+         print("bla 2aa",index, this_instance)
          if index >= (len(instances)-1) :
+            print("bla 2ab",index, this_instance)
             this_instance = sial_tensor_instance()
             instances.append(this_instance)
 
@@ -540,12 +547,9 @@ class sial :
          print ("fo4")
          this_instance.set_written_at(event_line)
       elif  event_type == 'CONTRACTION' :
-         print ("fo5")
-#        print("el[3]:",e[3],e[3].keys())
-         for k2 in e[3].keys() : # if the label of the tensor in this instance matches the first of the elements in the contraction, it is in the LHS, otherwise it is in the RHS 
-            kc = [k2][0]
+         print ("fo5b")
          assignment = [event_line, event_object ]
-         if k == kc :
+         if assign_tensor :
             this_instance.set_assigned_at(assignment)
          else :
             this_instance.set_used_at(assignment)
