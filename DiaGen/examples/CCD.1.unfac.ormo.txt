@@ -1,0 +1,212 @@
+#CCD: Energy
+#Diagram Domain Tag: Begining - End:    1:        1 -       11
+#ORMO formula          4: number of r.h.s. tensors =  2: parental diagram number =         2
+ #Contraction tree:  0= 2* 1;
+ Z26(|)+=S23(d1bd2b|l1bl2b)*H13(l1bl2b|d1bd2b)
+#ORMO formula          5: number of r.h.s. tensors =  2: parental diagram number =         2
+ #Contraction tree:  0= 2* 1;
+ Z26(|)+=S24(d1ad1b|l1al1b)*H19(l1al1b|d1ad1b)
+#ORMO formula          6: number of r.h.s. tensors =  2: parental diagram number =         2
+ #Contraction tree:  0= 2* 1;
+ Z26(|)+=S25(d1ad2a|l1al2a)*H21(l1al2a|d1ad2a)
+#ORMO formula          3: number of r.h.s. tensors =  1: parental diagram number =         1
+ #Contraction tree:  0= 1*-1;
+ Z27(e1be2b|m1bm2b)+=H3(e1be2b|m1bm2b)
+#ORMO formula         15: number of r.h.s. tensors =  2: parental diagram number =         5
+ #Contraction tree:  0= 1* 2;
+ Z27(e1be2b|m1bm2b)+=H2(e1be2b|d1bd2b)*S23(d1bd2b|m1bm2b)
+#ORMO formula         39: number of r.h.s. tensors =  3: parental diagram number =         9
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z33_1(l1bl2b|m1bm2b)+=S23(d1bd2b|m1bm2b)*H13(l1bl2b|d1bd2b)
+ Z27(e1be2b|m1bm2b)+=S23(e1be2b|l1bl2b)*Z33_1(l1bl2b|m1bm2b)
+#ORMO formula         28: number of r.h.s. tensors =  2: parental diagram number =         7
+ #Contraction tree:  0= 2* 1;
+ Z27(e1be2b|m1bm2b)+=S23(e1be2b|l1bl2b)*H14(l1bl2b|m1bm2b)
+#ORMO formula         42: number of r.h.s. tensors =  3: parental diagram number =        10
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z30_1(e1b|d1b)+=S23(e1b,d2b|l1bl2b)*H13(l1bl2b|d1b,d2b)*-1.
+ Z27(e1be2b|m1bm2b)+=S23(e1b,d1b|m1bm2b)*Z30_1(e2b|d1b)
+#ORMO formula         44: number of r.h.s. tensors =  3: parental diagram number =        10
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z30_1(e1b|d1b)+=S24(e1b,d1a|l1al1b)*H19(l1al1b|d1b,d1a)*-1.
+ Z27(e1be2b|m1bm2b)+=S23(e1b,d1b|m1bm2b)*Z30_1(e2b|d1b)
+#ORMO formula          7: number of r.h.s. tensors =  2: parental diagram number =         3
+ #Contraction tree:  0= 2* 1;
+ Z27(e1be2b|m1bm2b)+=S23(e1b,d1b|m1bm2b)*H1(e2b|d1b)
+#ORMO formula         31: number of r.h.s. tensors =  3: parental diagram number =         8
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z32_1(l1b|m1b)+=S23(d1bd2b|m1b,l2b)*H13(l1b,l2b|d1bd2b)*-1.
+ Z27(e1be2b|m1bm2b)+=S23(e1be2b|m1b,l1b)*Z32_1(l1b|m2b)
+#ORMO formula         33: number of r.h.s. tensors =  3: parental diagram number =         8
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z32_1(l1b|m1b)+=S24(d1ad1b|m1b,l1a)*H19(l1b,l1a|d1ad1b)*-1.
+ Z27(e1be2b|m1bm2b)+=S23(e1be2b|m1b,l1b)*Z32_1(l1b|m2b)
+#ORMO formula         11: number of r.h.s. tensors =  2: parental diagram number =         4
+ #Contraction tree:  0= 2* 1;
+ Z27(e1be2b|m1bm2b)+=S23(e1be2b|m1b,l1b)*H9(l1b|m2b)*-1.
+#ORMO formula         50: number of r.h.s. tensors =  3: parental diagram number =        11
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z37_1(e1b,l1b|m1b,d1b)+=S23(e1b,d2b|m1b,l2b)*H13(l1b,l2b|d1b,d2b)*0.5
+ Z27(e1be2b|m1bm2b)+=S23(e1b,d1b|m1b,l1b)*Z37_1(e2b,l1b|m2b,d1b)
+#ORMO formula         18: number of r.h.s. tensors =  2: parental diagram number =         6
+ #Contraction tree:  0= 2* 1;
+ Z27(e1be2b|m1bm2b)+=S23(e1b,d1b|m1b,l1b)*H10(e2b,l1b|m2b,d1b)
+#ORMO formula         54: number of r.h.s. tensors =  3: parental diagram number =        11
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z38_1(e1b,l1a|m1b,d1a)+=S23(e1b,d1b|m1b,l1b)*H19(l1b,l1a|d1b,d1a)
+ Z27(e1be2b|m1bm2b)+=S24(e1b,d1a|m1b,l1a)*Z38_1(e2b,l1a|m2b,d1a)
+#ORMO formula         58: number of r.h.s. tensors =  3: parental diagram number =        11
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z38_1(e1b,l1a|m1b,d1a)+=S24(e1b,d2a|m1b,l2a)*H21(l1a,l2a|d1a,d2a)*0.5
+ Z27(e1be2b|m1bm2b)+=S24(e1b,d1a|m1b,l1a)*Z38_1(e2b,l1a|m2b,d1a)
+#ORMO formula         20: number of r.h.s. tensors =  2: parental diagram number =         6
+ #Contraction tree:  0= 2* 1;
+ Z27(e1be2b|m1bm2b)+=S24(e1b,d1a|m1b,l1a)*H16(e2b,l1a|m2b,d1a)
+#ORMO formula          2: number of r.h.s. tensors =  1: parental diagram number =         1
+ #Contraction tree:  0= 1*-1;
+ Z28(e1ae1b|m1am1b)+=H6(e1ae1b|m1am1b)
+#ORMO formula         16: number of r.h.s. tensors =  2: parental diagram number =         5
+ #Contraction tree:  0= 1* 2;
+ Z28(e1ae1b|m1am1b)+=H5(e1ae1b|d1ad1b)*S24(d1ad1b|m1am1b)
+#ORMO formula         40: number of r.h.s. tensors =  3: parental diagram number =         9
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z35_1(l1al1b|m1am1b)+=S24(d1ad1b|m1am1b)*H19(l1al1b|d1ad1b)
+ Z28(e1ae1b|m1am1b)+=S24(e1ae1b|l1al1b)*Z35_1(l1al1b|m1am1b)
+#ORMO formula         29: number of r.h.s. tensors =  2: parental diagram number =         7
+ #Contraction tree:  0= 2* 1;
+ Z28(e1ae1b|m1am1b)+=S24(e1ae1b|l1al1b)*H20(l1al1b|m1am1b)
+#ORMO formula         46: number of r.h.s. tensors =  3: parental diagram number =        10
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z31_1(e1a|d1a)+=S24(e1a,d1b|l1al1b)*H19(l1al1b|d1b,d1a)*-1.
+ Z28(e1ae1b|m1am1b)+=S24(e1b,d1a|m1am1b)*Z31_1(e1a|d1a)
+#ORMO formula         48: number of r.h.s. tensors =  3: parental diagram number =        10
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z31_1(e1a|d1a)+=S25(e1a,d2a|l1al2a)*H21(l1al2a|d1a,d2a)
+ Z28(e1ae1b|m1am1b)+=S24(e1b,d1a|m1am1b)*Z31_1(e1a|d1a)
+#ORMO formula          9: number of r.h.s. tensors =  2: parental diagram number =         3
+ #Contraction tree:  0= 2* 1;
+ Z28(e1ae1b|m1am1b)+=S24(e1b,d1a|m1am1b)*H4(e1a|d1a)*-1.
+#ORMO formula         43: number of r.h.s. tensors =  3: parental diagram number =        10
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z30_1(e1b|d1b)+=S23(e1b,d2b|l1bl2b)*H13(l1bl2b|d1b,d2b)*-1.
+ Z28(e1ae1b|m1am1b)+=S24(e1a,d1b|m1am1b)*Z30_1(e1b|d1b)
+#ORMO formula         45: number of r.h.s. tensors =  3: parental diagram number =        10
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z30_1(e1b|d1b)+=S24(e1b,d1a|l1al1b)*H19(l1al1b|d1b,d1a)*-1.
+ Z28(e1ae1b|m1am1b)+=S24(e1a,d1b|m1am1b)*Z30_1(e1b|d1b)
+#ORMO formula          8: number of r.h.s. tensors =  2: parental diagram number =         3
+ #Contraction tree:  0= 2* 1;
+ Z28(e1ae1b|m1am1b)+=S24(e1a,d1b|m1am1b)*H1(e1b|d1b)
+#ORMO formula         35: number of r.h.s. tensors =  3: parental diagram number =         8
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z34_1(l1a|m1a)+=S24(d1ad1b|m1a,l1b)*H19(l1b,l1a|d1ad1b)*-1.
+ Z28(e1ae1b|m1am1b)+=S24(e1ae1b|m1b,l1a)*Z34_1(l1a|m1a)
+#ORMO formula         37: number of r.h.s. tensors =  3: parental diagram number =         8
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z34_1(l1a|m1a)+=S25(d1ad2a|m1a,l2a)*H21(l1a,l2a|d1ad2a)
+ Z28(e1ae1b|m1am1b)+=S24(e1ae1b|m1b,l1a)*Z34_1(l1a|m1a)
+#ORMO formula         13: number of r.h.s. tensors =  2: parental diagram number =         4
+ #Contraction tree:  0= 2* 1;
+ Z28(e1ae1b|m1am1b)+=S24(e1ae1b|m1b,l1a)*H15(l1a|m1a)
+#ORMO formula         32: number of r.h.s. tensors =  3: parental diagram number =         8
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z32_1(l1b|m1b)+=S23(d1bd2b|m1b,l2b)*H13(l1b,l2b|d1bd2b)*-1.
+ Z28(e1ae1b|m1am1b)+=S24(e1ae1b|m1a,l1b)*Z32_1(l1b|m1b)
+#ORMO formula         34: number of r.h.s. tensors =  3: parental diagram number =         8
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z32_1(l1b|m1b)+=S24(d1ad1b|m1b,l1a)*H19(l1b,l1a|d1ad1b)*-1.
+ Z28(e1ae1b|m1am1b)+=S24(e1ae1b|m1a,l1b)*Z32_1(l1b|m1b)
+#ORMO formula         12: number of r.h.s. tensors =  2: parental diagram number =         4
+ #Contraction tree:  0= 2* 1;
+ Z28(e1ae1b|m1am1b)+=S24(e1ae1b|m1a,l1b)*H9(l1b|m1b)*-1.
+#ORMO formula         24: number of r.h.s. tensors =  2: parental diagram number =         6
+ #Contraction tree:  0= 2* 1;
+ Z28(e1ae1b|m1am1b)+=S23(e1b,d1b|m1b,l1b)*H12(e1a,l1b|m1a,d1b)
+#ORMO formula         55: number of r.h.s. tensors =  3: parental diagram number =        11
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z41_1(e1a,l1a|m1a,d1a)+=S24(e1a,d1b|m1a,l1b)*H19(l1b,l1a|d1b,d1a)
+ Z28(e1ae1b|m1am1b)+=S24(e1b,d1a|m1b,l1a)*Z41_1(e1a,l1a|m1a,d1a)
+#ORMO formula         26: number of r.h.s. tensors =  2: parental diagram number =         6
+ #Contraction tree:  0= 2* 1;
+ Z28(e1ae1b|m1am1b)+=S24(e1b,d1a|m1b,l1a)*H18(e1a,l1a|m1a,d1a)
+#ORMO formula         23: number of r.h.s. tensors =  2: parental diagram number =         6
+ #Contraction tree:  0= 2* 1;
+ Z28(e1ae1b|m1am1b)+=S24(e1b,d1a|m1a,l1b)*H11(e1a,l1b|m1b,d1a)*-1.
+#ORMO formula         53: number of r.h.s. tensors =  3: parental diagram number =        11
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z39_1(e1b,l1a|m1a,d1b)+=S24(e1b,d1a|m1a,l1b)*H19(l1b,l1a|d1b,d1a)
+ Z28(e1ae1b|m1am1b)+=S24(e1a,d1b|m1b,l1a)*Z39_1(e1b,l1a|m1a,d1b)
+#ORMO formula         22: number of r.h.s. tensors =  2: parental diagram number =         6
+ #Contraction tree:  0= 2* 1;
+ Z28(e1ae1b|m1am1b)+=S24(e1a,d1b|m1b,l1a)*H17(e1b,l1a|m1a,d1b)*-1.
+#ORMO formula         51: number of r.h.s. tensors =  3: parental diagram number =        11
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z37_1(e1b,l1b|m1b,d1b)+=S23(e1b,d2b|m1b,l2b)*H13(l1b,l2b|d1b,d2b)
+ Z28(e1ae1b|m1am1b)+=S24(e1a,d1b|m1a,l1b)*Z37_1(e1b,l1b|m1b,d1b)
+#ORMO formula         19: number of r.h.s. tensors =  2: parental diagram number =         6
+ #Contraction tree:  0= 2* 1;
+ Z28(e1ae1b|m1am1b)+=S24(e1a,d1b|m1a,l1b)*H10(e1b,l1b|m1b,d1b)
+#ORMO formula         56: number of r.h.s. tensors =  3: parental diagram number =        11
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z38_1(e1b,l1a|m1b,d1a)+=S23(e1b,d1b|m1b,l1b)*H19(l1b,l1a|d1b,d1a)
+ Z28(e1ae1b|m1am1b)+=S25(e1a,d1a|m1a,l1a)*Z38_1(e1b,l1a|m1b,d1a)
+#ORMO formula         59: number of r.h.s. tensors =  3: parental diagram number =        11
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z38_1(e1b,l1a|m1b,d1a)+=S24(e1b,d2a|m1b,l2a)*H21(l1a,l2a|d1a,d2a)
+ Z28(e1ae1b|m1am1b)+=S25(e1a,d1a|m1a,l1a)*Z38_1(e1b,l1a|m1b,d1a)
+#ORMO formula         21: number of r.h.s. tensors =  2: parental diagram number =         6
+ #Contraction tree:  0= 2* 1;
+ Z28(e1ae1b|m1am1b)+=S25(e1a,d1a|m1a,l1a)*H16(e1b,l1a|m1b,d1a)
+#ORMO formula          1: number of r.h.s. tensors =  1: parental diagram number =         1
+ #Contraction tree:  0= 1*-1;
+ Z29(e1ae2a|m1am2a)+=H8(e1ae2a|m1am2a)
+#ORMO formula         17: number of r.h.s. tensors =  2: parental diagram number =         5
+ #Contraction tree:  0= 1* 2;
+ Z29(e1ae2a|m1am2a)+=H7(e1ae2a|d1ad2a)*S25(d1ad2a|m1am2a)
+#ORMO formula         41: number of r.h.s. tensors =  3: parental diagram number =         9
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z36_1(l1al2a|m1am2a)+=S25(d1ad2a|m1am2a)*H21(l1al2a|d1ad2a)
+ Z29(e1ae2a|m1am2a)+=S25(e1ae2a|l1al2a)*Z36_1(l1al2a|m1am2a)
+#ORMO formula         30: number of r.h.s. tensors =  2: parental diagram number =         7
+ #Contraction tree:  0= 2* 1;
+ Z29(e1ae2a|m1am2a)+=S25(e1ae2a|l1al2a)*H22(l1al2a|m1am2a)
+#ORMO formula         47: number of r.h.s. tensors =  3: parental diagram number =        10
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z31_1(e1a|d1a)+=S24(e1a,d1b|l1al1b)*H19(l1al1b|d1b,d1a)
+ Z29(e1ae2a|m1am2a)+=S25(e1a,d1a|m1am2a)*Z31_1(e2a|d1a)
+#ORMO formula         49: number of r.h.s. tensors =  3: parental diagram number =        10
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z31_1(e1a|d1a)+=S25(e1a,d2a|l1al2a)*H21(l1al2a|d1a,d2a)*-1.
+ Z29(e1ae2a|m1am2a)+=S25(e1a,d1a|m1am2a)*Z31_1(e2a|d1a)
+#ORMO formula         10: number of r.h.s. tensors =  2: parental diagram number =         3
+ #Contraction tree:  0= 2* 1;
+ Z29(e1ae2a|m1am2a)+=S25(e1a,d1a|m1am2a)*H4(e2a|d1a)
+#ORMO formula         36: number of r.h.s. tensors =  3: parental diagram number =         8
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z34_1(l1a|m1a)+=S24(d1ad1b|m1a,l1b)*H19(l1b,l1a|d1ad1b)
+ Z29(e1ae2a|m1am2a)+=S25(e1ae2a|m1a,l1a)*Z34_1(l1a|m2a)
+#ORMO formula         38: number of r.h.s. tensors =  3: parental diagram number =         8
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z34_1(l1a|m1a)+=S25(d1ad2a|m1a,l2a)*H21(l1a,l2a|d1ad2a)*-1.
+ Z29(e1ae2a|m1am2a)+=S25(e1ae2a|m1a,l1a)*Z34_1(l1a|m2a)
+#ORMO formula         14: number of r.h.s. tensors =  2: parental diagram number =         4
+ #Contraction tree:  0= 2* 1;
+ Z29(e1ae2a|m1am2a)+=S25(e1ae2a|m1a,l1a)*H15(l1a|m2a)*-1.
+#ORMO formula         52: number of r.h.s. tensors =  3: parental diagram number =        11
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z40_1(e1a,l1b|m1a,d1b)+=S24(e1a,d2b|m1a,l2b)*H13(l1b,l2b|d1b,d2b)*0.5
+ Z29(e1ae2a|m1am2a)+=S24(e1a,d1b|m1a,l1b)*Z40_1(e2a,l1b|m2a,d1b)
+#ORMO formula         25: number of r.h.s. tensors =  2: parental diagram number =         6
+ #Contraction tree:  0= 2* 1;
+ Z29(e1ae2a|m1am2a)+=S24(e1a,d1b|m1a,l1b)*H12(e2a,l1b|m2a,d1b)
+#ORMO formula         57: number of r.h.s. tensors =  3: parental diagram number =        11
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z41_1(e1a,l1a|m1a,d1a)+=S24(e1a,d1b|m1a,l1b)*H19(l1b,l1a|d1b,d1a)
+ Z29(e1ae2a|m1am2a)+=S25(e1a,d1a|m1a,l1a)*Z41_1(e2a,l1a|m2a,d1a)
+#ORMO formula         60: number of r.h.s. tensors =  3: parental diagram number =        11
+ #Contraction tree:  4= 3* 1;  0= 2* 4;
+ Z41_1(e1a,l1a|m1a,d1a)+=S25(e1a,d2a|m1a,l2a)*H21(l1a,l2a|d1a,d2a)*0.5
+ Z29(e1ae2a|m1am2a)+=S25(e1a,d1a|m1a,l1a)*Z41_1(e2a,l1a|m2a,d1a)
+#ORMO formula         27: number of r.h.s. tensors =  2: parental diagram number =         6
+ #Contraction tree:  0= 2* 1;
+ Z29(e1ae2a|m1am2a)+=S25(e1a,d1a|m1a,l1a)*H18(e2a,l1a|m2a,d1a)
