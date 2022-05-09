@@ -102,9 +102,13 @@ class TALSHcodeGenerator:
          nameA = A.get_tensor_name()
          if B is not None:
             nameB = B.get_tensor_name()
-            code = self.call_name['contract']+"(\""+expression+"\","+nameC+","+nameA+","+nameB
+#           code = self.call_name['contract']+"(\""+expression+"\","+nameC+","+nameA+","+nameB
+            code = self.call_name['contract']+"(\""+expression+"\", &"+self.newline
+            code = code + 2*self.indentation + nameC+","+nameA+","+nameB
          else:
-            code = self.call_name['add']+"(\""+expression+"\","+nameC+","+nameA
+#           code = self.call_name['add']+"(\""+expression+"\","+nameC+","+nameA
+            code = self.call_name['add']+"(\""+expression+"\", &"+self.newline
+            code = code + 2*self.indentation +nameC+","+nameA
          if scaling is not 1:
             code = code+",scale=("+str(scaling)+"d0,0.0d0)"
          code = code + ")"
@@ -200,7 +204,7 @@ class TALSHcodeGenerator:
          function_declaration = function_declaration + "(nocc,nvir"
          for t in call_tensors:
             function_declaration = function_declaration \
-                                 + ",\\"+self.newline+self.indentation + t 
+                                 + ", &"+self.newline+self.indentation + t 
          function_declaration = function_declaration + ")"
          self.generated_code.append(function_declaration) 
 
