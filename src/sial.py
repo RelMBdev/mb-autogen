@@ -9,6 +9,7 @@
 #
 import tensor as t
 import contraction as c
+import diagrams as di
 import sys, copy
 
 # instance[1].label = 'Z57_1'
@@ -176,6 +177,7 @@ class sial :
 
       sial_marker_regexp_definition = "\$SIAL"
       sial_instruction_regexp_definition = "\s*([a-zA-Z_0-9]+)" 
+      sial_diagram_info_regexp_definition = "^\#ORMO\s+(\d+); Diagram\s+(\d+); Contraction\s+(\d+); Tree Level\s+(\d+); Scaling (.+); Result_size (.+)"
       sial_comment_regexp_definition = "^\#.+$"
       sial_tensor_expression_regexp_definition = "\s*([a-zA-Z_0-9]+\(.+\))"
       sial_tensor_contraction_expression_regexp_definition = "(.+)"
@@ -191,6 +193,7 @@ class sial :
  
       sial_instruction_re = re.compile (r''+ sial_instruction_regexp_definition +'', re.IGNORECASE)
       sial_instruction_tensor_re = re.compile (r''+ sial_instruction_tensor_regexp_definition +'', re.IGNORECASE)
+      sial_diagram_info_re = re.compile (r''+ sial_diagram_info_regexp_definition +'', re.IGNORECASE)
       sial_ignoreline_re = re.compile (r''+ sial_comment_regexp_definition +'', re.IGNORECASE)
       sial_tensor_operation_expression_re = re.compile (r''+ sial_tensor_operation_expression_regexp_definition +'', re.IGNORECASE)
 
@@ -199,7 +202,33 @@ class sial :
 
       output = {}
 
-      if sial_ignoreline_re.match(input_string):
+      ormo_number        = None
+      diagram_number     = None
+      contraction_number = None
+      treelevel_number   = None
+      scaling_info       = None
+      ressize_info       = None
+
+      if sial_diagram_info_re.match(input_string):
+         instruction = "DIAGRAM_INFORMATION"
+ 
+         ormo_number = sial_diagram_info_re.match(input_string).group(1)
+         diagram_number = sial_diagram_info_re.match(input_string).group(2)
+         contraction_number = sial_diagram_info_re.match(input_string).group(3)
+         treelevel_number  = sial_diagram_info_re.match(input_string).group(4)
+         scaling_info = sial_diagram_info_re.match(input_string).group(5)
+         ressize_info = sial_diagram_info_re.match(input_string).group(6)
+
+         cd_info = di.diagram_info()
+         cd_info.set_ormo_number(ormo_number)
+         cd_info.set_diagram_number(diagram_number)
+         cd_info.set_treelevel_number(treelevel_number)
+         cd_info.set_scaling_info(scaling_info)
+         cd_info.set_ressize_info(ressize_info)
+
+         output[instruction] = cd_info
+
+      elif sial_ignoreline_re.match(input_string):
          pass
 
       elif sial_instruction_tensor_re.match(input_string):
