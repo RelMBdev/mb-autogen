@@ -50,8 +50,8 @@ class ExaTENSORcodeGenerator:
 
       self.variables_args  = { 'nocc' : 'integer, intent(in)', \
                                'nvir' : 'integer, intent(in)', \
-                               'dim_id_type' : 'integer(INTD)', \
-                               'dim_root_type' : 'integer(INTL)', \
+                               'dim_id_type' : 'integer(INTD), allocatable', \
+                               'dim_root_type' : 'integer(INTL), allocatable', \
                                'exatensor_tensor' : 'type(tens_rcrsv_t), intent(inout)' }
 
       self.variables_local = { 'exatensor_tensor' : 'type(tens_rcrsv_t)' }
@@ -129,18 +129,23 @@ class ExaTENSORcodeGenerator:
          for i, v in enumerate(varList):
             if i != (len(varList)-1) :
                dimensions  += v + varListSep
-               rootvars    += v + varListSep
+               rootvars    += "int(" + v + ",8)" + varListSep
             else:
                dimensions  += v
-               rootvars    += v
+               rootvars    += "int(" + v + ",8)"
          dimensions += "/)"
          rootvars   += "/)"
-
-         code = self.call_name['create']+"("+nameT+","+dimensions+","+rootvars
+         dim =  tensor.get_tensor_rank()
+         spaces_declaration = self.indentation + self.newline \
+                            + self.indentation + "allocate(tens_id("+str(dim)+"), tens_root("+str(dim)+"))" + self.newline \
+                            + self.indentation + "tens_id   = " + dimensions + self.newline \
+                            + self.indentation + "tens_root = " + rootvars   + self.newline  
+         code = self.call_name['create']+"("+nameT+",tens_id, tens_root"
          if initialize_to is not None:
             code = code + ", init_val="+initialize_to
          code = code +",EXA_DATA_KIND_C8)"
-         code = self.indentation+self.return_var_name+"="+code
+         code = spaces_declaration + self.indentation+self.return_var_name+"="+code
+         code = code + self.newline + self.indentation + "deallocate(tens_id,tens_root)"
       else:
          self.error_handler("tensors found as None")
       return code
@@ -168,6 +173,10 @@ class ExaTENSORcodeGenerator:
       code = self.indentation+self.variables_args['nocc']+" :: nocc"
       call_variable_block.append(code)
       code = self.indentation+self.variables_args['nvir']+" :: nvir"
+      call_variable_block.append(code)
+      code = self.indentation+self.variables_args['dim_id_type']+" :: tens_id(:)"
+      call_variable_block.append(code)
+      code = self.indentation+self.variables_args['dim_root_type']+" :: tens_root(:)"
       call_variable_block.append(code)
       for v in varnames:
          code = self.indentation+self.variables_args['exatensor_tensor']+ " :: "+v \
