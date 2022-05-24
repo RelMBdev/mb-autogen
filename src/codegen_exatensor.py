@@ -58,8 +58,9 @@ class ExaTENSORcodeGenerator:
 
       self.call_name = { 'add'      : "exatns_tensor_add", \
                          'contract' : "exatns_tensor_contract", \
-                         'create'   : "exatns_tensor_construct", \
-                         'destroy'  : "exatns_tensor_destruct" }
+                         'create'   : "exatns_tensor_create", \
+                         'init'     : "exatns_tensor_init", \
+                         'destroy'  : "exatns_tensor_destroy" }
 
    def read_sial(self, file_name, verbose=False):
       self.sial = p.sial(spinorbital_out=self.spinorbital_out)
@@ -141,11 +142,22 @@ class ExaTENSORcodeGenerator:
                             + self.indentation + "tens_id   = " + dimensions + self.newline \
                             + self.indentation + "tens_root = " + rootvars   + self.newline  
          code = self.call_name['create']+"("+nameT+",tens_id, tens_root"
-         if initialize_to is not None:
-            code = code + ", init_val="+initialize_to
          code = code +",EXA_DATA_KIND_C8)"
          code = spaces_declaration + self.indentation+self.return_var_name+"="+code
          code = code + self.newline + self.indentation + "deallocate(tens_id,tens_root)"
+         if initialize_to is not None:
+            init_code = self.generate_init(tensor,value=initialize_to)
+         code = code + self.newline + init_code
+      else:
+         self.error_handler("tensors found as None")
+      return code
+
+   def generate_init(self, tensor, value='ONE'):
+      if tensor is not None :
+         nameT = tensor.get_tensor_name()
+         code = self.call_name['init']+"("+nameT+",\'"+value+"\')"
+
+         code = self.indentation+self.return_var_name+self.assign_var+code
       else:
          self.error_handler("tensors found as None")
       return code
@@ -298,7 +310,7 @@ class ExaTENSORcodeGenerator:
 
       comment = self.comment+self.newline+self.comment+" Outputting ExaTensor-based "+self.lang+" code generated with :"
       comment = comment+self.newline+self.comment+"   Codegen, a toolset to process tensor contraction DSLs (SIAL etc)"
-      comment = comment+self.newline+self.comment+"   Andre Gomes (CNRS UMR8523, Lille) and Dmitry Lyakh (NVIDIA)"
+      comment = comment+self.newline+self.comment+"   Andre Gomes (CNRS UMR8523, Lille) and Dmitry Lyakh (OLCF/Oak Ridge, NVIDIA)"
       comment = comment+self.newline+self.comment
 
       if filename is not None :
