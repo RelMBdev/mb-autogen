@@ -86,7 +86,7 @@ class ExaTENSORcodeGenerator:
       common_declarations.append(self.indentation+"                         MINUS_ONE_EIGHT=(-0.125D0,0.D0)")
       common_declarations.append(self.newline)
       common_declarations.append(self.indentation+"integer :: ierr")
-      common_declarations.append(self.indentation+"type(tens_rcrsv_t),public :: one_tensor")
+      common_declarations.append(self.indentation+"type(tens_rcrsv_t) :: one_tensor")
 
       return common_declarations
 
@@ -141,7 +141,7 @@ class ExaTENSORcodeGenerator:
                             + self.indentation + "allocate(tens_id("+str(dim)+"), tens_root("+str(dim)+"))" + self.newline \
                             + self.indentation + "tens_id   = " + dimensions + self.newline \
                             + self.indentation + "tens_root = " + rootvars   + self.newline  
-         code = self.call_name['create']+"("+nameT+",tens_id, tens_root"
+         code = self.call_name['create']+"("+nameT+",\""+nameT+"\",tens_id, tens_root"
          code = code +",EXA_DATA_KIND_C8)"
          code = spaces_declaration + self.indentation+self.return_var_name+"="+code
          code = code + self.newline + self.indentation + "deallocate(tens_id,tens_root)"
