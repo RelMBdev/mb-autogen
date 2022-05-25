@@ -48,8 +48,10 @@ class ExaTENSORcodeGenerator:
       self.assign_var      = "="
       self.newline         = "\n"
 
-      self.variables_args  = { 'nocc' : 'integer, intent(in)', \
-                               'nvir' : 'integer, intent(in)', \
+      self.variables_args  = { 'nocc_id' : 'integer(INTD), intent(in)', \
+                               'nvir_id' : 'integer(INTD), intent(in)', \
+                               'nocc_root' : 'integer(INTL), intent(in)', \
+                               'nvir_root' : 'integer(INTL), intent(in)', \
                                'dim_id_type' : 'integer(INTD), allocatable', \
                                'dim_root_type' : 'integer(INTL), allocatable', \
                                'exatensor_tensor' : 'type(tens_rcrsv_t), intent(inout)' }
@@ -129,11 +131,11 @@ class ExaTENSORcodeGenerator:
          rootvars   = "(/"
          for i, v in enumerate(varList):
             if i != (len(varList)-1) :
-               dimensions  += v + varListSep
-               rootvars    += "int(" + v + ",8)" + varListSep
+               dimensions  += v + "_id" + varListSep
+               rootvars    += v + "_root" + varListSep
             else:
-               dimensions  += v
-               rootvars    += "int(" + v + ",8)"
+               dimensions  += v + "_id"
+               rootvars    += v + "_root"
          dimensions += "/)"
          rootvars   += "/)"
          dim =  tensor.get_tensor_rank()
@@ -182,9 +184,13 @@ class ExaTENSORcodeGenerator:
    def generate_variables_args(self,varnames,tensor_classes):
       call_variable_block = []
 
-      code = self.indentation+self.variables_args['nocc']+" :: nocc"
+      code = self.indentation+self.variables_args['nocc_id']+" :: nocc_id"
       call_variable_block.append(code)
-      code = self.indentation+self.variables_args['nvir']+" :: nvir"
+      code = self.indentation+self.variables_args['nvir_id']+" :: nvir_id"
+      call_variable_block.append(code)
+      code = self.indentation+self.variables_args['nocc_root']+" :: nocc_root"
+      call_variable_block.append(code)
+      code = self.indentation+self.variables_args['nvir_root']+" :: nvir_root"
       call_variable_block.append(code)
       code = self.indentation+self.variables_args['dim_id_type']+" :: tens_id(:)"
       call_variable_block.append(code)
@@ -227,7 +233,7 @@ class ExaTENSORcodeGenerator:
 
       if function_name is not None :
          function_declaration = "subroutine "+function_name 
-         function_declaration = function_declaration + "(nocc,nvir"
+         function_declaration = function_declaration + "(nocc_id,nvir_id,nocc_root,nvir_root"
          for t in call_tensors:
             function_declaration = function_declaration \
                                  + ", &"+self.newline+self.indentation + t 
