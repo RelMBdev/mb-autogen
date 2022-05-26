@@ -254,7 +254,9 @@ class ExaTENSORcodeGenerator:
       self.generated_code.append(self.newline)
 
       if function_name is not None :
-         function_end = "end subroutine "+function_name
+         function_end = self.newline + self.indentation \
+                      + "ierr=exatns_tensor_destroy(one_tensor)" \
+                      + self.newline + "end subroutine "+function_name
       self.generated_code.append(function_end)
 
    def generate_tensor_class_dict(self, instructions):
@@ -272,6 +274,7 @@ class ExaTENSORcodeGenerator:
       function_calls = []
 
       function_calls.append("! always define one_tensor to use in additions via calls to contraction")
+      function_calls.append(self.indentation+"ierr=exatns_tensor_create(one_tensor,\"autokern_one_tensor\",EXA_DATA_KIND_C8)")
       function_calls.append(self.indentation+"ierr=exatns_tensor_init(one_tensor,ONE)")
 
       for i in instructions:
