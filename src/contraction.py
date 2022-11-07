@@ -88,7 +88,7 @@ class binary_contraction:
 
       operator_regexp_definition = "(\+\=|\*\=|\*|\+|\/|\-)"
       tensor_regexp_definition   = "([a-zA-z0-9_\(\)\|\,]+)" 
-      factor_regexp_definition   = "(-?\d+\.\d*)"
+      factor_regexp_definition   = "([-+]?\d+\.\d*)"
       tensor_name_regexp_definition = "([a-zA-z0-9_]+)"
 
 # definition of binary contractions
@@ -102,8 +102,8 @@ class binary_contraction:
                                        + operator_regexp_definition \
                                        + factor_regexp_definition 
 
-      contraction_b_re = re.compile (r''+ contraction_regexp_definition_b+'', re.IGNORECASE)
-      contraction_bf_re = re.compile (r''+ contraction_regexp_definition_bf+'', re.IGNORECASE)
+      contraction_b_re = re.compile (r''+ contraction_regexp_definition_b+'$', re.IGNORECASE)
+      contraction_bf_re = re.compile (r''+ contraction_regexp_definition_bf+'$', re.IGNORECASE)
 
 # definition of unary contractions, special case of the binary contractions above 
       contraction_regexp_definition_u = tensor_regexp_definition \
@@ -114,8 +114,8 @@ class binary_contraction:
                                        + operator_regexp_definition \
                                        + factor_regexp_definition 
 
-      contraction_u_re = re.compile (r''+ contraction_regexp_definition_u+'', re.IGNORECASE)
-      contraction_uf_re = re.compile (r''+ contraction_regexp_definition_uf+'', re.IGNORECASE)
+      contraction_u_re = re.compile (r''+ contraction_regexp_definition_u+'$', re.IGNORECASE)
+      contraction_uf_re = re.compile (r''+ contraction_regexp_definition_uf+'$', re.IGNORECASE)
 
       tensorname_re = re.compile (r''+ tensor_name_regexp_definition +'', re.IGNORECASE)
 
@@ -340,7 +340,7 @@ class binary_contraction:
              self.print_info()
 
       else :
-         print("   Failed to indentify a tensor contraction")
+         print("   Failed to indentify a tensor contraction among the classes : binary with factor/binary/unary with factor/unary")
          raise ValueError
 
    def print_info(self) :
