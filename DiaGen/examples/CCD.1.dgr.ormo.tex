@@ -1,0 +1,83 @@
+\documentclass[letterpaper,10pt,fleqn,leqno,onecolumn]{article}
+\usepackage[margin=2.0cm]{geometry}
+\title{Got Tensor Contractions?}
+\author{Dmitry I. Lyakh}
+\begin{document}
+\maketitle
+\section{DEFINITIONS}
+ 1. The values of consecutive indices which are not separated by commas
+    are assumed to form an ascending sequence (partially symmetrical storage). \newline
+ 2. Index groups separated by commas run independently. \newline
+ 3. Index ranges: \newline
+    m,n,l: full occupied orbital range (e.g., [0..99]); \newline
+    e,f,d: full virtual orbital range (e.g., [100..999]); \newline
+    I,J,K: a small (active) subrange of the occupied orbital range (e.g., [90..99]); \newline
+    A,B,C: a small (active) subrange of the virtual orbital range (e.g., [990..999]); \newline
+    i,j,k: the occupied orbital range excluding the active subrange (e.g., [0..89]); \newline
+    a,b,c: the virtual orbital range excluding the active subrange (e.g., [100..989]). \newline
+ 4. Despite multiple forms in which S/L/C tensors may appear in contractions,
+    the only unique elements of these tensors are those which have both upper
+    and lower indices ordered in an ascending order (separately). \newline
+\section{TENSOR EXPRESSIONS}
+%#CCD: Energy
+\begin{equation} \;\;\;\;\;\;  2.1.4: Z+=H^{l_{1}^{b}l_{2}^{b}}_{d_{1}^{b}d_{2}^{b}}S^{d_{1}^{b}d_{2}^{b}}_{l_{1}^{b}l_{2}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  2.2.5: Z+=H^{l_{1}^{a}l_{1}^{b}}_{d_{1}^{a}d_{1}^{b}}S^{d_{1}^{a}d_{1}^{b}}_{l_{1}^{a}l_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  2.3.6: Z+=H^{l_{1}^{a}l_{2}^{a}}_{d_{1}^{a}d_{2}^{a}}S^{d_{1}^{a}d_{2}^{a}}_{l_{1}^{a}l_{2}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  1.2.2: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  3.2.8: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{e_{1}^{b}}_{d_{1}^{b}}S^{e_{1}^{a},d_{1}^{b}}_{m_{1}^{a}m_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  3.3.9: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{e_{1}^{a}}_{d_{1}^{a}}S^{e_{1}^{b},d_{1}^{a}}_{m_{1}^{a}m_{1}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  4.2.12: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{b}}_{m_{1}^{b}}S^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a},l_{1}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  4.3.13: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a}}_{m_{1}^{a}}S^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{b},l_{1}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  5.2.16: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{e_{1}^{a}e_{1}^{b}}_{d_{1}^{a}d_{1}^{b}}S^{d_{1}^{a}d_{1}^{b}}_{m_{1}^{a}m_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  6.2.19: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{e_{1}^{b},l_{1}^{b}}_{m_{1}^{b},d_{1}^{b}}S^{e_{1}^{a},d_{1}^{b}}_{m_{1}^{a},l_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  6.4.21: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{e_{1}^{b},l_{1}^{a}}_{m_{1}^{b},d_{1}^{a}}S^{e_{1}^{a},d_{1}^{a}}_{m_{1}^{a},l_{1}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  6.5.22: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{e_{1}^{b},l_{1}^{a}}_{m_{1}^{a},d_{1}^{b}}S^{e_{1}^{a},d_{1}^{b}}_{m_{1}^{b},l_{1}^{a}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  6.6.23: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{e_{1}^{a},l_{1}^{b}}_{m_{1}^{b},d_{1}^{a}}S^{e_{1}^{b},d_{1}^{a}}_{m_{1}^{a},l_{1}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  6.7.24: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{e_{1}^{a},l_{1}^{b}}_{m_{1}^{a},d_{1}^{b}}S^{e_{1}^{b},d_{1}^{b}}_{m_{1}^{b},l_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  6.9.26: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{e_{1}^{a},l_{1}^{a}}_{m_{1}^{a},d_{1}^{a}}S^{e_{1}^{b},d_{1}^{a}}_{m_{1}^{b},l_{1}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  7.2.29: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a}l_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}S^{e_{1}^{a}e_{1}^{b}}_{l_{1}^{a}l_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  8.2.32: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{b},l_{2}^{b}}_{d_{1}^{b}d_{2}^{b}}S^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a},l_{1}^{b}}S^{d_{1}^{b}d_{2}^{b}}_{m_{1}^{b},l_{2}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  8.4.34: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{b},l_{1}^{a}}_{d_{1}^{a}d_{1}^{b}}S^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a},l_{1}^{b}}S^{d_{1}^{a}d_{1}^{b}}_{m_{1}^{b},l_{1}^{a}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  8.5.35: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a},l_{1}^{b}}_{d_{1}^{a}d_{1}^{b}}S^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{b},l_{1}^{a}}S^{d_{1}^{a}d_{1}^{b}}_{m_{1}^{a},l_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  8.7.37: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a},l_{2}^{a}}_{d_{1}^{a}d_{2}^{a}}S^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{b},l_{1}^{a}}S^{d_{1}^{a}d_{2}^{a}}_{m_{1}^{a},l_{2}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  9.2.40: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a}l_{1}^{b}}_{d_{1}^{a}d_{1}^{b}}S^{e_{1}^{a}e_{1}^{b}}_{l_{1}^{a}l_{1}^{b}}S^{d_{1}^{a}d_{1}^{b}}_{m_{1}^{a}m_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  10.2.43: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{b}l_{2}^{b}}_{d_{1}^{b},d_{2}^{b}}S^{e_{1}^{a},d_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}S^{e_{1}^{b},d_{2}^{b}}_{l_{1}^{b}l_{2}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  10.4.45: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a}l_{1}^{b}}_{d_{1}^{b},d_{1}^{a}}S^{e_{1}^{a},d_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}S^{e_{1}^{b},d_{1}^{a}}_{l_{1}^{a}l_{1}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  10.5.46: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a}l_{1}^{b}}_{d_{1}^{a},d_{1}^{b}}S^{e_{1}^{b},d_{1}^{a}}_{m_{1}^{a}m_{1}^{b}}S^{e_{1}^{a},d_{1}^{b}}_{l_{1}^{a}l_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  10.7.48: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a}l_{2}^{a}}_{d_{1}^{a},d_{2}^{a}}S^{e_{1}^{b},d_{1}^{a}}_{m_{1}^{a}m_{1}^{b}}S^{e_{1}^{a},d_{2}^{a}}_{l_{1}^{a}l_{2}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  11.2.51: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{b},l_{2}^{b}}_{d_{1}^{b},d_{2}^{b}}S^{e_{1}^{a},d_{1}^{b}}_{m_{1}^{a},l_{1}^{b}}S^{e_{1}^{b},d_{2}^{b}}_{m_{1}^{b},l_{2}^{b}}\cdot 2/2 \end{equation}
+\begin{equation} \;\;\;\;\;\;  11.4.53: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a},l_{1}^{b}}_{d_{1}^{b},d_{1}^{a}}S^{e_{1}^{a},d_{1}^{b}}_{m_{1}^{b},l_{1}^{a}}S^{e_{1}^{b},d_{1}^{a}}_{m_{1}^{a},l_{1}^{b}}\cdot -2/2 \end{equation}
+\begin{equation} \;\;\;\;\;\;  11.6.55: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a},l_{1}^{b}}_{d_{1}^{a},d_{1}^{b}}S^{e_{1}^{b},d_{1}^{a}}_{m_{1}^{b},l_{1}^{a}}S^{e_{1}^{a},d_{1}^{b}}_{m_{1}^{a},l_{1}^{b}}\cdot 2/2 \end{equation}
+\begin{equation} \;\;\;\;\;\;  11.7.56: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a},l_{1}^{b}}_{d_{1}^{a},d_{1}^{b}}S^{e_{1}^{a},d_{1}^{a}}_{m_{1}^{a},l_{1}^{a}}S^{e_{1}^{b},d_{1}^{b}}_{m_{1}^{b},l_{1}^{b}}\cdot 2/2 \end{equation}
+\begin{equation} \;\;\;\;\;\;  11.10.59: Z^{e_{1}^{a}e_{1}^{b}}_{m_{1}^{a}m_{1}^{b}}+=H^{l_{1}^{a},l_{2}^{a}}_{d_{1}^{a},d_{2}^{a}}S^{e_{1}^{a},d_{1}^{a}}_{m_{1}^{a},l_{1}^{a}}S^{e_{1}^{b},d_{2}^{a}}_{m_{1}^{b},l_{2}^{a}}\cdot 2/2 \end{equation}
+\begin{equation} \;\;\;\;\;\;  1.1.1: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  3.4.10: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{e_{1}^{a}}_{d_{1}^{a}}S^{e_{2}^{a},d_{1}^{a}}_{m_{1}^{a}m_{2}^{a}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  4.4.14: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{l_{1}^{a}}_{m_{1}^{a}}S^{e_{1}^{a}e_{2}^{a}}_{m_{2}^{a},l_{1}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  5.3.17: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{e_{1}^{a}e_{2}^{a}}_{d_{1}^{a}d_{2}^{a}}S^{d_{1}^{a}d_{2}^{a}}_{m_{1}^{a}m_{2}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  6.8.25: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{e_{1}^{a},l_{1}^{b}}_{m_{1}^{a},d_{1}^{b}}S^{e_{2}^{a},d_{1}^{b}}_{m_{2}^{a},l_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  6.10.27: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{e_{1}^{a},l_{1}^{a}}_{m_{1}^{a},d_{1}^{a}}S^{e_{2}^{a},d_{1}^{a}}_{m_{2}^{a},l_{1}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  7.3.30: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{l_{1}^{a}l_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}S^{e_{1}^{a}e_{2}^{a}}_{l_{1}^{a}l_{2}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  8.6.36: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{l_{1}^{a},l_{1}^{b}}_{d_{1}^{a}d_{1}^{b}}S^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a},l_{1}^{a}}S^{d_{1}^{a}d_{1}^{b}}_{m_{2}^{a},l_{1}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  8.8.38: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{l_{1}^{a},l_{2}^{a}}_{d_{1}^{a}d_{2}^{a}}S^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a},l_{1}^{a}}S^{d_{1}^{a}d_{2}^{a}}_{m_{2}^{a},l_{2}^{a}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  9.3.41: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{l_{1}^{a}l_{2}^{a}}_{d_{1}^{a}d_{2}^{a}}S^{e_{1}^{a}e_{2}^{a}}_{l_{1}^{a}l_{2}^{a}}S^{d_{1}^{a}d_{2}^{a}}_{m_{1}^{a}m_{2}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  10.6.47: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{l_{1}^{a}l_{1}^{b}}_{d_{1}^{a},d_{1}^{b}}S^{e_{1}^{a},d_{1}^{a}}_{m_{1}^{a}m_{2}^{a}}S^{e_{2}^{a},d_{1}^{b}}_{l_{1}^{a}l_{1}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  10.8.49: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{l_{1}^{a}l_{2}^{a}}_{d_{1}^{a},d_{2}^{a}}S^{e_{1}^{a},d_{1}^{a}}_{m_{1}^{a}m_{2}^{a}}S^{e_{2}^{a},d_{2}^{a}}_{l_{1}^{a}l_{2}^{a}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  11.3.52: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{l_{1}^{b},l_{2}^{b}}_{d_{1}^{b},d_{2}^{b}}S^{e_{1}^{a},d_{1}^{b}}_{m_{1}^{a},l_{1}^{b}}S^{e_{2}^{a},d_{2}^{b}}_{m_{2}^{a},l_{2}^{b}}\cdot +1/2 \end{equation}
+\begin{equation} \;\;\;\;\;\;  11.8.57: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{l_{1}^{a},l_{1}^{b}}_{d_{1}^{a},d_{1}^{b}}S^{e_{1}^{a},d_{1}^{a}}_{m_{1}^{a},l_{1}^{a}}S^{e_{2}^{a},d_{1}^{b}}_{m_{2}^{a},l_{1}^{b}}\cdot 2/2 \end{equation}
+\begin{equation} \;\;\;\;\;\;  11.11.60: Z^{e_{1}^{a}e_{2}^{a}}_{m_{1}^{a}m_{2}^{a}}+=H^{l_{1}^{a},l_{2}^{a}}_{d_{1}^{a},d_{2}^{a}}S^{e_{1}^{a},d_{1}^{a}}_{m_{1}^{a},l_{1}^{a}}S^{e_{2}^{a},d_{2}^{a}}_{m_{2}^{a},l_{2}^{a}}\cdot +1/2 \end{equation}
+\begin{equation} \;\;\;\;\;\;  1.3.3: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  3.1.7: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{e_{1}^{b}}_{d_{1}^{b}}S^{e_{2}^{b},d_{1}^{b}}_{m_{1}^{b}m_{2}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  4.1.11: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{l_{1}^{b}}_{m_{1}^{b}}S^{e_{1}^{b}e_{2}^{b}}_{m_{2}^{b},l_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  5.1.15: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{e_{1}^{b}e_{2}^{b}}_{d_{1}^{b}d_{2}^{b}}S^{d_{1}^{b}d_{2}^{b}}_{m_{1}^{b}m_{2}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  6.1.18: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{e_{1}^{b},l_{1}^{b}}_{m_{1}^{b},d_{1}^{b}}S^{e_{2}^{b},d_{1}^{b}}_{m_{2}^{b},l_{1}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  6.3.20: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{e_{1}^{b},l_{1}^{a}}_{m_{1}^{b},d_{1}^{a}}S^{e_{2}^{b},d_{1}^{a}}_{m_{2}^{b},l_{1}^{a}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  7.1.28: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{l_{1}^{b}l_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}S^{e_{1}^{b}e_{2}^{b}}_{l_{1}^{b}l_{2}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  8.1.31: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{l_{1}^{b},l_{2}^{b}}_{d_{1}^{b}d_{2}^{b}}S^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b},l_{1}^{b}}S^{d_{1}^{b}d_{2}^{b}}_{m_{2}^{b},l_{2}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  8.3.33: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{l_{1}^{b},l_{1}^{a}}_{d_{1}^{a}d_{1}^{b}}S^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b},l_{1}^{b}}S^{d_{1}^{a}d_{1}^{b}}_{m_{2}^{b},l_{1}^{a}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  9.1.39: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{l_{1}^{b}l_{2}^{b}}_{d_{1}^{b}d_{2}^{b}}S^{e_{1}^{b}e_{2}^{b}}_{l_{1}^{b}l_{2}^{b}}S^{d_{1}^{b}d_{2}^{b}}_{m_{1}^{b}m_{2}^{b}} \end{equation}
+\begin{equation} \;\;\;\;\;\;  10.1.42: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{l_{1}^{b}l_{2}^{b}}_{d_{1}^{b},d_{2}^{b}}S^{e_{1}^{b},d_{1}^{b}}_{m_{1}^{b}m_{2}^{b}}S^{e_{2}^{b},d_{2}^{b}}_{l_{1}^{b}l_{2}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  10.3.44: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{l_{1}^{a}l_{1}^{b}}_{d_{1}^{b},d_{1}^{a}}S^{e_{1}^{b},d_{1}^{b}}_{m_{1}^{b}m_{2}^{b}}S^{e_{2}^{b},d_{1}^{a}}_{l_{1}^{a}l_{1}^{b}}\cdot -1/1 \end{equation}
+\begin{equation} \;\;\;\;\;\;  11.1.50: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{l_{1}^{b},l_{2}^{b}}_{d_{1}^{b},d_{2}^{b}}S^{e_{1}^{b},d_{1}^{b}}_{m_{1}^{b},l_{1}^{b}}S^{e_{2}^{b},d_{2}^{b}}_{m_{2}^{b},l_{2}^{b}}\cdot +1/2 \end{equation}
+\begin{equation} \;\;\;\;\;\;  11.5.54: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{l_{1}^{a},l_{1}^{b}}_{d_{1}^{a},d_{1}^{b}}S^{e_{1}^{b},d_{1}^{a}}_{m_{1}^{b},l_{1}^{a}}S^{e_{2}^{b},d_{1}^{b}}_{m_{2}^{b},l_{1}^{b}}\cdot 2/2 \end{equation}
+\begin{equation} \;\;\;\;\;\;  11.9.58: Z^{e_{1}^{b}e_{2}^{b}}_{m_{1}^{b}m_{2}^{b}}+=H^{l_{1}^{a},l_{2}^{a}}_{d_{1}^{a},d_{2}^{a}}S^{e_{1}^{b},d_{1}^{a}}_{m_{1}^{b},l_{1}^{a}}S^{e_{2}^{b},d_{2}^{a}}_{m_{2}^{b},l_{2}^{a}}\cdot +1/2 \end{equation}
+\end{document}

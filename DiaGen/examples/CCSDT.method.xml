@@ -1,0 +1,35 @@
+<domain name="CCSDT: Energy">
+set H12 = ham(1) + ham(2)
+set P0 = P()
+set Q0 = P()
+set Q0123 = P() + P(1a-;1i+) + P(2a-;2i+) + P(3a-;3i+) 
+set T123 = S(1a+;1i-) + S(2a+;2i-) + S(3a+;3i-) 
+
+product Q0123*H12*expn(T123,6,6)*P0
+ connect(2,3)
+
+#CODE section:
+
+input H(1i+;1i-)
+input H(1i+;1a-)
+input H(1a+;1i-)
+input H(1a+;1a-)
+input H(2i+;2i-)
+input H(2i+;1i-;1a-)
+input H(2i+;2a-)
+input H(1i+;1a+;2i-)
+input H(1i+;1a+;1i-;1a-)
+input H(1i+;1a+;2a-)
+input H(2a+;2i-)
+input H(2a+;1i-;1a-)
+input H(2a+;2a-)
+
+input S(1a+;1i-)
+input S(2a+;2i-)
+input S(3a+;3i-)
+
+output S(1a+;1i-)
+output S(2a+;2i-)
+output S(3a+;3i-)
+
+</domain>

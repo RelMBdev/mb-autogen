@@ -1,0 +1,1618 @@
+#CCSDT: Energy
+#Diagram Domain Tag: Begining - End:    1:        1 -      102
+#Diagram #        1 spin-form #        1 flat ORMO #          1
+Z21(e1a|m1a)+=H2(e1a|m1a) #
+#Diagram #        1 spin-form #        2 flat ORMO #          2
+Z21(e1b|m1b)+=H2(e1b|m1b) #
+#Diagram #        2 spin-form #        1 flat ORMO #          3
+Z22(e1ae2a|m1am2a)+=H5(e1ae2a|m1am2a) #
+#Diagram #        2 spin-form #        2 flat ORMO #          4
+Z22(e1ae1b|m1am1b)+=H5(e1ae1b|m1am1b) #
+#Diagram #        2 spin-form #        3 flat ORMO #          5
+Z22(e1be2b|m1bm2b)+=H5(e1be2b|m1bm2b) #
+#Diagram #        3 spin-form #        1 flat ORMO #          6
+Z23(|)+=H6(l1b|d1b)*S7(d1b|l1b) #
+#Diagram #        3 spin-form #        2 flat ORMO #          7
+Z23(|)+=H6(l1a|d1a)*S7(d1a|l1a) #
+#Diagram #        4 spin-form #        1 flat ORMO #          8
+Z21(e1b|m1b)+=H8(e1b|d1b)*S7(d1b|m1b) #
+#Diagram #        4 spin-form #        2 flat ORMO #          9
+Z21(e1a|m1a)+=H8(e1a|d1a)*S7(d1a|m1a) #
+#Diagram #        5 spin-form #        1 flat ORMO #         10
+Z21(e1b|m1b)+=H9(l1b|m1b)*S7(e1b|l1b)*-1/1 #
+#Diagram #        5 spin-form #        2 flat ORMO #         11
+Z21(e1a|m1a)+=H9(l1a|m1a)*S7(e1a|l1a)*-1/1 #
+#Diagram #        6 spin-form #        1 flat ORMO #         12
+Z21(e1b|m1b)+=H10(e1b,l1b|m1b,d1b)*S7(d1b|l1b) #
+#Diagram #        6 spin-form #        2 flat ORMO #         13
+Z21(e1b|m1b)+=H10(e1b,l1a|m1b,d1a)*S7(d1a|l1a) #
+#Diagram #        6 spin-form #        3 flat ORMO #         14
+Z21(e1a|m1a)+=H10(e1a,l1b|m1a,d1b)*S7(d1b|l1b) #
+#Diagram #        6 spin-form #        4 flat ORMO #         15
+Z21(e1a|m1a)+=H10(e1a,l1a|m1a,d1a)*S7(d1a|l1a) #
+#Diagram #        7 spin-form #        1 flat ORMO #         16
+Z22(e1be2b|m1bm2b)+=H11(e1be2b|m1b,d1b)*S7(d1b|m2b) #
+#Diagram #        7 spin-form #        2 flat ORMO #         17
+Z22(e1ae1b|m1am1b)+=H11(e1ae1b|m1b,d1a)*S7(d1a|m1a)*-1/1 #
+#Diagram #        7 spin-form #        3 flat ORMO #         18
+Z22(e1ae1b|m1am1b)+=H11(e1ae1b|m1a,d1b)*S7(d1b|m1b) #
+#Diagram #        7 spin-form #        4 flat ORMO #         19
+Z22(e1ae2a|m1am2a)+=H11(e1ae2a|m1a,d1a)*S7(d1a|m2a) #
+#Diagram #        8 spin-form #        1 flat ORMO #         20
+Z22(e1be2b|m1bm2b)+=H12(e1b,l1b|m1bm2b)*S7(e2b|l1b)*-1/1 #
+#Diagram #        8 spin-form #        2 flat ORMO #         21
+Z22(e1ae1b|m1am1b)+=H12(e1b,l1a|m1am1b)*S7(e1a|l1a) #
+#Diagram #        8 spin-form #        3 flat ORMO #         22
+Z22(e1ae1b|m1am1b)+=H12(e1a,l1b|m1am1b)*S7(e1b|l1b)*-1/1 #
+#Diagram #        8 spin-form #        4 flat ORMO #         23
+Z22(e1ae2a|m1am2a)+=H12(e1a,l1a|m1am2a)*S7(e2a|l1a)*-1/1 #
+#Diagram #        9 spin-form #        1 flat ORMO #         24
+Z23(|)+=H13(l1bl2b|d1bd2b)*S14(d1bd2b|l1bl2b) #
+#Diagram #        9 spin-form #        2 flat ORMO #         25
+Z23(|)+=H13(l1al1b|d1ad1b)*S14(d1ad1b|l1al1b) #
+#Diagram #        9 spin-form #        3 flat ORMO #         26
+Z23(|)+=H13(l1al2a|d1ad2a)*S14(d1ad2a|l1al2a) #
+#Diagram #       10 spin-form #        1 flat ORMO #         27
+Z21(e1b|m1b)+=H6(l1b|d1b)*S14(e1b,d1b|m1b,l1b) #
+#Diagram #       10 spin-form #        2 flat ORMO #         28
+Z21(e1a|m1a)+=H6(l1b|d1b)*S14(e1a,d1b|m1a,l1b) #
+#Diagram #       10 spin-form #        3 flat ORMO #         29
+Z21(e1b|m1b)+=H6(l1a|d1a)*S14(e1b,d1a|m1b,l1a) #
+#Diagram #       10 spin-form #        4 flat ORMO #         30
+Z21(e1a|m1a)+=H6(l1a|d1a)*S14(e1a,d1a|m1a,l1a) #
+#Diagram #       11 spin-form #        1 flat ORMO #         31
+Z21(e1b|m1b)+=H15(e1b,l1b|d1bd2b)*S14(d1bd2b|m1b,l1b) #
+#Diagram #       11 spin-form #        2 flat ORMO #         32
+Z21(e1b|m1b)+=H15(e1b,l1a|d1ad1b)*S14(d1ad1b|m1b,l1a) #
+#Diagram #       11 spin-form #        3 flat ORMO #         33
+Z21(e1a|m1a)+=H15(e1a,l1b|d1ad1b)*S14(d1ad1b|m1a,l1b) #
+#Diagram #       11 spin-form #        4 flat ORMO #         34
+Z21(e1a|m1a)+=H15(e1a,l1a|d1ad2a)*S14(d1ad2a|m1a,l1a) #
+#Diagram #       12 spin-form #        1 flat ORMO #         35
+Z21(e1b|m1b)+=H16(l1bl2b|m1b,d1b)*S14(e1b,d1b|l1bl2b)*-1/1 #
+#Diagram #       12 spin-form #        2 flat ORMO #         36
+Z21(e1b|m1b)+=H16(l1al1b|m1b,d1a)*S14(e1b,d1a|l1al1b)*-1/1 #
+#Diagram #       12 spin-form #        3 flat ORMO #         37
+Z21(e1a|m1a)+=H16(l1al1b|m1a,d1b)*S14(e1a,d1b|l1al1b)*-1/1 #
+#Diagram #       12 spin-form #        4 flat ORMO #         38
+Z21(e1a|m1a)+=H16(l1al2a|m1a,d1a)*S14(e1a,d1a|l1al2a)*-1/1 #
+#Diagram #       13 spin-form #        1 flat ORMO #         39
+Z22(e1be2b|m1bm2b)+=H8(e1b|d1b)*S14(e2b,d1b|m1bm2b)*-1/1 #
+#Diagram #       13 spin-form #        2 flat ORMO #         40
+Z22(e1ae1b|m1am1b)+=H8(e1b|d1b)*S14(e1a,d1b|m1am1b) #
+#Diagram #       13 spin-form #        3 flat ORMO #         41
+Z22(e1ae1b|m1am1b)+=H8(e1a|d1a)*S14(e1b,d1a|m1am1b)*-1/1 #
+#Diagram #       13 spin-form #        4 flat ORMO #         42
+Z22(e1ae2a|m1am2a)+=H8(e1a|d1a)*S14(e2a,d1a|m1am2a)*-1/1 #
+#Diagram #       14 spin-form #        1 flat ORMO #         43
+Z22(e1be2b|m1bm2b)+=H9(l1b|m1b)*S14(e1be2b|m2b,l1b) #
+#Diagram #       14 spin-form #        2 flat ORMO #         44
+Z22(e1ae1b|m1am1b)+=H9(l1b|m1b)*S14(e1ae1b|m1a,l1b)*-1/1 #
+#Diagram #       14 spin-form #        3 flat ORMO #         45
+Z22(e1ae1b|m1am1b)+=H9(l1a|m1a)*S14(e1ae1b|m1b,l1a) #
+#Diagram #       14 spin-form #        4 flat ORMO #         46
+Z22(e1ae2a|m1am2a)+=H9(l1a|m1a)*S14(e1ae2a|m2a,l1a) #
+#Diagram #       15 spin-form #        1 flat ORMO #         47
+Z22(e1be2b|m1bm2b)+=H17(e1be2b|d1bd2b)*S14(d1bd2b|m1bm2b) #
+#Diagram #       15 spin-form #        2 flat ORMO #         48
+Z22(e1ae1b|m1am1b)+=H17(e1ae1b|d1ad1b)*S14(d1ad1b|m1am1b) #
+#Diagram #       15 spin-form #        3 flat ORMO #         49
+Z22(e1ae2a|m1am2a)+=H17(e1ae2a|d1ad2a)*S14(d1ad2a|m1am2a) #
+#Diagram #       16 spin-form #        1 flat ORMO #         50
+Z22(e1be2b|m1bm2b)+=H10(e1b,l1b|m1b,d1b)*S14(e2b,d1b|m2b,l1b) #
+#Diagram #       16 spin-form #        2 flat ORMO #         51
+Z22(e1ae1b|m1am1b)+=H10(e1b,l1b|m1b,d1b)*S14(e1a,d1b|m1a,l1b) #
+#Diagram #       16 spin-form #        3 flat ORMO #         52
+Z22(e1be2b|m1bm2b)+=H10(e1b,l1a|m1b,d1a)*S14(e2b,d1a|m2b,l1a) #
+#Diagram #       16 spin-form #        4 flat ORMO #         53
+Z22(e1ae1b|m1am1b)+=H10(e1b,l1a|m1b,d1a)*S14(e1a,d1a|m1a,l1a) #
+#Diagram #       16 spin-form #        5 flat ORMO #         54
+Z22(e1ae1b|m1am1b)+=H10(e1b,l1a|m1a,d1b)*S14(e1a,d1b|m1b,l1a)*-1/1 #
+#Diagram #       16 spin-form #        6 flat ORMO #         55
+Z22(e1ae1b|m1am1b)+=H10(e1a,l1b|m1b,d1a)*S14(e1b,d1a|m1a,l1b)*-1/1 #
+#Diagram #       16 spin-form #        7 flat ORMO #         56
+Z22(e1ae1b|m1am1b)+=H10(e1a,l1b|m1a,d1b)*S14(e1b,d1b|m1b,l1b) #
+#Diagram #       16 spin-form #        8 flat ORMO #         57
+Z22(e1ae2a|m1am2a)+=H10(e1a,l1b|m1a,d1b)*S14(e2a,d1b|m2a,l1b) #
+#Diagram #       16 spin-form #        9 flat ORMO #         58
+Z22(e1ae1b|m1am1b)+=H10(e1a,l1a|m1a,d1a)*S14(e1b,d1a|m1b,l1a) #
+#Diagram #       16 spin-form #       10 flat ORMO #         59
+Z22(e1ae2a|m1am2a)+=H10(e1a,l1a|m1a,d1a)*S14(e2a,d1a|m2a,l1a) #
+#Diagram #       17 spin-form #        1 flat ORMO #         60
+Z22(e1be2b|m1bm2b)+=H18(l1bl2b|m1bm2b)*S14(e1be2b|l1bl2b) #
+#Diagram #       17 spin-form #        2 flat ORMO #         61
+Z22(e1ae1b|m1am1b)+=H18(l1al1b|m1am1b)*S14(e1ae1b|l1al1b) #
+#Diagram #       17 spin-form #        3 flat ORMO #         62
+Z22(e1ae2a|m1am2a)+=H18(l1al2a|m1am2a)*S14(e1ae2a|l1al2a) #
+#Diagram #       18 spin-form #        1 flat ORMO #         63
+Z24(e1be2be3b|m1bm2bm3b)+=H11(e1be2b|m1b,d1b)*S14(e3b,d1b|m2bm3b)*-1/1 #
+#Diagram #       18 spin-form #        2 flat ORMO #         64
+Z24(e1ae1be2b|m1am1bm2b)+=H11(e1be2b|m1b,d1b)*S14(e1a,d1b|m1am2b) #
+#Diagram #       18 spin-form #        3 flat ORMO #         65
+Z24(e1ae1be2b|m1am1bm2b)+=H11(e1ae1b|m1b,d1a)*S14(e2b,d1a|m1am2b) #
+#Diagram #       18 spin-form #        4 flat ORMO #         66
+Z24(e1ae2ae1b|m1am2am1b)+=H11(e1ae1b|m1b,d1a)*S14(e2a,d1a|m1am2a) #
+#Diagram #       18 spin-form #        5 flat ORMO #         67
+Z24(e1ae1be2b|m1am1bm2b)+=H11(e1ae1b|m1a,d1b)*S14(e2b,d1b|m1bm2b)*-1/1 #
+#Diagram #       18 spin-form #        6 flat ORMO #         68
+Z24(e1ae2ae1b|m1am2am1b)+=H11(e1ae1b|m1a,d1b)*S14(e2a,d1b|m2am1b) #
+#Diagram #       18 spin-form #        7 flat ORMO #         69
+Z24(e1ae2ae1b|m1am2am1b)+=H11(e1ae2a|m1a,d1a)*S14(e1b,d1a|m2am1b)*-1/1 #
+#Diagram #       18 spin-form #        8 flat ORMO #         70
+Z24(e1ae2ae3a|m1am2am3a)+=H11(e1ae2a|m1a,d1a)*S14(e3a,d1a|m2am3a)*-1/1 #
+#Diagram #       19 spin-form #        1 flat ORMO #         71
+Z24(e1be2be3b|m1bm2bm3b)+=H12(e1b,l1b|m1bm2b)*S14(e2be3b|m3b,l1b) #
+#Diagram #       19 spin-form #        2 flat ORMO #         72
+Z24(e1ae1be2b|m1am1bm2b)+=H12(e1b,l1b|m1bm2b)*S14(e1ae2b|m1a,l1b)*-1/1 #
+#Diagram #       19 spin-form #        3 flat ORMO #         73
+Z24(e1ae1be2b|m1am1bm2b)+=H12(e1b,l1a|m1am1b)*S14(e1ae2b|m2b,l1a)*-1/1 #
+#Diagram #       19 spin-form #        4 flat ORMO #         74
+Z24(e1ae2ae1b|m1am2am1b)+=H12(e1b,l1a|m1am1b)*S14(e1ae2a|m2a,l1a)*-1/1 #
+#Diagram #       19 spin-form #        5 flat ORMO #         75
+Z24(e1ae1be2b|m1am1bm2b)+=H12(e1a,l1b|m1am1b)*S14(e1be2b|m2b,l1b) #
+#Diagram #       19 spin-form #        6 flat ORMO #         76
+Z24(e1ae2ae1b|m1am2am1b)+=H12(e1a,l1b|m1am1b)*S14(e2ae1b|m2a,l1b)*-1/1 #
+#Diagram #       19 spin-form #        7 flat ORMO #         77
+Z24(e1ae2ae1b|m1am2am1b)+=H12(e1a,l1a|m1am2a)*S14(e2ae1b|m1b,l1a) #
+#Diagram #       19 spin-form #        8 flat ORMO #         78
+Z24(e1ae2ae3a|m1am2am3a)+=H12(e1a,l1a|m1am2a)*S14(e2ae3a|m3a,l1a) #
+#Diagram #       20 spin-form #        1 flat ORMO #         79
+Z21(e1b|m1b)+=H13(l1bl2b|d1bd2b)*S20(e1b,d1bd2b|m1b,l1bl2b) #
+#Diagram #       20 spin-form #        2 flat ORMO #         80
+Z21(e1a|m1a)+=H13(l1bl2b|d1bd2b)*S20(e1a,d1bd2b|m1a,l1bl2b) #
+#Diagram #       20 spin-form #        3 flat ORMO #         81
+Z21(e1b|m1b)+=H13(l1al1b|d1ad1b)*S20(e1b,d1ad1b|m1b,l1al1b) #
+#Diagram #       20 spin-form #        4 flat ORMO #         82
+Z21(e1a|m1a)+=H13(l1al1b|d1ad1b)*S20(e1a,d1ad1b|m1a,l1al1b) #
+#Diagram #       20 spin-form #        5 flat ORMO #         83
+Z21(e1b|m1b)+=H13(l1al2a|d1ad2a)*S20(e1b,d1ad2a|m1b,l1al2a) #
+#Diagram #       20 spin-form #        6 flat ORMO #         84
+Z21(e1a|m1a)+=H13(l1al2a|d1ad2a)*S20(e1a,d1ad2a|m1a,l1al2a) #
+#Diagram #       21 spin-form #        1 flat ORMO #         85
+Z22(e1be2b|m1bm2b)+=H6(l1b|d1b)*S20(e1be2b,d1b|m1bm2b,l1b) #
+#Diagram #       21 spin-form #        2 flat ORMO #         86
+Z22(e1ae1b|m1am1b)+=H6(l1b|d1b)*S20(e1ae1b,d1b|m1am1b,l1b) #
+#Diagram #       21 spin-form #        3 flat ORMO #         87
+Z22(e1ae2a|m1am2a)+=H6(l1b|d1b)*S20(e1ae2a,d1b|m1am2a,l1b) #
+#Diagram #       21 spin-form #        4 flat ORMO #         88
+Z22(e1be2b|m1bm2b)+=H6(l1a|d1a)*S20(e1be2b,d1a|m1bm2b,l1a) #
+#Diagram #       21 spin-form #        5 flat ORMO #         89
+Z22(e1ae1b|m1am1b)+=H6(l1a|d1a)*S20(e1ae1b,d1a|m1am1b,l1a) #
+#Diagram #       21 spin-form #        6 flat ORMO #         90
+Z22(e1ae2a|m1am2a)+=H6(l1a|d1a)*S20(e1ae2a,d1a|m1am2a,l1a) #
+#Diagram #       22 spin-form #        1 flat ORMO #         91
+Z22(e1be2b|m1bm2b)+=H15(e1b,l1b|d1bd2b)*S20(e2b,d1bd2b|m1bm2b,l1b)*-1/1 #
+#Diagram #       22 spin-form #        2 flat ORMO #         92
+Z22(e1ae1b|m1am1b)+=H15(e1b,l1b|d1bd2b)*S20(e1a,d1bd2b|m1am1b,l1b) #
+#Diagram #       22 spin-form #        3 flat ORMO #         93
+Z22(e1be2b|m1bm2b)+=H15(e1b,l1a|d1ad1b)*S20(e2b,d1ad1b|m1bm2b,l1a)*-1/1 #
+#Diagram #       22 spin-form #        4 flat ORMO #         94
+Z22(e1ae1b|m1am1b)+=H15(e1b,l1a|d1ad1b)*S20(e1a,d1ad1b|m1am1b,l1a) #
+#Diagram #       22 spin-form #        5 flat ORMO #         95
+Z22(e1ae1b|m1am1b)+=H15(e1a,l1b|d1ad1b)*S20(e1b,d1ad1b|m1am1b,l1b)*-1/1 #
+#Diagram #       22 spin-form #        6 flat ORMO #         96
+Z22(e1ae2a|m1am2a)+=H15(e1a,l1b|d1ad1b)*S20(e2a,d1ad1b|m1am2a,l1b)*-1/1 #
+#Diagram #       22 spin-form #        7 flat ORMO #         97
+Z22(e1ae1b|m1am1b)+=H15(e1a,l1a|d1ad2a)*S20(e1b,d1ad2a|m1am1b,l1a)*-1/1 #
+#Diagram #       22 spin-form #        8 flat ORMO #         98
+Z22(e1ae2a|m1am2a)+=H15(e1a,l1a|d1ad2a)*S20(e2a,d1ad2a|m1am2a,l1a)*-1/1 #
+#Diagram #       23 spin-form #        1 flat ORMO #         99
+Z22(e1be2b|m1bm2b)+=H16(l1bl2b|m1b,d1b)*S20(e1be2b,d1b|m2b,l1bl2b) #
+#Diagram #       23 spin-form #        2 flat ORMO #        100
+Z22(e1ae1b|m1am1b)+=H16(l1bl2b|m1b,d1b)*S20(e1ae1b,d1b|m1a,l1bl2b)*-1/1 #
+#Diagram #       23 spin-form #        3 flat ORMO #        101
+Z22(e1be2b|m1bm2b)+=H16(l1al1b|m1b,d1a)*S20(e1be2b,d1a|m2b,l1al1b) #
+#Diagram #       23 spin-form #        4 flat ORMO #        102
+Z22(e1ae1b|m1am1b)+=H16(l1al1b|m1b,d1a)*S20(e1ae1b,d1a|m1a,l1al1b)*-1/1 #
+#Diagram #       23 spin-form #        5 flat ORMO #        103
+Z22(e1ae1b|m1am1b)+=H16(l1al1b|m1a,d1b)*S20(e1ae1b,d1b|m1b,l1al1b) #
+#Diagram #       23 spin-form #        6 flat ORMO #        104
+Z22(e1ae2a|m1am2a)+=H16(l1al1b|m1a,d1b)*S20(e1ae2a,d1b|m2a,l1al1b) #
+#Diagram #       23 spin-form #        7 flat ORMO #        105
+Z22(e1ae1b|m1am1b)+=H16(l1al2a|m1a,d1a)*S20(e1ae1b,d1a|m1b,l1al2a) #
+#Diagram #       23 spin-form #        8 flat ORMO #        106
+Z22(e1ae2a|m1am2a)+=H16(l1al2a|m1a,d1a)*S20(e1ae2a,d1a|m2a,l1al2a) #
+#Diagram #       24 spin-form #        1 flat ORMO #        107
+Z24(e1be2be3b|m1bm2bm3b)+=H8(e1b|d1b)*S20(e2be3b,d1b|m1bm2bm3b) #
+#Diagram #       24 spin-form #        2 flat ORMO #        108
+Z24(e1ae1be2b|m1am1bm2b)+=H8(e1b|d1b)*S20(e1ae2b,d1b|m1am1bm2b)*-1/1 #
+#Diagram #       24 spin-form #        3 flat ORMO #        109
+Z24(e1ae2ae1b|m1am2am1b)+=H8(e1b|d1b)*S20(e1ae2a,d1b|m1am2am1b) #
+#Diagram #       24 spin-form #        4 flat ORMO #        110
+Z24(e1ae1be2b|m1am1bm2b)+=H8(e1a|d1a)*S20(e1be2b,d1a|m1am1bm2b) #
+#Diagram #       24 spin-form #        5 flat ORMO #        111
+Z24(e1ae2ae1b|m1am2am1b)+=H8(e1a|d1a)*S20(e2ae1b,d1a|m1am2am1b) #
+#Diagram #       24 spin-form #        6 flat ORMO #        112
+Z24(e1ae2ae3a|m1am2am3a)+=H8(e1a|d1a)*S20(e2ae3a,d1a|m1am2am3a) #
+#Diagram #       25 spin-form #        1 flat ORMO #        113
+Z24(e1be2be3b|m1bm2bm3b)+=H9(l1b|m1b)*S20(e1be2be3b|m2bm3b,l1b)*-1/1 #
+#Diagram #       25 spin-form #        2 flat ORMO #        114
+Z24(e1ae1be2b|m1am1bm2b)+=H9(l1b|m1b)*S20(e1ae1be2b|m1am2b,l1b) #
+#Diagram #       25 spin-form #        3 flat ORMO #        115
+Z24(e1ae2ae1b|m1am2am1b)+=H9(l1b|m1b)*S20(e1ae2ae1b|m1am2a,l1b)*-1/1 #
+#Diagram #       25 spin-form #        4 flat ORMO #        116
+Z24(e1ae1be2b|m1am1bm2b)+=H9(l1a|m1a)*S20(e1ae1be2b|m1bm2b,l1a)*-1/1 #
+#Diagram #       25 spin-form #        5 flat ORMO #        117
+Z24(e1ae2ae1b|m1am2am1b)+=H9(l1a|m1a)*S20(e1ae2ae1b|m2am1b,l1a)*-1/1 #
+#Diagram #       25 spin-form #        6 flat ORMO #        118
+Z24(e1ae2ae3a|m1am2am3a)+=H9(l1a|m1a)*S20(e1ae2ae3a|m2am3a,l1a)*-1/1 #
+#Diagram #       26 spin-form #        1 flat ORMO #        119
+Z24(e1be2be3b|m1bm2bm3b)+=H17(e1be2b|d1bd2b)*S20(e3b,d1bd2b|m1bm2bm3b) #
+#Diagram #       26 spin-form #        2 flat ORMO #        120
+Z24(e1ae1be2b|m1am1bm2b)+=H17(e1be2b|d1bd2b)*S20(e1a,d1bd2b|m1am1bm2b) #
+#Diagram #       26 spin-form #        3 flat ORMO #        121
+Z24(e1ae1be2b|m1am1bm2b)+=H17(e1ae1b|d1ad1b)*S20(e2b,d1ad1b|m1am1bm2b) #
+#Diagram #       26 spin-form #        4 flat ORMO #        122
+Z24(e1ae2ae1b|m1am2am1b)+=H17(e1ae1b|d1ad1b)*S20(e2a,d1ad1b|m1am2am1b)*-1/1 #
+#Diagram #       26 spin-form #        5 flat ORMO #        123
+Z24(e1ae2ae1b|m1am2am1b)+=H17(e1ae2a|d1ad2a)*S20(e1b,d1ad2a|m1am2am1b) #
+#Diagram #       26 spin-form #        6 flat ORMO #        124
+Z24(e1ae2ae3a|m1am2am3a)+=H17(e1ae2a|d1ad2a)*S20(e3a,d1ad2a|m1am2am3a) #
+#Diagram #       27 spin-form #        1 flat ORMO #        125
+Z24(e1be2be3b|m1bm2bm3b)+=H10(e1b,l1b|m1b,d1b)*S20(e2be3b,d1b|m2bm3b,l1b) #
+#Diagram #       27 spin-form #        2 flat ORMO #        126
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1b,l1b|m1b,d1b)*S20(e1ae2b,d1b|m1am2b,l1b) #
+#Diagram #       27 spin-form #        3 flat ORMO #        127
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1b,l1b|m1b,d1b)*S20(e1ae2a,d1b|m1am2a,l1b) #
+#Diagram #       27 spin-form #        4 flat ORMO #        128
+Z24(e1be2be3b|m1bm2bm3b)+=H10(e1b,l1a|m1b,d1a)*S20(e2be3b,d1a|m2bm3b,l1a) #
+#Diagram #       27 spin-form #        5 flat ORMO #        129
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1b,l1a|m1b,d1a)*S20(e1ae2b,d1a|m1am2b,l1a) #
+#Diagram #       27 spin-form #        6 flat ORMO #        130
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1b,l1a|m1b,d1a)*S20(e1ae2a,d1a|m1am2a,l1a) #
+#Diagram #       27 spin-form #        7 flat ORMO #        131
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1b,l1a|m1a,d1b)*S20(e1ae2b,d1b|m1bm2b,l1a)*-1/1 #
+#Diagram #       27 spin-form #        8 flat ORMO #        132
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1b,l1a|m1a,d1b)*S20(e1ae2a,d1b|m2am1b,l1a) #
+#Diagram #       27 spin-form #        9 flat ORMO #        133
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1a,l1b|m1b,d1a)*S20(e1be2b,d1a|m1am2b,l1b)*-1/1 #
+#Diagram #       27 spin-form #       10 flat ORMO #        134
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1a,l1b|m1b,d1a)*S20(e2ae1b,d1a|m1am2a,l1b) #
+#Diagram #       27 spin-form #       11 flat ORMO #        135
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1a,l1b|m1a,d1b)*S20(e1be2b,d1b|m1bm2b,l1b) #
+#Diagram #       27 spin-form #       12 flat ORMO #        136
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1a,l1b|m1a,d1b)*S20(e2ae1b,d1b|m2am1b,l1b) #
+#Diagram #       27 spin-form #       13 flat ORMO #        137
+Z24(e1ae2ae3a|m1am2am3a)+=H10(e1a,l1b|m1a,d1b)*S20(e2ae3a,d1b|m2am3a,l1b) #
+#Diagram #       27 spin-form #       14 flat ORMO #        138
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1a,l1a|m1a,d1a)*S20(e1be2b,d1a|m1bm2b,l1a) #
+#Diagram #       27 spin-form #       15 flat ORMO #        139
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1a,l1a|m1a,d1a)*S20(e2ae1b,d1a|m2am1b,l1a) #
+#Diagram #       27 spin-form #       16 flat ORMO #        140
+Z24(e1ae2ae3a|m1am2am3a)+=H10(e1a,l1a|m1a,d1a)*S20(e2ae3a,d1a|m2am3a,l1a) #
+#Diagram #       28 spin-form #        1 flat ORMO #        141
+Z24(e1be2be3b|m1bm2bm3b)+=H18(l1bl2b|m1bm2b)*S20(e1be2be3b|m3b,l1bl2b) #
+#Diagram #       28 spin-form #        2 flat ORMO #        142
+Z24(e1ae1be2b|m1am1bm2b)+=H18(l1bl2b|m1bm2b)*S20(e1ae1be2b|m1a,l1bl2b) #
+#Diagram #       28 spin-form #        3 flat ORMO #        143
+Z24(e1ae1be2b|m1am1bm2b)+=H18(l1al1b|m1am1b)*S20(e1ae1be2b|m2b,l1al1b) #
+#Diagram #       28 spin-form #        4 flat ORMO #        144
+Z24(e1ae2ae1b|m1am2am1b)+=H18(l1al1b|m1am1b)*S20(e1ae2ae1b|m2a,l1al1b)*-1/1 #
+#Diagram #       28 spin-form #        5 flat ORMO #        145
+Z24(e1ae2ae1b|m1am2am1b)+=H18(l1al2a|m1am2a)*S20(e1ae2ae1b|m1b,l1al2a) #
+#Diagram #       28 spin-form #        6 flat ORMO #        146
+Z24(e1ae2ae3a|m1am2am3a)+=H18(l1al2a|m1am2a)*S20(e1ae2ae3a|m3a,l1al2a) #
+#Diagram #       29 spin-form #        1 flat ORMO #        147
+Z23(|)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|l1b)*S7(d2b|l2b)*+1/2 #
+#Diagram #       29 spin-form #        2 flat ORMO #        148
+Z23(|)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|l1a)*S7(d1b|l1b)*2/2 #
+#Diagram #       29 spin-form #        3 flat ORMO #        149
+Z23(|)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|l1a)*S7(d2a|l2a)*+1/2 #
+#Diagram #       30 spin-form #        1 flat ORMO #        150
+Z21(e1b|m1b)+=H6(l1b|d1b)*S7(e1b|l1b)*S7(d1b|m1b)*-1/1 #
+#Diagram #       30 spin-form #        2 flat ORMO #        151
+Z21(e1a|m1a)+=H6(l1a|d1a)*S7(e1a|l1a)*S7(d1a|m1a)*-1/1 #
+#Diagram #       31 spin-form #        1 flat ORMO #        152
+Z21(e1b|m1b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|l1b) #
+#Diagram #       31 spin-form #        2 flat ORMO #        153
+Z21(e1b|m1b)+=H15(e1b,l1a|d1b,d1a)*S7(d1b|m1b)*S7(d1a|l1a) #
+#Diagram #       31 spin-form #        3 flat ORMO #        154
+Z21(e1a|m1a)+=H15(e1a,l1b|d1a,d1b)*S7(d1a|m1a)*S7(d1b|l1b) #
+#Diagram #       31 spin-form #        4 flat ORMO #        155
+Z21(e1a|m1a)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|l1a) #
+#Diagram #       32 spin-form #        1 flat ORMO #        156
+Z21(e1b|m1b)+=H16(l1b,l2b|m1b,d1b)*S7(e1b|l1b)*S7(d1b|l2b)*-1/1 #
+#Diagram #       32 spin-form #        2 flat ORMO #        157
+Z21(e1b|m1b)+=H16(l1b,l1a|m1b,d1a)*S7(e1b|l1b)*S7(d1a|l1a)*-1/1 #
+#Diagram #       32 spin-form #        3 flat ORMO #        158
+Z21(e1a|m1a)+=H16(l1a,l1b|m1a,d1b)*S7(e1a|l1a)*S7(d1b|l1b)*-1/1 #
+#Diagram #       32 spin-form #        4 flat ORMO #        159
+Z21(e1a|m1a)+=H16(l1a,l2a|m1a,d1a)*S7(e1a|l1a)*S7(d1a|l2a)*-1/1 #
+#Diagram #       33 spin-form #        1 flat ORMO #        160
+Z22(e1be2b|m1bm2b)+=H17(e1be2b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|m2b)*+1/2 #
+#Diagram #       33 spin-form #        2 flat ORMO #        161
+Z22(e1ae1b|m1am1b)+=H17(e1ae1b|d1a,d1b)*S7(d1a|m1a)*S7(d1b|m1b)*2/2 #
+#Diagram #       33 spin-form #        3 flat ORMO #        162
+Z22(e1ae2a|m1am2a)+=H17(e1ae2a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|m2a)*+1/2 #
+#Diagram #       34 spin-form #        1 flat ORMO #        163
+Z22(e1be2b|m1bm2b)+=H10(e1b,l1b|m1b,d1b)*S7(e2b|l1b)*S7(d1b|m2b)*-1/1 #
+#Diagram #       34 spin-form #        2 flat ORMO #        164
+Z22(e1ae1b|m1am1b)+=H10(e1b,l1a|m1b,d1a)*S7(e1a|l1a)*S7(d1a|m1a)*-1/1 #
+#Diagram #       34 spin-form #        3 flat ORMO #        165
+Z22(e1ae1b|m1am1b)+=H10(e1b,l1a|m1a,d1b)*S7(e1a|l1a)*S7(d1b|m1b) #
+#Diagram #       34 spin-form #        4 flat ORMO #        166
+Z22(e1ae1b|m1am1b)+=H10(e1a,l1b|m1b,d1a)*S7(e1b|l1b)*S7(d1a|m1a) #
+#Diagram #       34 spin-form #        5 flat ORMO #        167
+Z22(e1ae1b|m1am1b)+=H10(e1a,l1b|m1a,d1b)*S7(e1b|l1b)*S7(d1b|m1b)*-1/1 #
+#Diagram #       34 spin-form #        6 flat ORMO #        168
+Z22(e1ae2a|m1am2a)+=H10(e1a,l1a|m1a,d1a)*S7(e2a|l1a)*S7(d1a|m2a)*-1/1 #
+#Diagram #       35 spin-form #        1 flat ORMO #        169
+Z22(e1be2b|m1bm2b)+=H18(l1b,l2b|m1bm2b)*S7(e1b|l1b)*S7(e2b|l2b)*+1/2 #
+#Diagram #       35 spin-form #        2 flat ORMO #        170
+Z22(e1ae1b|m1am1b)+=H18(l1a,l1b|m1am1b)*S7(e1a|l1a)*S7(e1b|l1b)*2/2 #
+#Diagram #       35 spin-form #        3 flat ORMO #        171
+Z22(e1ae2a|m1am2a)+=H18(l1a,l2a|m1am2a)*S7(e1a|l1a)*S7(e2a|l2a)*+1/2 #
+#Diagram #       36 spin-form #        1 flat ORMO #        172
+Z21(e1b|m1b)+=H13(l1b,l2b|d1bd2b)*S7(e1b|l1b)*S14(d1bd2b|m1b,l2b)*-1/1 #
+#Diagram #       36 spin-form #        2 flat ORMO #        173
+Z21(e1b|m1b)+=H13(l1b,l1a|d1ad1b)*S7(e1b|l1b)*S14(d1ad1b|m1b,l1a)*-1/1 #
+#Diagram #       36 spin-form #        3 flat ORMO #        174
+Z21(e1a|m1a)+=H13(l1a,l1b|d1ad1b)*S7(e1a|l1a)*S14(d1ad1b|m1a,l1b)*-1/1 #
+#Diagram #       36 spin-form #        4 flat ORMO #        175
+Z21(e1a|m1a)+=H13(l1a,l2a|d1ad2a)*S7(e1a|l1a)*S14(d1ad2a|m1a,l2a)*-1/1 #
+#Diagram #       37 spin-form #        1 flat ORMO #        176
+Z21(e1b|m1b)+=H13(l1bl2b|d1b,d2b)*S7(d1b|m1b)*S14(e1b,d2b|l1bl2b)*-1/1 #
+#Diagram #       37 spin-form #        2 flat ORMO #        177
+Z21(e1b|m1b)+=H13(l1al1b|d1b,d1a)*S7(d1b|m1b)*S14(e1b,d1a|l1al1b)*-1/1 #
+#Diagram #       37 spin-form #        3 flat ORMO #        178
+Z21(e1a|m1a)+=H13(l1al1b|d1a,d1b)*S7(d1a|m1a)*S14(e1a,d1b|l1al1b)*-1/1 #
+#Diagram #       37 spin-form #        4 flat ORMO #        179
+Z21(e1a|m1a)+=H13(l1al2a|d1a,d2a)*S7(d1a|m1a)*S14(e1a,d2a|l1al2a)*-1/1 #
+#Diagram #       38 spin-form #        1 flat ORMO #        180
+Z21(e1b|m1b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|l1b)*S14(e1b,d2b|m1b,l2b) #
+#Diagram #       38 spin-form #        2 flat ORMO #        181
+Z21(e1a|m1a)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|l1b)*S14(e1a,d2b|m1a,l2b) #
+#Diagram #       38 spin-form #        3 flat ORMO #        182
+Z21(e1b|m1b)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|l1b)*S14(e1b,d1a|m1b,l1a) #
+#Diagram #       38 spin-form #        4 flat ORMO #        183
+Z21(e1a|m1a)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|l1b)*S14(e1a,d1a|m1a,l1a) #
+#Diagram #       38 spin-form #        5 flat ORMO #        184
+Z21(e1b|m1b)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|l1a)*S14(e1b,d1b|m1b,l1b) #
+#Diagram #       38 spin-form #        6 flat ORMO #        185
+Z21(e1a|m1a)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|l1a)*S14(e1a,d1b|m1a,l1b) #
+#Diagram #       38 spin-form #        7 flat ORMO #        186
+Z21(e1b|m1b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|l1a)*S14(e1b,d2a|m1b,l2a) #
+#Diagram #       38 spin-form #        8 flat ORMO #        187
+Z21(e1a|m1a)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|l1a)*S14(e1a,d2a|m1a,l2a) #
+#Diagram #       39 spin-form #        1 flat ORMO #        188
+Z22(e1be2b|m1bm2b)+=H6(l1b|d1b)*S7(e1b|l1b)*S14(e2b,d1b|m1bm2b) #
+#Diagram #       39 spin-form #        2 flat ORMO #        189
+Z22(e1ae1b|m1am1b)+=H6(l1b|d1b)*S7(e1b|l1b)*S14(e1a,d1b|m1am1b)*-1/1 #
+#Diagram #       39 spin-form #        3 flat ORMO #        190
+Z22(e1ae1b|m1am1b)+=H6(l1a|d1a)*S7(e1a|l1a)*S14(e1b,d1a|m1am1b) #
+#Diagram #       39 spin-form #        4 flat ORMO #        191
+Z22(e1ae2a|m1am2a)+=H6(l1a|d1a)*S7(e1a|l1a)*S14(e2a,d1a|m1am2a) #
+#Diagram #       40 spin-form #        1 flat ORMO #        192
+Z22(e1be2b|m1bm2b)+=H6(l1b|d1b)*S7(d1b|m1b)*S14(e1be2b|m2b,l1b) #
+#Diagram #       40 spin-form #        2 flat ORMO #        193
+Z22(e1ae1b|m1am1b)+=H6(l1b|d1b)*S7(d1b|m1b)*S14(e1ae1b|m1a,l1b)*-1/1 #
+#Diagram #       40 spin-form #        3 flat ORMO #        194
+Z22(e1ae1b|m1am1b)+=H6(l1a|d1a)*S7(d1a|m1a)*S14(e1ae1b|m1b,l1a) #
+#Diagram #       40 spin-form #        4 flat ORMO #        195
+Z22(e1ae2a|m1am2a)+=H6(l1a|d1a)*S7(d1a|m1a)*S14(e1ae2a|m2a,l1a) #
+#Diagram #       41 spin-form #        1 flat ORMO #        196
+Z22(e1be2b|m1bm2b)+=H15(e1b,l1b|d1bd2b)*S7(e2b|l1b)*S14(d1bd2b|m1bm2b)*-1/1 #
+#Diagram #       41 spin-form #        2 flat ORMO #        197
+Z22(e1ae1b|m1am1b)+=H15(e1b,l1a|d1ad1b)*S7(e1a|l1a)*S14(d1ad1b|m1am1b) #
+#Diagram #       41 spin-form #        3 flat ORMO #        198
+Z22(e1ae1b|m1am1b)+=H15(e1a,l1b|d1ad1b)*S7(e1b|l1b)*S14(d1ad1b|m1am1b)*-1/1 #
+#Diagram #       41 spin-form #        4 flat ORMO #        199
+Z22(e1ae2a|m1am2a)+=H15(e1a,l1a|d1ad2a)*S7(e2a|l1a)*S14(d1ad2a|m1am2a)*-1/1 #
+#Diagram #       42 spin-form #        1 flat ORMO #        200
+Z22(e1be2b|m1bm2b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|m1b)*S14(e2b,d2b|m2b,l1b) #
+#Diagram #       42 spin-form #        2 flat ORMO #        201
+Z22(e1ae1b|m1am1b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|m1b)*S14(e1a,d2b|m1a,l1b) #
+#Diagram #       42 spin-form #        3 flat ORMO #        202
+Z22(e1be2b|m1bm2b)+=H15(e1b,l1a|d1b,d1a)*S7(d1b|m1b)*S14(e2b,d1a|m2b,l1a) #
+#Diagram #       42 spin-form #        4 flat ORMO #        203
+Z22(e1ae1b|m1am1b)+=H15(e1b,l1a|d1b,d1a)*S7(d1b|m1b)*S14(e1a,d1a|m1a,l1a) #
+#Diagram #       42 spin-form #        5 flat ORMO #        204
+Z22(e1ae1b|m1am1b)+=H15(e1b,l1a|d1a,d1b)*S7(d1a|m1a)*S14(e1a,d1b|m1b,l1a)*-1/1 #
+#Diagram #       42 spin-form #        6 flat ORMO #        205
+Z22(e1ae1b|m1am1b)+=H15(e1a,l1b|d1b,d1a)*S7(d1b|m1b)*S14(e1b,d1a|m1a,l1b)*-1/1 #
+#Diagram #       42 spin-form #        7 flat ORMO #        206
+Z22(e1ae1b|m1am1b)+=H15(e1a,l1b|d1a,d1b)*S7(d1a|m1a)*S14(e1b,d1b|m1b,l1b) #
+#Diagram #       42 spin-form #        8 flat ORMO #        207
+Z22(e1ae2a|m1am2a)+=H15(e1a,l1b|d1a,d1b)*S7(d1a|m1a)*S14(e2a,d1b|m2a,l1b) #
+#Diagram #       42 spin-form #        9 flat ORMO #        208
+Z22(e1ae1b|m1am1b)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|m1a)*S14(e1b,d2a|m1b,l1a) #
+#Diagram #       42 spin-form #       10 flat ORMO #        209
+Z22(e1ae2a|m1am2a)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|m1a)*S14(e2a,d2a|m2a,l1a) #
+#Diagram #       43 spin-form #        1 flat ORMO #        210
+Z22(e1be2b|m1bm2b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|l1b)*S14(e2b,d2b|m1bm2b) #
+#Diagram #       43 spin-form #        2 flat ORMO #        211
+Z22(e1ae1b|m1am1b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|l1b)*S14(e1a,d2b|m1am1b)*-1/1 #
+#Diagram #       43 spin-form #        3 flat ORMO #        212
+Z22(e1be2b|m1bm2b)+=H15(e1b,l1a|d1a,d1b)*S7(d1a|l1a)*S14(e2b,d1b|m1bm2b) #
+#Diagram #       43 spin-form #        4 flat ORMO #        213
+Z22(e1ae1b|m1am1b)+=H15(e1b,l1a|d1a,d1b)*S7(d1a|l1a)*S14(e1a,d1b|m1am1b)*-1/1 #
+#Diagram #       43 spin-form #        5 flat ORMO #        214
+Z22(e1ae1b|m1am1b)+=H15(e1a,l1b|d1b,d1a)*S7(d1b|l1b)*S14(e1b,d1a|m1am1b) #
+#Diagram #       43 spin-form #        6 flat ORMO #        215
+Z22(e1ae2a|m1am2a)+=H15(e1a,l1b|d1b,d1a)*S7(d1b|l1b)*S14(e2a,d1a|m1am2a) #
+#Diagram #       43 spin-form #        7 flat ORMO #        216
+Z22(e1ae1b|m1am1b)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|l1a)*S14(e1b,d2a|m1am1b) #
+#Diagram #       43 spin-form #        8 flat ORMO #        217
+Z22(e1ae2a|m1am2a)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|l1a)*S14(e2a,d2a|m1am2a) #
+#Diagram #       44 spin-form #        1 flat ORMO #        218
+Z22(e1be2b|m1bm2b)+=H16(l1b,l2b|m1b,d1b)*S7(e1b|l1b)*S14(e2b,d1b|m2b,l2b)*-1/1 #
+#Diagram #       44 spin-form #        2 flat ORMO #        219
+Z22(e1ae1b|m1am1b)+=H16(l1b,l2b|m1b,d1b)*S7(e1b|l1b)*S14(e1a,d1b|m1a,l2b)*-1/1 #
+#Diagram #       44 spin-form #        3 flat ORMO #        220
+Z22(e1be2b|m1bm2b)+=H16(l1b,l1a|m1b,d1a)*S7(e1b|l1b)*S14(e2b,d1a|m2b,l1a)*-1/1 #
+#Diagram #       44 spin-form #        4 flat ORMO #        221
+Z22(e1ae1b|m1am1b)+=H16(l1b,l1a|m1b,d1a)*S7(e1b|l1b)*S14(e1a,d1a|m1a,l1a)*-1/1 #
+#Diagram #       44 spin-form #        5 flat ORMO #        222
+Z22(e1ae1b|m1am1b)+=H16(l1b,l1a|m1a,d1b)*S7(e1b|l1b)*S14(e1a,d1b|m1b,l1a) #
+#Diagram #       44 spin-form #        6 flat ORMO #        223
+Z22(e1ae1b|m1am1b)+=H16(l1a,l1b|m1b,d1a)*S7(e1a|l1a)*S14(e1b,d1a|m1a,l1b) #
+#Diagram #       44 spin-form #        7 flat ORMO #        224
+Z22(e1ae1b|m1am1b)+=H16(l1a,l1b|m1a,d1b)*S7(e1a|l1a)*S14(e1b,d1b|m1b,l1b)*-1/1 #
+#Diagram #       44 spin-form #        8 flat ORMO #        225
+Z22(e1ae2a|m1am2a)+=H16(l1a,l1b|m1a,d1b)*S7(e1a|l1a)*S14(e2a,d1b|m2a,l1b)*-1/1 #
+#Diagram #       44 spin-form #        9 flat ORMO #        226
+Z22(e1ae1b|m1am1b)+=H16(l1a,l2a|m1a,d1a)*S7(e1a|l1a)*S14(e1b,d1a|m1b,l2a)*-1/1 #
+#Diagram #       44 spin-form #       10 flat ORMO #        227
+Z22(e1ae2a|m1am2a)+=H16(l1a,l2a|m1a,d1a)*S7(e1a|l1a)*S14(e2a,d1a|m2a,l2a)*-1/1 #
+#Diagram #       45 spin-form #        1 flat ORMO #        228
+Z22(e1be2b|m1bm2b)+=H16(l1bl2b|m1b,d1b)*S7(d1b|m2b)*S14(e1be2b|l1bl2b) #
+#Diagram #       45 spin-form #        2 flat ORMO #        229
+Z22(e1ae1b|m1am1b)+=H16(l1al1b|m1b,d1a)*S7(d1a|m1a)*S14(e1ae1b|l1al1b)*-1/1 #
+#Diagram #       45 spin-form #        3 flat ORMO #        230
+Z22(e1ae1b|m1am1b)+=H16(l1al1b|m1a,d1b)*S7(d1b|m1b)*S14(e1ae1b|l1al1b) #
+#Diagram #       45 spin-form #        4 flat ORMO #        231
+Z22(e1ae2a|m1am2a)+=H16(l1al2a|m1a,d1a)*S7(d1a|m2a)*S14(e1ae2a|l1al2a) #
+#Diagram #       46 spin-form #        1 flat ORMO #        232
+Z22(e1be2b|m1bm2b)+=H16(l1b,l2b|m1b,d1b)*S7(d1b|l1b)*S14(e1be2b|m2b,l2b)*-1/1 #
+#Diagram #       46 spin-form #        2 flat ORMO #        233
+Z22(e1ae1b|m1am1b)+=H16(l1b,l2b|m1b,d1b)*S7(d1b|l1b)*S14(e1ae1b|m1a,l2b) #
+#Diagram #       46 spin-form #        3 flat ORMO #        234
+Z22(e1ae1b|m1am1b)+=H16(l1b,l1a|m1a,d1b)*S7(d1b|l1b)*S14(e1ae1b|m1b,l1a)*-1/1 #
+#Diagram #       46 spin-form #        4 flat ORMO #        235
+Z22(e1ae2a|m1am2a)+=H16(l1b,l1a|m1a,d1b)*S7(d1b|l1b)*S14(e1ae2a|m2a,l1a)*-1/1 #
+#Diagram #       46 spin-form #        5 flat ORMO #        236
+Z22(e1be2b|m1bm2b)+=H16(l1a,l1b|m1b,d1a)*S7(d1a|l1a)*S14(e1be2b|m2b,l1b)*-1/1 #
+#Diagram #       46 spin-form #        6 flat ORMO #        237
+Z22(e1ae1b|m1am1b)+=H16(l1a,l1b|m1b,d1a)*S7(d1a|l1a)*S14(e1ae1b|m1a,l1b) #
+#Diagram #       46 spin-form #        7 flat ORMO #        238
+Z22(e1ae1b|m1am1b)+=H16(l1a,l2a|m1a,d1a)*S7(d1a|l1a)*S14(e1ae1b|m1b,l2a)*-1/1 #
+#Diagram #       46 spin-form #        8 flat ORMO #        239
+Z22(e1ae2a|m1am2a)+=H16(l1a,l2a|m1a,d1a)*S7(d1a|l1a)*S14(e1ae2a|m2a,l2a)*-1/1 #
+#Diagram #       47 spin-form #        1 flat ORMO #        240
+Z24(e1be2be3b|m1bm2bm3b)+=H17(e1be2b|d1b,d2b)*S7(d1b|m1b)*S14(e3b,d2b|m2bm3b)*-1/1 #
+#Diagram #       47 spin-form #        2 flat ORMO #        241
+Z24(e1ae1be2b|m1am1bm2b)+=H17(e1be2b|d1b,d2b)*S7(d1b|m1b)*S14(e1a,d2b|m1am2b) #
+#Diagram #       47 spin-form #        3 flat ORMO #        242
+Z24(e1ae1be2b|m1am1bm2b)+=H17(e1ae1b|d1b,d1a)*S7(d1b|m1b)*S14(e2b,d1a|m1am2b) #
+#Diagram #       47 spin-form #        4 flat ORMO #        243
+Z24(e1ae2ae1b|m1am2am1b)+=H17(e1ae1b|d1b,d1a)*S7(d1b|m1b)*S14(e2a,d1a|m1am2a) #
+#Diagram #       47 spin-form #        5 flat ORMO #        244
+Z24(e1ae1be2b|m1am1bm2b)+=H17(e1ae1b|d1a,d1b)*S7(d1a|m1a)*S14(e2b,d1b|m1bm2b)*-1/1 #
+#Diagram #       47 spin-form #        6 flat ORMO #        245
+Z24(e1ae2ae1b|m1am2am1b)+=H17(e1ae1b|d1a,d1b)*S7(d1a|m1a)*S14(e2a,d1b|m2am1b) #
+#Diagram #       47 spin-form #        7 flat ORMO #        246
+Z24(e1ae2ae1b|m1am2am1b)+=H17(e1ae2a|d1a,d2a)*S7(d1a|m1a)*S14(e1b,d2a|m2am1b)*-1/1 #
+#Diagram #       47 spin-form #        8 flat ORMO #        247
+Z24(e1ae2ae3a|m1am2am3a)+=H17(e1ae2a|d1a,d2a)*S7(d1a|m1a)*S14(e3a,d2a|m2am3a)*-1/1 #
+#Diagram #       48 spin-form #        1 flat ORMO #        248
+Z24(e1be2be3b|m1bm2bm3b)+=H10(e1b,l1b|m1b,d1b)*S7(e2b|l1b)*S14(e3b,d1b|m2bm3b) #
+#Diagram #       48 spin-form #        2 flat ORMO #        249
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1b,l1b|m1b,d1b)*S7(e2b|l1b)*S14(e1a,d1b|m1am2b)*-1/1 #
+#Diagram #       48 spin-form #        3 flat ORMO #        250
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1b,l1a|m1b,d1a)*S7(e1a|l1a)*S14(e2b,d1a|m1am2b) #
+#Diagram #       48 spin-form #        4 flat ORMO #        251
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1b,l1a|m1b,d1a)*S7(e1a|l1a)*S14(e2a,d1a|m1am2a) #
+#Diagram #       48 spin-form #        5 flat ORMO #        252
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1b,l1a|m1a,d1b)*S7(e1a|l1a)*S14(e2b,d1b|m1bm2b)*-1/1 #
+#Diagram #       48 spin-form #        6 flat ORMO #        253
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1b,l1a|m1a,d1b)*S7(e1a|l1a)*S14(e2a,d1b|m2am1b) #
+#Diagram #       48 spin-form #        7 flat ORMO #        254
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1a,l1b|m1b,d1a)*S7(e1b|l1b)*S14(e2b,d1a|m1am2b)*-1/1 #
+#Diagram #       48 spin-form #        8 flat ORMO #        255
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1a,l1b|m1b,d1a)*S7(e1b|l1b)*S14(e2a,d1a|m1am2a)*-1/1 #
+#Diagram #       48 spin-form #        9 flat ORMO #        256
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1a,l1b|m1a,d1b)*S7(e1b|l1b)*S14(e2b,d1b|m1bm2b) #
+#Diagram #       48 spin-form #       10 flat ORMO #        257
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1a,l1b|m1a,d1b)*S7(e1b|l1b)*S14(e2a,d1b|m2am1b)*-1/1 #
+#Diagram #       48 spin-form #       11 flat ORMO #        258
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1a,l1a|m1a,d1a)*S7(e2a|l1a)*S14(e1b,d1a|m2am1b) #
+#Diagram #       48 spin-form #       12 flat ORMO #        259
+Z24(e1ae2ae3a|m1am2am3a)+=H10(e1a,l1a|m1a,d1a)*S7(e2a|l1a)*S14(e3a,d1a|m2am3a) #
+#Diagram #       49 spin-form #        1 flat ORMO #        260
+Z24(e1be2be3b|m1bm2bm3b)+=H10(e1b,l1b|m1b,d1b)*S7(d1b|m2b)*S14(e2be3b|m3b,l1b) #
+#Diagram #       49 spin-form #        2 flat ORMO #        261
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1b,l1b|m1b,d1b)*S7(d1b|m2b)*S14(e1ae2b|m1a,l1b)*-1/1 #
+#Diagram #       49 spin-form #        3 flat ORMO #        262
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1b,l1a|m1b,d1a)*S7(d1a|m1a)*S14(e1ae2b|m2b,l1a) #
+#Diagram #       49 spin-form #        4 flat ORMO #        263
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1b,l1a|m1b,d1a)*S7(d1a|m1a)*S14(e1ae2a|m2a,l1a) #
+#Diagram #       49 spin-form #        5 flat ORMO #        264
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1b,l1a|m1a,d1b)*S7(d1b|m1b)*S14(e1ae2b|m2b,l1a)*-1/1 #
+#Diagram #       49 spin-form #        6 flat ORMO #        265
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1b,l1a|m1a,d1b)*S7(d1b|m1b)*S14(e1ae2a|m2a,l1a)*-1/1 #
+#Diagram #       49 spin-form #        7 flat ORMO #        266
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1a,l1b|m1b,d1a)*S7(d1a|m1a)*S14(e1be2b|m2b,l1b)*-1/1 #
+#Diagram #       49 spin-form #        8 flat ORMO #        267
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1a,l1b|m1b,d1a)*S7(d1a|m1a)*S14(e2ae1b|m2a,l1b) #
+#Diagram #       49 spin-form #        9 flat ORMO #        268
+Z24(e1ae1be2b|m1am1bm2b)+=H10(e1a,l1b|m1a,d1b)*S7(d1b|m1b)*S14(e1be2b|m2b,l1b) #
+#Diagram #       49 spin-form #       10 flat ORMO #        269
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1a,l1b|m1a,d1b)*S7(d1b|m1b)*S14(e2ae1b|m2a,l1b)*-1/1 #
+#Diagram #       49 spin-form #       11 flat ORMO #        270
+Z24(e1ae2ae1b|m1am2am1b)+=H10(e1a,l1a|m1a,d1a)*S7(d1a|m2a)*S14(e2ae1b|m1b,l1a) #
+#Diagram #       49 spin-form #       12 flat ORMO #        271
+Z24(e1ae2ae3a|m1am2am3a)+=H10(e1a,l1a|m1a,d1a)*S7(d1a|m2a)*S14(e2ae3a|m3a,l1a) #
+#Diagram #       50 spin-form #        1 flat ORMO #        272
+Z24(e1be2be3b|m1bm2bm3b)+=H18(l1b,l2b|m1bm2b)*S7(e1b|l1b)*S14(e2be3b|m3b,l2b)*-1/1 #
+#Diagram #       50 spin-form #        2 flat ORMO #        273
+Z24(e1ae1be2b|m1am1bm2b)+=H18(l1b,l2b|m1bm2b)*S7(e1b|l1b)*S14(e1ae2b|m1a,l2b) #
+#Diagram #       50 spin-form #        3 flat ORMO #        274
+Z24(e1ae1be2b|m1am1bm2b)+=H18(l1b,l1a|m1am1b)*S7(e1b|l1b)*S14(e1ae2b|m2b,l1a) #
+#Diagram #       50 spin-form #        4 flat ORMO #        275
+Z24(e1ae2ae1b|m1am2am1b)+=H18(l1b,l1a|m1am1b)*S7(e1b|l1b)*S14(e1ae2a|m2a,l1a) #
+#Diagram #       50 spin-form #        5 flat ORMO #        276
+Z24(e1ae1be2b|m1am1bm2b)+=H18(l1a,l1b|m1am1b)*S7(e1a|l1a)*S14(e1be2b|m2b,l1b)*-1/1 #
+#Diagram #       50 spin-form #        6 flat ORMO #        277
+Z24(e1ae2ae1b|m1am2am1b)+=H18(l1a,l1b|m1am1b)*S7(e1a|l1a)*S14(e2ae1b|m2a,l1b) #
+#Diagram #       50 spin-form #        7 flat ORMO #        278
+Z24(e1ae2ae1b|m1am2am1b)+=H18(l1a,l2a|m1am2a)*S7(e1a|l1a)*S14(e2ae1b|m1b,l2a)*-1/1 #
+#Diagram #       50 spin-form #        8 flat ORMO #        279
+Z24(e1ae2ae3a|m1am2am3a)+=H18(l1a,l2a|m1am2a)*S7(e1a|l1a)*S14(e2ae3a|m3a,l2a)*-1/1 #
+#Diagram #       51 spin-form #        1 flat ORMO #        280
+Z22(e1be2b|m1bm2b)+=H13(l1b,l2b|d1bd2b)*S7(e1b|l1b)*S20(e2b,d1bd2b|m1bm2b,l2b) #
+#Diagram #       51 spin-form #        2 flat ORMO #        281
+Z22(e1ae1b|m1am1b)+=H13(l1b,l2b|d1bd2b)*S7(e1b|l1b)*S20(e1a,d1bd2b|m1am1b,l2b)*-1/1 #
+#Diagram #       51 spin-form #        3 flat ORMO #        282
+Z22(e1be2b|m1bm2b)+=H13(l1b,l1a|d1ad1b)*S7(e1b|l1b)*S20(e2b,d1ad1b|m1bm2b,l1a) #
+#Diagram #       51 spin-form #        4 flat ORMO #        283
+Z22(e1ae1b|m1am1b)+=H13(l1b,l1a|d1ad1b)*S7(e1b|l1b)*S20(e1a,d1ad1b|m1am1b,l1a)*-1/1 #
+#Diagram #       51 spin-form #        5 flat ORMO #        284
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1ad1b)*S7(e1a|l1a)*S20(e1b,d1ad1b|m1am1b,l1b) #
+#Diagram #       51 spin-form #        6 flat ORMO #        285
+Z22(e1ae2a|m1am2a)+=H13(l1a,l1b|d1ad1b)*S7(e1a|l1a)*S20(e2a,d1ad1b|m1am2a,l1b) #
+#Diagram #       51 spin-form #        7 flat ORMO #        286
+Z22(e1ae1b|m1am1b)+=H13(l1a,l2a|d1ad2a)*S7(e1a|l1a)*S20(e1b,d1ad2a|m1am1b,l2a) #
+#Diagram #       51 spin-form #        8 flat ORMO #        287
+Z22(e1ae2a|m1am2a)+=H13(l1a,l2a|d1ad2a)*S7(e1a|l1a)*S20(e2a,d1ad2a|m1am2a,l2a) #
+#Diagram #       52 spin-form #        1 flat ORMO #        288
+Z22(e1be2b|m1bm2b)+=H13(l1bl2b|d1b,d2b)*S7(d1b|m1b)*S20(e1be2b,d2b|m2b,l1bl2b) #
+#Diagram #       52 spin-form #        2 flat ORMO #        289
+Z22(e1ae1b|m1am1b)+=H13(l1bl2b|d1b,d2b)*S7(d1b|m1b)*S20(e1ae1b,d2b|m1a,l1bl2b)*-1/1 #
+#Diagram #       52 spin-form #        3 flat ORMO #        290
+Z22(e1be2b|m1bm2b)+=H13(l1al1b|d1b,d1a)*S7(d1b|m1b)*S20(e1be2b,d1a|m2b,l1al1b) #
+#Diagram #       52 spin-form #        4 flat ORMO #        291
+Z22(e1ae1b|m1am1b)+=H13(l1al1b|d1b,d1a)*S7(d1b|m1b)*S20(e1ae1b,d1a|m1a,l1al1b)*-1/1 #
+#Diagram #       52 spin-form #        5 flat ORMO #        292
+Z22(e1ae1b|m1am1b)+=H13(l1al1b|d1a,d1b)*S7(d1a|m1a)*S20(e1ae1b,d1b|m1b,l1al1b) #
+#Diagram #       52 spin-form #        6 flat ORMO #        293
+Z22(e1ae2a|m1am2a)+=H13(l1al1b|d1a,d1b)*S7(d1a|m1a)*S20(e1ae2a,d1b|m2a,l1al1b) #
+#Diagram #       52 spin-form #        7 flat ORMO #        294
+Z22(e1ae1b|m1am1b)+=H13(l1al2a|d1a,d2a)*S7(d1a|m1a)*S20(e1ae1b,d2a|m1b,l1al2a) #
+#Diagram #       52 spin-form #        8 flat ORMO #        295
+Z22(e1ae2a|m1am2a)+=H13(l1al2a|d1a,d2a)*S7(d1a|m1a)*S20(e1ae2a,d2a|m2a,l1al2a) #
+#Diagram #       53 spin-form #        1 flat ORMO #        296
+Z22(e1be2b|m1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|l1b)*S20(e1be2b,d2b|m1bm2b,l2b) #
+#Diagram #       53 spin-form #        2 flat ORMO #        297
+Z22(e1ae1b|m1am1b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|l1b)*S20(e1ae1b,d2b|m1am1b,l2b) #
+#Diagram #       53 spin-form #        3 flat ORMO #        298
+Z22(e1ae2a|m1am2a)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|l1b)*S20(e1ae2a,d2b|m1am2a,l2b) #
+#Diagram #       53 spin-form #        4 flat ORMO #        299
+Z22(e1be2b|m1bm2b)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|l1b)*S20(e1be2b,d1a|m1bm2b,l1a) #
+#Diagram #       53 spin-form #        5 flat ORMO #        300
+Z22(e1ae1b|m1am1b)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|l1b)*S20(e1ae1b,d1a|m1am1b,l1a) #
+#Diagram #       53 spin-form #        6 flat ORMO #        301
+Z22(e1ae2a|m1am2a)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|l1b)*S20(e1ae2a,d1a|m1am2a,l1a) #
+#Diagram #       53 spin-form #        7 flat ORMO #        302
+Z22(e1be2b|m1bm2b)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|l1a)*S20(e1be2b,d1b|m1bm2b,l1b) #
+#Diagram #       53 spin-form #        8 flat ORMO #        303
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|l1a)*S20(e1ae1b,d1b|m1am1b,l1b) #
+#Diagram #       53 spin-form #        9 flat ORMO #        304
+Z22(e1ae2a|m1am2a)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|l1a)*S20(e1ae2a,d1b|m1am2a,l1b) #
+#Diagram #       53 spin-form #       10 flat ORMO #        305
+Z22(e1be2b|m1bm2b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|l1a)*S20(e1be2b,d2a|m1bm2b,l2a) #
+#Diagram #       53 spin-form #       11 flat ORMO #        306
+Z22(e1ae1b|m1am1b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|l1a)*S20(e1ae1b,d2a|m1am1b,l2a) #
+#Diagram #       53 spin-form #       12 flat ORMO #        307
+Z22(e1ae2a|m1am2a)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|l1a)*S20(e1ae2a,d2a|m1am2a,l2a) #
+#Diagram #       54 spin-form #        1 flat ORMO #        308
+Z24(e1be2be3b|m1bm2bm3b)+=H6(l1b|d1b)*S7(e1b|l1b)*S20(e2be3b,d1b|m1bm2bm3b)*-1/1 #
+#Diagram #       54 spin-form #        2 flat ORMO #        309
+Z24(e1ae1be2b|m1am1bm2b)+=H6(l1b|d1b)*S7(e1b|l1b)*S20(e1ae2b,d1b|m1am1bm2b) #
+#Diagram #       54 spin-form #        3 flat ORMO #        310
+Z24(e1ae2ae1b|m1am2am1b)+=H6(l1b|d1b)*S7(e1b|l1b)*S20(e1ae2a,d1b|m1am2am1b)*-1/1 #
+#Diagram #       54 spin-form #        4 flat ORMO #        311
+Z24(e1ae1be2b|m1am1bm2b)+=H6(l1a|d1a)*S7(e1a|l1a)*S20(e1be2b,d1a|m1am1bm2b)*-1/1 #
+#Diagram #       54 spin-form #        5 flat ORMO #        312
+Z24(e1ae2ae1b|m1am2am1b)+=H6(l1a|d1a)*S7(e1a|l1a)*S20(e2ae1b,d1a|m1am2am1b)*-1/1 #
+#Diagram #       54 spin-form #        6 flat ORMO #        313
+Z24(e1ae2ae3a|m1am2am3a)+=H6(l1a|d1a)*S7(e1a|l1a)*S20(e2ae3a,d1a|m1am2am3a)*-1/1 #
+#Diagram #       55 spin-form #        1 flat ORMO #        314
+Z24(e1be2be3b|m1bm2bm3b)+=H6(l1b|d1b)*S7(d1b|m1b)*S20(e1be2be3b|m2bm3b,l1b)*-1/1 #
+#Diagram #       55 spin-form #        2 flat ORMO #        315
+Z24(e1ae1be2b|m1am1bm2b)+=H6(l1b|d1b)*S7(d1b|m1b)*S20(e1ae1be2b|m1am2b,l1b) #
+#Diagram #       55 spin-form #        3 flat ORMO #        316
+Z24(e1ae2ae1b|m1am2am1b)+=H6(l1b|d1b)*S7(d1b|m1b)*S20(e1ae2ae1b|m1am2a,l1b)*-1/1 #
+#Diagram #       55 spin-form #        4 flat ORMO #        317
+Z24(e1ae1be2b|m1am1bm2b)+=H6(l1a|d1a)*S7(d1a|m1a)*S20(e1ae1be2b|m1bm2b,l1a)*-1/1 #
+#Diagram #       55 spin-form #        5 flat ORMO #        318
+Z24(e1ae2ae1b|m1am2am1b)+=H6(l1a|d1a)*S7(d1a|m1a)*S20(e1ae2ae1b|m2am1b,l1a)*-1/1 #
+#Diagram #       55 spin-form #        6 flat ORMO #        319
+Z24(e1ae2ae3a|m1am2am3a)+=H6(l1a|d1a)*S7(d1a|m1a)*S20(e1ae2ae3a|m2am3a,l1a)*-1/1 #
+#Diagram #       56 spin-form #        1 flat ORMO #        320
+Z24(e1be2be3b|m1bm2bm3b)+=H15(e1b,l1b|d1bd2b)*S7(e2b|l1b)*S20(e3b,d1bd2b|m1bm2bm3b)*-1/1 #
+#Diagram #       56 spin-form #        2 flat ORMO #        321
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1b|d1bd2b)*S7(e2b|l1b)*S20(e1a,d1bd2b|m1am1bm2b)*-1/1 #
+#Diagram #       56 spin-form #        3 flat ORMO #        322
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1a|d1ad1b)*S7(e1a|l1a)*S20(e2b,d1ad1b|m1am1bm2b) #
+#Diagram #       56 spin-form #        4 flat ORMO #        323
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1a|d1ad1b)*S7(e1a|l1a)*S20(e2a,d1ad1b|m1am2am1b)*-1/1 #
+#Diagram #       56 spin-form #        5 flat ORMO #        324
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1b|d1ad1b)*S7(e1b|l1b)*S20(e2b,d1ad1b|m1am1bm2b)*-1/1 #
+#Diagram #       56 spin-form #        6 flat ORMO #        325
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1b|d1ad1b)*S7(e1b|l1b)*S20(e2a,d1ad1b|m1am2am1b) #
+#Diagram #       56 spin-form #        7 flat ORMO #        326
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1a|d1ad2a)*S7(e2a|l1a)*S20(e1b,d1ad2a|m1am2am1b)*-1/1 #
+#Diagram #       56 spin-form #        8 flat ORMO #        327
+Z24(e1ae2ae3a|m1am2am3a)+=H15(e1a,l1a|d1ad2a)*S7(e2a|l1a)*S20(e3a,d1ad2a|m1am2am3a)*-1/1 #
+#Diagram #       57 spin-form #        1 flat ORMO #        328
+Z24(e1be2be3b|m1bm2bm3b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|m1b)*S20(e2be3b,d2b|m2bm3b,l1b) #
+#Diagram #       57 spin-form #        2 flat ORMO #        329
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|m1b)*S20(e1ae2b,d2b|m1am2b,l1b) #
+#Diagram #       57 spin-form #        3 flat ORMO #        330
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|m1b)*S20(e1ae2a,d2b|m1am2a,l1b) #
+#Diagram #       57 spin-form #        4 flat ORMO #        331
+Z24(e1be2be3b|m1bm2bm3b)+=H15(e1b,l1a|d1b,d1a)*S7(d1b|m1b)*S20(e2be3b,d1a|m2bm3b,l1a) #
+#Diagram #       57 spin-form #        5 flat ORMO #        332
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1a|d1b,d1a)*S7(d1b|m1b)*S20(e1ae2b,d1a|m1am2b,l1a) #
+#Diagram #       57 spin-form #        6 flat ORMO #        333
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1a|d1b,d1a)*S7(d1b|m1b)*S20(e1ae2a,d1a|m1am2a,l1a) #
+#Diagram #       57 spin-form #        7 flat ORMO #        334
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1a|d1a,d1b)*S7(d1a|m1a)*S20(e1ae2b,d1b|m1bm2b,l1a)*-1/1 #
+#Diagram #       57 spin-form #        8 flat ORMO #        335
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1a|d1a,d1b)*S7(d1a|m1a)*S20(e1ae2a,d1b|m2am1b,l1a) #
+#Diagram #       57 spin-form #        9 flat ORMO #        336
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1b|d1b,d1a)*S7(d1b|m1b)*S20(e1be2b,d1a|m1am2b,l1b)*-1/1 #
+#Diagram #       57 spin-form #       10 flat ORMO #        337
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1b|d1b,d1a)*S7(d1b|m1b)*S20(e2ae1b,d1a|m1am2a,l1b) #
+#Diagram #       57 spin-form #       11 flat ORMO #        338
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1b|d1a,d1b)*S7(d1a|m1a)*S20(e1be2b,d1b|m1bm2b,l1b) #
+#Diagram #       57 spin-form #       12 flat ORMO #        339
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1b|d1a,d1b)*S7(d1a|m1a)*S20(e2ae1b,d1b|m2am1b,l1b) #
+#Diagram #       57 spin-form #       13 flat ORMO #        340
+Z24(e1ae2ae3a|m1am2am3a)+=H15(e1a,l1b|d1a,d1b)*S7(d1a|m1a)*S20(e2ae3a,d1b|m2am3a,l1b) #
+#Diagram #       57 spin-form #       14 flat ORMO #        341
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|m1a)*S20(e1be2b,d2a|m1bm2b,l1a) #
+#Diagram #       57 spin-form #       15 flat ORMO #        342
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|m1a)*S20(e2ae1b,d2a|m2am1b,l1a) #
+#Diagram #       57 spin-form #       16 flat ORMO #        343
+Z24(e1ae2ae3a|m1am2am3a)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|m1a)*S20(e2ae3a,d2a|m2am3a,l1a) #
+#Diagram #       58 spin-form #        1 flat ORMO #        344
+Z24(e1be2be3b|m1bm2bm3b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|l1b)*S20(e2be3b,d2b|m1bm2bm3b)*-1/1 #
+#Diagram #       58 spin-form #        2 flat ORMO #        345
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|l1b)*S20(e1ae2b,d2b|m1am1bm2b) #
+#Diagram #       58 spin-form #        3 flat ORMO #        346
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|l1b)*S20(e1ae2a,d2b|m1am2am1b)*-1/1 #
+#Diagram #       58 spin-form #        4 flat ORMO #        347
+Z24(e1be2be3b|m1bm2bm3b)+=H15(e1b,l1a|d1a,d1b)*S7(d1a|l1a)*S20(e2be3b,d1b|m1bm2bm3b)*-1/1 #
+#Diagram #       58 spin-form #        5 flat ORMO #        348
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1a|d1a,d1b)*S7(d1a|l1a)*S20(e1ae2b,d1b|m1am1bm2b) #
+#Diagram #       58 spin-form #        6 flat ORMO #        349
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1a|d1a,d1b)*S7(d1a|l1a)*S20(e1ae2a,d1b|m1am2am1b)*-1/1 #
+#Diagram #       58 spin-form #        7 flat ORMO #        350
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1b|d1b,d1a)*S7(d1b|l1b)*S20(e1be2b,d1a|m1am1bm2b)*-1/1 #
+#Diagram #       58 spin-form #        8 flat ORMO #        351
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1b|d1b,d1a)*S7(d1b|l1b)*S20(e2ae1b,d1a|m1am2am1b)*-1/1 #
+#Diagram #       58 spin-form #        9 flat ORMO #        352
+Z24(e1ae2ae3a|m1am2am3a)+=H15(e1a,l1b|d1b,d1a)*S7(d1b|l1b)*S20(e2ae3a,d1a|m1am2am3a)*-1/1 #
+#Diagram #       58 spin-form #       10 flat ORMO #        353
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|l1a)*S20(e1be2b,d2a|m1am1bm2b)*-1/1 #
+#Diagram #       58 spin-form #       11 flat ORMO #        354
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|l1a)*S20(e2ae1b,d2a|m1am2am1b)*-1/1 #
+#Diagram #       58 spin-form #       12 flat ORMO #        355
+Z24(e1ae2ae3a|m1am2am3a)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|l1a)*S20(e2ae3a,d2a|m1am2am3a)*-1/1 #
+#Diagram #       59 spin-form #        1 flat ORMO #        356
+Z24(e1be2be3b|m1bm2bm3b)+=H16(l1b,l2b|m1b,d1b)*S7(e1b|l1b)*S20(e2be3b,d1b|m2bm3b,l2b)*-1/1 #
+#Diagram #       59 spin-form #        2 flat ORMO #        357
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l2b|m1b,d1b)*S7(e1b|l1b)*S20(e1ae2b,d1b|m1am2b,l2b)*-1/1 #
+#Diagram #       59 spin-form #        3 flat ORMO #        358
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1b,l2b|m1b,d1b)*S7(e1b|l1b)*S20(e1ae2a,d1b|m1am2a,l2b)*-1/1 #
+#Diagram #       59 spin-form #        4 flat ORMO #        359
+Z24(e1be2be3b|m1bm2bm3b)+=H16(l1b,l1a|m1b,d1a)*S7(e1b|l1b)*S20(e2be3b,d1a|m2bm3b,l1a)*-1/1 #
+#Diagram #       59 spin-form #        5 flat ORMO #        360
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l1a|m1b,d1a)*S7(e1b|l1b)*S20(e1ae2b,d1a|m1am2b,l1a)*-1/1 #
+#Diagram #       59 spin-form #        6 flat ORMO #        361
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1b,l1a|m1b,d1a)*S7(e1b|l1b)*S20(e1ae2a,d1a|m1am2a,l1a)*-1/1 #
+#Diagram #       59 spin-form #        7 flat ORMO #        362
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l1a|m1a,d1b)*S7(e1b|l1b)*S20(e1ae2b,d1b|m1bm2b,l1a) #
+#Diagram #       59 spin-form #        8 flat ORMO #        363
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1b,l1a|m1a,d1b)*S7(e1b|l1b)*S20(e1ae2a,d1b|m2am1b,l1a)*-1/1 #
+#Diagram #       59 spin-form #        9 flat ORMO #        364
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l1b|m1b,d1a)*S7(e1a|l1a)*S20(e1be2b,d1a|m1am2b,l1b) #
+#Diagram #       59 spin-form #       10 flat ORMO #        365
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l1b|m1b,d1a)*S7(e1a|l1a)*S20(e2ae1b,d1a|m1am2a,l1b)*-1/1 #
+#Diagram #       59 spin-form #       11 flat ORMO #        366
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l1b|m1a,d1b)*S7(e1a|l1a)*S20(e1be2b,d1b|m1bm2b,l1b)*-1/1 #
+#Diagram #       59 spin-form #       12 flat ORMO #        367
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l1b|m1a,d1b)*S7(e1a|l1a)*S20(e2ae1b,d1b|m2am1b,l1b)*-1/1 #
+#Diagram #       59 spin-form #       13 flat ORMO #        368
+Z24(e1ae2ae3a|m1am2am3a)+=H16(l1a,l1b|m1a,d1b)*S7(e1a|l1a)*S20(e2ae3a,d1b|m2am3a,l1b)*-1/1 #
+#Diagram #       59 spin-form #       14 flat ORMO #        369
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l2a|m1a,d1a)*S7(e1a|l1a)*S20(e1be2b,d1a|m1bm2b,l2a)*-1/1 #
+#Diagram #       59 spin-form #       15 flat ORMO #        370
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l2a|m1a,d1a)*S7(e1a|l1a)*S20(e2ae1b,d1a|m2am1b,l2a)*-1/1 #
+#Diagram #       59 spin-form #       16 flat ORMO #        371
+Z24(e1ae2ae3a|m1am2am3a)+=H16(l1a,l2a|m1a,d1a)*S7(e1a|l1a)*S20(e2ae3a,d1a|m2am3a,l2a)*-1/1 #
+#Diagram #       60 spin-form #        1 flat ORMO #        372
+Z24(e1be2be3b|m1bm2bm3b)+=H16(l1bl2b|m1b,d1b)*S7(d1b|m2b)*S20(e1be2be3b|m3b,l1bl2b) #
+#Diagram #       60 spin-form #        2 flat ORMO #        373
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1bl2b|m1b,d1b)*S7(d1b|m2b)*S20(e1ae1be2b|m1a,l1bl2b) #
+#Diagram #       60 spin-form #        3 flat ORMO #        374
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1al1b|m1b,d1a)*S7(d1a|m1a)*S20(e1ae1be2b|m2b,l1al1b)*-1/1 #
+#Diagram #       60 spin-form #        4 flat ORMO #        375
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1al1b|m1b,d1a)*S7(d1a|m1a)*S20(e1ae2ae1b|m2a,l1al1b) #
+#Diagram #       60 spin-form #        5 flat ORMO #        376
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1al1b|m1a,d1b)*S7(d1b|m1b)*S20(e1ae1be2b|m2b,l1al1b) #
+#Diagram #       60 spin-form #        6 flat ORMO #        377
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1al1b|m1a,d1b)*S7(d1b|m1b)*S20(e1ae2ae1b|m2a,l1al1b)*-1/1 #
+#Diagram #       60 spin-form #        7 flat ORMO #        378
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1al2a|m1a,d1a)*S7(d1a|m2a)*S20(e1ae2ae1b|m1b,l1al2a) #
+#Diagram #       60 spin-form #        8 flat ORMO #        379
+Z24(e1ae2ae3a|m1am2am3a)+=H16(l1al2a|m1a,d1a)*S7(d1a|m2a)*S20(e1ae2ae3a|m3a,l1al2a) #
+#Diagram #       61 spin-form #        1 flat ORMO #        380
+Z24(e1be2be3b|m1bm2bm3b)+=H16(l1b,l2b|m1b,d1b)*S7(d1b|l1b)*S20(e1be2be3b|m2bm3b,l2b) #
+#Diagram #       61 spin-form #        2 flat ORMO #        381
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l2b|m1b,d1b)*S7(d1b|l1b)*S20(e1ae1be2b|m1am2b,l2b)*-1/1 #
+#Diagram #       61 spin-form #        3 flat ORMO #        382
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1b,l2b|m1b,d1b)*S7(d1b|l1b)*S20(e1ae2ae1b|m1am2a,l2b) #
+#Diagram #       61 spin-form #        4 flat ORMO #        383
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l1a|m1a,d1b)*S7(d1b|l1b)*S20(e1ae1be2b|m1bm2b,l1a) #
+#Diagram #       61 spin-form #        5 flat ORMO #        384
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1b,l1a|m1a,d1b)*S7(d1b|l1b)*S20(e1ae2ae1b|m2am1b,l1a) #
+#Diagram #       61 spin-form #        6 flat ORMO #        385
+Z24(e1ae2ae3a|m1am2am3a)+=H16(l1b,l1a|m1a,d1b)*S7(d1b|l1b)*S20(e1ae2ae3a|m2am3a,l1a) #
+#Diagram #       61 spin-form #        7 flat ORMO #        386
+Z24(e1be2be3b|m1bm2bm3b)+=H16(l1a,l1b|m1b,d1a)*S7(d1a|l1a)*S20(e1be2be3b|m2bm3b,l1b) #
+#Diagram #       61 spin-form #        8 flat ORMO #        387
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l1b|m1b,d1a)*S7(d1a|l1a)*S20(e1ae1be2b|m1am2b,l1b)*-1/1 #
+#Diagram #       61 spin-form #        9 flat ORMO #        388
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l1b|m1b,d1a)*S7(d1a|l1a)*S20(e1ae2ae1b|m1am2a,l1b) #
+#Diagram #       61 spin-form #       10 flat ORMO #        389
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l2a|m1a,d1a)*S7(d1a|l1a)*S20(e1ae1be2b|m1bm2b,l2a) #
+#Diagram #       61 spin-form #       11 flat ORMO #        390
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l2a|m1a,d1a)*S7(d1a|l1a)*S20(e1ae2ae1b|m2am1b,l2a) #
+#Diagram #       61 spin-form #       12 flat ORMO #        391
+Z24(e1ae2ae3a|m1am2am3a)+=H16(l1a,l2a|m1a,d1a)*S7(d1a|l1a)*S20(e1ae2ae3a|m2am3a,l2a) #
+#Diagram #       62 spin-form #        1 flat ORMO #        392
+Z22(e1be2b|m1bm2b)+=H13(l1b,l2b|d1bd2b)*S14(e1be2b|m1b,l1b)*S14(d1bd2b|m2b,l2b)*-1/1 #
+#Diagram #       62 spin-form #        2 flat ORMO #        393
+Z22(e1ae1b|m1am1b)+=H13(l1b,l2b|d1bd2b)*S14(e1ae1b|m1a,l1b)*S14(d1bd2b|m1b,l2b)*-1/1 #
+#Diagram #       62 spin-form #        3 flat ORMO #        394
+Z22(e1be2b|m1bm2b)+=H13(l1b,l1a|d1ad1b)*S14(e1be2b|m1b,l1b)*S14(d1ad1b|m2b,l1a)*-1/1 #
+#Diagram #       62 spin-form #        4 flat ORMO #        395
+Z22(e1ae1b|m1am1b)+=H13(l1b,l1a|d1ad1b)*S14(e1ae1b|m1a,l1b)*S14(d1ad1b|m1b,l1a)*-1/1 #
+#Diagram #       62 spin-form #        5 flat ORMO #        396
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1ad1b)*S14(e1ae1b|m1b,l1a)*S14(d1ad1b|m1a,l1b) #
+#Diagram #       62 spin-form #        6 flat ORMO #        397
+Z22(e1ae2a|m1am2a)+=H13(l1a,l1b|d1ad1b)*S14(e1ae2a|m1a,l1a)*S14(d1ad1b|m2a,l1b)*-1/1 #
+#Diagram #       62 spin-form #        7 flat ORMO #        398
+Z22(e1ae1b|m1am1b)+=H13(l1a,l2a|d1ad2a)*S14(e1ae1b|m1b,l1a)*S14(d1ad2a|m1a,l2a) #
+#Diagram #       62 spin-form #        8 flat ORMO #        399
+Z22(e1ae2a|m1am2a)+=H13(l1a,l2a|d1ad2a)*S14(e1ae2a|m1a,l1a)*S14(d1ad2a|m2a,l2a)*-1/1 #
+#Diagram #       63 spin-form #        1 flat ORMO #        400
+Z22(e1be2b|m1bm2b)+=H13(l1bl2b|d1bd2b)*S14(e1be2b|l1bl2b)*S14(d1bd2b|m1bm2b) #
+#Diagram #       63 spin-form #        2 flat ORMO #        401
+Z22(e1ae1b|m1am1b)+=H13(l1al1b|d1ad1b)*S14(e1ae1b|l1al1b)*S14(d1ad1b|m1am1b) #
+#Diagram #       63 spin-form #        3 flat ORMO #        402
+Z22(e1ae2a|m1am2a)+=H13(l1al2a|d1ad2a)*S14(e1ae2a|l1al2a)*S14(d1ad2a|m1am2a) #
+#Diagram #       64 spin-form #        1 flat ORMO #        403
+Z22(e1be2b|m1bm2b)+=H13(l1bl2b|d1b,d2b)*S14(e1b,d1b|m1bm2b)*S14(e2b,d2b|l1bl2b)*-1/1 #
+#Diagram #       64 spin-form #        2 flat ORMO #        404
+Z22(e1ae1b|m1am1b)+=H13(l1bl2b|d1b,d2b)*S14(e1a,d1b|m1am1b)*S14(e1b,d2b|l1bl2b)*-1/1 #
+#Diagram #       64 spin-form #        3 flat ORMO #        405
+Z22(e1be2b|m1bm2b)+=H13(l1al1b|d1b,d1a)*S14(e1b,d1b|m1bm2b)*S14(e2b,d1a|l1al1b)*-1/1 #
+#Diagram #       64 spin-form #        4 flat ORMO #        406
+Z22(e1ae1b|m1am1b)+=H13(l1al1b|d1b,d1a)*S14(e1a,d1b|m1am1b)*S14(e1b,d1a|l1al1b)*-1/1 #
+#Diagram #       64 spin-form #        5 flat ORMO #        407
+Z22(e1ae1b|m1am1b)+=H13(l1al1b|d1a,d1b)*S14(e1b,d1a|m1am1b)*S14(e1a,d1b|l1al1b) #
+#Diagram #       64 spin-form #        6 flat ORMO #        408
+Z22(e1ae2a|m1am2a)+=H13(l1al1b|d1a,d1b)*S14(e1a,d1a|m1am2a)*S14(e2a,d1b|l1al1b)*-1/1 #
+#Diagram #       64 spin-form #        7 flat ORMO #        409
+Z22(e1ae1b|m1am1b)+=H13(l1al2a|d1a,d2a)*S14(e1b,d1a|m1am1b)*S14(e1a,d2a|l1al2a) #
+#Diagram #       64 spin-form #        8 flat ORMO #        410
+Z22(e1ae2a|m1am2a)+=H13(l1al2a|d1a,d2a)*S14(e1a,d1a|m1am2a)*S14(e2a,d2a|l1al2a)*-1/1 #
+#Diagram #       65 spin-form #        1 flat ORMO #        411
+Z22(e1be2b|m1bm2b)+=H13(l1b,l2b|d1b,d2b)*S14(e1b,d1b|m1b,l1b)*S14(e2b,d2b|m2b,l2b)*+1/2 #
+#Diagram #       65 spin-form #        2 flat ORMO #        412
+Z22(e1ae1b|m1am1b)+=H13(l1b,l2b|d1b,d2b)*S14(e1a,d1b|m1a,l1b)*S14(e1b,d2b|m1b,l2b)*2/2 #
+#Diagram #       65 spin-form #        3 flat ORMO #        413
+Z22(e1ae2a|m1am2a)+=H13(l1b,l2b|d1b,d2b)*S14(e1a,d1b|m1a,l1b)*S14(e2a,d2b|m2a,l2b)*+1/2 #
+#Diagram #       65 spin-form #        4 flat ORMO #        414
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1b,d1a)*S14(e1a,d1b|m1b,l1a)*S14(e1b,d1a|m1a,l1b)*-2/2 #
+#Diagram #       65 spin-form #        5 flat ORMO #        415
+Z22(e1be2b|m1bm2b)+=H13(l1a,l1b|d1a,d1b)*S14(e1b,d1a|m1b,l1a)*S14(e2b,d1b|m2b,l1b)*2/2 #
+#Diagram #       65 spin-form #        6 flat ORMO #        416
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1a,d1b)*S14(e1b,d1a|m1b,l1a)*S14(e1a,d1b|m1a,l1b)*2/2 #
+#Diagram #       65 spin-form #        7 flat ORMO #        417
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1a,d1b)*S14(e1a,d1a|m1a,l1a)*S14(e1b,d1b|m1b,l1b)*2/2 #
+#Diagram #       65 spin-form #        8 flat ORMO #        418
+Z22(e1ae2a|m1am2a)+=H13(l1a,l1b|d1a,d1b)*S14(e1a,d1a|m1a,l1a)*S14(e2a,d1b|m2a,l1b)*2/2 #
+#Diagram #       65 spin-form #        9 flat ORMO #        419
+Z22(e1be2b|m1bm2b)+=H13(l1a,l2a|d1a,d2a)*S14(e1b,d1a|m1b,l1a)*S14(e2b,d2a|m2b,l2a)*+1/2 #
+#Diagram #       65 spin-form #       10 flat ORMO #        420
+Z22(e1ae1b|m1am1b)+=H13(l1a,l2a|d1a,d2a)*S14(e1a,d1a|m1a,l1a)*S14(e1b,d2a|m1b,l2a)*2/2 #
+#Diagram #       65 spin-form #       11 flat ORMO #        421
+Z22(e1ae2a|m1am2a)+=H13(l1a,l2a|d1a,d2a)*S14(e1a,d1a|m1a,l1a)*S14(e2a,d2a|m2a,l2a)*+1/2 #
+#Diagram #       66 spin-form #        1 flat ORMO #        422
+Z24(e1be2be3b|m1bm2bm3b)+=H6(l1b|d1b)*S14(e1be2b|m1b,l1b)*S14(e3b,d1b|m2bm3b) #
+#Diagram #       66 spin-form #        2 flat ORMO #        423
+Z24(e1ae1be2b|m1am1bm2b)+=H6(l1b|d1b)*S14(e1be2b|m1b,l1b)*S14(e1a,d1b|m1am2b)*-1/1 #
+#Diagram #       66 spin-form #        3 flat ORMO #        424
+Z24(e1ae1be2b|m1am1bm2b)+=H6(l1b|d1b)*S14(e1ae1b|m1a,l1b)*S14(e2b,d1b|m1bm2b) #
+#Diagram #       66 spin-form #        4 flat ORMO #        425
+Z24(e1ae2ae1b|m1am2am1b)+=H6(l1b|d1b)*S14(e1ae1b|m1a,l1b)*S14(e2a,d1b|m2am1b)*-1/1 #
+#Diagram #       66 spin-form #        5 flat ORMO #        426
+Z24(e1ae1be2b|m1am1bm2b)+=H6(l1a|d1a)*S14(e1ae1b|m1b,l1a)*S14(e2b,d1a|m1am2b)*-1/1 #
+#Diagram #       66 spin-form #        6 flat ORMO #        427
+Z24(e1ae2ae1b|m1am2am1b)+=H6(l1a|d1a)*S14(e1ae1b|m1b,l1a)*S14(e2a,d1a|m1am2a)*-1/1 #
+#Diagram #       66 spin-form #        7 flat ORMO #        428
+Z24(e1ae2ae1b|m1am2am1b)+=H6(l1a|d1a)*S14(e1ae2a|m1a,l1a)*S14(e1b,d1a|m2am1b) #
+#Diagram #       66 spin-form #        8 flat ORMO #        429
+Z24(e1ae2ae3a|m1am2am3a)+=H6(l1a|d1a)*S14(e1ae2a|m1a,l1a)*S14(e3a,d1a|m2am3a) #
+#Diagram #       67 spin-form #        1 flat ORMO #        430
+Z24(e1be2be3b|m1bm2bm3b)+=H15(e1b,l1b|d1bd2b)*S14(e2be3b|m1b,l1b)*S14(d1bd2b|m2bm3b) #
+#Diagram #       67 spin-form #        2 flat ORMO #        431
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1b|d1bd2b)*S14(e1ae2b|m1a,l1b)*S14(d1bd2b|m1bm2b)*-1/1 #
+#Diagram #       67 spin-form #        3 flat ORMO #        432
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1a|d1ad1b)*S14(e1ae2b|m1b,l1a)*S14(d1ad1b|m1am2b) #
+#Diagram #       67 spin-form #        4 flat ORMO #        433
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1a|d1ad1b)*S14(e1ae2a|m1a,l1a)*S14(d1ad1b|m2am1b) #
+#Diagram #       67 spin-form #        5 flat ORMO #        434
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1b|d1ad1b)*S14(e1be2b|m1b,l1b)*S14(d1ad1b|m1am2b)*-1/1 #
+#Diagram #       67 spin-form #        6 flat ORMO #        435
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1b|d1ad1b)*S14(e2ae1b|m1a,l1b)*S14(d1ad1b|m2am1b) #
+#Diagram #       67 spin-form #        7 flat ORMO #        436
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1a|d1ad2a)*S14(e2ae1b|m1b,l1a)*S14(d1ad2a|m1am2a) #
+#Diagram #       67 spin-form #        8 flat ORMO #        437
+Z24(e1ae2ae3a|m1am2am3a)+=H15(e1a,l1a|d1ad2a)*S14(e2ae3a|m1a,l1a)*S14(d1ad2a|m2am3a) #
+#Diagram #       68 spin-form #        1 flat ORMO #        438
+Z24(e1be2be3b|m1bm2bm3b)+=H15(e1b,l1b|d1b,d2b)*S14(e2b,d1b|m1bm2b)*S14(e3b,d2b|m3b,l1b)*-1/1 #
+#Diagram #       68 spin-form #        2 flat ORMO #        439
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1b|d1b,d2b)*S14(e2b,d1b|m1bm2b)*S14(e1a,d2b|m1a,l1b)*-1/1 #
+#Diagram #       68 spin-form #        3 flat ORMO #        440
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1b|d1b,d2b)*S14(e1a,d1b|m1am1b)*S14(e2b,d2b|m2b,l1b) #
+#Diagram #       68 spin-form #        4 flat ORMO #        441
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1b|d1b,d2b)*S14(e1a,d1b|m1am1b)*S14(e2a,d2b|m2a,l1b) #
+#Diagram #       68 spin-form #        5 flat ORMO #        442
+Z24(e1be2be3b|m1bm2bm3b)+=H15(e1b,l1a|d1b,d1a)*S14(e2b,d1b|m1bm2b)*S14(e3b,d1a|m3b,l1a)*-1/1 #
+#Diagram #       68 spin-form #        6 flat ORMO #        443
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1a|d1b,d1a)*S14(e2b,d1b|m1bm2b)*S14(e1a,d1a|m1a,l1a)*-1/1 #
+#Diagram #       68 spin-form #        7 flat ORMO #        444
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1a|d1b,d1a)*S14(e1a,d1b|m1am1b)*S14(e2b,d1a|m2b,l1a) #
+#Diagram #       68 spin-form #        8 flat ORMO #        445
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1a|d1b,d1a)*S14(e1a,d1b|m1am1b)*S14(e2a,d1a|m2a,l1a) #
+#Diagram #       68 spin-form #        9 flat ORMO #        446
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1a|d1a,d1b)*S14(e2b,d1a|m1am1b)*S14(e1a,d1b|m2b,l1a)*-1/1 #
+#Diagram #       68 spin-form #       10 flat ORMO #        447
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1a|d1a,d1b)*S14(e1a,d1a|m1am2a)*S14(e2a,d1b|m1b,l1a)*-1/1 #
+#Diagram #       68 spin-form #       11 flat ORMO #        448
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1b|d1b,d1a)*S14(e1b,d1b|m1bm2b)*S14(e2b,d1a|m1a,l1b)*-1/1 #
+#Diagram #       68 spin-form #       12 flat ORMO #        449
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1b|d1b,d1a)*S14(e2a,d1b|m1am1b)*S14(e1b,d1a|m2a,l1b) #
+#Diagram #       68 spin-form #       13 flat ORMO #        450
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1b|d1a,d1b)*S14(e1b,d1a|m1am1b)*S14(e2b,d1b|m2b,l1b)*-1/1 #
+#Diagram #       68 spin-form #       14 flat ORMO #        451
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1b|d1a,d1b)*S14(e1b,d1a|m1am1b)*S14(e2a,d1b|m2a,l1b)*-1/1 #
+#Diagram #       68 spin-form #       15 flat ORMO #        452
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1b|d1a,d1b)*S14(e2a,d1a|m1am2a)*S14(e1b,d1b|m1b,l1b)*-1/1 #
+#Diagram #       68 spin-form #       16 flat ORMO #        453
+Z24(e1ae2ae3a|m1am2am3a)+=H15(e1a,l1b|d1a,d1b)*S14(e2a,d1a|m1am2a)*S14(e3a,d1b|m3a,l1b)*-1/1 #
+#Diagram #       68 spin-form #       17 flat ORMO #        454
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1a|d1a,d2a)*S14(e1b,d1a|m1am1b)*S14(e2b,d2a|m2b,l1a)*-1/1 #
+#Diagram #       68 spin-form #       18 flat ORMO #        455
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1a|d1a,d2a)*S14(e1b,d1a|m1am1b)*S14(e2a,d2a|m2a,l1a)*-1/1 #
+#Diagram #       68 spin-form #       19 flat ORMO #        456
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1a|d1a,d2a)*S14(e2a,d1a|m1am2a)*S14(e1b,d2a|m1b,l1a)*-1/1 #
+#Diagram #       68 spin-form #       20 flat ORMO #        457
+Z24(e1ae2ae3a|m1am2am3a)+=H15(e1a,l1a|d1a,d2a)*S14(e2a,d1a|m1am2a)*S14(e3a,d2a|m3a,l1a)*-1/1 #
+#Diagram #       69 spin-form #        1 flat ORMO #        458
+Z24(e1be2be3b|m1bm2bm3b)+=H16(l1b,l2b|m1b,d1b)*S14(e1be2b|m2b,l1b)*S14(e3b,d1b|m3b,l2b) #
+#Diagram #       69 spin-form #        2 flat ORMO #        459
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l2b|m1b,d1b)*S14(e1be2b|m2b,l1b)*S14(e1a,d1b|m1a,l2b) #
+#Diagram #       69 spin-form #        3 flat ORMO #        460
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l2b|m1b,d1b)*S14(e1ae1b|m1a,l1b)*S14(e2b,d1b|m2b,l2b)*-1/1 #
+#Diagram #       69 spin-form #        4 flat ORMO #        461
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1b,l2b|m1b,d1b)*S14(e1ae1b|m1a,l1b)*S14(e2a,d1b|m2a,l2b)*-1/1 #
+#Diagram #       69 spin-form #        5 flat ORMO #        462
+Z24(e1be2be3b|m1bm2bm3b)+=H16(l1b,l1a|m1b,d1a)*S14(e1be2b|m2b,l1b)*S14(e3b,d1a|m3b,l1a) #
+#Diagram #       69 spin-form #        6 flat ORMO #        463
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l1a|m1b,d1a)*S14(e1be2b|m2b,l1b)*S14(e1a,d1a|m1a,l1a) #
+#Diagram #       69 spin-form #        7 flat ORMO #        464
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l1a|m1b,d1a)*S14(e1ae1b|m1a,l1b)*S14(e2b,d1a|m2b,l1a)*-1/1 #
+#Diagram #       69 spin-form #        8 flat ORMO #        465
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1b,l1a|m1b,d1a)*S14(e1ae1b|m1a,l1b)*S14(e2a,d1a|m2a,l1a)*-1/1 #
+#Diagram #       69 spin-form #        9 flat ORMO #        466
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l1a|m1a,d1b)*S14(e1be2b|m1b,l1b)*S14(e1a,d1b|m2b,l1a) #
+#Diagram #       69 spin-form #       10 flat ORMO #        467
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1b,l1a|m1a,d1b)*S14(e1ae1b|m2a,l1b)*S14(e2a,d1b|m1b,l1a)*-1/1 #
+#Diagram #       69 spin-form #       11 flat ORMO #        468
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l1b|m1b,d1a)*S14(e1ae1b|m2b,l1a)*S14(e2b,d1a|m1a,l1b) #
+#Diagram #       69 spin-form #       12 flat ORMO #        469
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l1b|m1b,d1a)*S14(e1ae2a|m1a,l1a)*S14(e1b,d1a|m2a,l1b) #
+#Diagram #       69 spin-form #       13 flat ORMO #        470
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l1b|m1a,d1b)*S14(e1ae1b|m1b,l1a)*S14(e2b,d1b|m2b,l1b) #
+#Diagram #       69 spin-form #       14 flat ORMO #        471
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l1b|m1a,d1b)*S14(e1ae1b|m1b,l1a)*S14(e2a,d1b|m2a,l1b) #
+#Diagram #       69 spin-form #       15 flat ORMO #        472
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l1b|m1a,d1b)*S14(e1ae2a|m2a,l1a)*S14(e1b,d1b|m1b,l1b) #
+#Diagram #       69 spin-form #       16 flat ORMO #        473
+Z24(e1ae2ae3a|m1am2am3a)+=H16(l1a,l1b|m1a,d1b)*S14(e1ae2a|m2a,l1a)*S14(e3a,d1b|m3a,l1b) #
+#Diagram #       69 spin-form #       17 flat ORMO #        474
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l2a|m1a,d1a)*S14(e1ae1b|m1b,l1a)*S14(e2b,d1a|m2b,l2a) #
+#Diagram #       69 spin-form #       18 flat ORMO #        475
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l2a|m1a,d1a)*S14(e1ae1b|m1b,l1a)*S14(e2a,d1a|m2a,l2a) #
+#Diagram #       69 spin-form #       19 flat ORMO #        476
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l2a|m1a,d1a)*S14(e1ae2a|m2a,l1a)*S14(e1b,d1a|m1b,l2a) #
+#Diagram #       69 spin-form #       20 flat ORMO #        477
+Z24(e1ae2ae3a|m1am2am3a)+=H16(l1a,l2a|m1a,d1a)*S14(e1ae2a|m2a,l1a)*S14(e3a,d1a|m3a,l2a) #
+#Diagram #       70 spin-form #        1 flat ORMO #        478
+Z24(e1be2be3b|m1bm2bm3b)+=H16(l1bl2b|m1b,d1b)*S14(e1be2b|l1bl2b)*S14(e3b,d1b|m2bm3b)*-1/1 #
+#Diagram #       70 spin-form #        2 flat ORMO #        479
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1bl2b|m1b,d1b)*S14(e1be2b|l1bl2b)*S14(e1a,d1b|m1am2b) #
+#Diagram #       70 spin-form #        3 flat ORMO #        480
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1al1b|m1b,d1a)*S14(e1ae1b|l1al1b)*S14(e2b,d1a|m1am2b) #
+#Diagram #       70 spin-form #        4 flat ORMO #        481
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1al1b|m1b,d1a)*S14(e1ae1b|l1al1b)*S14(e2a,d1a|m1am2a) #
+#Diagram #       70 spin-form #        5 flat ORMO #        482
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1al1b|m1a,d1b)*S14(e1ae1b|l1al1b)*S14(e2b,d1b|m1bm2b)*-1/1 #
+#Diagram #       70 spin-form #        6 flat ORMO #        483
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1al1b|m1a,d1b)*S14(e1ae1b|l1al1b)*S14(e2a,d1b|m2am1b) #
+#Diagram #       70 spin-form #        7 flat ORMO #        484
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1al2a|m1a,d1a)*S14(e1ae2a|l1al2a)*S14(e1b,d1a|m2am1b)*-1/1 #
+#Diagram #       70 spin-form #        8 flat ORMO #        485
+Z24(e1ae2ae3a|m1am2am3a)+=H16(l1al2a|m1a,d1a)*S14(e1ae2a|l1al2a)*S14(e3a,d1a|m2am3a)*-1/1 #
+#Diagram #       71 spin-form #        1 flat ORMO #        486
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1bd2b)*S14(e1be2b|m1b,l1b)*S20(e3b,d1bd2b|m2bm3b,l2b) #
+#Diagram #       71 spin-form #        2 flat ORMO #        487
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1bd2b)*S14(e1be2b|m1b,l1b)*S20(e1a,d1bd2b|m1am2b,l2b)*-1/1 #
+#Diagram #       71 spin-form #        3 flat ORMO #        488
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1bd2b)*S14(e1ae1b|m1a,l1b)*S20(e2b,d1bd2b|m1bm2b,l2b) #
+#Diagram #       71 spin-form #        4 flat ORMO #        489
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l2b|d1bd2b)*S14(e1ae1b|m1a,l1b)*S20(e2a,d1bd2b|m2am1b,l2b)*-1/1 #
+#Diagram #       71 spin-form #        5 flat ORMO #        490
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l1a|d1ad1b)*S14(e1be2b|m1b,l1b)*S20(e3b,d1ad1b|m2bm3b,l1a) #
+#Diagram #       71 spin-form #        6 flat ORMO #        491
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1ad1b)*S14(e1be2b|m1b,l1b)*S20(e1a,d1ad1b|m1am2b,l1a)*-1/1 #
+#Diagram #       71 spin-form #        7 flat ORMO #        492
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1ad1b)*S14(e1ae1b|m1a,l1b)*S20(e2b,d1ad1b|m1bm2b,l1a) #
+#Diagram #       71 spin-form #        8 flat ORMO #        493
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1ad1b)*S14(e1ae1b|m1a,l1b)*S20(e2a,d1ad1b|m2am1b,l1a)*-1/1 #
+#Diagram #       71 spin-form #        9 flat ORMO #        494
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1ad1b)*S14(e1ae1b|m1b,l1a)*S20(e2b,d1ad1b|m1am2b,l1b)*-1/1 #
+#Diagram #       71 spin-form #       10 flat ORMO #        495
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1ad1b)*S14(e1ae1b|m1b,l1a)*S20(e2a,d1ad1b|m1am2a,l1b)*-1/1 #
+#Diagram #       71 spin-form #       11 flat ORMO #        496
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1ad1b)*S14(e1ae2a|m1a,l1a)*S20(e1b,d1ad1b|m2am1b,l1b) #
+#Diagram #       71 spin-form #       12 flat ORMO #        497
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l1b|d1ad1b)*S14(e1ae2a|m1a,l1a)*S20(e3a,d1ad1b|m2am3a,l1b) #
+#Diagram #       71 spin-form #       13 flat ORMO #        498
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l2a|d1ad2a)*S14(e1ae1b|m1b,l1a)*S20(e2b,d1ad2a|m1am2b,l2a)*-1/1 #
+#Diagram #       71 spin-form #       14 flat ORMO #        499
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1ad2a)*S14(e1ae1b|m1b,l1a)*S20(e2a,d1ad2a|m1am2a,l2a)*-1/1 #
+#Diagram #       71 spin-form #       15 flat ORMO #        500
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1ad2a)*S14(e1ae2a|m1a,l1a)*S20(e1b,d1ad2a|m2am1b,l2a) #
+#Diagram #       71 spin-form #       16 flat ORMO #        501
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1ad2a)*S14(e1ae2a|m1a,l1a)*S20(e3a,d1ad2a|m2am3a,l2a) #
+#Diagram #       72 spin-form #        1 flat ORMO #        502
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1bl2b|d1bd2b)*S14(e1be2b|l1bl2b)*S20(e3b,d1bd2b|m1bm2bm3b) #
+#Diagram #       72 spin-form #        2 flat ORMO #        503
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1bl2b|d1bd2b)*S14(e1be2b|l1bl2b)*S20(e1a,d1bd2b|m1am1bm2b) #
+#Diagram #       72 spin-form #        3 flat ORMO #        504
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al1b|d1ad1b)*S14(e1ae1b|l1al1b)*S20(e2b,d1ad1b|m1am1bm2b) #
+#Diagram #       72 spin-form #        4 flat ORMO #        505
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al1b|d1ad1b)*S14(e1ae1b|l1al1b)*S20(e2a,d1ad1b|m1am2am1b)*-1/1 #
+#Diagram #       72 spin-form #        5 flat ORMO #        506
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al2a|d1ad2a)*S14(e1ae2a|l1al2a)*S20(e1b,d1ad2a|m1am2am1b) #
+#Diagram #       72 spin-form #        6 flat ORMO #        507
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1al2a|d1ad2a)*S14(e1ae2a|l1al2a)*S20(e3a,d1ad2a|m1am2am3a) #
+#Diagram #       73 spin-form #        1 flat ORMO #        508
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1bl2b|d1b,d2b)*S14(e1b,d1b|m1bm2b)*S20(e2be3b,d2b|m3b,l1bl2b) #
+#Diagram #       73 spin-form #        2 flat ORMO #        509
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1bl2b|d1b,d2b)*S14(e1b,d1b|m1bm2b)*S20(e1ae2b,d2b|m1a,l1bl2b)*-1/1 #
+#Diagram #       73 spin-form #        3 flat ORMO #        510
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1bl2b|d1b,d2b)*S14(e1a,d1b|m1am1b)*S20(e1be2b,d2b|m2b,l1bl2b) #
+#Diagram #       73 spin-form #        4 flat ORMO #        511
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1bl2b|d1b,d2b)*S14(e1a,d1b|m1am1b)*S20(e2ae1b,d2b|m2a,l1bl2b)*-1/1 #
+#Diagram #       73 spin-form #        5 flat ORMO #        512
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1al1b|d1b,d1a)*S14(e1b,d1b|m1bm2b)*S20(e2be3b,d1a|m3b,l1al1b) #
+#Diagram #       73 spin-form #        6 flat ORMO #        513
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al1b|d1b,d1a)*S14(e1b,d1b|m1bm2b)*S20(e1ae2b,d1a|m1a,l1al1b)*-1/1 #
+#Diagram #       73 spin-form #        7 flat ORMO #        514
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al1b|d1b,d1a)*S14(e1a,d1b|m1am1b)*S20(e1be2b,d1a|m2b,l1al1b) #
+#Diagram #       73 spin-form #        8 flat ORMO #        515
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al1b|d1b,d1a)*S14(e1a,d1b|m1am1b)*S20(e2ae1b,d1a|m2a,l1al1b)*-1/1 #
+#Diagram #       73 spin-form #        9 flat ORMO #        516
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al1b|d1a,d1b)*S14(e1b,d1a|m1am1b)*S20(e1ae2b,d1b|m2b,l1al1b)*-1/1 #
+#Diagram #       73 spin-form #       10 flat ORMO #        517
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al1b|d1a,d1b)*S14(e1b,d1a|m1am1b)*S20(e1ae2a,d1b|m2a,l1al1b)*-1/1 #
+#Diagram #       73 spin-form #       11 flat ORMO #        518
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al1b|d1a,d1b)*S14(e1a,d1a|m1am2a)*S20(e2ae1b,d1b|m1b,l1al1b) #
+#Diagram #       73 spin-form #       12 flat ORMO #        519
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1al1b|d1a,d1b)*S14(e1a,d1a|m1am2a)*S20(e2ae3a,d1b|m3a,l1al1b) #
+#Diagram #       73 spin-form #       13 flat ORMO #        520
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al2a|d1a,d2a)*S14(e1b,d1a|m1am1b)*S20(e1ae2b,d2a|m2b,l1al2a)*-1/1 #
+#Diagram #       73 spin-form #       14 flat ORMO #        521
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al2a|d1a,d2a)*S14(e1b,d1a|m1am1b)*S20(e1ae2a,d2a|m2a,l1al2a)*-1/1 #
+#Diagram #       73 spin-form #       15 flat ORMO #        522
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al2a|d1a,d2a)*S14(e1a,d1a|m1am2a)*S20(e2ae1b,d2a|m1b,l1al2a) #
+#Diagram #       73 spin-form #       16 flat ORMO #        523
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1al2a|d1a,d2a)*S14(e1a,d1a|m1am2a)*S20(e2ae3a,d2a|m3a,l1al2a) #
+#Diagram #       74 spin-form #        1 flat ORMO #        524
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1b,d2b)*S14(e1b,d1b|m1b,l1b)*S20(e2be3b,d2b|m2bm3b,l2b) #
+#Diagram #       74 spin-form #        2 flat ORMO #        525
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S14(e1b,d1b|m1b,l1b)*S20(e1ae2b,d2b|m1am2b,l2b) #
+#Diagram #       74 spin-form #        3 flat ORMO #        526
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l2b|d1b,d2b)*S14(e1b,d1b|m1b,l1b)*S20(e1ae2a,d2b|m1am2a,l2b) #
+#Diagram #       74 spin-form #        4 flat ORMO #        527
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S14(e1a,d1b|m1a,l1b)*S20(e1be2b,d2b|m1bm2b,l2b) #
+#Diagram #       74 spin-form #        5 flat ORMO #        528
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l2b|d1b,d2b)*S14(e1a,d1b|m1a,l1b)*S20(e2ae1b,d2b|m2am1b,l2b) #
+#Diagram #       74 spin-form #        6 flat ORMO #        529
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1b,l2b|d1b,d2b)*S14(e1a,d1b|m1a,l1b)*S20(e2ae3a,d2b|m2am3a,l2b) #
+#Diagram #       74 spin-form #        7 flat ORMO #        530
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l1a|d1b,d1a)*S14(e1b,d1b|m1b,l1b)*S20(e2be3b,d1a|m2bm3b,l1a) #
+#Diagram #       74 spin-form #        8 flat ORMO #        531
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1b,d1a)*S14(e1b,d1b|m1b,l1b)*S20(e1ae2b,d1a|m1am2b,l1a) #
+#Diagram #       74 spin-form #        9 flat ORMO #        532
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1b,d1a)*S14(e1b,d1b|m1b,l1b)*S20(e1ae2a,d1a|m1am2a,l1a) #
+#Diagram #       74 spin-form #       10 flat ORMO #        533
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1b,d1a)*S14(e1a,d1b|m1a,l1b)*S20(e1be2b,d1a|m1bm2b,l1a) #
+#Diagram #       74 spin-form #       11 flat ORMO #        534
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1b,d1a)*S14(e1a,d1b|m1a,l1b)*S20(e2ae1b,d1a|m2am1b,l1a) #
+#Diagram #       74 spin-form #       12 flat ORMO #        535
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1b,l1a|d1b,d1a)*S14(e1a,d1b|m1a,l1b)*S20(e2ae3a,d1a|m2am3a,l1a) #
+#Diagram #       74 spin-form #       13 flat ORMO #        536
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1a,d1b)*S14(e1b,d1a|m1a,l1b)*S20(e1ae2b,d1b|m1bm2b,l1a)*-1/1 #
+#Diagram #       74 spin-form #       14 flat ORMO #        537
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1a,d1b)*S14(e1b,d1a|m1a,l1b)*S20(e1ae2a,d1b|m2am1b,l1a) #
+#Diagram #       74 spin-form #       15 flat ORMO #        538
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1b,d1a)*S14(e1a,d1b|m1b,l1a)*S20(e1be2b,d1a|m1am2b,l1b)*-1/1 #
+#Diagram #       74 spin-form #       16 flat ORMO #        539
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1b,d1a)*S14(e1a,d1b|m1b,l1a)*S20(e2ae1b,d1a|m1am2a,l1b) #
+#Diagram #       74 spin-form #       17 flat ORMO #        540
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1a,l1b|d1a,d1b)*S14(e1b,d1a|m1b,l1a)*S20(e2be3b,d1b|m2bm3b,l1b) #
+#Diagram #       74 spin-form #       18 flat ORMO #        541
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1a,d1b)*S14(e1b,d1a|m1b,l1a)*S20(e1ae2b,d1b|m1am2b,l1b) #
+#Diagram #       74 spin-form #       19 flat ORMO #        542
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1a,d1b)*S14(e1b,d1a|m1b,l1a)*S20(e1ae2a,d1b|m1am2a,l1b) #
+#Diagram #       74 spin-form #       20 flat ORMO #        543
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1a,d1b)*S14(e1a,d1a|m1a,l1a)*S20(e1be2b,d1b|m1bm2b,l1b) #
+#Diagram #       74 spin-form #       21 flat ORMO #        544
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1a,d1b)*S14(e1a,d1a|m1a,l1a)*S20(e2ae1b,d1b|m2am1b,l1b) #
+#Diagram #       74 spin-form #       22 flat ORMO #        545
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l1b|d1a,d1b)*S14(e1a,d1a|m1a,l1a)*S20(e2ae3a,d1b|m2am3a,l1b) #
+#Diagram #       74 spin-form #       23 flat ORMO #        546
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1a,l2a|d1a,d2a)*S14(e1b,d1a|m1b,l1a)*S20(e2be3b,d2a|m2bm3b,l2a) #
+#Diagram #       74 spin-form #       24 flat ORMO #        547
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l2a|d1a,d2a)*S14(e1b,d1a|m1b,l1a)*S20(e1ae2b,d2a|m1am2b,l2a) #
+#Diagram #       74 spin-form #       25 flat ORMO #        548
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S14(e1b,d1a|m1b,l1a)*S20(e1ae2a,d2a|m1am2a,l2a) #
+#Diagram #       74 spin-form #       26 flat ORMO #        549
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l2a|d1a,d2a)*S14(e1a,d1a|m1a,l1a)*S20(e1be2b,d2a|m1bm2b,l2a) #
+#Diagram #       74 spin-form #       27 flat ORMO #        550
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S14(e1a,d1a|m1a,l1a)*S20(e2ae1b,d2a|m2am1b,l2a) #
+#Diagram #       74 spin-form #       28 flat ORMO #        551
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1a,d2a)*S14(e1a,d1a|m1a,l1a)*S20(e2ae3a,d2a|m2am3a,l2a) #
+#Diagram #       75 spin-form #        1 flat ORMO #        552
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1bl2b|d1b,d2b)*S14(e1b,d1b|l1bl2b)*S20(e2be3b,d2b|m1bm2bm3b) #
+#Diagram #       75 spin-form #        2 flat ORMO #        553
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1bl2b|d1b,d2b)*S14(e1b,d1b|l1bl2b)*S20(e1ae2b,d2b|m1am1bm2b)*-1/1 #
+#Diagram #       75 spin-form #        3 flat ORMO #        554
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1bl2b|d1b,d2b)*S14(e1b,d1b|l1bl2b)*S20(e1ae2a,d2b|m1am2am1b) #
+#Diagram #       75 spin-form #        4 flat ORMO #        555
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al1b|d1b,d1a)*S14(e1a,d1b|l1al1b)*S20(e1be2b,d1a|m1am1bm2b) #
+#Diagram #       75 spin-form #        5 flat ORMO #        556
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al1b|d1b,d1a)*S14(e1a,d1b|l1al1b)*S20(e2ae1b,d1a|m1am2am1b) #
+#Diagram #       75 spin-form #        6 flat ORMO #        557
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1al1b|d1b,d1a)*S14(e1a,d1b|l1al1b)*S20(e2ae3a,d1a|m1am2am3a) #
+#Diagram #       75 spin-form #        7 flat ORMO #        558
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1al1b|d1a,d1b)*S14(e1b,d1a|l1al1b)*S20(e2be3b,d1b|m1bm2bm3b) #
+#Diagram #       75 spin-form #        8 flat ORMO #        559
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al1b|d1a,d1b)*S14(e1b,d1a|l1al1b)*S20(e1ae2b,d1b|m1am1bm2b)*-1/1 #
+#Diagram #       75 spin-form #        9 flat ORMO #        560
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al1b|d1a,d1b)*S14(e1b,d1a|l1al1b)*S20(e1ae2a,d1b|m1am2am1b) #
+#Diagram #       75 spin-form #       10 flat ORMO #        561
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al2a|d1a,d2a)*S14(e1a,d1a|l1al2a)*S20(e1be2b,d2a|m1am1bm2b) #
+#Diagram #       75 spin-form #       11 flat ORMO #        562
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al2a|d1a,d2a)*S14(e1a,d1a|l1al2a)*S20(e2ae1b,d2a|m1am2am1b) #
+#Diagram #       75 spin-form #       12 flat ORMO #        563
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1al2a|d1a,d2a)*S14(e1a,d1a|l1al2a)*S20(e2ae3a,d2a|m1am2am3a) #
+#Diagram #       76 spin-form #        1 flat ORMO #        564
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1bl2b|d1bd2b)*S14(d1bd2b|m1bm2b)*S20(e1be2be3b|m3b,l1bl2b) #
+#Diagram #       76 spin-form #        2 flat ORMO #        565
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1bl2b|d1bd2b)*S14(d1bd2b|m1bm2b)*S20(e1ae1be2b|m1a,l1bl2b) #
+#Diagram #       76 spin-form #        3 flat ORMO #        566
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al1b|d1ad1b)*S14(d1ad1b|m1am1b)*S20(e1ae1be2b|m2b,l1al1b) #
+#Diagram #       76 spin-form #        4 flat ORMO #        567
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al1b|d1ad1b)*S14(d1ad1b|m1am1b)*S20(e1ae2ae1b|m2a,l1al1b)*-1/1 #
+#Diagram #       76 spin-form #        5 flat ORMO #        568
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al2a|d1ad2a)*S14(d1ad2a|m1am2a)*S20(e1ae2ae1b|m1b,l1al2a) #
+#Diagram #       76 spin-form #        6 flat ORMO #        569
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1al2a|d1ad2a)*S14(d1ad2a|m1am2a)*S20(e1ae2ae3a|m3a,l1al2a) #
+#Diagram #       77 spin-form #        1 flat ORMO #        570
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1bd2b)*S14(d1bd2b|m1b,l1b)*S20(e1be2be3b|m2bm3b,l2b) #
+#Diagram #       77 spin-form #        2 flat ORMO #        571
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1bd2b)*S14(d1bd2b|m1b,l1b)*S20(e1ae1be2b|m1am2b,l2b)*-1/1 #
+#Diagram #       77 spin-form #        3 flat ORMO #        572
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l2b|d1bd2b)*S14(d1bd2b|m1b,l1b)*S20(e1ae2ae1b|m1am2a,l2b) #
+#Diagram #       77 spin-form #        4 flat ORMO #        573
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1ad1b)*S14(d1ad1b|m1a,l1b)*S20(e1ae1be2b|m1bm2b,l1a) #
+#Diagram #       77 spin-form #        5 flat ORMO #        574
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1ad1b)*S14(d1ad1b|m1a,l1b)*S20(e1ae2ae1b|m2am1b,l1a) #
+#Diagram #       77 spin-form #        6 flat ORMO #        575
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1b,l1a|d1ad1b)*S14(d1ad1b|m1a,l1b)*S20(e1ae2ae3a|m2am3a,l1a) #
+#Diagram #       77 spin-form #        7 flat ORMO #        576
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1a,l1b|d1ad1b)*S14(d1ad1b|m1b,l1a)*S20(e1be2be3b|m2bm3b,l1b) #
+#Diagram #       77 spin-form #        8 flat ORMO #        577
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1ad1b)*S14(d1ad1b|m1b,l1a)*S20(e1ae1be2b|m1am2b,l1b)*-1/1 #
+#Diagram #       77 spin-form #        9 flat ORMO #        578
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1ad1b)*S14(d1ad1b|m1b,l1a)*S20(e1ae2ae1b|m1am2a,l1b) #
+#Diagram #       77 spin-form #       10 flat ORMO #        579
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l2a|d1ad2a)*S14(d1ad2a|m1a,l1a)*S20(e1ae1be2b|m1bm2b,l2a) #
+#Diagram #       77 spin-form #       11 flat ORMO #        580
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1ad2a)*S14(d1ad2a|m1a,l1a)*S20(e1ae2ae1b|m2am1b,l2a) #
+#Diagram #       77 spin-form #       12 flat ORMO #        581
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1ad2a)*S14(d1ad2a|m1a,l1a)*S20(e1ae2ae3a|m2am3a,l2a) #
+#Diagram #       78 spin-form #        1 flat ORMO #        582
+Z21(e1b|m1b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|m1b)*S7(d2b|l2b)*-1/1 #
+#Diagram #       78 spin-form #        2 flat ORMO #        583
+Z21(e1b|m1b)+=H13(l1b,l1a|d1b,d1a)*S7(e1b|l1b)*S7(d1b|m1b)*S7(d1a|l1a)*-1/1 #
+#Diagram #       78 spin-form #        3 flat ORMO #        584
+Z21(e1a|m1a)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S7(d1a|m1a)*S7(d1b|l1b)*-1/1 #
+#Diagram #       78 spin-form #        4 flat ORMO #        585
+Z21(e1a|m1a)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|m1a)*S7(d2a|l2a)*-1/1 #
+#Diagram #       79 spin-form #        1 flat ORMO #        586
+Z22(e1be2b|m1bm2b)+=H15(e1b,l1b|d1b,d2b)*S7(e2b|l1b)*S7(d1b|m1b)*S7(d2b|m2b)*-1/2 #
+#Diagram #       79 spin-form #        2 flat ORMO #        587
+Z22(e1ae1b|m1am1b)+=H15(e1b,l1a|d1a,d1b)*S7(e1a|l1a)*S7(d1a|m1a)*S7(d1b|m1b)*2/2 #
+#Diagram #       79 spin-form #        3 flat ORMO #        588
+Z22(e1ae1b|m1am1b)+=H15(e1a,l1b|d1a,d1b)*S7(e1b|l1b)*S7(d1a|m1a)*S7(d1b|m1b)*-2/2 #
+#Diagram #       79 spin-form #        4 flat ORMO #        589
+Z22(e1ae2a|m1am2a)+=H15(e1a,l1a|d1a,d2a)*S7(e2a|l1a)*S7(d1a|m1a)*S7(d2a|m2a)*-1/2 #
+#Diagram #       80 spin-form #        1 flat ORMO #        590
+Z22(e1be2b|m1bm2b)+=H16(l1b,l2b|m1b,d1b)*S7(e1b|l1b)*S7(e2b|l2b)*S7(d1b|m2b)*+1/2 #
+#Diagram #       80 spin-form #        2 flat ORMO #        591
+Z22(e1ae1b|m1am1b)+=H16(l1a,l1b|m1b,d1a)*S7(e1a|l1a)*S7(e1b|l1b)*S7(d1a|m1a)*-2/2 #
+#Diagram #       80 spin-form #        3 flat ORMO #        592
+Z22(e1ae1b|m1am1b)+=H16(l1a,l1b|m1a,d1b)*S7(e1a|l1a)*S7(e1b|l1b)*S7(d1b|m1b)*2/2 #
+#Diagram #       80 spin-form #        4 flat ORMO #        593
+Z22(e1ae2a|m1am2a)+=H16(l1a,l2a|m1a,d1a)*S7(e1a|l1a)*S7(e2a|l2a)*S7(d1a|m2a)*+1/2 #
+#Diagram #       81 spin-form #        1 flat ORMO #        594
+Z22(e1be2b|m1bm2b)+=H13(l1b,l2b|d1bd2b)*S7(e1b|l1b)*S7(e2b|l2b)*S14(d1bd2b|m1bm2b)*+1/2 #
+#Diagram #       81 spin-form #        2 flat ORMO #        595
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1ad1b)*S7(e1a|l1a)*S7(e1b|l1b)*S14(d1ad1b|m1am1b)*2/2 #
+#Diagram #       81 spin-form #        3 flat ORMO #        596
+Z22(e1ae2a|m1am2a)+=H13(l1a,l2a|d1ad2a)*S7(e1a|l1a)*S7(e2a|l2a)*S14(d1ad2a|m1am2a)*+1/2 #
+#Diagram #       82 spin-form #        1 flat ORMO #        597
+Z22(e1be2b|m1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|m1b)*S14(e2b,d2b|m2b,l2b)*-1/1 #
+#Diagram #       82 spin-form #        2 flat ORMO #        598
+Z22(e1ae1b|m1am1b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|m1b)*S14(e1a,d2b|m1a,l2b)*-1/1 #
+#Diagram #       82 spin-form #        3 flat ORMO #        599
+Z22(e1be2b|m1bm2b)+=H13(l1b,l1a|d1b,d1a)*S7(e1b|l1b)*S7(d1b|m1b)*S14(e2b,d1a|m2b,l1a)*-1/1 #
+#Diagram #       82 spin-form #        4 flat ORMO #        600
+Z22(e1ae1b|m1am1b)+=H13(l1b,l1a|d1b,d1a)*S7(e1b|l1b)*S7(d1b|m1b)*S14(e1a,d1a|m1a,l1a)*-1/1 #
+#Diagram #       82 spin-form #        5 flat ORMO #        601
+Z22(e1ae1b|m1am1b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S7(d1a|m1a)*S14(e1a,d1b|m1b,l1a) #
+#Diagram #       82 spin-form #        6 flat ORMO #        602
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S7(d1b|m1b)*S14(e1b,d1a|m1a,l1b) #
+#Diagram #       82 spin-form #        7 flat ORMO #        603
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S7(d1a|m1a)*S14(e1b,d1b|m1b,l1b)*-1/1 #
+#Diagram #       82 spin-form #        8 flat ORMO #        604
+Z22(e1ae2a|m1am2a)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S7(d1a|m1a)*S14(e2a,d1b|m2a,l1b)*-1/1 #
+#Diagram #       82 spin-form #        9 flat ORMO #        605
+Z22(e1ae1b|m1am1b)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|m1a)*S14(e1b,d2a|m1b,l2a)*-1/1 #
+#Diagram #       82 spin-form #       10 flat ORMO #        606
+Z22(e1ae2a|m1am2a)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|m1a)*S14(e2a,d2a|m2a,l2a)*-1/1 #
+#Diagram #       83 spin-form #        1 flat ORMO #        607
+Z22(e1be2b|m1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|l2b)*S14(e2b,d2b|m1bm2b)*-1/1 #
+#Diagram #       83 spin-form #        2 flat ORMO #        608
+Z22(e1ae1b|m1am1b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|l2b)*S14(e1a,d2b|m1am1b) #
+#Diagram #       83 spin-form #        3 flat ORMO #        609
+Z22(e1be2b|m1bm2b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S7(d1a|l1a)*S14(e2b,d1b|m1bm2b)*-1/1 #
+#Diagram #       83 spin-form #        4 flat ORMO #        610
+Z22(e1ae1b|m1am1b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S7(d1a|l1a)*S14(e1a,d1b|m1am1b) #
+#Diagram #       83 spin-form #        5 flat ORMO #        611
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S7(d1b|l1b)*S14(e1b,d1a|m1am1b)*-1/1 #
+#Diagram #       83 spin-form #        6 flat ORMO #        612
+Z22(e1ae2a|m1am2a)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S7(d1b|l1b)*S14(e2a,d1a|m1am2a)*-1/1 #
+#Diagram #       83 spin-form #        7 flat ORMO #        613
+Z22(e1ae1b|m1am1b)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|l2a)*S14(e1b,d2a|m1am1b)*-1/1 #
+#Diagram #       83 spin-form #        8 flat ORMO #        614
+Z22(e1ae2a|m1am2a)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|l2a)*S14(e2a,d2a|m1am2a)*-1/1 #
+#Diagram #       84 spin-form #        1 flat ORMO #        615
+Z22(e1be2b|m1bm2b)+=H13(l1bl2b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|m2b)*S14(e1be2b|l1bl2b)*+1/2 #
+#Diagram #       84 spin-form #        2 flat ORMO #        616
+Z22(e1ae1b|m1am1b)+=H13(l1al1b|d1a,d1b)*S7(d1a|m1a)*S7(d1b|m1b)*S14(e1ae1b|l1al1b)*2/2 #
+#Diagram #       84 spin-form #        3 flat ORMO #        617
+Z22(e1ae2a|m1am2a)+=H13(l1al2a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|m2a)*S14(e1ae2a|l1al2a)*+1/2 #
+#Diagram #       85 spin-form #        1 flat ORMO #        618
+Z22(e1be2b|m1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|l1b)*S14(e1be2b|m2b,l2b)*-1/1 #
+#Diagram #       85 spin-form #        2 flat ORMO #        619
+Z22(e1ae1b|m1am1b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|l1b)*S14(e1ae1b|m1a,l2b) #
+#Diagram #       85 spin-form #        3 flat ORMO #        620
+Z22(e1ae1b|m1am1b)+=H13(l1b,l1a|d1a,d1b)*S7(d1a|m1a)*S7(d1b|l1b)*S14(e1ae1b|m1b,l1a)*-1/1 #
+#Diagram #       85 spin-form #        4 flat ORMO #        621
+Z22(e1ae2a|m1am2a)+=H13(l1b,l1a|d1a,d1b)*S7(d1a|m1a)*S7(d1b|l1b)*S14(e1ae2a|m2a,l1a)*-1/1 #
+#Diagram #       85 spin-form #        5 flat ORMO #        622
+Z22(e1be2b|m1bm2b)+=H13(l1a,l1b|d1b,d1a)*S7(d1b|m1b)*S7(d1a|l1a)*S14(e1be2b|m2b,l1b)*-1/1 #
+#Diagram #       85 spin-form #        6 flat ORMO #        623
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1b,d1a)*S7(d1b|m1b)*S7(d1a|l1a)*S14(e1ae1b|m1a,l1b) #
+#Diagram #       85 spin-form #        7 flat ORMO #        624
+Z22(e1ae1b|m1am1b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|l1a)*S14(e1ae1b|m1b,l2a)*-1/1 #
+#Diagram #       85 spin-form #        8 flat ORMO #        625
+Z22(e1ae2a|m1am2a)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|l1a)*S14(e1ae2a|m2a,l2a)*-1/1 #
+#Diagram #       86 spin-form #        1 flat ORMO #        626
+Z24(e1be2be3b|m1bm2bm3b)+=H15(e1b,l1b|d1b,d2b)*S7(e2b|l1b)*S7(d1b|m1b)*S14(e3b,d2b|m2bm3b) #
+#Diagram #       86 spin-form #        2 flat ORMO #        627
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1b|d1b,d2b)*S7(e2b|l1b)*S7(d1b|m1b)*S14(e1a,d2b|m1am2b)*-1/1 #
+#Diagram #       86 spin-form #        3 flat ORMO #        628
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1a|d1b,d1a)*S7(e1a|l1a)*S7(d1b|m1b)*S14(e2b,d1a|m1am2b) #
+#Diagram #       86 spin-form #        4 flat ORMO #        629
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1a|d1b,d1a)*S7(e1a|l1a)*S7(d1b|m1b)*S14(e2a,d1a|m1am2a) #
+#Diagram #       86 spin-form #        5 flat ORMO #        630
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1a|d1a,d1b)*S7(e1a|l1a)*S7(d1a|m1a)*S14(e2b,d1b|m1bm2b)*-1/1 #
+#Diagram #       86 spin-form #        6 flat ORMO #        631
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1a|d1a,d1b)*S7(e1a|l1a)*S7(d1a|m1a)*S14(e2a,d1b|m2am1b) #
+#Diagram #       86 spin-form #        7 flat ORMO #        632
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1b|d1b,d1a)*S7(e1b|l1b)*S7(d1b|m1b)*S14(e2b,d1a|m1am2b)*-1/1 #
+#Diagram #       86 spin-form #        8 flat ORMO #        633
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1b|d1b,d1a)*S7(e1b|l1b)*S7(d1b|m1b)*S14(e2a,d1a|m1am2a)*-1/1 #
+#Diagram #       86 spin-form #        9 flat ORMO #        634
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1b|d1a,d1b)*S7(e1b|l1b)*S7(d1a|m1a)*S14(e2b,d1b|m1bm2b) #
+#Diagram #       86 spin-form #       10 flat ORMO #        635
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1b|d1a,d1b)*S7(e1b|l1b)*S7(d1a|m1a)*S14(e2a,d1b|m2am1b)*-1/1 #
+#Diagram #       86 spin-form #       11 flat ORMO #        636
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1a|d1a,d2a)*S7(e2a|l1a)*S7(d1a|m1a)*S14(e1b,d2a|m2am1b) #
+#Diagram #       86 spin-form #       12 flat ORMO #        637
+Z24(e1ae2ae3a|m1am2am3a)+=H15(e1a,l1a|d1a,d2a)*S7(e2a|l1a)*S7(d1a|m1a)*S14(e3a,d2a|m2am3a) #
+#Diagram #       87 spin-form #        1 flat ORMO #        638
+Z24(e1be2be3b|m1bm2bm3b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|m2b)*S14(e2be3b|m3b,l1b)*+1/2 #
+#Diagram #       87 spin-form #        2 flat ORMO #        639
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|m2b)*S14(e1ae2b|m1a,l1b)*-1/2 #
+#Diagram #       87 spin-form #        3 flat ORMO #        640
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1b,l1a|d1a,d1b)*S7(d1a|m1a)*S7(d1b|m1b)*S14(e1ae2b|m2b,l1a)*-2/2 #
+#Diagram #       87 spin-form #        4 flat ORMO #        641
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1b,l1a|d1a,d1b)*S7(d1a|m1a)*S7(d1b|m1b)*S14(e1ae2a|m2a,l1a)*-2/2 #
+#Diagram #       87 spin-form #        5 flat ORMO #        642
+Z24(e1ae1be2b|m1am1bm2b)+=H15(e1a,l1b|d1a,d1b)*S7(d1a|m1a)*S7(d1b|m1b)*S14(e1be2b|m2b,l1b)*2/2 #
+#Diagram #       87 spin-form #        6 flat ORMO #        643
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1b|d1a,d1b)*S7(d1a|m1a)*S7(d1b|m1b)*S14(e2ae1b|m2a,l1b)*-2/2 #
+#Diagram #       87 spin-form #        7 flat ORMO #        644
+Z24(e1ae2ae1b|m1am2am1b)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|m2a)*S14(e2ae1b|m1b,l1a)*+1/2 #
+#Diagram #       87 spin-form #        8 flat ORMO #        645
+Z24(e1ae2ae3a|m1am2am3a)+=H15(e1a,l1a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|m2a)*S14(e2ae3a|m3a,l1a)*+1/2 #
+#Diagram #       88 spin-form #        1 flat ORMO #        646
+Z24(e1be2be3b|m1bm2bm3b)+=H16(l1b,l2b|m1b,d1b)*S7(e1b|l1b)*S7(e2b|l2b)*S14(e3b,d1b|m2bm3b)*-1/2 #
+#Diagram #       88 spin-form #        2 flat ORMO #        647
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l2b|m1b,d1b)*S7(e1b|l1b)*S7(e2b|l2b)*S14(e1a,d1b|m1am2b)*+1/2 #
+#Diagram #       88 spin-form #        3 flat ORMO #        648
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l1b|m1b,d1a)*S7(e1a|l1a)*S7(e1b|l1b)*S14(e2b,d1a|m1am2b)*2/2 #
+#Diagram #       88 spin-form #        4 flat ORMO #        649
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l1b|m1b,d1a)*S7(e1a|l1a)*S7(e1b|l1b)*S14(e2a,d1a|m1am2a)*2/2 #
+#Diagram #       88 spin-form #        5 flat ORMO #        650
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l1b|m1a,d1b)*S7(e1a|l1a)*S7(e1b|l1b)*S14(e2b,d1b|m1bm2b)*-2/2 #
+#Diagram #       88 spin-form #        6 flat ORMO #        651
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l1b|m1a,d1b)*S7(e1a|l1a)*S7(e1b|l1b)*S14(e2a,d1b|m2am1b)*2/2 #
+#Diagram #       88 spin-form #        7 flat ORMO #        652
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l2a|m1a,d1a)*S7(e1a|l1a)*S7(e2a|l2a)*S14(e1b,d1a|m2am1b)*-1/2 #
+#Diagram #       88 spin-form #        8 flat ORMO #        653
+Z24(e1ae2ae3a|m1am2am3a)+=H16(l1a,l2a|m1a,d1a)*S7(e1a|l1a)*S7(e2a|l2a)*S14(e3a,d1a|m2am3a)*-1/2 #
+#Diagram #       89 spin-form #        1 flat ORMO #        654
+Z24(e1be2be3b|m1bm2bm3b)+=H16(l1b,l2b|m1b,d1b)*S7(e1b|l1b)*S7(d1b|m2b)*S14(e2be3b|m3b,l2b)*-1/1 #
+#Diagram #       89 spin-form #        2 flat ORMO #        655
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l2b|m1b,d1b)*S7(e1b|l1b)*S7(d1b|m2b)*S14(e1ae2b|m1a,l2b) #
+#Diagram #       89 spin-form #        3 flat ORMO #        656
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l1a|m1b,d1a)*S7(e1b|l1b)*S7(d1a|m1a)*S14(e1ae2b|m2b,l1a)*-1/1 #
+#Diagram #       89 spin-form #        4 flat ORMO #        657
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1b,l1a|m1b,d1a)*S7(e1b|l1b)*S7(d1a|m1a)*S14(e1ae2a|m2a,l1a)*-1/1 #
+#Diagram #       89 spin-form #        5 flat ORMO #        658
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1b,l1a|m1a,d1b)*S7(e1b|l1b)*S7(d1b|m1b)*S14(e1ae2b|m2b,l1a) #
+#Diagram #       89 spin-form #        6 flat ORMO #        659
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1b,l1a|m1a,d1b)*S7(e1b|l1b)*S7(d1b|m1b)*S14(e1ae2a|m2a,l1a) #
+#Diagram #       89 spin-form #        7 flat ORMO #        660
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l1b|m1b,d1a)*S7(e1a|l1a)*S7(d1a|m1a)*S14(e1be2b|m2b,l1b) #
+#Diagram #       89 spin-form #        8 flat ORMO #        661
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l1b|m1b,d1a)*S7(e1a|l1a)*S7(d1a|m1a)*S14(e2ae1b|m2a,l1b)*-1/1 #
+#Diagram #       89 spin-form #        9 flat ORMO #        662
+Z24(e1ae1be2b|m1am1bm2b)+=H16(l1a,l1b|m1a,d1b)*S7(e1a|l1a)*S7(d1b|m1b)*S14(e1be2b|m2b,l1b)*-1/1 #
+#Diagram #       89 spin-form #       10 flat ORMO #        663
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l1b|m1a,d1b)*S7(e1a|l1a)*S7(d1b|m1b)*S14(e2ae1b|m2a,l1b) #
+#Diagram #       89 spin-form #       11 flat ORMO #        664
+Z24(e1ae2ae1b|m1am2am1b)+=H16(l1a,l2a|m1a,d1a)*S7(e1a|l1a)*S7(d1a|m2a)*S14(e2ae1b|m1b,l2a)*-1/1 #
+#Diagram #       89 spin-form #       12 flat ORMO #        665
+Z24(e1ae2ae3a|m1am2am3a)+=H16(l1a,l2a|m1a,d1a)*S7(e1a|l1a)*S7(d1a|m2a)*S14(e2ae3a|m3a,l2a)*-1/1 #
+#Diagram #       90 spin-form #        1 flat ORMO #        666
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1bd2b)*S7(e1b|l1b)*S7(e2b|l2b)*S20(e3b,d1bd2b|m1bm2bm3b)*+1/2 #
+#Diagram #       90 spin-form #        2 flat ORMO #        667
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1bd2b)*S7(e1b|l1b)*S7(e2b|l2b)*S20(e1a,d1bd2b|m1am1bm2b)*+1/2 #
+#Diagram #       90 spin-form #        3 flat ORMO #        668
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1ad1b)*S7(e1a|l1a)*S7(e1b|l1b)*S20(e2b,d1ad1b|m1am1bm2b)*2/2 #
+#Diagram #       90 spin-form #        4 flat ORMO #        669
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1ad1b)*S7(e1a|l1a)*S7(e1b|l1b)*S20(e2a,d1ad1b|m1am2am1b)*-2/2 #
+#Diagram #       90 spin-form #        5 flat ORMO #        670
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1ad2a)*S7(e1a|l1a)*S7(e2a|l2a)*S20(e1b,d1ad2a|m1am2am1b)*+1/2 #
+#Diagram #       90 spin-form #        6 flat ORMO #        671
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1ad2a)*S7(e1a|l1a)*S7(e2a|l2a)*S20(e3a,d1ad2a|m1am2am3a)*+1/2 #
+#Diagram #       91 spin-form #        1 flat ORMO #        672
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|m1b)*S20(e2be3b,d2b|m2bm3b,l2b)*-1/1 #
+#Diagram #       91 spin-form #        2 flat ORMO #        673
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|m1b)*S20(e1ae2b,d2b|m1am2b,l2b)*-1/1 #
+#Diagram #       91 spin-form #        3 flat ORMO #        674
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|m1b)*S20(e1ae2a,d2b|m1am2a,l2b)*-1/1 #
+#Diagram #       91 spin-form #        4 flat ORMO #        675
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l1a|d1b,d1a)*S7(e1b|l1b)*S7(d1b|m1b)*S20(e2be3b,d1a|m2bm3b,l1a)*-1/1 #
+#Diagram #       91 spin-form #        5 flat ORMO #        676
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1b,d1a)*S7(e1b|l1b)*S7(d1b|m1b)*S20(e1ae2b,d1a|m1am2b,l1a)*-1/1 #
+#Diagram #       91 spin-form #        6 flat ORMO #        677
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1b,d1a)*S7(e1b|l1b)*S7(d1b|m1b)*S20(e1ae2a,d1a|m1am2a,l1a)*-1/1 #
+#Diagram #       91 spin-form #        7 flat ORMO #        678
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S7(d1a|m1a)*S20(e1ae2b,d1b|m1bm2b,l1a) #
+#Diagram #       91 spin-form #        8 flat ORMO #        679
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S7(d1a|m1a)*S20(e1ae2a,d1b|m2am1b,l1a)*-1/1 #
+#Diagram #       91 spin-form #        9 flat ORMO #        680
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S7(d1b|m1b)*S20(e1be2b,d1a|m1am2b,l1b) #
+#Diagram #       91 spin-form #       10 flat ORMO #        681
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S7(d1b|m1b)*S20(e2ae1b,d1a|m1am2a,l1b)*-1/1 #
+#Diagram #       91 spin-form #       11 flat ORMO #        682
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S7(d1a|m1a)*S20(e1be2b,d1b|m1bm2b,l1b)*-1/1 #
+#Diagram #       91 spin-form #       12 flat ORMO #        683
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S7(d1a|m1a)*S20(e2ae1b,d1b|m2am1b,l1b)*-1/1 #
+#Diagram #       91 spin-form #       13 flat ORMO #        684
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S7(d1a|m1a)*S20(e2ae3a,d1b|m2am3a,l1b)*-1/1 #
+#Diagram #       91 spin-form #       14 flat ORMO #        685
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|m1a)*S20(e1be2b,d2a|m1bm2b,l2a)*-1/1 #
+#Diagram #       91 spin-form #       15 flat ORMO #        686
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|m1a)*S20(e2ae1b,d2a|m2am1b,l2a)*-1/1 #
+#Diagram #       91 spin-form #       16 flat ORMO #        687
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|m1a)*S20(e2ae3a,d2a|m2am3a,l2a)*-1/1 #
+#Diagram #       92 spin-form #        1 flat ORMO #        688
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|l2b)*S20(e2be3b,d2b|m1bm2bm3b) #
+#Diagram #       92 spin-form #        2 flat ORMO #        689
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|l2b)*S20(e1ae2b,d2b|m1am1bm2b)*-1/1 #
+#Diagram #       92 spin-form #        3 flat ORMO #        690
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|l2b)*S20(e1ae2a,d2b|m1am2am1b) #
+#Diagram #       92 spin-form #        4 flat ORMO #        691
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S7(d1a|l1a)*S20(e2be3b,d1b|m1bm2bm3b) #
+#Diagram #       92 spin-form #        5 flat ORMO #        692
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S7(d1a|l1a)*S20(e1ae2b,d1b|m1am1bm2b)*-1/1 #
+#Diagram #       92 spin-form #        6 flat ORMO #        693
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S7(d1a|l1a)*S20(e1ae2a,d1b|m1am2am1b) #
+#Diagram #       92 spin-form #        7 flat ORMO #        694
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S7(d1b|l1b)*S20(e1be2b,d1a|m1am1bm2b) #
+#Diagram #       92 spin-form #        8 flat ORMO #        695
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S7(d1b|l1b)*S20(e2ae1b,d1a|m1am2am1b) #
+#Diagram #       92 spin-form #        9 flat ORMO #        696
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S7(d1b|l1b)*S20(e2ae3a,d1a|m1am2am3a) #
+#Diagram #       92 spin-form #       10 flat ORMO #        697
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|l2a)*S20(e1be2b,d2a|m1am1bm2b) #
+#Diagram #       92 spin-form #       11 flat ORMO #        698
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|l2a)*S20(e2ae1b,d2a|m1am2am1b) #
+#Diagram #       92 spin-form #       12 flat ORMO #        699
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|l2a)*S20(e2ae3a,d2a|m1am2am3a) #
+#Diagram #       93 spin-form #        1 flat ORMO #        700
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1bl2b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|m2b)*S20(e1be2be3b|m3b,l1bl2b)*+1/2 #
+#Diagram #       93 spin-form #        2 flat ORMO #        701
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1bl2b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|m2b)*S20(e1ae1be2b|m1a,l1bl2b)*+1/2 #
+#Diagram #       93 spin-form #        3 flat ORMO #        702
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al1b|d1a,d1b)*S7(d1a|m1a)*S7(d1b|m1b)*S20(e1ae1be2b|m2b,l1al1b)*2/2 #
+#Diagram #       93 spin-form #        4 flat ORMO #        703
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al1b|d1a,d1b)*S7(d1a|m1a)*S7(d1b|m1b)*S20(e1ae2ae1b|m2a,l1al1b)*-2/2 #
+#Diagram #       93 spin-form #        5 flat ORMO #        704
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al2a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|m2a)*S20(e1ae2ae1b|m1b,l1al2a)*+1/2 #
+#Diagram #       93 spin-form #        6 flat ORMO #        705
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1al2a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|m2a)*S20(e1ae2ae3a|m3a,l1al2a)*+1/2 #
+#Diagram #       94 spin-form #        1 flat ORMO #        706
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|l1b)*S20(e1be2be3b|m2bm3b,l2b) #
+#Diagram #       94 spin-form #        2 flat ORMO #        707
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|l1b)*S20(e1ae1be2b|m1am2b,l2b)*-1/1 #
+#Diagram #       94 spin-form #        3 flat ORMO #        708
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|m1b)*S7(d2b|l1b)*S20(e1ae2ae1b|m1am2a,l2b) #
+#Diagram #       94 spin-form #        4 flat ORMO #        709
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1a,d1b)*S7(d1a|m1a)*S7(d1b|l1b)*S20(e1ae1be2b|m1bm2b,l1a) #
+#Diagram #       94 spin-form #        5 flat ORMO #        710
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1a,d1b)*S7(d1a|m1a)*S7(d1b|l1b)*S20(e1ae2ae1b|m2am1b,l1a) #
+#Diagram #       94 spin-form #        6 flat ORMO #        711
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1b,l1a|d1a,d1b)*S7(d1a|m1a)*S7(d1b|l1b)*S20(e1ae2ae3a|m2am3a,l1a) #
+#Diagram #       94 spin-form #        7 flat ORMO #        712
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1a,l1b|d1b,d1a)*S7(d1b|m1b)*S7(d1a|l1a)*S20(e1be2be3b|m2bm3b,l1b) #
+#Diagram #       94 spin-form #        8 flat ORMO #        713
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1b,d1a)*S7(d1b|m1b)*S7(d1a|l1a)*S20(e1ae1be2b|m1am2b,l1b)*-1/1 #
+#Diagram #       94 spin-form #        9 flat ORMO #        714
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1b,d1a)*S7(d1b|m1b)*S7(d1a|l1a)*S20(e1ae2ae1b|m1am2a,l1b) #
+#Diagram #       94 spin-form #       10 flat ORMO #        715
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|l1a)*S20(e1ae1be2b|m1bm2b,l2a) #
+#Diagram #       94 spin-form #       11 flat ORMO #        716
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|l1a)*S20(e1ae2ae1b|m2am1b,l2a) #
+#Diagram #       94 spin-form #       12 flat ORMO #        717
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|m1a)*S7(d2a|l1a)*S20(e1ae2ae3a|m2am3a,l2a) #
+#Diagram #       95 spin-form #        1 flat ORMO #        718
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1bd2b)*S7(e1b|l1b)*S14(e2be3b|m1b,l2b)*S14(d1bd2b|m2bm3b)*-1/1 #
+#Diagram #       95 spin-form #        2 flat ORMO #        719
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1bd2b)*S7(e1b|l1b)*S14(e1ae2b|m1a,l2b)*S14(d1bd2b|m1bm2b) #
+#Diagram #       95 spin-form #        3 flat ORMO #        720
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1ad1b)*S7(e1b|l1b)*S14(e1ae2b|m1b,l1a)*S14(d1ad1b|m1am2b)*-1/1 #
+#Diagram #       95 spin-form #        4 flat ORMO #        721
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1ad1b)*S7(e1b|l1b)*S14(e1ae2a|m1a,l1a)*S14(d1ad1b|m2am1b)*-1/1 #
+#Diagram #       95 spin-form #        5 flat ORMO #        722
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1ad1b)*S7(e1a|l1a)*S14(e1be2b|m1b,l1b)*S14(d1ad1b|m1am2b) #
+#Diagram #       95 spin-form #        6 flat ORMO #        723
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1ad1b)*S7(e1a|l1a)*S14(e2ae1b|m1a,l1b)*S14(d1ad1b|m2am1b)*-1/1 #
+#Diagram #       95 spin-form #        7 flat ORMO #        724
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1ad2a)*S7(e1a|l1a)*S14(e2ae1b|m1b,l2a)*S14(d1ad2a|m1am2a)*-1/1 #
+#Diagram #       95 spin-form #        8 flat ORMO #        725
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1ad2a)*S7(e1a|l1a)*S14(e2ae3a|m1a,l2a)*S14(d1ad2a|m2am3a)*-1/1 #
+#Diagram #       96 spin-form #        1 flat ORMO #        726
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S14(e2b,d1b|m1bm2b)*S14(e3b,d2b|m3b,l2b) #
+#Diagram #       96 spin-form #        2 flat ORMO #        727
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S14(e2b,d1b|m1bm2b)*S14(e1a,d2b|m1a,l2b) #
+#Diagram #       96 spin-form #        3 flat ORMO #        728
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S14(e1a,d1b|m1am1b)*S14(e2b,d2b|m2b,l2b)*-1/1 #
+#Diagram #       96 spin-form #        4 flat ORMO #        729
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S14(e1a,d1b|m1am1b)*S14(e2a,d2b|m2a,l2b)*-1/1 #
+#Diagram #       96 spin-form #        5 flat ORMO #        730
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l1a|d1b,d1a)*S7(e1b|l1b)*S14(e2b,d1b|m1bm2b)*S14(e3b,d1a|m3b,l1a) #
+#Diagram #       96 spin-form #        6 flat ORMO #        731
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1b,d1a)*S7(e1b|l1b)*S14(e2b,d1b|m1bm2b)*S14(e1a,d1a|m1a,l1a) #
+#Diagram #       96 spin-form #        7 flat ORMO #        732
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1b,d1a)*S7(e1b|l1b)*S14(e1a,d1b|m1am1b)*S14(e2b,d1a|m2b,l1a)*-1/1 #
+#Diagram #       96 spin-form #        8 flat ORMO #        733
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1b,d1a)*S7(e1b|l1b)*S14(e1a,d1b|m1am1b)*S14(e2a,d1a|m2a,l1a)*-1/1 #
+#Diagram #       96 spin-form #        9 flat ORMO #        734
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S14(e2b,d1a|m1am1b)*S14(e1a,d1b|m2b,l1a) #
+#Diagram #       96 spin-form #       10 flat ORMO #        735
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S14(e1a,d1a|m1am2a)*S14(e2a,d1b|m1b,l1a) #
+#Diagram #       96 spin-form #       11 flat ORMO #        736
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S14(e1b,d1b|m1bm2b)*S14(e2b,d1a|m1a,l1b) #
+#Diagram #       96 spin-form #       12 flat ORMO #        737
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S14(e2a,d1b|m1am1b)*S14(e1b,d1a|m2a,l1b)*-1/1 #
+#Diagram #       96 spin-form #       13 flat ORMO #        738
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S14(e1b,d1a|m1am1b)*S14(e2b,d1b|m2b,l1b) #
+#Diagram #       96 spin-form #       14 flat ORMO #        739
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S14(e1b,d1a|m1am1b)*S14(e2a,d1b|m2a,l1b) #
+#Diagram #       96 spin-form #       15 flat ORMO #        740
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S14(e2a,d1a|m1am2a)*S14(e1b,d1b|m1b,l1b) #
+#Diagram #       96 spin-form #       16 flat ORMO #        741
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S14(e2a,d1a|m1am2a)*S14(e3a,d1b|m3a,l1b) #
+#Diagram #       96 spin-form #       17 flat ORMO #        742
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S14(e1b,d1a|m1am1b)*S14(e2b,d2a|m2b,l2a) #
+#Diagram #       96 spin-form #       18 flat ORMO #        743
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S14(e1b,d1a|m1am1b)*S14(e2a,d2a|m2a,l2a) #
+#Diagram #       96 spin-form #       19 flat ORMO #        744
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S14(e2a,d1a|m1am2a)*S14(e1b,d2a|m1b,l2a) #
+#Diagram #       96 spin-form #       20 flat ORMO #        745
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S14(e2a,d1a|m1am2a)*S14(e3a,d2a|m3a,l2a) #
+#Diagram #       97 spin-form #        1 flat ORMO #        746
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|m1b)*S14(e1be2b|m2b,l1b)*S14(e3b,d2b|m3b,l2b) #
+#Diagram #       97 spin-form #        2 flat ORMO #        747
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|m1b)*S14(e1be2b|m2b,l1b)*S14(e1a,d2b|m1a,l2b) #
+#Diagram #       97 spin-form #        3 flat ORMO #        748
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|m1b)*S14(e1ae1b|m1a,l1b)*S14(e2b,d2b|m2b,l2b)*-1/1 #
+#Diagram #       97 spin-form #        4 flat ORMO #        749
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|m1b)*S14(e1ae1b|m1a,l1b)*S14(e2a,d2b|m2a,l2b)*-1/1 #
+#Diagram #       97 spin-form #        5 flat ORMO #        750
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|m1b)*S14(e1be2b|m2b,l1b)*S14(e3b,d1a|m3b,l1a) #
+#Diagram #       97 spin-form #        6 flat ORMO #        751
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|m1b)*S14(e1be2b|m2b,l1b)*S14(e1a,d1a|m1a,l1a) #
+#Diagram #       97 spin-form #        7 flat ORMO #        752
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|m1b)*S14(e1ae1b|m1a,l1b)*S14(e2b,d1a|m2b,l1a)*-1/1 #
+#Diagram #       97 spin-form #        8 flat ORMO #        753
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|m1b)*S14(e1ae1b|m1a,l1b)*S14(e2a,d1a|m2a,l1a)*-1/1 #
+#Diagram #       97 spin-form #        9 flat ORMO #        754
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1a,d1b)*S7(d1a|m1a)*S14(e1be2b|m1b,l1b)*S14(e1a,d1b|m2b,l1a) #
+#Diagram #       97 spin-form #       10 flat ORMO #        755
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1a,d1b)*S7(d1a|m1a)*S14(e1ae1b|m2a,l1b)*S14(e2a,d1b|m1b,l1a)*-1/1 #
+#Diagram #       97 spin-form #       11 flat ORMO #        756
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1b,d1a)*S7(d1b|m1b)*S14(e1ae1b|m2b,l1a)*S14(e2b,d1a|m1a,l1b) #
+#Diagram #       97 spin-form #       12 flat ORMO #        757
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1b,d1a)*S7(d1b|m1b)*S14(e1ae2a|m1a,l1a)*S14(e1b,d1a|m2a,l1b) #
+#Diagram #       97 spin-form #       13 flat ORMO #        758
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|m1a)*S14(e1ae1b|m1b,l1a)*S14(e2b,d1b|m2b,l1b) #
+#Diagram #       97 spin-form #       14 flat ORMO #        759
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|m1a)*S14(e1ae1b|m1b,l1a)*S14(e2a,d1b|m2a,l1b) #
+#Diagram #       97 spin-form #       15 flat ORMO #        760
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|m1a)*S14(e1ae2a|m2a,l1a)*S14(e1b,d1b|m1b,l1b) #
+#Diagram #       97 spin-form #       16 flat ORMO #        761
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|m1a)*S14(e1ae2a|m2a,l1a)*S14(e3a,d1b|m3a,l1b) #
+#Diagram #       97 spin-form #       17 flat ORMO #        762
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|m1a)*S14(e1ae1b|m1b,l1a)*S14(e2b,d2a|m2b,l2a) #
+#Diagram #       97 spin-form #       18 flat ORMO #        763
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|m1a)*S14(e1ae1b|m1b,l1a)*S14(e2a,d2a|m2a,l2a) #
+#Diagram #       97 spin-form #       19 flat ORMO #        764
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|m1a)*S14(e1ae2a|m2a,l1a)*S14(e1b,d2a|m1b,l2a) #
+#Diagram #       97 spin-form #       20 flat ORMO #        765
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|m1a)*S14(e1ae2a|m2a,l1a)*S14(e3a,d2a|m3a,l2a) #
+#Diagram #       98 spin-form #        1 flat ORMO #        766
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1bl2b|d1b,d2b)*S7(d1b|m1b)*S14(e1be2b|l1bl2b)*S14(e3b,d2b|m2bm3b)*-1/1 #
+#Diagram #       98 spin-form #        2 flat ORMO #        767
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1bl2b|d1b,d2b)*S7(d1b|m1b)*S14(e1be2b|l1bl2b)*S14(e1a,d2b|m1am2b) #
+#Diagram #       98 spin-form #        3 flat ORMO #        768
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al1b|d1b,d1a)*S7(d1b|m1b)*S14(e1ae1b|l1al1b)*S14(e2b,d1a|m1am2b) #
+#Diagram #       98 spin-form #        4 flat ORMO #        769
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al1b|d1b,d1a)*S7(d1b|m1b)*S14(e1ae1b|l1al1b)*S14(e2a,d1a|m1am2a) #
+#Diagram #       98 spin-form #        5 flat ORMO #        770
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1al1b|d1a,d1b)*S7(d1a|m1a)*S14(e1ae1b|l1al1b)*S14(e2b,d1b|m1bm2b)*-1/1 #
+#Diagram #       98 spin-form #        6 flat ORMO #        771
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al1b|d1a,d1b)*S7(d1a|m1a)*S14(e1ae1b|l1al1b)*S14(e2a,d1b|m2am1b) #
+#Diagram #       98 spin-form #        7 flat ORMO #        772
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1al2a|d1a,d2a)*S7(d1a|m1a)*S14(e1ae2a|l1al2a)*S14(e1b,d2a|m2am1b)*-1/1 #
+#Diagram #       98 spin-form #        8 flat ORMO #        773
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1al2a|d1a,d2a)*S7(d1a|m1a)*S14(e1ae2a|l1al2a)*S14(e3a,d2a|m2am3a)*-1/1 #
+#Diagram #       99 spin-form #        1 flat ORMO #        774
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|l1b)*S14(e1be2b|m1b,l2b)*S14(e3b,d2b|m2bm3b) #
+#Diagram #       99 spin-form #        2 flat ORMO #        775
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|l1b)*S14(e1be2b|m1b,l2b)*S14(e1a,d2b|m1am2b)*-1/1 #
+#Diagram #       99 spin-form #        3 flat ORMO #        776
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|l1b)*S14(e1ae1b|m1a,l2b)*S14(e2b,d2b|m1bm2b) #
+#Diagram #       99 spin-form #        4 flat ORMO #        777
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l2b|d1b,d2b)*S7(d1b|l1b)*S14(e1ae1b|m1a,l2b)*S14(e2a,d2b|m2am1b)*-1/1 #
+#Diagram #       99 spin-form #        5 flat ORMO #        778
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|l1b)*S14(e1ae1b|m1b,l1a)*S14(e2b,d1a|m1am2b)*-1/1 #
+#Diagram #       99 spin-form #        6 flat ORMO #        779
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|l1b)*S14(e1ae1b|m1b,l1a)*S14(e2a,d1a|m1am2a)*-1/1 #
+#Diagram #       99 spin-form #        7 flat ORMO #        780
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|l1b)*S14(e1ae2a|m1a,l1a)*S14(e1b,d1a|m2am1b) #
+#Diagram #       99 spin-form #        8 flat ORMO #        781
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1b,l1a|d1b,d1a)*S7(d1b|l1b)*S14(e1ae2a|m1a,l1a)*S14(e3a,d1a|m2am3a) #
+#Diagram #       99 spin-form #        9 flat ORMO #        782
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|l1a)*S14(e1be2b|m1b,l1b)*S14(e3b,d1b|m2bm3b) #
+#Diagram #       99 spin-form #       10 flat ORMO #        783
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|l1a)*S14(e1be2b|m1b,l1b)*S14(e1a,d1b|m1am2b)*-1/1 #
+#Diagram #       99 spin-form #       11 flat ORMO #        784
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|l1a)*S14(e1ae1b|m1a,l1b)*S14(e2b,d1b|m1bm2b) #
+#Diagram #       99 spin-form #       12 flat ORMO #        785
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1a,d1b)*S7(d1a|l1a)*S14(e1ae1b|m1a,l1b)*S14(e2a,d1b|m2am1b)*-1/1 #
+#Diagram #       99 spin-form #       13 flat ORMO #        786
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|l1a)*S14(e1ae1b|m1b,l2a)*S14(e2b,d2a|m1am2b)*-1/1 #
+#Diagram #       99 spin-form #       14 flat ORMO #        787
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|l1a)*S14(e1ae1b|m1b,l2a)*S14(e2a,d2a|m1am2a)*-1/1 #
+#Diagram #       99 spin-form #       15 flat ORMO #        788
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|l1a)*S14(e1ae2a|m1a,l2a)*S14(e1b,d2a|m2am1b) #
+#Diagram #       99 spin-form #       16 flat ORMO #        789
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1a,d2a)*S7(d1a|l1a)*S14(e1ae2a|m1a,l2a)*S14(e3a,d2a|m2am3a) #
+#Diagram #      100 spin-form #        1 flat ORMO #        790
+Z22(e1be2b|m1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(e2b|l2b)*S7(d1b|m1b)*S7(d2b|m2b)*+1/4 #
+#Diagram #      100 spin-form #        2 flat ORMO #        791
+Z22(e1ae1b|m1am1b)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S7(e1b|l1b)*S7(d1a|m1a)*S7(d1b|m1b)*4/4 #
+#Diagram #      100 spin-form #        3 flat ORMO #        792
+Z22(e1ae2a|m1am2a)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(e2a|l2a)*S7(d1a|m1a)*S7(d2a|m2a)*+1/4 #
+#Diagram #      101 spin-form #        1 flat ORMO #        793
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(e2b|l2b)*S7(d1b|m1b)*S14(e3b,d2b|m2bm3b)*-1/2 #
+#Diagram #      101 spin-form #        2 flat ORMO #        794
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(e2b|l2b)*S7(d1b|m1b)*S14(e1a,d2b|m1am2b)*+1/2 #
+#Diagram #      101 spin-form #        3 flat ORMO #        795
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S7(e1b|l1b)*S7(d1b|m1b)*S14(e2b,d1a|m1am2b)*2/2 #
+#Diagram #      101 spin-form #        4 flat ORMO #        796
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1b,d1a)*S7(e1a|l1a)*S7(e1b|l1b)*S7(d1b|m1b)*S14(e2a,d1a|m1am2a)*2/2 #
+#Diagram #      101 spin-form #        5 flat ORMO #        797
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S7(e1b|l1b)*S7(d1a|m1a)*S14(e2b,d1b|m1bm2b)*-2/2 #
+#Diagram #      101 spin-form #        6 flat ORMO #        798
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S7(e1b|l1b)*S7(d1a|m1a)*S14(e2a,d1b|m2am1b)*2/2 #
+#Diagram #      101 spin-form #        7 flat ORMO #        799
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(e2a|l2a)*S7(d1a|m1a)*S14(e1b,d2a|m2am1b)*-1/2 #
+#Diagram #      101 spin-form #        8 flat ORMO #        800
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(e2a|l2a)*S7(d1a|m1a)*S14(e3a,d2a|m2am3a)*-1/2 #
+#Diagram #      102 spin-form #        1 flat ORMO #        801
+Z24(e1be2be3b|m1bm2bm3b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|m1b)*S7(d2b|m2b)*S14(e2be3b|m3b,l2b)*-1/2 #
+#Diagram #      102 spin-form #        2 flat ORMO #        802
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l2b|d1b,d2b)*S7(e1b|l1b)*S7(d1b|m1b)*S7(d2b|m2b)*S14(e1ae2b|m1a,l2b)*+1/2 #
+#Diagram #      102 spin-form #        3 flat ORMO #        803
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S7(d1a|m1a)*S7(d1b|m1b)*S14(e1ae2b|m2b,l1a)*2/2 #
+#Diagram #      102 spin-form #        4 flat ORMO #        804
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1b,l1a|d1a,d1b)*S7(e1b|l1b)*S7(d1a|m1a)*S7(d1b|m1b)*S14(e1ae2a|m2a,l1a)*2/2 #
+#Diagram #      102 spin-form #        5 flat ORMO #        805
+Z24(e1ae1be2b|m1am1bm2b)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S7(d1a|m1a)*S7(d1b|m1b)*S14(e1be2b|m2b,l1b)*-2/2 #
+#Diagram #      102 spin-form #        6 flat ORMO #        806
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l1b|d1a,d1b)*S7(e1a|l1a)*S7(d1a|m1a)*S7(d1b|m1b)*S14(e2ae1b|m2a,l1b)*2/2 #
+#Diagram #      102 spin-form #        7 flat ORMO #        807
+Z24(e1ae2ae1b|m1am2am1b)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|m1a)*S7(d2a|m2a)*S14(e2ae1b|m1b,l2a)*-1/2 #
+#Diagram #      102 spin-form #        8 flat ORMO #        808
+Z24(e1ae2ae3a|m1am2am3a)+=H13(l1a,l2a|d1a,d2a)*S7(e1a|l1a)*S7(d1a|m1a)*S7(d2a|m2a)*S14(e2ae3a|m3a,l2a)*-1/2 #
