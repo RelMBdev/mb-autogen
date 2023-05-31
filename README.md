@@ -1,6 +1,6 @@
 ## mb-autogen: a processing tool to generate code for many-body (electronic structure) methods
 
-Copyright Andre Severo Pereira Gomes 2020-2022.
+Copyright Andre Severo Pereira Gomes 2020-2023.
 
 # Aims and scope
 
