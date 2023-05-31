@@ -15,5 +15,5 @@ toolchain to go from a the definition of a many-body problem to code that can be
 
 # License
 
-mb-diag-autogen is licensed under version 2.1 of the GNU Lesser General Public License [(LGPLv2.1)](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html), see [LICENSE](LICENSE)
+**mb-diag-autogen** is licensed under version 2.1 of the GNU Lesser General Public License [(LGPLv2.1)](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html), see [LICENSE](LICENSE)
 
