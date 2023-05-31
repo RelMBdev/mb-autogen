@@ -1,0 +1,210 @@
+   *** Many-Body Theory Diagram Generator <DIAGEN> v.2016.05.26 (base v.2010.06) ***
+                     Author: Dmitry I. Lyakh (Liakh)
+                          All rights reserved!
+                           ------------------------
+Diagram generator started:
+----------------------------------------------
+INTEGER*4 limit check           :   2147483647
+Max tensor exc-level            :           16
+Max tensor rank                 :           32
+Max same-sort indices per tensor:            9
+Max tensors per diagram         :           20
+Tensor size (b)                 :          104
+Diagram size (b)                :         6120
+Diagram record size (b)         :         2520
+Max number of diagrams          :      8388608
+Diagram pool size (Mb)          :     20160.00
+Product pool size (Mb)          :       130.00
+Tensor-form register size (Mb)  :         4.00
+Tensor-class register size (Mb) :         6.00
+----------------------------------------------
+Restricted Summation Convention :            T
+Intradiagram Optimization Level :         1.00
+Disconnected Intermediates      :            T
+Factorization of Equations      :            F
+Reusing Intermediate Parts      :            F
+Fortran indexing convention     :            T
+Active index separation         :            F
+Explicit symmetry marking       :            F
+----------------------------------------------
+Deriving equations and code for a user-defined method: CCSD:
+ Processing QMDL (method) file CCSD.method.xml:
+  TASK BEGIN: CCSD: Energy:
+   Generating diagrams:
+    product Q012*H12*expn(T12,6,6)*P0:      48 diagrams (    0.0 min): Canceling ... Ok:      48 diagrams (    0.0 +    0.0 min).
+   Total amount of diagrams saved:      48 diagrams:
+    Diagram type 1: amount =       48
+    Diagram type 2: amount =        0
+    Diagram type 3: amount =        0
+    Diagram type 4: amount =        0
+    Diagram type 5: amount =        0
+    Diagram type 6: amount =        0
+     1-part diagram amount =       48
+    Max number of tensors per diagram =  5
+    Max number of parts per diagram   =  1
+   Done.
+   Drawing diagrams ... Ok (    0.0 min)
+   Symbolic part: Spin-integration of formulae, factorization, and code generation:
+    Spin-integrating the formulae ...      232 spin-integrated formulae. Ok (    0.0 min)
+    Diagram factorization without any storage restrictions:
+     Converting diagrams to the canonical intra-optimized digital form ... Ok (    0.0 min)
+     Contraction statistics before the inter-diagram factorization (amounts of contractions):
+      Scaling:    OpCount:    Storage:
+         o0v0           0           8
+         o2v0           0          42
+         o1v1           7          83
+         o0v2           0          20
+         o2v1          34           0
+         o1v2           6           0
+         o4v0           0          20
+         o3v1          12          79
+         o2v2          53         197
+         o1v3          12           3
+         o4v1          27           0
+         o3v2         157           0
+         o2v3          53           0
+         o1v4           3           0
+         o4v2          39           0
+         o3v3          46           0
+         o2v4           3           0
+      Digital diagram representation size (Mb)  =    0.03
+      Total number of floating-point operations =  0.49121917D+13
+      Maximal number of r.h.s tensors per tensor expression   =          5
+      Maximal number of slots encountered in a tensor form    =          4
+      Maximal number of slots encountered in an intermediate  =          4
+      Maximal tensor {type,slot_num} sortlist size            =        327
+     Ok
+     Registering basic tensor forms ... 
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           0  2:         45
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   0  2:         45
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           0  3:         60
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   0  3:         60
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           0  4:        127
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   0  4:        127
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           1  2:        277
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   1  2:        277
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           1  3:         96
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   1  3:         96
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           1  4:         74
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   1  4:         74
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  0:          8
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   8  0:          8
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  2:        327
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   8  2:        224
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  3:         79
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  4:         38
+     Ok:       108 basic TF. (    0.0 min)
+     Registering intermediate tensor forms ... 
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  0:          8
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  2:        327
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   8  2:         88
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  3:         79
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   8  3:         52
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  4:         38
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   8  4:         38
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  0:          8
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  2:        327
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   8  2:         15
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  3:         79
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   8  3:         24
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  4:         38
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  0:          8
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  2:        327
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  3:         79
+      DEBUG(csq_generator): sorting non-empty tensor class (tensor_type/slots_amount):   8  3:          3
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  4:         38
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  0:          8
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  2:        327
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  3:         79
+      DEBUG(csq_generator): non-empty tensor class (tensor_type/slots_amount):           8  4:         38
+     Ok:       129 intermediate TF. (    0.0 min)
+     Renumbering tensor forms to group same-type, same-rank tensors together ... Ok (    0.0 min)
+     Registering tensor storage forms (host-arrays) ...        53/       33 basic/intermediate TSF. Ok (    0.0 min)
+     Checking consistency before factorization ... Ok (    0.0 min)
+     Generating and traversing the Global Contraction Tree ... 
+      Generating the Global Contraction Tree: Width =   12 ... Ok (    0.0 min)
+      Merging some equivalent ORMO ... Ok: number of tensor expressions/operations =       232/       452 (    0.0 min)
+      Printing the Global Contraction Tree ... Ok (    0.0 min)
+      Establishing the Global Contraction Path ... Ok:        892 actions recorded. (    0.0 min)
+      Checking correctness of diagram signs ... Ok (    0.0 min)
+      Recognizing reusable parts of composite (right) intermediates ... 
+       Total number of composite intermediates      =          0
+       Size of the RUI register (Mb)                =      27.00
+       Total number of intermediates to compute     =        129
+       Number of simple intermediates to compute    =        129
+       Number of composite intermediates to compute =          0
+       Total number of intermediates to save        =          0
+       Number of simple intermediates to save       =          0
+       Number of composite intermediates to save    =          0
+       Total number of intermediate reuses          =          0
+       Number of intermediate parts reuses          =          0
+       Number of full intermediate reuses           =          0
+       Number of absorbed simple intermediates      =          0
+      Ok (    0.0 min)
+      Traversing the Global Contraction Path ...        892 active actions. Ok (    0.0 min)
+      Cleaning ... Ok (    0.0 min)
+     Done: Contraction statistics after the inter-diagram factorization (amounts of contractions):
+      Scaling:    OpCount:    Storage:
+         o0v0           0           8
+         o2v0           0          42
+         o1v1           7          83
+         o0v2           0          20
+         o2v1          34           0
+         o1v2           6           0
+         o4v0           0          20
+         o3v1          12          79
+         o2v2          53         197
+         o1v3          12           3
+         o4v1          27           0
+         o3v2         157           0
+         o2v3          53           0
+         o1v4           3           0
+         o4v2          39           0
+         o3v3          46           0
+         o2v4           3           0
+      Total number of FLOPs                  =  0.48899373D+13
+      Total number of tensor operations      =        452
+      Total number of factorized subdomains  =        232
+      Total number of tensor forms:          =        237
+       * Basic tensor forms                  =        108
+       * Simple intermediate tensor forms    =        129
+       * Composite intermediate tensor forms =          0
+        + Repeated composite intermediates   =          0
+      Total number of host-arrays:           =         86
+       * Basic host-arrays                   =         53
+       * Intermediate host-arrays            =         33
+       * Reusable intermediate host-arrays   =          0
+       * Additional intermediate host-arrays =          0
+      Tensor types:        H       S       C       L       W       Y       X       R       Z       T       O       P       Q       A       B       E       F       G       I       J       K       M       N       U       V
+      Tensor forms:       65      37       0       0       0       0       0       0     135       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Host-arrays :       42       5       0       0       0       0       0       0      39       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+     Ok
+    Ok (    0.0 min)
+It is time to modify the .fac.ormo.txt file if needed, then press Enter ...
+    Unfolding open multiindex permutations ...        452 -->        574 unfolded tensor operations. Ok (    0.0 min)
+    Analyzing the tensor operation list: 
+     Operational cost and memory size scaling distribution ... Ok
+     Tracing the tensor instruction list:
+      WARNING(statistics_dag): deleted array has not been used in: $SIAL DELETE_ARRAY Z48(|)
+ Line         2536
+      WARNING(statistics_dag): deleted array has not been used in: $SIAL DELETE_ARRAY Z49(e1b|m1b)
+ Line         2538
+      WARNING(statistics_dag): deleted array has not been used in: $SIAL DELETE_ARRAY Z51(e1a|m1a)
+ Line         2540
+      WARNING(statistics_dag): deleted array has not been used in: $SIAL DELETE_ARRAY Z50(e1be2b|m1bm2b)
+ Line         2542
+      WARNING(statistics_dag): deleted array has not been used in: $SIAL DELETE_ARRAY Z52(e1ae1b|m1am1b)
+ Line         2544
+      WARNING(statistics_dag): deleted array has not been used in: $SIAL DELETE_ARRAY Z53(e1ae2a|m1am2a)
+ Line         2546
+      Max number of simultaneously opened arrays =    55
+     Ok
+    Ok (    0.0 min)
+    Assembling the code ...      2547 lines processed. Max number of simultaneously opened arrays:      55. Ok (    0.0 min)
+   Ok
+  END OF TASK: CCSD: Energy. Ok
+  -----------
+ Ok
+ dgr_tag =   1; dgr_limit =       48; prdt_lim =     34; prod_class =     34; exr_limit =    -1
+Ok. Done for      0.1 min. Enjoy!
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG

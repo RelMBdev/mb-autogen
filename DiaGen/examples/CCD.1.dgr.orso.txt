@@ -1,0 +1,24 @@
+#CCD: Energy
+#Diagram Domain Tag: Begining - End:    1:        1 -       11
+#Diagram #        1
+Z11(e1e2|m1m2)+=H2(e1e2|m1m2) #
+#Diagram #        2
+Z12(|)+=H4(l1l2|d1d2)*S5(d1d2|l1l2) #
+#Diagram #        3
+Z11(e1e2|m1m2)+=H6(e1|d1)*S5(e2,d1|m1m2)*-1/1 #
+#Diagram #        4
+Z11(e1e2|m1m2)+=H7(l1|m1)*S5(e1e2|m2,l1) #
+#Diagram #        5
+Z11(e1e2|m1m2)+=H8(e1e2|d1d2)*S5(d1d2|m1m2) #
+#Diagram #        6
+Z11(e1e2|m1m2)+=H9(e1,l1|m1,d1)*S5(e2,d1|m2,l1) #
+#Diagram #        7
+Z11(e1e2|m1m2)+=H10(l1l2|m1m2)*S5(e1e2|l1l2) #
+#Diagram #        8
+Z11(e1e2|m1m2)+=H4(l1,l2|d1d2)*S5(e1e2|m1,l1)*S5(d1d2|m2,l2)*-1/1 #
+#Diagram #        9
+Z11(e1e2|m1m2)+=H4(l1l2|d1d2)*S5(e1e2|l1l2)*S5(d1d2|m1m2) #
+#Diagram #       10
+Z11(e1e2|m1m2)+=H4(l1l2|d1,d2)*S5(e1,d1|m1m2)*S5(e2,d2|l1l2)*-1/1 #
+#Diagram #       11
+Z11(e1e2|m1m2)+=H4(l1,l2|d1,d2)*S5(e1,d1|m1,l1)*S5(e2,d2|m2,l2)*1/2 #
