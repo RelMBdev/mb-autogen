@@ -8,10 +8,10 @@ Copyright Andre Severo Pereira Gomes 2020-2023.
 electronic structure approach (kernels from residue equations etc) and generate code for (non-)relativistic electronic
 structure.
 
-**mb-autogen** has been heavily inspired by discussions with Dmitry Liakh (then at Oak Rigde Leadership Computing facility) on a simple 
+**mb-autogen** has been developed as part of a collaboration with Dmitry Liakh (then at Oak Rigde Leadership Computing facility) on a simple 
 toolchain to go from a the definition of a many-body problem to code that can be executed on different architectures.
 
-**mb-autogen** currently supports the generation of code for the TAL-SH and ExaTENSOR libraries.
+**mb-autogen** currently supports the generation of code for the TAL-SH and ExaTENSOR libraries,  and has been used to obtain code for the  [Exacorr module](https://doi.org/10.1021/acs.jctc.1c00260) from the [DIRAC](https://diracprogram.org) code.
 
 # License
 
