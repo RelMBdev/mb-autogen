@@ -1,9 +1,11 @@
-cff-version: 1.1.0
+cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Severo Pereira Gomes
-    given-names: Andre
-    orcid: https://orcid.org/0000-0002-5437-2251
-title: RelMBdev/mb-autogen: mb-autogen
-version: v1.0.1
+- family-names: "Severo Pereira Gomes"
+  given-names: "Andre"
+  orcid: "https://orcid.org/0000-0002-5437-2251"
+title: "mb-autogen: a processing tool to generate code for many-body (electronic structure) methods"
+version: 1.0.1
+doi: 10.5281/zenodo.8094430
 date-released: 2023-06-29
+url: "https://github.com/RelMBdev/mb-autogen"
