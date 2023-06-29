@@ -4,7 +4,7 @@ Copyright Andre Severo Pereira Gomes 2020-2023.
 
 # Aims and scope
 
-**mb-autogen** is a python tool to process a SIAL (Super Instruction Architecture Language) specification for a particular
+**mb-autogen** is a python tool to process a SIAL (Super Instruction Architecture Language, see documentation at the [ACES](http://qtp.ufl.edu/ACES/docs.shtml) site) specification for a particular
 electronic structure approach (kernels from residue equations etc) and generate code for (non-)relativistic electronic
 structure.
 
