@@ -4,6 +4,9 @@ authors:
 - family-names: "Severo Pereira Gomes"
   given-names: "Andre"
   orcid: "https://orcid.org/0000-0002-5437-2251"
+- family-names: "I. Lyakh"
+  given-names: "Dmitry"
+  orcid: "https://orcid.org/0000-0002-1851-2974"
 title: "mb-autogen: a processing tool to generate code for many-body (electronic structure) methods"
 version: 1.0.1
 doi: 10.5281/zenodo.8094430
